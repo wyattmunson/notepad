@@ -1,5 +1,5 @@
 title = "My Docs"
-baseurl = "https://wyattmunson.github.io/notepad/"
+baseurl = "http://localhost/"
 canonifyURLs = false
 disableAliases = true
 disableHugoGeneratorInject = true
