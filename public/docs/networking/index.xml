@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Networking on My Docs</title>
+    <link>http://localhost:1313/docs/networking/</link>
+    <description>Recent content in Networking on My Docs</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <copyright>Copyright (c) 2020-2024 Hyas</copyright>
+    <lastBuildDate>Mon, 13 Feb 2023 20:15:31 -0800</lastBuildDate>
+    <atom:link href="http://localhost:1313/docs/networking/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>DNS</title>
+      <link>http://localhost:1313/docs/networking/dns/</link>
+      <pubDate>Mon, 13 Feb 2023 20:15:31 -0800</pubDate>
+      <guid>http://localhost:1313/docs/networking/dns/</guid>
+      <description>Domain Name System (DNS) is the phone book of the internet. It translates human friendly domain names, e.g., www.exmaple.com, to computer friendly addresses like 192.</description>
+    </item>
+  </channel>
+</rss>

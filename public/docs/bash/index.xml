@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Bash on My Docs</title>
+    <link>http://localhost:1313/docs/bash/</link>
+    <description>Recent content in Bash on My Docs</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <copyright>Copyright (c) 2020-2024 Hyas</copyright>
+    <lastBuildDate>Mon, 26 Jun 2023 17:35:47 -0700</lastBuildDate>
+    <atom:link href="http://localhost:1313/docs/bash/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Bash Scripting</title>
+      <link>http://localhost:1313/docs/bash/bash-scripting/</link>
+      <pubDate>Mon, 26 Jun 2023 17:35:47 -0700</pubDate>
+      <guid>http://localhost:1313/docs/bash/bash-scripting/</guid>
+      <description>Variables # set a variable VARIABLE_NAME=some_text # reference a variable echo $VARIABLE_NAME # set variable equal to a command output VARIABLE_NAME=$(ls)&#xD;Bash Builtin Variables $0 # Name of the Bash script $1 - $9 # First 9 arguments to the script $# # Number of arguments were passed to script $@ # All the arguments supplied to the Bash script.</description>
+    </item>
+    <item>
+      <title>Bash Reference</title>
+      <link>http://localhost:1313/docs/bash/bash-reference/</link>
+      <pubDate>Tue, 03 Jan 2023 23:53:04 -0800</pubDate>
+      <guid>http://localhost:1313/docs/bash/bash-reference/</guid>
+      <description>Full Bash reference Command Name Description cat concatenate Display contents of text file; combine multiple files. cd change directory Traverse the directory tree and move to different folders cp copy Copy files or directories curl curl HTTP utility cut cut dig domain information grouper Show DNS information for a URL file file Display file type find find Find a file echo echo Print output to the terminal exit exit Exit current script or shell session export export Export a variable grep global regular expression print Use regex to find files kill kill Stop a running process ls list List contents of a directory lsof list open files See running processes, check ports mkdir mkdir Create a directory ps ps See status of running process pwd print working directory Show current directory rm remove Removes files or directories sudo super user do Elevates a command to super user privileges scp secure copy Securely copy file between hosts sed stream editor Edit a text stream ssh ssh HTTP utility tail tail Print the end of a file touch touch Create a file type type See file or directory type xargs xargs Yarr Redirect Operators Redirect Syntax Reference command ARGUMENT [OPTIONS] [FILE_NAME.</description>
+    </item>
+    <item>
+      <title>Bash Cheatsheet</title>
+      <link>http://localhost:1313/docs/bash/bash-cheatsheet/</link>
+      <pubDate>Tue, 03 Jan 2023 23:52:57 -0800</pubDate>
+      <guid>http://localhost:1313/docs/bash/bash-cheatsheet/</guid>
+      <description>File Commands File Commands ls Use ls to list files and directories.&#xA;ls # list current directory files ls -lah # show metadata and hidden files ls /dir # list specified direcotry&amp;#39;s file contents&#xD;Changing directories pwd # print working directory - get current location cd dir # move into &amp;#34;dir&amp;#34; directory cd .</description>
+    </item>
+  </channel>
+</rss>

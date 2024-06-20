@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Help on My Docs</title>
+    <link>http://localhost:1313/docs/help/</link>
+    <description>Recent content in Help on My Docs</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <copyright>Copyright (c) 2020-2024 Hyas</copyright>
+    <lastBuildDate>Thu, 12 Nov 2020 15:22:20 +0100</lastBuildDate>
+    <atom:link href="http://localhost:1313/docs/help/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>How to Update</title>
+      <link>http://localhost:1313/docs/help/how-to-update/</link>
+      <pubDate>Thu, 12 Nov 2020 13:26:54 +0100</pubDate>
+      <guid>http://localhost:1313/docs/help/how-to-update/</guid>
+      <description>Check for outdated packages The npm outdated command will check the registry to see if any (or, specific) installed packages are currently outdated:</description>
+    </item>
+    <item>
+      <title>Troubleshooting</title>
+      <link>http://localhost:1313/docs/help/troubleshooting/</link>
+      <pubDate>Thu, 12 Nov 2020 15:22:20 +0100</pubDate>
+      <guid>http://localhost:1313/docs/help/troubleshooting/</guid>
+      <description>Problems updating npm packages Delete the ./node_modules folder, and run again:&#xA;npm install&#xD;Problems with cache Delete the temporary directories:</description>
+    </item>
+    <item>
+      <title>FAQ</title>
+      <link>http://localhost:1313/docs/help/faq/</link>
+      <pubDate>Tue, 06 Oct 2020 08:49:31 +0000</pubDate>
+      <guid>http://localhost:1313/docs/help/faq/</guid>
+      <description>Hyas? Doks is a Hyas theme build by the creator of Hyas.&#xA;Footer notice? Please keep it in place.&#xA;Keyboard shortcuts for search?</description>
+    </item>
+  </channel>
+</rss>

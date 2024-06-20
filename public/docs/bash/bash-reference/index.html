@@ -1,0 +1,2501 @@
+<!doctype html>
+<html lang="en" data-bs-theme="auto">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><link rel="preload" href="http://localhost:1313/fonts/vendor/jost/jost-v4-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="http://localhost:1313/fonts/vendor/jost/jost-v4-latin-500.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="http://localhost:1313/fonts/vendor/jost/jost-v4-latin-700.woff2" as="font" type="font/woff2" crossorigin>
+<script 
+  src="/js/color-mode.f14b3e296de1d0b69e75af684b62a4a912a2cadab04e36123407cd8388204f1d.js"
+  integrity="sha256-8Us&#43;KW3h0Laeda9oS2KkqRKiytqwTjYSNAfNg4ggTx0=">
+</script>
+
+
+<link rel="stylesheet" href="/main.01b0834d5af51b24812d02878d09c8d7677d6b8af13164fb50215889dc19aaefd0e9366c13b45a9a57ae481dfd1836bce46b5ebfe461d56e3498b9443d8c5e27.css" integrity="sha512-AbCDTVr1GySBLQKHjQnI12d9a4rxMWT7UCFYidwZqu/Q6TZsE7RamleuSB39GDa85Gtev&#43;Rh1W40mLlEPYxeJw==" crossorigin="anonymous">
+
+<noscript><style>img.lazyload { display: none; }</style></noscript><base href="http://localhost:1313/docs/bash/bash-reference/">
+  <link rel="canonical" href="http://localhost:1313/docs/bash/bash-reference/">
+<title>Bash Reference  |  My Docs</title>
+<meta name="description" content="Congrats on setting up a new Doks project!">
+
+    
+    <link rel="icon" href="/favicon.ico" sizes="32x32">
+    
+      <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    
+      <link
+        rel="apple-touch-icon"
+        href="/apple-touch-icon.png"
+        sizes="180x180"
+        type="image/png"
+      >
+      <link
+        rel="icon"
+        href="/favicon-192x192.png"
+        sizes="192x192"
+        type="image/png"
+      >
+      <link
+        rel="icon"
+        href="/favicon-512x512.png"
+        sizes="512x512"
+        type="image/png"
+      >
+<link rel="manifest" href="/manifest.webmanifest">
+<meta property="og:title" content="Bash Reference">
+<meta property="og:description" content="Full Bash reference Command Name Description cat concatenate Display contents of text file; combine multiple files. cd change directory Traverse the directory tree and move to different folders cp copy Copy files or directories curl curl HTTP utility cut cut dig domain information grouper Show DNS information for a URL file file Display file type find find Find a file echo echo Print output to the terminal exit exit Exit current script or shell session export export Export a variable grep global regular expression print Use regex to find files kill kill Stop a running process ls list List contents of a directory lsof list open files See running processes, check ports mkdir mkdir Create a directory ps ps See status of running process pwd print working directory Show current directory rm remove Removes files or directories sudo super user do Elevates a command to super user privileges scp secure copy Securely copy file between hosts sed stream editor Edit a text stream ssh ssh HTTP utility tail tail Print the end of a file touch touch Create a file type type See file or directory type xargs xargs Yarr Redirect Operators Redirect Syntax Reference command ARGUMENT [OPTIONS] [FILE_NAME.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="http://localhost:1313/docs/bash/bash-reference/"><meta property="og:image" content="http://localhost:1313/cover.png"><meta property="article:section" content="docs">
+<meta property="article:published_time" content="2023-01-03T23:53:04-08:00">
+<meta property="article:modified_time" content="2023-01-03T23:53:04-08:00"><meta property="og:site_name" content="My Docs">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="http://localhost:1313/cover.png"><meta name="twitter:title" content="Bash Reference">
+<meta name="twitter:description" content="Full Bash reference Command Name Description cat concatenate Display contents of text file; combine multiple files. cd change directory Traverse the directory tree and move to different folders cp copy Copy files or directories curl curl HTTP utility cut cut dig domain information grouper Show DNS information for a URL file file Display file type find find Find a file echo echo Print output to the terminal exit exit Exit current script or shell session export export Export a variable grep global regular expression print Use regex to find files kill kill Stop a running process ls list List contents of a directory lsof list open files See running processes, check ports mkdir mkdir Create a directory ps ps See status of running process pwd print working directory Show current directory rm remove Removes files or directories sudo super user do Elevates a command to super user privileges scp secure copy Securely copy file between hosts sed stream editor Edit a text stream ssh ssh HTTP utility tail tail Print the end of a file touch touch Create a file type type See file or directory type xargs xargs Yarr Redirect Operators Redirect Syntax Reference command ARGUMENT [OPTIONS] [FILE_NAME.">
+<meta name="twitter:site" content="@getdoks">
+
+    
+    
+    <script type="application/ld+json">
+  {
+   "@context": "https://schema.org",
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+     {
+       "@type": "ListItem",
+       "item": "http://localhost:1313/",
+       "name": "Welcome to Doks",
+       "position": 1
+     },
+     {
+       "@type": "ListItem",
+       "item": "http://localhost:1313/docs/",
+       "name": "Docs",
+       "position": 2
+     },
+     {
+       "@type": "ListItem",
+       "item": "http://localhost:1313/docs/bash/",
+       "name": "Bash",
+       "position": 3
+     },
+     {
+       "@type": "ListItem",
+       "name": "Bash Reference",
+       "position": 4
+     }
+   ]
+ }
+</script>
+
+
+
+
+
+</head>
+
+  
+  <body class="single section docs" data-bs-spy="scroll" data-bs-target="#toc" data-bs-root-margin="0px 0px -60%" data-bs-smooth-scroll="true" tabindex="0">
+    <div class="sticky-top">
+<header class="navbar navbar-expand-lg">
+  <div class="container-lg">
+  
+    <a class="navbar-brand me-auto me-lg-3" href="/">My Docs</a>
+
+    
+    
+    <button type="button" id="searchToggleMobile" class="btn btn-link nav-link mx-2 d-lg-none" aria-label="Search website">
+      <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+        <circle cx="10" cy="10" r="7"></circle>
+        <line x1="21" y1="21" x2="15" y2="15"></line>
+      </svg>
+    </button>
+    
+    <button class="btn btn-link d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavSection" aria-controls="offcanvasNavSection" aria-label="Open section navigation menu">
+      <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-dots-vertical" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+        <path d="M12 12m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0"></path>
+        <path d="M12 19m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0"></path>
+        <path d="M12 5m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0"></path>
+      </svg>
+    </button>
+    <div class="offcanvas offcanvas-start d-lg-none" tabindex="-1" id="offcanvasNavSection" aria-labelledby="offcanvasNavSectionLabel">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasNavSectionLabel">Docs</h5>
+        <button type="button" class="btn btn-link nav-link p-0 ms-auto" data-bs-dismiss="offcanvas" aria-label="Close">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-x" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+            <path d="M18 6l-12 12"></path>
+            <path d="M6 6l12 12"></path>
+          </svg>
+        </button>
+      </div>
+      <div class="offcanvas-body">
+        <aside class="doks-sidebar mt-n3">
+          <nav id="doks-docs-nav" aria-label="Tertiary navigation">
+            
+  
+    
+<nav class="section-nav docs-links">
+  <ul class="list-unstyled">
+
+  <li>
+    <details open open>
+      <summary>Bash</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/docs/bash/bash-scripting/">Bash Scripting</a>
+  </li>
+
+  <li class="active" >
+      <a aria-current="page" href="/docs/bash/bash-reference/">Bash Reference</a>
+  </li>
+
+  <li>
+      <a href="/docs/bash/bash-cheatsheet/">Bash Cheatsheet</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Docker</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/docs/docker/docker-overview/">Docker Overview</a>
+  </li>
+
+  <li>
+      <a href="/docs/docker/docker-cli-commands/">Docker CLI Commands</a>
+  </li>
+
+  <li>
+      <a href="/docs/docker/creating-dockerfiles/">Creating Dockerfiles</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Help</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/docs/help/how-to-update/">How to Update</a>
+  </li>
+
+  <li>
+      <a href="/docs/help/troubleshooting/">Troubleshooting</a>
+  </li>
+
+  <li>
+      <a href="/docs/help/faq/">FAQ</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Javascript</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/docs/js/js-reference/">Js Reference</a>
+  </li>
+
+  <li>
+      <a href="/docs/js/js-cheatsheet/">Js Cheatsheet</a>
+  </li>
+
+  <li>
+      <a href="/docs/js/basic-js/">Basic Js</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Linux</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/docs/linux/file-structure/">File Structure</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Python2</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/docs/python2/python-snippets/">Python Snippets</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Guides</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/docs/guides/example-guide/">Example Guide</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details>
+      <summary>Reference</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/docs/reference/example-reference/">Example Reference</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Python</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/docs/python/python-snippets/">Python Snippets</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Networking</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/docs/networking/dns/">DNS</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Kubernetes</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/docs/kubernetes/kubernetes-overview/">Kubernetes Overview</a>
+  </li>
+
+  <li>
+      <a href="/docs/kubernetes/kubectl-cli/">Kubectl CLI</a>
+  </li>
+
+  <li>
+      <a href="/docs/kubernetes/kubernetes-troubleshooting/">Kubernetes Troubleshooting</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Postgres</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/docs/postgres/postgres-basics/">Postgres Basics</a>
+  </li>
+
+  <li>
+      <a href="/docs/postgres/psql-reference/">PSQL Reference</a>
+  </li>
+
+  <li>
+      <a href="/docs/postgres/postgres-dataypes/">Postgres Dataypes</a>
+  </li>
+
+  <li>
+      <a href="/docs/postgres/sql-crash-course/">SQL Crash Course</a>
+  </li>
+
+  <li>
+      <a href="/docs/postgres/psql-cli/">PSQL CLI</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Web Dev</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/docs/web-dev/online-tools/">Online Tools</a>
+  </li>
+
+  <li>
+      <a href="/docs/web-dev/css/">CSS</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+  </ul>
+</nav>
+
+  
+
+          </nav>
+        </aside>
+      </div>
+    </div>
+    
+    <button class="btn btn-link nav-link mx-2 order-3 d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavMain" aria-controls="offcanvasNavMain" aria-label="Open main navigation menu">
+      <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-menu" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+        <line x1="4" y1="8" x2="20" y2="8"></line>
+        <line x1="4" y1="16" x2="20" y2="16"></line>
+      </svg>
+    </button>
+
+    
+    <div class="offcanvas offcanvas-end h-auto" tabindex="-1" id="offcanvasNavMain" aria-labelledby="offcanvasNavMainLabel">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasNavMainLabel">My Docs</h5>
+        <button type="button" class="btn btn-link nav-link p-0 ms-auto" data-bs-dismiss="offcanvas" aria-label="Close">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-x" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+            <path d="M18 6l-12 12"></path>
+            <path d="M6 6l12 12"></path>
+         </svg>
+        </button>
+      </div>
+      
+      <div class="offcanvas-body d-flex flex-column flex-lg-row justify-content-between">
+        <ul class="navbar-nav flex-grow-1"><li class="nav-item">
+                <a class="nav-link active" href="http://localhost:1313/docs/guides/example-guide/" aria-current="true">Docs</a>
+              </li>
+            <li class="nav-item">
+                <a class="nav-link" href="http://localhost:1313/blog/">Blog</a>
+              </li>
+            </ul>
+
+        
+        
+        <button type="button" id="searchToggleDesktop" class="btn btn-link nav-link p-2 d-none d-lg-block" aria-label="Search website">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+            <circle cx="10" cy="10" r="7"></circle>
+            <line x1="21" y1="21" x2="15" y2="15"></line>
+          </svg>
+        </button>
+        
+        
+        
+        <button id="buttonColorMode" class="btn btn-link mx-auto nav-link p-0 ms-lg-2 me-lg-1" type="button" aria-label="Toggle theme">
+          <svg data-bs-theme-value="dark" xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-moon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+            <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z"></path>
+          </svg>
+          <svg data-bs-theme-value="light" xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-sun" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+            <path d="M12 12m-4 0a4 4 0 1 0 8 0a4 4 0 1 0 -8 0m-5 0h1m8 -9v1m8 8h1m-9 8v1m-6.4 -15.4l.7 .7m12.1 -.7l-.7 .7m0 11.4l.7 .7m-12.1 -.7l-.7 .7"></path>
+          </svg>
+        </button>
+        
+        <ul id="socialMenu" class="nav mx-auto flex-row order-lg-4">
+          <li class="nav-item">
+              <a class="nav-link social-link" href="https://github.com/gethyas/doks"><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5"></path></svg><small class="ms-2 visually-hidden">GitHub</small></a>
+            </li>
+          </ul>
+        
+        </div>
+    </div>
+
+    
+    </div>
+</header>
+</div>
+
+<div class="modal" id="searchModal" tabindex="-1" aria-labelledby="searchModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-fullscreen-md-down">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5 visually-hidden" id="searchModalLabel">Search</h1>
+        <button type="button" class="btn-close visually-hidden" data-bs-dismiss="modal" aria-label="Close"></button>
+        <div class="search-input flex-grow-1 d-none">
+          <form id="search-form" class="search-form" action="#" method="post" accept-charset="UTF-8" role="search">
+            <label for="query" class="visually-hidden">Search</label>
+            <div class="d-flex">
+              <input type="search" id="query" name="query" class="search-text form-control form-control-lg" placeholder="Search" aria-label="Search" maxlength="128" autocomplete="off">
+              <button type="button" class="btn btn-link text-decoration-none px-0 ms-3 d-md-none" data-bs-dismiss="modal" aria-label="Close">Cancel</button>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="modal-body">
+        <p class="search-loading status message d-none mt-3 text-center">Loading search index…</p>
+        <p class="search-no-recent message d-none mt-3 text-center">No recent searches</p>
+        <p class="search-no-results message d-none mt-3 text-center">No results for "<strong><span class="query-no-results">Query here</span></strong>"</p>
+        <div id="searchResults" class="search-results"></div>
+        <template>
+          <article class="search-result list-view">
+            <div class="card my-3">
+              <div class="card-body">
+                <header>
+                  <h2 class="h5 title title-submitted mb-0"><a class="stretched-link text-decoration-none text-reset" href="#">Title here</a></h2>
+                  <div class="submitted d-none"><time class="created-date">Date here</time></div>
+                </header>
+                <div class="content">Summary here</div>
+              </div>
+            </div>
+          </article>
+        </template>
+      </div>
+      <div class="modal-footer">
+        <ul class="list-inline me-auto d-none d-md-block">
+          <li class="list-inline-item"><kbd class="me-2"><svg width="15" height="15" aria-label="Enter key" role="img"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2"><path d="M12 3.53088v3c0 1-1 2-2 2H4M7 11.53088l-3-3 3-3"></path></g></svg></kbd><span class="DocSearch-Label">to select</span></li>
+          <li class="list-inline-item"><kbd class="me-2"><svg width="15" height="15" aria-label="Arrow down" role="img"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2"><path d="M7.5 3.5v8M10.5 8.5l-3 3-3-3"></path></g></svg></kbd><kbd class="me-2"><svg width="15" height="15" aria-label="Arrow up" role="img"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2"><path d="M7.5 11.5v-8M10.5 6.5l-3-3-3 3"></path></g></svg></kbd><span class="DocSearch-Label">to navigate</span></li>
+          <li class="list-inline-item"><kbd class="me-2"><svg width="15" height="15" aria-label="Escape key" role="img"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2"><path d="M13.6167 8.936c-.1065.3583-.6883.962-1.4875.962-.7993 0-1.653-.9165-1.653-2.1258v-.5678c0-1.2548.7896-2.1016 1.653-2.1016.8634 0 1.3601.4778 1.4875 1.0724M9 6c-.1352-.4735-.7506-.9219-1.46-.8972-.7092.0246-1.344.57-1.344 1.2166s.4198.8812 1.3445.9805C8.465 7.3992 8.968 7.9337 9 8.5c.032.5663-.454 1.398-1.4595 1.398C6.6593 9.898 6 9 5.963 8.4851m-1.4748.5368c-.2635.5941-.8099.876-1.5443.876s-1.7073-.6248-1.7073-2.204v-.4603c0-1.0416.721-2.131 1.7073-2.131.9864 0 1.6425 1.031 1.5443 2.2492h-2.956"></path></g></svg></kbd><span class="DocSearch-Label">to close</span></li>
+        </ul>
+        <p class="d-md-none">Search by <a class="text-decoration-none" href="https://github.com/nextapps-de/flexsearch">FlexSearch</a></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+    <div class="wrap container-lg" role="document">
+      <div class="content">
+      
+        
+	<div class="row flex-xl-nowrap">
+		<div class="col-lg-5 col-xl-4 docs-sidebar d-none d-lg-block">
+			
+  
+    
+<nav class="section-nav docs-links">
+  <ul class="list-unstyled">
+
+  <li>
+    <details open open>
+      <summary>Bash</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/docs/bash/bash-scripting/">Bash Scripting</a>
+  </li>
+
+  <li class="active" >
+      <a aria-current="page" href="/docs/bash/bash-reference/">Bash Reference</a>
+  </li>
+
+  <li>
+      <a href="/docs/bash/bash-cheatsheet/">Bash Cheatsheet</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Docker</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/docs/docker/docker-overview/">Docker Overview</a>
+  </li>
+
+  <li>
+      <a href="/docs/docker/docker-cli-commands/">Docker CLI Commands</a>
+  </li>
+
+  <li>
+      <a href="/docs/docker/creating-dockerfiles/">Creating Dockerfiles</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Help</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/docs/help/how-to-update/">How to Update</a>
+  </li>
+
+  <li>
+      <a href="/docs/help/troubleshooting/">Troubleshooting</a>
+  </li>
+
+  <li>
+      <a href="/docs/help/faq/">FAQ</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Javascript</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/docs/js/js-reference/">Js Reference</a>
+  </li>
+
+  <li>
+      <a href="/docs/js/js-cheatsheet/">Js Cheatsheet</a>
+  </li>
+
+  <li>
+      <a href="/docs/js/basic-js/">Basic Js</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Linux</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/docs/linux/file-structure/">File Structure</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Python2</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/docs/python2/python-snippets/">Python Snippets</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Guides</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/docs/guides/example-guide/">Example Guide</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details>
+      <summary>Reference</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/docs/reference/example-reference/">Example Reference</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Python</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/docs/python/python-snippets/">Python Snippets</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Networking</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/docs/networking/dns/">DNS</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Kubernetes</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/docs/kubernetes/kubernetes-overview/">Kubernetes Overview</a>
+  </li>
+
+  <li>
+      <a href="/docs/kubernetes/kubectl-cli/">Kubectl CLI</a>
+  </li>
+
+  <li>
+      <a href="/docs/kubernetes/kubernetes-troubleshooting/">Kubernetes Troubleshooting</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Postgres</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/docs/postgres/postgres-basics/">Postgres Basics</a>
+  </li>
+
+  <li>
+      <a href="/docs/postgres/psql-reference/">PSQL Reference</a>
+  </li>
+
+  <li>
+      <a href="/docs/postgres/postgres-dataypes/">Postgres Dataypes</a>
+  </li>
+
+  <li>
+      <a href="/docs/postgres/sql-crash-course/">SQL Crash Course</a>
+  </li>
+
+  <li>
+      <a href="/docs/postgres/psql-cli/">PSQL CLI</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Web Dev</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/docs/web-dev/online-tools/">Online Tools</a>
+  </li>
+
+  <li>
+      <a href="/docs/web-dev/css/">CSS</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+  </ul>
+</nav>
+
+  
+
+		</div>
+		
+		<nav class="docs-toc d-none d-xl-block col-xl-3" aria-label="Secondary navigation">
+			<div class="page-links">
+  <h3>On this page</h3>
+    <nav id="toc">
+  <ul>
+    <li><a href="#syntax-reference">Syntax Reference</a></li>
+    <li><a href="#cat---concatenate"><code>cat</code> - ConcATenate</a></li>
+    <li><a href="#cd---change-directory"><code>cd</code> - Change Directory</a></li>
+    <li><a href="#chmod---change-mode"><code>chmod</code> - CHange MODe</a>
+      <ul>
+        <li><a href="#symobilc-method">Symobilc Method</a></li>
+        <li><a href="#numeric-method">Numeric Method</a></li>
+      </ul>
+    </li>
+    <li><a href="#cp---copy"><code>cp</code> - CoPy</a>
+      <ul>
+        <li><a href="#copy-a-file">Copy a file</a></li>
+        <li><a href="#copy-files-to-a-directory">Copy files to a directory</a></li>
+        <li><a href="#copy-directories">Copy directories</a></li>
+        <li><a href="#copy-and-preserve-timestamp">Copy and preserve timestamp</a></li>
+      </ul>
+    </li>
+    <li><a href="#curl---client-url"><code>curl</code> - Client URL</a>
+      <ul>
+        <li><a href="#usename-and-password-authentication">Usename and password authentication</a></li>
+        <li><a href="#http-post-request">HTTP POST request</a></li>
+        <li><a href="#see-redirect-path">See redirect path</a></li>
+        <li><a href="#certificates">Certificates</a></li>
+      </ul>
+    </li>
+    <li><a href="#cut---cut"><code>cut</code> - CUT</a>
+      <ul>
+        <li><a href="#cut-by-field">Cut by Field</a></li>
+        <li><a href="#cut-with-a-delimeter">Cut with a Delimeter</a></li>
+      </ul>
+    </li>
+    <li><a href="#dig---domain-information-grouper"><code>dig</code> - Domain Information Grouper</a></li>
+    <li><a href="#export---export"><code>export</code> - EXPORT</a></li>
+    <li><a href="#file-command"><code>file</code> command</a></li>
+    <li><a href="#find-command"><code>find</code> command</a></li>
+    <li><a href="#echo-command"><code>echo</code> command</a></li>
+    <li><a href="#exit-command"><code>exit</code> command</a></li>
+    <li><a href="#grep---global-regular-expression-print"><code>grep</code> - Global Regular Expression Print</a>
+      <ul>
+        <li><a href="#get-count-of-matching-keyword">Get count of matching keyword</a></li>
+      </ul>
+    </li>
+    <li><a href="#kill-command"><code>kill</code> command</a></li>
+    <li><a href="#ls---list"><code>ls</code> - LiSt</a></li>
+    <li><a href="#lsof---list-open-files"><code>lsof</code> - LiSt Open Files</a></li>
+    <li><a href="#sudo---super-user-do"><code>sudo</code> - Super User DO</a></li>
+    <li><a href="#man---manual"><code>man</code> - MANual</a></li>
+    <li><a href="#mkdir---make-directory"><code>mkdir</code> - MaKe DIRectory</a></li>
+    <li><a href="#ps---process-status"><code>ps</code> - Process Status</a>
+      <ul>
+        <li><a href="#show-all-running-processes">Show all running processes</a></li>
+      </ul>
+    </li>
+    <li><a href="#pwd---print-working-directory"><code>pwd</code> - Print Working Directory</a></li>
+    <li><a href="#rm---remove"><code>rm</code> - ReMove</a></li>
+    <li><a href="#scp---secure-copy"><code>scp</code> - Secure CoPy</a></li>
+    <li><a href="#sed---stream-editor"><code>sed</code> - Stream EDitor</a></li>
+    <li><a href="#ssh---openssh-client"><code>ssh</code> - openSSH client</a></li>
+    <li><a href="#tail-command"><code>tail</code> command</a></li>
+    <li><a href="#touch-command"><code>touch</code> command</a></li>
+    <li><a href="#type-command"><code>type</code> command</a></li>
+    <li><a href="#xargs"><code>xargs</code></a>
+      <ul>
+        <li><a href="#random-commands">Random Commands</a></li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul>
+    <li><a href="#---redirect-output-operator"><code>&gt;</code> - Redirect Output Operator</a>
+      <ul>
+        <li><a href="#types-of-output">Types of Output</a></li>
+        <li><a href="#redirect-standard-error">Redirect Standard Error</a></li>
+        <li><a href="#redirect-standard-error-and-standard-output">Redirect Standard Error and Standard Output</a></li>
+        <li><a href="#discard-output-of-command">Discard Output of Command</a></li>
+      </ul>
+    </li>
+    <li><a href="#---redirect-output-append-operator"><code>&gt;&gt;</code> - Redirect Output Append Operator</a>
+      <ul>
+        <li><a href="#redirect-standard-error-and-standard-output-1">Redirect Standard Error and Standard Output`</a></li>
+      </ul>
+    </li>
+    <li><a href="#---regular-input-operator"><code>&lt;</code> - Regular Input Operator</a></li>
+    <li><a href="#---pipe-operator"><code>|</code> - Pipe Operator</a></li>
+  </ul>
+</nav>
+</div>
+
+		</nav>
+		<main class="docs-content col-lg-11 col-xl-9">
+		
+			<h1>Bash Reference</h1>
+			
+			<nav class="toc-mobile d-xl-none" aria-label="Quaternary navigation">
+				<details>
+    <summary>On this page</summary>
+    <div class="page-links">
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#syntax-reference">Syntax Reference</a></li>
+    <li><a href="#cat---concatenate"><code>cat</code> - ConcATenate</a></li>
+    <li><a href="#cd---change-directory"><code>cd</code> - Change Directory</a></li>
+    <li><a href="#chmod---change-mode"><code>chmod</code> - CHange MODe</a>
+      <ul>
+        <li><a href="#symobilc-method">Symobilc Method</a></li>
+        <li><a href="#numeric-method">Numeric Method</a></li>
+      </ul>
+    </li>
+    <li><a href="#cp---copy"><code>cp</code> - CoPy</a>
+      <ul>
+        <li><a href="#copy-a-file">Copy a file</a></li>
+        <li><a href="#copy-files-to-a-directory">Copy files to a directory</a></li>
+        <li><a href="#copy-directories">Copy directories</a></li>
+        <li><a href="#copy-and-preserve-timestamp">Copy and preserve timestamp</a></li>
+      </ul>
+    </li>
+    <li><a href="#curl---client-url"><code>curl</code> - Client URL</a>
+      <ul>
+        <li><a href="#usename-and-password-authentication">Usename and password authentication</a></li>
+        <li><a href="#http-post-request">HTTP POST request</a></li>
+        <li><a href="#see-redirect-path">See redirect path</a></li>
+        <li><a href="#certificates">Certificates</a></li>
+      </ul>
+    </li>
+    <li><a href="#cut---cut"><code>cut</code> - CUT</a>
+      <ul>
+        <li><a href="#cut-by-field">Cut by Field</a></li>
+        <li><a href="#cut-with-a-delimeter">Cut with a Delimeter</a></li>
+      </ul>
+    </li>
+    <li><a href="#dig---domain-information-grouper"><code>dig</code> - Domain Information Grouper</a></li>
+    <li><a href="#export---export"><code>export</code> - EXPORT</a></li>
+    <li><a href="#file-command"><code>file</code> command</a></li>
+    <li><a href="#find-command"><code>find</code> command</a></li>
+    <li><a href="#echo-command"><code>echo</code> command</a></li>
+    <li><a href="#exit-command"><code>exit</code> command</a></li>
+    <li><a href="#grep---global-regular-expression-print"><code>grep</code> - Global Regular Expression Print</a>
+      <ul>
+        <li><a href="#get-count-of-matching-keyword">Get count of matching keyword</a></li>
+      </ul>
+    </li>
+    <li><a href="#kill-command"><code>kill</code> command</a></li>
+    <li><a href="#ls---list"><code>ls</code> - LiSt</a></li>
+    <li><a href="#lsof---list-open-files"><code>lsof</code> - LiSt Open Files</a></li>
+    <li><a href="#sudo---super-user-do"><code>sudo</code> - Super User DO</a></li>
+    <li><a href="#man---manual"><code>man</code> - MANual</a></li>
+    <li><a href="#mkdir---make-directory"><code>mkdir</code> - MaKe DIRectory</a></li>
+    <li><a href="#ps---process-status"><code>ps</code> - Process Status</a>
+      <ul>
+        <li><a href="#show-all-running-processes">Show all running processes</a></li>
+      </ul>
+    </li>
+    <li><a href="#pwd---print-working-directory"><code>pwd</code> - Print Working Directory</a></li>
+    <li><a href="#rm---remove"><code>rm</code> - ReMove</a></li>
+    <li><a href="#scp---secure-copy"><code>scp</code> - Secure CoPy</a></li>
+    <li><a href="#sed---stream-editor"><code>sed</code> - Stream EDitor</a></li>
+    <li><a href="#ssh---openssh-client"><code>ssh</code> - openSSH client</a></li>
+    <li><a href="#tail-command"><code>tail</code> command</a></li>
+    <li><a href="#touch-command"><code>touch</code> command</a></li>
+    <li><a href="#type-command"><code>type</code> command</a></li>
+    <li><a href="#xargs"><code>xargs</code></a>
+      <ul>
+        <li><a href="#random-commands">Random Commands</a></li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul>
+    <li><a href="#---redirect-output-operator"><code>&gt;</code> - Redirect Output Operator</a>
+      <ul>
+        <li><a href="#types-of-output">Types of Output</a></li>
+        <li><a href="#redirect-standard-error">Redirect Standard Error</a></li>
+        <li><a href="#redirect-standard-error-and-standard-output">Redirect Standard Error and Standard Output</a></li>
+        <li><a href="#discard-output-of-command">Discard Output of Command</a></li>
+      </ul>
+    </li>
+    <li><a href="#---redirect-output-append-operator"><code>&gt;&gt;</code> - Redirect Output Append Operator</a>
+      <ul>
+        <li><a href="#redirect-standard-error-and-standard-output-1">Redirect Standard Error and Standard Output`</a></li>
+      </ul>
+    </li>
+    <li><a href="#---regular-input-operator"><code>&lt;</code> - Regular Input Operator</a></li>
+    <li><a href="#---pipe-operator"><code>|</code> - Pipe Operator</a></li>
+  </ul>
+</nav>
+    </div>
+  </details>
+
+			</nav>
+			<h1 id="full-bash-reference">Full Bash reference</h1>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="#cat---concatenate">cat</a></td>
+<td>concatenate</td>
+<td>Display contents of text file; combine multiple files.</td>
+</tr>
+<tr>
+<td><a href="#cd---change-directory">cd</a></td>
+<td>change directory</td>
+<td>Traverse the directory tree and move to different folders</td>
+</tr>
+<tr>
+<td><a href="#cp---copy">cp</a></td>
+<td>copy</td>
+<td>Copy files or directories</td>
+</tr>
+<tr>
+<td><a href="#curl---client-url">curl</a></td>
+<td>curl</td>
+<td>HTTP utility</td>
+</tr>
+<tr>
+<td><a href="#curl---cut">cut</a></td>
+<td>cut</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#dig---domain-information-grouper">dig</a></td>
+<td>domain information grouper</td>
+<td>Show DNS information for a URL</td>
+</tr>
+<tr>
+<td><a href="#file-command">file</a></td>
+<td>file</td>
+<td>Display file type</td>
+</tr>
+<tr>
+<td><a href="#find-command">find</a></td>
+<td>find</td>
+<td>Find a file</td>
+</tr>
+<tr>
+<td><a href="#echo-command">echo</a></td>
+<td>echo</td>
+<td>Print output to the terminal</td>
+</tr>
+<tr>
+<td><a href="#exit-command">exit</a></td>
+<td>exit</td>
+<td>Exit current script or shell session</td>
+</tr>
+<tr>
+<td><a href="#export---export">export</a></td>
+<td>export</td>
+<td>Export a variable</td>
+</tr>
+<tr>
+<td><a href="#grep---global-regular-expression-print">grep</a></td>
+<td>global regular expression print</td>
+<td>Use regex to find files</td>
+</tr>
+<tr>
+<td><a href="#kill-command">kill</a></td>
+<td>kill</td>
+<td>Stop a running process</td>
+</tr>
+<tr>
+<td><a href="#ls---list">ls</a></td>
+<td>list</td>
+<td>List contents of a directory</td>
+</tr>
+<tr>
+<td><a href="#lsof---list-open-files">lsof</a></td>
+<td>list open files</td>
+<td>See running processes, check ports</td>
+</tr>
+<tr>
+<td><a href="#mkdir---make-directory">mkdir</a></td>
+<td>mkdir</td>
+<td>Create a directory</td>
+</tr>
+<tr>
+<td><a href="#ps---process-status">ps</a></td>
+<td>ps</td>
+<td>See status of running process</td>
+</tr>
+<tr>
+<td><a href="#pwd---print-working-directory">pwd</a></td>
+<td>print working directory</td>
+<td>Show current directory</td>
+</tr>
+<tr>
+<td><a href="#rm---remove">rm</a></td>
+<td>remove</td>
+<td>Removes files or directories</td>
+</tr>
+<tr>
+<td><a href="#sudo---super-user-do">sudo</a></td>
+<td>super user do</td>
+<td>Elevates a command to super user privileges</td>
+</tr>
+<tr>
+<td><a href="#scp---secure-copy">scp</a></td>
+<td>secure copy</td>
+<td>Securely copy file between hosts</td>
+</tr>
+<tr>
+<td><a href="#sed---stream-editor">sed</a></td>
+<td>stream editor</td>
+<td>Edit a text stream</td>
+</tr>
+<tr>
+<td><a href="#ssh---openssh-client">ssh</a></td>
+<td>ssh</td>
+<td>HTTP utility</td>
+</tr>
+<tr>
+<td><a href="#tail-command">tail</a></td>
+<td>tail</td>
+<td>Print the end of a file</td>
+</tr>
+<tr>
+<td><a href="#touch-command">touch</a></td>
+<td>touch</td>
+<td>Create a file</td>
+</tr>
+<tr>
+<td><a href="#type-command">type</a></td>
+<td>type</td>
+<td>See file or directory type</td>
+</tr>
+<tr>
+<td><a href="#xargs">xargs</a></td>
+<td>xargs</td>
+<td>Yarr</td>
+</tr>
+<tr>
+<td><a href="#redirect-operators">Redirect Operators</a></td>
+<td>Redirect</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="syntax-reference">Syntax Reference<a href="#syntax-reference" class="anchor" aria-hidden="true">#</a> </h2>
+
+
+
+<div class="expressive-code">
+  <figure class="frame is-terminal not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nb">command</span> ARGUMENT <span class="o">[</span>OPTIONS<span class="o">]</span> <span class="o">[</span>FILE_NAME...<span class="o">]</span></span></span></code></pre></div>
+  </figure>
+</div>
+<h2 id="cat---concatenate"><code>cat</code> - ConcATenate<a href="#cat---concatenate" class="anchor" aria-hidden="true">#</a> </h2>
+<p>Intended to combine or concatenate multiple text files into one. Used for a variety of things, like the simple <code>cat filename.txt</code> to print out a files contents.</p>
+<p>Use <code>cat</code> to print out contents of file to terminal:</p>
+
+
+
+<div class="expressive-code">
+  <figure class="frame is-terminal not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ cat FILE_NAME
+</span></span><span class="line"><span class="cl">$ cat log.txt</span></span></code></pre></div>
+  </figure>
+</div>
+<p>Use the more or less command to print out one page at a time:</p>
+
+
+
+<div class="expressive-code">
+  <figure class="frame is-terminal not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ cat file <span class="p">|</span> more
+</span></span><span class="line"><span class="cl">$ cat file <span class="p">|</span> less</span></span></code></pre></div>
+  </figure>
+</div>
+<p>Use <code>cat</code> to combine multiple files:</p>
+
+
+
+<div class="expressive-code">
+  <figure class="frame is-terminal not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># combine file1 and file2 into megaFile.txt</span>
+</span></span><span class="line"><span class="cl">$ cat file1 file2 &gt; megaFile.txt
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># combine all files in current directory to monsterFile.txt</span>
+</span></span><span class="line"><span class="cl">$ cat * &gt; monsterFile.txt</span></span></code></pre></div>
+  </figure>
+</div>
+<h2 id="cd---change-directory"><code>cd</code> - Change Directory<a href="#cd---change-directory" class="anchor" aria-hidden="true">#</a> </h2>
+<p>Probably the most rudimentary command. Allows you to traverse the file system.</p>
+
+
+
+<div class="expressive-code">
+  <figure class="frame is-terminal not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ <span class="nb">pwd</span>                       <span class="c1"># print working directory - get current location</span>
+</span></span><span class="line"><span class="cl">↪ /users/benish/code
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">$ ls                        <span class="c1"># list out content of current directory</span>
+</span></span><span class="line"><span class="cl">↪ file.txt  lounge-frontend/  lounge-backend/
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">$ <span class="nb">cd</span> lounge-frontend/       <span class="c1"># move into &#34;lounge-frontend&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># pwd /users/benish/code/lounge-frontend</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">$ <span class="nb">cd</span> ..                     <span class="c1"># move up one directory</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># pwd /users/benish/code</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">$ <span class="nb">cd</span> -                      <span class="c1"># return to previous directory</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># pwd /users/benish/code/lounge-frontend</span></span></span></code></pre></div>
+  </figure>
+</div>
+<hr>
+<h2 id="chmod---change-mode"><code>chmod</code> - CHange MODe<a href="#chmod---change-mode" class="anchor" aria-hidden="true">#</a> </h2>
+<p>Changes file permissions: who can read, write, and execute the file.</p>
+
+
+
+<div class="expressive-code">
+  <figure class="frame is-terminal not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">chmod +x FILE_NAME
+</span></span><span class="line"><span class="cl">chmod <span class="m">744</span> FILE_NAME</span></span></code></pre></div>
+  </figure>
+</div>
+<p>The file permissions can be specified with either the symbolic or numeric method.</p>
+<h3 id="symobilc-method">Symobilc Method<a href="#symobilc-method" class="anchor" aria-hidden="true">#</a> </h3>
+<p>Symbolic method uses letters to refer to the groups and permissions, e.g., <code>g+x</code>.</p>
+<p>Groups:</p>
+<ul>
+<li><code>u</code> - file owner (user)</li>
+<li><code>g</code> - group, users in the same linux group</li>
+<li><code>o</code> - all other users</li>
+<li><code>a</code> - all users (<code>u</code>, <code>g</code>, <code>o</code>)</li>
+</ul>
+<p>Attachments:</p>
+<ul>
+<li><code>+</code> - add specified permission</li>
+<li><code>-</code> - remove specified permission</li>
+<li><code>=</code> - change current permission to specified permission (if no permissions are specified, all permissions are removed)</li>
+</ul>
+<p>Permissions:</p>
+<ul>
+<li><code>r</code> - read</li>
+<li><code>w</code> - write</li>
+<li><code>x</code> - execute</li>
+</ul>
+<p><strong>Use <code>chmod</code> with symbolic method</strong>:</p>
+
+
+
+<div class="expressive-code">
+  <figure class="frame is-terminal not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># give file owner execute permissions</span>
+</span></span><span class="line"><span class="cl">chmod <span class="nv">u</span><span class="o">=</span>x FILE_NAME
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># remove group permissions to write to file</span>
+</span></span><span class="line"><span class="cl">chmod g-w FILE_NAME
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># add execute to file owner, remove all permissions from group</span>
+</span></span><span class="line"><span class="cl">chmod u+x,g<span class="o">=</span> FILE_NAME</span></span></code></pre></div>
+  </figure>
+</div>
+<h3 id="numeric-method">Numeric Method<a href="#numeric-method" class="anchor" aria-hidden="true">#</a> </h3>
+<blockquote>
+<p>The numeric method uses numbers to identify permissions and their position to identify the linux user, e.g., <code>744</code>.</p>
+</blockquote>
+<ul>
+<li><code>r</code> - read - 4</li>
+<li><code>w</code> - write - 2</li>
+<li><code>x</code> - execute - 1</li>
+<li>No permission - 0</li>
+</ul>
+<p>To combine permissions, add the value for each permission:</p>
+
+
+
+<div class="expressive-code">
+  <figure class="frame not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <pre tabindex="0"><code>Read (4) + Write (2) + Execute (1) =&gt; 7
+Read (4) + Execute (1)             =&gt; 5
+Read (4)                           =&gt; 4</code></pre>
+  </figure>
+</div>
+<p>Permissions given in a three digit code. The permission type(s) like read or execute are denoted by the value. The position of each digit refers to the three linux user group.</p>
+
+
+
+<div class="expressive-code">
+  <figure class="frame is-terminal not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">chmod <span class="m">123</span> FILE_NAME
+</span></span><span class="line"><span class="cl">      ^^^
+</span></span><span class="line"><span class="cl">      <span class="o">||</span><span class="p">|</span>_  all other users <span class="o">(</span>o<span class="o">)</span>
+</span></span><span class="line"><span class="cl">      <span class="o">||</span>__  group <span class="o">(</span>g<span class="o">)</span>
+</span></span><span class="line"><span class="cl">      <span class="p">|</span>___  file owner</span></span></code></pre></div>
+  </figure>
+</div>
+<p><strong>Use <code>chmod</code> with numeric method</strong>:</p>
+
+
+
+<div class="expressive-code">
+  <figure class="frame is-terminal not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># give file owner - read, write, execute; group - read, write; all other users - read</span>
+</span></span><span class="line"><span class="cl">chmod <span class="m">764</span> FILE_NAME
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># give all permissions to all groups</span>
+</span></span><span class="line"><span class="cl">chmod <span class="m">777</span> FILE_NAME</span></span></code></pre></div>
+  </figure>
+</div>
+<hr>
+<h2 id="cp---copy"><code>cp</code> - CoPy<a href="#cp---copy" class="anchor" aria-hidden="true">#</a> </h2>
+
+
+
+<div class="expressive-code">
+  <figure class="frame is-terminal not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># syntax</span>
+</span></span><span class="line"><span class="cl">cp <span class="o">[</span>OPTIONS<span class="o">]</span> <span class="nb">source</span> destination
+</span></span><span class="line"><span class="cl">cp <span class="o">[</span>OPTIONS<span class="o">]</span> <span class="nb">source</span> directory
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">cp fileName ../otherDirectory
+</span></span><span class="line"><span class="cl">cp someDirectory/* anotherDirectory/</span></span></code></pre></div>
+  </figure>
+</div>
+<h3 id="copy-a-file">Copy a file<a href="#copy-a-file" class="anchor" aria-hidden="true">#</a> </h3>
+<p>Copies content of <code>file1</code> to <code>file2</code>. Creates file2 if it doesn&rsquo;t exist, overwrites it if it does.</p>
+
+
+
+<div class="expressive-code">
+  <figure class="frame is-terminal not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">cp file1 file2</span></span></code></pre></div>
+  </figure>
+</div>
+<h3 id="copy-files-to-a-directory">Copy files to a directory<a href="#copy-files-to-a-directory" class="anchor" aria-hidden="true">#</a> </h3>
+<p>Overwrites contents of directory if it exits, creates one if it does not. Can supply 1..n files.</p>
+
+
+
+<div class="expressive-code">
+  <figure class="frame not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <pre tabindex="0"><code>cp file1 file2 file3 targetDirectory</code></pre>
+  </figure>
+</div>
+<h3 id="copy-directories">Copy directories<a href="#copy-directories" class="anchor" aria-hidden="true">#</a> </h3>
+<p>Copies entire contents of source directory to target directory. Creates or overwrites contents in target. Usually needs to be run recursively with the <code>-r</code> option.</p>
+
+
+
+<div class="expressive-code">
+  <figure class="frame is-terminal not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">cp -R sourceDirectory targetDirectory</span></span></code></pre></div>
+  </figure>
+</div>
+<h3 id="copy-and-preserve-timestamp">Copy and preserve timestamp<a href="#copy-and-preserve-timestamp" class="anchor" aria-hidden="true">#</a> </h3>
+
+
+
+<div class="expressive-code">
+  <figure class="frame is-terminal not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">cp -p file1 file2</span></span></code></pre></div>
+  </figure>
+</div>
+<p>Other <code>cp</code> commands</p>
+
+
+
+<div class="expressive-code">
+  <figure class="frame is-terminal not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ cp -i s.txt f.txt <span class="c1"># interactive - promt before overwriting</span></span></span></code></pre></div>
+  </figure>
+</div>
+<hr>
+<h2 id="curl---client-url"><code>curl</code> - Client URL<a href="#curl---client-url" class="anchor" aria-hidden="true">#</a> </h2>
+<p>Transfer an URL.</p>
+
+
+
+<div class="expressive-code">
+  <figure class="frame is-terminal not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">curl https://google.com
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># download file and set name to file_name</span>
+</span></span><span class="line"><span class="cl">curl https://google.com --output file_name
+</span></span><span class="line"><span class="cl">curl https://google.com -o file_name
+</span></span><span class="line"><span class="cl"><span class="c1"># download file and use same file name</span>
+</span></span><span class="line"><span class="cl">curl https://google.com -O
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># silence output</span>
+</span></span><span class="line"><span class="cl">curl https://google.com --silent
+</span></span><span class="line"><span class="cl">curl https://google.com -s
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># follow a location (instead of returning redirect)</span>
+</span></span><span class="line"><span class="cl">curl --location https://google.com</span></span></code></pre></div>
+  </figure>
+</div>
+
+
+
+<div class="expressive-code">
+  <figure class="frame is-terminal not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># download file</span>
+</span></span><span class="line"><span class="cl">curl -O https://example.com/dowload/linux-amd64.tar.gz
+</span></span><span class="line"><span class="cl">    <span class="c1"># -O: save file locally with same name as remote file</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># -L: follow redirects (if first response is 3xx)</span></span></span></code></pre></div>
+  </figure>
+</div>
+<h3 id="usename-and-password-authentication">Usename and password authentication<a href="#usename-and-password-authentication" class="anchor" aria-hidden="true">#</a> </h3>
+
+
+
+<div class="expressive-code">
+  <figure class="frame is-terminal not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># username/password authentication</span>
+</span></span><span class="line"><span class="cl">curl http://user:password@example.com/
+</span></span><span class="line"><span class="cl"><span class="c1"># OR</span>
+</span></span><span class="line"><span class="cl">curl -u user:password http://example.com/</span></span></code></pre></div>
+  </figure>
+</div>
+<h3 id="http-post-request">HTTP POST request<a href="#http-post-request" class="anchor" aria-hidden="true">#</a> </h3>
+
+
+
+<div class="expressive-code">
+  <figure class="frame is-terminal not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># curl POST using application/json</span>
+</span></span><span class="line"><span class="cl">curl --header <span class="s2">&#34;Content-Type: application/json&#34;</span> <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>  --request POST <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>  --data <span class="s1">&#39;{&#34;key&#34;:&#34;value&#34;,&#34;key&#34;:&#34;value&#34;}&#39;</span> <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>  http://example.com/api
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># curl POST using application/json (alternate flags)</span>
+</span></span><span class="line"><span class="cl">curl -X POST <span class="s2">&#34;http://example.com&#34;</span> <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>-H <span class="s2">&#34;Content-Type:application/json&#34;</span> <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>-d <span class="s1">&#39;{&#34;username&#34;:&#34;admin&#34;, &#34;password&#34;:&#34;magentorocks1&#34;}&#39;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># curl POST using application/x-www-form-urlencoded</span>
+</span></span><span class="line"><span class="cl">curl --data <span class="s2">&#34;birthyear=1905&amp;press=%20OK%20&#34;</span> http://example.com/api</span></span></code></pre></div>
+  </figure>
+</div>
+<h3 id="see-redirect-path">See redirect path<a href="#see-redirect-path" class="anchor" aria-hidden="true">#</a> </h3>
+
+
+
+<div class="expressive-code">
+  <figure class="frame is-terminal not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">curl -sILk google.com</span></span></code></pre></div>
+  </figure>
+</div>
+<h3 id="certificates">Certificates<a href="#certificates" class="anchor" aria-hidden="true">#</a> </h3>
+
+
+
+<div class="expressive-code">
+  <figure class="frame is-terminal not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># Certificates</span>
+</span></span><span class="line"><span class="cl">curl --cert mycert.pem https://secure.example.com
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># use your own CA cert store to verify server&#39;s certificate</span>
+</span></span><span class="line"><span class="cl">curl --cacert ca-bundle.pem https://example.com/
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># ignore certificate verification</span>
+</span></span><span class="line"><span class="cl">curl --insecure https://secure.example.com
+</span></span><span class="line"><span class="cl"><span class="c1"># OR</span>
+</span></span><span class="line"><span class="cl">curl -k https://secure.example.com
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># curl resolve (point to different address for a hostname)</span>
+</span></span><span class="line"><span class="cl">curl --resolve www.example.org:80:127.0.0.1 http://www.example.org/</span></span></code></pre></div>
+  </figure>
+</div>
+<hr>
+<h2 id="cut---cut"><code>cut</code> - CUT<a href="#cut---cut" class="anchor" aria-hidden="true">#</a> </h2>
+<p>Cut stuff.</p>
+<h3 id="cut-by-field">Cut by Field<a href="#cut-by-field" class="anchor" aria-hidden="true">#</a> </h3>
+<p>Cut by field using the <code>-f</code> flag. The default delimeter is TAB.</p>
+
+
+
+<div class="expressive-code">
+  <figure class="frame is-terminal not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># sales.txt</span>
+</span></span><span class="line"><span class="cl">2022-20-11  11:34   134.23      Electronics
+</span></span><span class="line"><span class="cl">2022-20-10  10:23   500.34      Appliances</span></span></code></pre></div>
+  </figure>
+</div>
+<p>Use <code>cut</code> to extract the first and third column:</p>
+
+
+
+<div class="expressive-code">
+  <figure class="frame is-terminal not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ cut sales.txt -f 1,3
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># output</span>
+</span></span><span class="line"><span class="cl">2022-20-11  134.23
+</span></span><span class="line"><span class="cl">2022-20-10  500.34</span></span></code></pre></div>
+  </figure>
+</div>
+<p>Display first through thrid field:</p>
+
+
+
+<div class="expressive-code">
+  <figure class="frame is-terminal not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ cut sales.txt -f -3
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># output</span>
+</span></span><span class="line"><span class="cl">2022-20-11  11:34   134.23
+</span></span><span class="line"><span class="cl">2022-20-10  10:23   500.34</span></span></code></pre></div>
+  </figure>
+</div>
+<h3 id="cut-with-a-delimeter">Cut with a Delimeter<a href="#cut-with-a-delimeter" class="anchor" aria-hidden="true">#</a> </h3>
+<p>Use the <code>-d</code> flag to specify a delimeter.</p>
+
+
+
+<div class="expressive-code">
+  <figure class="frame is-terminal not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">cut sales.txt -d <span class="s2">&#34;:&#34;</span> -f 1,2</span></span></code></pre></div>
+  </figure>
+</div>
+<hr>
+<h2 id="dig---domain-information-grouper"><code>dig</code> - Domain Information Grouper<a href="#dig---domain-information-grouper" class="anchor" aria-hidden="true">#</a> </h2>
+<p>Get information about DNS name servers. Commonly used to see what domain names resolve to.</p>
+
+
+
+<div class="expressive-code">
+  <figure class="frame is-terminal not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># run dig on github.com</span>
+</span></span><span class="line"><span class="cl">$ dig github.com
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># results</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># ...</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># ;; ANSWER SECTION:</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># github.com.		42	IN	A	140.82.113.3</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># ...</span></span></span></code></pre></div>
+  </figure>
+</div>
+<p>Use the <code>ANSWER SECTION</code> to see the DNS records of the search. If there are no answers, the requested DNS record could not be found or does not exist.</p>
+
+
+
+<div class="expressive-code">
+  <figure class="frame is-terminal not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># quick dig</span>
+</span></span><span class="line"><span class="cl">$ dig github.com +short
+</span></span><span class="line"><span class="cl">↪ 140.82.113.3
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># get trace route</span>
+</span></span><span class="line"><span class="cl">$ dig github.com +trace
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># bring your own nameserver</span>
+</span></span><span class="line"><span class="cl">$ dig @ns1.you-specify.com github.com
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># trim dig output</span>
+</span></span><span class="line"><span class="cl">$ dig github.com +nostats       <span class="c1"># no stats</span>
+</span></span><span class="line"><span class="cl">$ dig github.com +nocomments    <span class="c1"># no header</span>
+</span></span><span class="line"><span class="cl">$ dig github.com +noall +answer <span class="c1"># remove everything, show answer</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Request different types of records</span>
+</span></span><span class="line"><span class="cl">$ dig github.com NS</span></span></code></pre></div>
+  </figure>
+</div>
+<p>Request different types of records</p>
+<ul>
+<li>A = Internet Address, default (IP address)</li>
+<li>TXT = Text annotations</li>
+<li>MX = Mail eXchange (mail servers)</li>
+<li>NS = Name Server</li>
+</ul>
+<hr>
+<h2 id="export---export"><code>export</code> - EXPORT<a href="#export---export" class="anchor" aria-hidden="true">#</a> </h2>
+<p>Mark variables and functions to be passed to child shells and processes.</p>
+<p>Export a variable:</p>
+<blockquote>
+<p>Bash variables are capatalized by convention.</p>
+</blockquote>
+
+
+
+<div class="expressive-code">
+  <figure class="frame is-terminal not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nb">export</span> <span class="nv">VARIABLE_NAME</span><span class="o">=</span>VARIABLE_VALUE
+</span></span><span class="line"><span class="cl"><span class="nb">export</span> <span class="nv">NODE_VERSION</span><span class="o">=</span><span class="m">14</span></span></span></code></pre></div>
+  </figure>
+</div>
+<p>Get text from file and insert into new file:</p>
+
+
+
+<div class="expressive-code">
+  <figure class="frame is-terminal not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nb">export</span> <span class="nv">VERSION</span><span class="o">=</span><span class="sb">`</span>grep <span class="s1">&#39;&#34;version&#34;:&#39;</span> package.json <span class="p">|</span> cut -d<span class="se">\&#34;</span> -f4<span class="sb">`</span>
+</span></span><span class="line"><span class="cl"><span class="nb">export</span> <span class="nv">IMAGE_NAME_AND_TAG</span><span class="o">=</span><span class="k">$(</span>cat .dev-image-name-and-tag<span class="k">)</span>
+</span></span><span class="line"><span class="cl"><span class="nb">echo</span> <span class="nv">$IMAGE_NAME_AND_TAG</span> &gt; .stage-image-name-and-tag</span></span></code></pre></div>
+  </figure>
+</div>
+<hr>
+<h2 id="file-command"><code>file</code> command<a href="#file-command" class="anchor" aria-hidden="true">#</a> </h2>
+<p>Indicates file type.</p>
+<p>Usage</p>
+
+
+
+<div class="expressive-code">
+  <figure class="frame is-terminal not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ file cats.md      <span class="c1"># basic usage</span>
+</span></span><span class="line"><span class="cl">↪ ./cats.md: ASCII text, with very long lines
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">$ file cats.md      <span class="c1"># get MIME type</span>
+</span></span><span class="line"><span class="cl">↪ ./cats.md: text/plain<span class="p">;</span> <span class="nv">charset</span><span class="o">=</span>utf-8
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">$ file some-directory/* <span class="c1"># entire contents of &#34;some-directory&#34;</span>
+</span></span><span class="line"><span class="cl">$ file -z flash.        <span class="c1"># content of compressed file</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">file /dev/sda
+</span></span><span class="line"><span class="cl">file -s /dev/sda
+</span></span><span class="line"><span class="cl">file /dev/sda5
+</span></span><span class="line"><span class="cl">file -s /dev/sda5</span></span></code></pre></div>
+  </figure>
+</div>
+<hr>
+<h2 id="find-command"><code>find</code> command<a href="#find-command" class="anchor" aria-hidden="true">#</a> </h2>
+<p>Find a file.</p>
+<p>Basic usage:</p>
+
+
+
+<div class="expressive-code">
+  <figure class="frame is-terminal not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">find . -name search_text</span></span></code></pre></div>
+  </figure>
+</div>
+<p>Usage</p>
+
+
+
+<div class="expressive-code">
+  <figure class="frame is-terminal not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># ignore text case</span>
+</span></span><span class="line"><span class="cl">find . -iname search_text
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># follow subdirectories to level X</span>
+</span></span><span class="line"><span class="cl">find . -name search_text -maxdepth X
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># only find files modified in last 4 days</span>
+</span></span><span class="line"><span class="cl">find . -name search_text -mtime <span class="m">4</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># only find empty</span>
+</span></span><span class="line"><span class="cl">find . -name search_text -type f</span></span></code></pre></div>
+  </figure>
+</div>
+<hr>
+<h2 id="echo-command"><code>echo</code> command<a href="#echo-command" class="anchor" aria-hidden="true">#</a> </h2>
+<p>Prints text to the terminal window.</p>
+
+
+
+<div class="expressive-code">
+  <figure class="frame is-terminal not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ <span class="nb">echo</span> some text
+</span></span><span class="line"><span class="cl">↪ some text</span></span></code></pre></div>
+  </figure>
+</div>
+<hr>
+<h2 id="exit-command"><code>exit</code> command<a href="#exit-command" class="anchor" aria-hidden="true">#</a> </h2>
+<p>Exit current shell session with a given exit code.</p>
+
+
+
+<div class="expressive-code">
+  <figure class="frame is-terminal not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># exit current shell with exit code 1</span>
+</span></span><span class="line"><span class="cl"><span class="nb">exit</span> <span class="m">1</span></span></span></code></pre></div>
+  </figure>
+</div>
+<hr>
+<h2 id="grep---global-regular-expression-print"><code>grep</code> - Global Regular Expression Print<a href="#grep---global-regular-expression-print" class="anchor" aria-hidden="true">#</a> </h2>
+<p>Search a file to see if it contains a phrase.</p>
+
+
+
+<div class="expressive-code">
+  <figure class="frame is-terminal not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">grep SEARCH_TEXT FILE_NAME
+</span></span><span class="line"><span class="cl">grep phrase log.txt</span></span></code></pre></div>
+  </figure>
+</div>
+<p>Case insensitive search:</p>
+
+
+
+<div class="expressive-code">
+  <figure class="frame is-terminal not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">grep -i <span class="s2">&#34;phrase&#34;</span></span></span></code></pre></div>
+  </figure>
+</div>
+<p>Search current directory and all subdirectories:</p>
+
+
+
+<div class="expressive-code">
+  <figure class="frame is-terminal not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">grep -R <span class="s2">&#34;phrase&#34;</span> .</span></span></code></pre></div>
+  </figure>
+</div>
+<p>Commands can be &ldquo;piped in&rdquo; to grep using the <code>|</code> operator.</p>
+
+
+
+<div class="expressive-code">
+  <figure class="frame is-terminal not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># display only matching files</span>
+</span></span><span class="line"><span class="cl">ls <span class="p">|</span> grep SEARCH_TEXT
+</span></span><span class="line"><span class="cl">ls <span class="p">|</span> grep log.txt
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># use wildcards</span>
+</span></span><span class="line"><span class="cl">ls <span class="p">|</span> grep *report.txt
+</span></span><span class="line"><span class="cl">ls <span class="p">|</span> grep *report*</span></span></code></pre></div>
+  </figure>
+</div>
+<h3 id="get-count-of-matching-keyword">Get count of matching keyword<a href="#get-count-of-matching-keyword" class="anchor" aria-hidden="true">#</a> </h3>
+
+
+
+<div class="expressive-code">
+  <figure class="frame is-terminal not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">grep -c <span class="s2">&#34;keyword&#34;</span> log.txt</span></span></code></pre></div>
+  </figure>
+</div>
+<hr>
+<h2 id="kill-command"><code>kill</code> command<a href="#kill-command" class="anchor" aria-hidden="true">#</a> </h2>
+<p>Stop a process by process ID.</p>
+
+
+
+<div class="expressive-code">
+  <figure class="frame is-terminal not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># see processes running in terminal</span>
+</span></span><span class="line"><span class="cl">$ ps
+</span></span><span class="line"><span class="cl">  PID TTY           TIME CMD
+</span></span><span class="line"><span class="cl"><span class="m">27894</span> ttys001    0:00.08 -bash
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># see process for all users and outside of terminal</span>
+</span></span><span class="line"><span class="cl">$ ps aux
+</span></span><span class="line"><span class="cl">$ ps aux <span class="p">|</span> grep chrome
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">$ <span class="nb">kill</span> SIGNAL PID
+</span></span><span class="line"><span class="cl">$ <span class="nb">kill</span> -9 ./applications-service
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># see all signal commands</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 9 (SIGKILL) - is the most common command to terminate a process</span>
+</span></span><span class="line"><span class="cl">$ <span class="nb">kill</span> -l</span></span></code></pre></div>
+  </figure>
+</div>
+<hr>
+<h2 id="ls---list"><code>ls</code> - LiSt<a href="#ls---list" class="anchor" aria-hidden="true">#</a> </h2>
+<p>List contents of a directory.</p>
+<p>List current directory:</p>
+
+
+
+<div class="expressive-code">
+  <figure class="frame is-terminal not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">ls</span></span></code></pre></div>
+  </figure>
+</div>
+<p>List a specified directory:</p>
+
+
+
+<div class="expressive-code">
+  <figure class="frame is-terminal not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">ls DIRECTORY
+</span></span><span class="line"><span class="cl">ls /local/usr/bin</span></span></code></pre></div>
+  </figure>
+</div>
+<p><code>ls</code> flags:</p>
+
+
+
+<div class="expressive-code">
+  <figure class="frame is-terminal not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">ls -l
+</span></span><span class="line"><span class="cl">ls -lah
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># flags</span>
+</span></span><span class="line"><span class="cl">  <span class="c1"># list/table view with date, ownership, and size</span>
+</span></span><span class="line"><span class="cl">  -l
+</span></span><span class="line"><span class="cl">  <span class="c1"># list hidden files like .git (starting with a dot &#34;.&#34;)</span>
+</span></span><span class="line"><span class="cl">  -a
+</span></span><span class="line"><span class="cl">  <span class="c1"># human readable file sizes</span>
+</span></span><span class="line"><span class="cl">  -h
+</span></span><span class="line"><span class="cl">  <span class="c1"># list subdirectories</span>
+</span></span><span class="line"><span class="cl">  -R
+</span></span><span class="line"><span class="cl">  <span class="c1"># order by last modified</span>
+</span></span><span class="line"><span class="cl">  -t
+</span></span><span class="line"><span class="cl">  <span class="c1"># order by file size</span>
+</span></span><span class="line"><span class="cl">  -lS
+</span></span><span class="line"><span class="cl">  <span class="c1"># list in reverse order (combine with other commands)</span>
+</span></span><span class="line"><span class="cl">  -r
+</span></span><span class="line"><span class="cl">  <span class="c1"># show directories with &#34;/&#34; and executables with &#34;*&#34;</span>
+</span></span><span class="line"><span class="cl">  -F
+</span></span><span class="line"><span class="cl">  <span class="c1"># display inode number of file or directory</span>
+</span></span><span class="line"><span class="cl">  -i</span></span></code></pre></div>
+  </figure>
+</div>
+<hr>
+<h2 id="lsof---list-open-files"><code>lsof</code> - LiSt Open Files<a href="#lsof---list-open-files" class="anchor" aria-hidden="true">#</a> </h2>
+<p>Use it to check if a process is running on a given port.</p>
+
+
+
+<div class="expressive-code">
+  <figure class="frame is-terminal not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">lsof -i :5432</span></span></code></pre></div>
+  </figure>
+</div>
+<p><code>lsof</code> may be in <code>/usr/sbin</code> and needs to be invoked directly (<code>/usr/sbin/lsof -i :5432</code>).</p>
+<hr>
+<h2 id="sudo---super-user-do"><code>sudo</code> - Super User DO<a href="#sudo---super-user-do" class="anchor" aria-hidden="true">#</a> </h2>
+<p><code>sudo</code> allows a user to execute a command as the superuser or another user, within the specified security policy.</p>
+<p>If a command fails because of insufficient prviledges, the <code>sudo</code> command can help. This does elevate permissions and should be used with caution.</p>
+
+
+
+<div class="expressive-code">
+  <figure class="frame is-terminal not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo COMMAND
+</span></span><span class="line"><span class="cl">sudo rm -rf /data</span></span></code></pre></div>
+  </figure>
+</div>
+<p>More:</p>
+
+
+
+<div class="expressive-code">
+  <figure class="frame is-terminal not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># add a new user</span>
+</span></span><span class="line"><span class="cl">sudo useradd
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># create password for new user</span>
+</span></span><span class="line"><span class="cl">sudo passwd
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># add to a group</span>
+</span></span><span class="line"><span class="cl">sudo groupadd
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># delete user</span>
+</span></span><span class="line"><span class="cl">sudo userdel
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># delete group</span>
+</span></span><span class="line"><span class="cl">sudo groupdel
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># add user to a primary group</span>
+</span></span><span class="line"><span class="cl">sudo usermod -g</span></span></code></pre></div>
+  </figure>
+</div>
+<hr>
+<h2 id="man---manual"><code>man</code> - MANual<a href="#man---manual" class="anchor" aria-hidden="true">#</a> </h2>
+<p>Show manual page for a given command. Use to show the manual for any bash command.</p>
+
+
+
+<div class="expressive-code">
+  <figure class="frame is-terminal not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">man COMMAND
+</span></span><span class="line"><span class="cl">man ls</span></span></code></pre></div>
+  </figure>
+</div>
+<hr>
+<h2 id="mkdir---make-directory"><code>mkdir</code> - MaKe DIRectory<a href="#mkdir---make-directory" class="anchor" aria-hidden="true">#</a> </h2>
+<p>Creates a directory</p>
+
+
+
+<div class="expressive-code">
+  <figure class="frame is-terminal not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">mkdir DIRECTORY_NAME
+</span></span><span class="line"><span class="cl">mkdir some directory
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># copy subdirectories</span>
+</span></span><span class="line"><span class="cl">-p</span></span></code></pre></div>
+  </figure>
+</div>
+<hr>
+<h2 id="ps---process-status"><code>ps</code> - Process Status<a href="#ps---process-status" class="anchor" aria-hidden="true">#</a> </h2>
+<p>Use to see running processes.</p>
+
+
+
+<div class="expressive-code">
+  <figure class="frame is-terminal not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># show running terminal sessions</span>
+</span></span><span class="line"><span class="cl">ps</span></span></code></pre></div>
+  </figure>
+</div>
+<h3 id="show-all-running-processes">Show all running processes<a href="#show-all-running-processes" class="anchor" aria-hidden="true">#</a> </h3>
+
+
+
+<div class="expressive-code">
+  <figure class="frame is-terminal not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">ps aux
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># use grep to find process by keyword</span>
+</span></span><span class="line"><span class="cl">ps aux <span class="p">|</span> grep keyword</span></span></code></pre></div>
+  </figure>
+</div>
+
+
+
+<div class="expressive-code">
+  <figure class="frame is-terminal not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># check if a process is running</span>
+</span></span><span class="line"><span class="cl">ps auxwww <span class="p">|</span> grep postgres</span></span></code></pre></div>
+  </figure>
+</div>
+<hr>
+<h2 id="pwd---print-working-directory"><code>pwd</code> - Print Working Directory<a href="#pwd---print-working-directory" class="anchor" aria-hidden="true">#</a> </h2>
+<p>Displays the current directory you&rsquo;re in.</p>
+
+
+
+<div class="expressive-code">
+  <figure class="frame is-terminal not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ <span class="nb">pwd</span>
+</span></span><span class="line"><span class="cl">↪ /home/greg/documents</span></span></code></pre></div>
+  </figure>
+</div>
+<hr>
+<h2 id="rm---remove"><code>rm</code> - ReMove<a href="#rm---remove" class="anchor" aria-hidden="true">#</a> </h2>
+<p>Delets a file or directory.</p>
+
+
+
+<div class="expressive-code">
+  <figure class="frame is-terminal not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">rm FILE_NAME
+</span></span><span class="line"><span class="cl">rm file.txt
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># remove directory</span>
+</span></span><span class="line"><span class="cl">rm -r directory_name
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># force remove file</span>
+</span></span><span class="line"><span class="cl">rm -f file_name</span></span></code></pre></div>
+  </figure>
+</div>
+<hr>
+<h2 id="scp---secure-copy"><code>scp</code> - Secure CoPy<a href="#scp---secure-copy" class="anchor" aria-hidden="true">#</a> </h2>
+<p>Secure copy is used to securely transfer files from one host to another.</p>
+
+
+
+<div class="expressive-code">
+  <figure class="frame is-terminal not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">scp -i SOURCE TARGET
+</span></span><span class="line"><span class="cl">scp -i /home/file.txt user@host:/app/data/file.txt</span></span></code></pre></div>
+  </figure>
+</div>
+<hr>
+<h2 id="sed---stream-editor"><code>sed</code> - Stream EDitor<a href="#sed---stream-editor" class="anchor" aria-hidden="true">#</a> </h2>
+<p>Sed is a stream editor for filtering and replacing text. Sed probably has a shit tonne of stuff going on, used commonly for REGEX string matching and replacement.</p>
+
+
+
+<div class="expressive-code">
+  <figure class="frame is-terminal not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sed -i <span class="s2">&#34;s,TEXT_TO_FIND,TEXT_TO_REPLACE_WITH,g&#34;</span>
+</span></span><span class="line"><span class="cl">sed -i <span class="s2">&#34;s,&lt;SOMETHING_TO_FIND&gt;,REPLACE_TEXT,g&#34;</span> someFile.txt</span></span></code></pre></div>
+  </figure>
+</div>
+<hr>
+<h2 id="ssh---openssh-client"><code>ssh</code> - openSSH client<a href="#ssh---openssh-client" class="anchor" aria-hidden="true">#</a> </h2>
+<p>Remote login program</p>
+
+
+
+<div class="expressive-code">
+  <figure class="frame not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <pre tabindex="0"><code>$ ssh -i keyName.pem ec2-user@whatever.amazonaws.com</code></pre>
+  </figure>
+</div>
+<hr>
+<h2 id="tail-command"><code>tail</code> command<a href="#tail-command" class="anchor" aria-hidden="true">#</a> </h2>
+<p>Displays content of files; prints the last 10 lines of a file by default.</p>
+
+
+
+<div class="expressive-code">
+  <figure class="frame is-terminal not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">tail FILE_NAME</span></span></code></pre></div>
+  </figure>
+</div>
+<p><strong>Follow a file</strong>: do not close tail when end of file is reached, but rather wait for additional input.</p>
+
+
+
+<div class="expressive-code">
+  <figure class="frame is-terminal not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">tail -f FILE_NAME
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># also check if file is renamed or rotated</span>
+</span></span><span class="line"><span class="cl">tail -F FILE_NAME</span></span></code></pre></div>
+  </figure>
+</div>
+<p><strong>Specify length</strong>: specify amount of file returned in lines, blocks, or bytes.</p>
+
+
+
+<div class="expressive-code">
+  <figure class="frame is-terminal not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># specify 50 lines</span>
+</span></span><span class="line"><span class="cl">tail -n <span class="m">50</span> FILE_NAME
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># specify 50 blocks</span>
+</span></span><span class="line"><span class="cl">tail -b <span class="m">50</span> FILE_NAME
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># specify 50 bytes</span>
+</span></span><span class="line"><span class="cl">tail -c <span class="m">50</span> FILE_NAME</span></span></code></pre></div>
+  </figure>
+</div>
+<hr>
+<h2 id="touch-command"><code>touch</code> command<a href="#touch-command" class="anchor" aria-hidden="true">#</a> </h2>
+<p>Touch command creates a new file.</p>
+
+
+
+<div class="expressive-code">
+  <figure class="frame is-terminal not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">touch FILE_NAME</span></span></code></pre></div>
+  </figure>
+</div>
+
+
+
+<div class="expressive-code">
+  <figure class="frame is-terminal not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># create multiple files</span>
+</span></span><span class="line"><span class="cl">touch FILE_NAME_1 FILE_NAME_2</span></span></code></pre></div>
+  </figure>
+</div>
+<p><strong>Full argument list</strong></p>
+<ul>
+<li><code>-A</code> Adjust access and modification timestamps of value with specified value.</li>
+<li><code>-a</code> Change access time of file. Modification time is not changed, unless <code>-m</code> flag also specified.</li>
+<li><code>-c</code> Do not create the file if it does not exist</li>
+<li><code>-d</code> Change access and modification times</li>
+<li><code>-h</code> If file has symbolic link, change time of the link itself, rather than the file the link points to. Using <code>-h</code> implies <code>-c</code> and will not create a new file.</li>
+<li><code>m</code> Change modification time of file. Access time is not changed unless <code>-a</code> is also specified.</li>
+<li><code>r</code> Use access and modification times from specified file instead of the current time of day.</li>
+<li><code>t</code> Change access and modification times to the specified time instead of the current time of day.</li>
+</ul>
+
+
+
+<div class="expressive-code">
+  <figure class="frame is-terminal not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># Adjust access and modification timestamps of value with specified value</span>
+</span></span><span class="line"><span class="cl">touch
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Change access time of file. Modification time is not changed, unless `-m` flag also specified.</span>
+</span></span><span class="line"><span class="cl">touch -a FILE_NAME</span></span></code></pre></div>
+  </figure>
+</div>
+<hr>
+<h2 id="type-command"><code>type</code> command<a href="#type-command" class="anchor" aria-hidden="true">#</a> </h2>
+<p>Type give the user information about the command type.</p>
+
+
+
+<div class="expressive-code">
+  <figure class="frame not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <pre tabindex="0"><code>type [OPTIONS] FILE_NAME...</code></pre>
+  </figure>
+</div>
+<hr>
+<h2 id="xargs"><code>xargs</code><a href="#xargs" class="anchor" aria-hidden="true">#</a> </h2>
+<p>Can remove quotes form a</p>
+
+
+
+<div class="expressive-code">
+  <figure class="frame is-terminal not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s1">&#39;&#34;text&#34;&#39;</span> <span class="p">|</span> xargs
+</span></span><span class="line"><span class="cl">↪ text</span></span></code></pre></div>
+  </figure>
+</div>
+<h3 id="random-commands">Random Commands<a href="#random-commands" class="anchor" aria-hidden="true">#</a> </h3>
+<p><strong><code>xargs</code></strong></p>
+<p>Can remove quotes form a</p>
+
+
+
+<div class="expressive-code">
+  <figure class="frame is-terminal not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s1">&#39;&#34;text&#34;&#39;</span> <span class="p">|</span> xargs
+</span></span><span class="line"><span class="cl">↪ text</span></span></code></pre></div>
+  </figure>
+</div>
+<h1 id="redirect-operators">Redirect Operators</h1>
+<h2 id="---redirect-output-operator"><code>&gt;</code> - Redirect Output Operator<a href="#---redirect-output-operator" class="anchor" aria-hidden="true">#</a> </h2>
+<p>Redirects the output of standard output (stdout) and writes it to a given file. If the file exists, it&rsquo;s overwritten.</p>
+<p>Redirect standard output to a file:</p>
+
+
+
+<div class="expressive-code">
+  <figure class="frame is-terminal not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># list current directory and write results to file_directory.txt</span>
+</span></span><span class="line"><span class="cl">ls &gt; file_directory.txt</span></span></code></pre></div>
+  </figure>
+</div>
+<h3 id="types-of-output">Types of Output<a href="#types-of-output" class="anchor" aria-hidden="true">#</a> </h3>
+<p>Different types of output</p>
+<table>
+<thead>
+<tr>
+<th>Number</th>
+<th>Type</th>
+<th>Abbreviation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>Standard input</td>
+<td><code>stdin</code></td>
+</tr>
+<tr>
+<td>1</td>
+<td>Standard output</td>
+<td><code>stdout</code></td>
+</tr>
+<tr>
+<td>2</td>
+<td>Standard error</td>
+<td><code>stderr</code></td>
+</tr>
+</tbody>
+</table>
+<p>With the <code>&gt;</code> operator, standard output (<code>1</code>) is assumed. Using <code>&gt;</code> is the same as <code>1&gt;</code>.</p>
+<h3 id="redirect-standard-error">Redirect Standard Error<a href="#redirect-standard-error" class="anchor" aria-hidden="true">#</a> </h3>
+<p>Use <code>2&gt;</code> to redirect <code>stderr</code>:</p>
+
+
+
+<div class="expressive-code">
+  <figure class="frame is-terminal not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nb">command</span> 2&gt; /dev/null</span></span></code></pre></div>
+  </figure>
+</div>
+<h3 id="redirect-standard-error-and-standard-output">Redirect Standard Error and Standard Output<a href="#redirect-standard-error-and-standard-output" class="anchor" aria-hidden="true">#</a> </h3>
+<p>Use <code>&amp;&gt;</code> to redirect <code>stderr</code> and <code>stdout</code>:</p>
+
+
+
+<div class="expressive-code">
+  <figure class="frame is-terminal not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nb">command</span> <span class="p">&amp;</span>&gt; /dev/null</span></span></code></pre></div>
+  </figure>
+</div>
+<p>In Bash, <code>&amp;&gt;</code> is the same as <code>&gt;&amp;</code>; however, the former is preferred.</p>
+<p>More complex solutions achieve the same results</p>
+
+
+
+<div class="expressive-code">
+  <figure class="frame is-terminal not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nb">command</span> &gt;file 2&gt;<span class="p">&amp;</span><span class="m">1</span></span></span></code></pre></div>
+  </figure>
+</div>
+<p>What happened:</p>
+<ul>
+<li>The first redirection <code>&gt;file</code> prints <code>stdout</code> to <code>file</code></li>
+<li>The second redirection <code>2&gt;&amp;1</code> duplicates file descriptor <code>2</code> to be the same as <code>1</code></li>
+</ul>
+<h3 id="discard-output-of-command">Discard Output of Command<a href="#discard-output-of-command" class="anchor" aria-hidden="true">#</a> </h3>
+
+
+
+<div class="expressive-code">
+  <figure class="frame is-terminal not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nb">command</span> &gt; /dev/null</span></span></code></pre></div>
+  </figure>
+</div>
+<p>The location <code>/dev/null</code> immediately deletes all data written to it. Also known as the &ldquo;bit bucket.&rdquo;</p>
+<p>Discard output of stdout and stderr:</p>
+
+
+
+<div class="expressive-code">
+  <figure class="frame is-terminal not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nb">command</span> <span class="p">&amp;</span>&gt; /dev/null
+</span></span><span class="line"><span class="cl"><span class="c1"># OR</span>
+</span></span><span class="line"><span class="cl"><span class="nb">command</span> &gt;/dev/null 2&gt;<span class="p">&amp;</span><span class="m">1</span></span></span></code></pre></div>
+  </figure>
+</div>
+<h2 id="---redirect-output-append-operator"><code>&gt;&gt;</code> - Redirect Output Append Operator<a href="#---redirect-output-append-operator" class="anchor" aria-hidden="true">#</a> </h2>
+<p>Redirects the output of standard output (stdout) and writes it to a given file. If the file exists, it&rsquo;s appended to the contents of the file.</p>
+
+
+
+<div class="expressive-code">
+  <figure class="frame is-terminal not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># list current directory and write results to file_directory.txt</span>
+</span></span><span class="line"><span class="cl">ls &gt;&gt; file_directory.txt</span></span></code></pre></div>
+  </figure>
+</div>
+<h3 id="redirect-standard-error-and-standard-output-1">Redirect Standard Error and Standard Output`<a href="#redirect-standard-error-and-standard-output-1" class="anchor" aria-hidden="true">#</a> </h3>
+<p>Use <code>&amp;&gt;&gt;</code> to redirect <code>stderr</code> and <code>stdout</code>:</p>
+
+
+
+<div class="expressive-code">
+  <figure class="frame is-terminal not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nb">command</span> <span class="p">&amp;</span>&gt;&gt; file.txt</span></span></code></pre></div>
+  </figure>
+</div>
+<h2 id="---regular-input-operator"><code>&lt;</code> - Regular Input Operator<a href="#---regular-input-operator" class="anchor" aria-hidden="true">#</a> </h2>
+<p>The input redirector pulls data in a stream from a given source.</p>
+<p>Take the given text file for example:</p>
+
+
+
+<div class="expressive-code">
+  <figure class="frame is-terminal not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># states.txt</span>
+</span></span><span class="line"><span class="cl">California
+</span></span><span class="line"><span class="cl">Alaska
+</span></span><span class="line"><span class="cl">New York</span></span></code></pre></div>
+  </figure>
+</div>
+<p>Use above text file as input to <code>sort</code> command:</p>
+
+
+
+<div class="expressive-code">
+  <figure class="frame is-terminal not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ sort &lt; states.txt
+</span></span><span class="line"><span class="cl">Alaska
+</span></span><span class="line"><span class="cl">California
+</span></span><span class="line"><span class="cl">New York</span></span></code></pre></div>
+  </figure>
+</div>
+<h2 id="---pipe-operator"><code>|</code> - Pipe Operator<a href="#---pipe-operator" class="anchor" aria-hidden="true">#</a> </h2>
+<p>Takes the output of a given program and redirects it as input for another program. This is known as &ldquo;piping&rdquo;.</p>
+<p>Use <code>ls</code> to print directory contents and use <code>grep</code> to find matching regex pattern:</p>
+
+
+
+<div class="expressive-code">
+  <figure class="frame is-terminal not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># show files names that match &#34;2004&#34;</span>
+</span></span><span class="line"><span class="cl">ls <span class="p">|</span> grep <span class="m">2004</span></span></span></code></pre></div>
+  </figure>
+</div>
+<p>https://catonmat.net/bash-one-liners-explained-part-three</p>
+
+			<div class="page-footer-meta d-flex flex-column flex-md-row justify-content-between">
+				</div>
+			<div class="page-nav d-flex flex-column flex-sm-row">
+	
+	<div class="card w-100">
+			<div class="card-body d-flex">
+				<div class="d-flex flex-column justify-content-center">
+					<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-arrow-left" width="20" height="20" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+						<path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+						<path d="M5 12l14 0"></path>
+						<path d="M5 12l6 6"></path>
+						<path d="M5 12l6 -6"></path>
+				 	</svg>
+				</div>
+				<div class="d-flex flex-column">
+					<div class="text-body-secondary">Prev</div>
+					<a href="/docs/docker/creating-dockerfiles/" class="stretched-link text-reset text-decoration-none">Creating Dockerfiles</a>
+				</div>
+			</div>
+		</div>
+	<div class="m-2"></div>
+	<div class="card text-end w-100">
+			<div class="card-body d-flex justify-content-end">
+				<div class="d-flex flex-column">
+					<div class="text-body-secondary">Next</div>
+					<a href="/docs/bash/bash-cheatsheet/" class="stretched-link text-reset text-decoration-none">Bash Cheatsheet</a>
+				</div>
+				<div class="d-flex flex-column justify-content-center">
+					<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-arrow-right" width="20" height="20" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+						<path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+						<path d="M5 12l14 0"></path>
+						<path d="M13 18l6 -6"></path>
+						<path d="M13 6l6 6"></path>
+					</svg>
+				</div>
+			</div>
+		</div>
+	</div>
+
+			
+		</main>
+		
+	</div>
+
+      
+      </div>
+    </div>
+    
+    
+    <footer class="footer text-muted">
+  <div class="container-lg">
+    <div class="row">
+      <div class="col-lg-8 text-center text-lg-start">
+        <ul class="list-inline">
+          <li class="list-inline-item"><a class="text-muted" href="/privacy/">Privacy Policy</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-8 text-center text-lg-end">
+        <ul class="list-inline">
+          <li class="list-inline-item">Brought to you by <a class="text-muted" href="https://gethyas.com/">Hyas</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+
+    
+
+<script async
+  src="/js/app.2ef400de62fcbede61c74a23fadc29706e0732d309f2320efefe5b1179abd857.js"
+  integrity="sha256-LvQA3mL8vt5hx0oj&#43;twpcG4HMtMJ8jIO/v5bEXmr2Fc=">
+</script>
+
+
+
+
+
+<script async
+  src="/js/flexsearch.a43ad3e9453067320ab808b85ef437fc65518a219cfea8499e744b7b6f0b6924.js"
+  integrity="sha256-pDrT6UUwZzIKuAi4XvQ3/GVRiiGc/qhJnnRLe28LaSQ=">
+</script>
+<script async
+  src="/js/search-modal.543117a85590123cda9e96d1fcbf8bd22fc1a3a3ca3d31a816382f0f10f30a34.js"
+  integrity="sha256-VDEXqFWQEjzanpbR/L&#43;L0i/Bo6PKPTGoFjgvDxDzCjQ=">
+</script>
+
+    
+  </body>
+</html>

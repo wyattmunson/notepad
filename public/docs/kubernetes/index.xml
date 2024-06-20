@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Kubernetes on My Docs</title>
+    <link>http://localhost:1313/docs/kubernetes/</link>
+    <description>Recent content in Kubernetes on My Docs</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <copyright>Copyright (c) 2020-2024 Hyas</copyright>
+    <lastBuildDate>Mon, 13 Feb 2023 19:10:57 -0800</lastBuildDate>
+    <atom:link href="http://localhost:1313/docs/kubernetes/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Kubernetes Overview</title>
+      <link>http://localhost:1313/docs/kubernetes/kubernetes-overview/</link>
+      <pubDate>Mon, 13 Feb 2023 19:07:47 -0800</pubDate>
+      <guid>http://localhost:1313/docs/kubernetes/kubernetes-overview/</guid>
+      <description>Kubernetes Kubernetes is a container orchistration platform.&#xA;Contents Core concepts kubectl commands Kubectx &amp;amp; Kubens Secrets - external secrets Core Concepts Deployment Set things like:</description>
+    </item>
+    <item>
+      <title>Kubectl CLI</title>
+      <link>http://localhost:1313/docs/kubernetes/kubectl-cli/</link>
+      <pubDate>Mon, 13 Feb 2023 19:10:57 -0800</pubDate>
+      <guid>http://localhost:1313/docs/kubernetes/kubectl-cli/</guid>
+      <description>kubectl is a command line interface tool that interacts with the kube-apiserver/control plane.&#xA;API resources can generally use with get, describe, delete.</description>
+    </item>
+    <item>
+      <title>Kubernetes Troubleshooting</title>
+      <link>http://localhost:1313/docs/kubernetes/kubernetes-troubleshooting/</link>
+      <pubDate>Mon, 13 Feb 2023 19:08:19 -0800</pubDate>
+      <guid>http://localhost:1313/docs/kubernetes/kubernetes-troubleshooting/</guid>
+      <description>Kubernetes Troubleshooting NOTE: TL;DR&#xA;Prerequisite Understanding It&amp;rsquo;s helpful to have some shared terminology. I encourage you to read the Kubernetes and Helm documentation first.</description>
+    </item>
+  </channel>
+</rss>

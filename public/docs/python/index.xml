@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Python on My Docs</title>
+    <link>http://localhost:1313/docs/python/</link>
+    <description>Recent content in Python on My Docs</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <copyright>Copyright (c) 2020-2024 Hyas</copyright>
+    <lastBuildDate>Mon, 03 Jun 2024 22:35:44 -0700</lastBuildDate>
+    <atom:link href="http://localhost:1313/docs/python/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Python Snippets</title>
+      <link>http://localhost:1313/docs/python/python-snippets/</link>
+      <pubDate>Mon, 03 Jun 2024 22:35:44 -0700</pubDate>
+      <guid>http://localhost:1313/docs/python/python-snippets/</guid>
+      <description>Snippets of various python code.&#xA;Time Things of time.&#xA;Convert datetime to string Convert datetime to string - strftime() from datetime import datetime now = datetime.</description>
+    </item>
+  </channel>
+</rss>

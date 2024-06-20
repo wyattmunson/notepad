@@ -1,0 +1,1178 @@
+<!doctype html>
+<html lang="en" data-bs-theme="auto">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><link rel="preload" href="http://localhost:1313/fonts/vendor/jost/jost-v4-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="http://localhost:1313/fonts/vendor/jost/jost-v4-latin-500.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="http://localhost:1313/fonts/vendor/jost/jost-v4-latin-700.woff2" as="font" type="font/woff2" crossorigin>
+<script 
+  src="/js/color-mode.f14b3e296de1d0b69e75af684b62a4a912a2cadab04e36123407cd8388204f1d.js"
+  integrity="sha256-8Us&#43;KW3h0Laeda9oS2KkqRKiytqwTjYSNAfNg4ggTx0=">
+</script>
+
+
+<link rel="stylesheet" href="/main.01b0834d5af51b24812d02878d09c8d7677d6b8af13164fb50215889dc19aaefd0e9366c13b45a9a57ae481dfd1836bce46b5ebfe461d56e3498b9443d8c5e27.css" integrity="sha512-AbCDTVr1GySBLQKHjQnI12d9a4rxMWT7UCFYidwZqu/Q6TZsE7RamleuSB39GDa85Gtev&#43;Rh1W40mLlEPYxeJw==" crossorigin="anonymous">
+
+<noscript><style>img.lazyload { display: none; }</style></noscript><base href="http://localhost:1313/docs/kubernetes/kubectl-cli/">
+  <link rel="canonical" href="http://localhost:1313/docs/kubernetes/kubectl-cli/">
+<title>Kubectl CLI  |  My Docs</title>
+<meta name="description" content="Congrats on setting up a new Doks project!">
+
+    
+    <link rel="icon" href="/favicon.ico" sizes="32x32">
+    
+      <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    
+      <link
+        rel="apple-touch-icon"
+        href="/apple-touch-icon.png"
+        sizes="180x180"
+        type="image/png"
+      >
+      <link
+        rel="icon"
+        href="/favicon-192x192.png"
+        sizes="192x192"
+        type="image/png"
+      >
+      <link
+        rel="icon"
+        href="/favicon-512x512.png"
+        sizes="512x512"
+        type="image/png"
+      >
+<link rel="manifest" href="/manifest.webmanifest">
+<meta property="og:title" content="Kubectl CLI">
+<meta property="og:description" content="kubectl is a command line interface tool that interacts with the kube-apiserver/control plane.
+API resources can generally use with get, describe, delete.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="http://localhost:1313/docs/kubernetes/kubectl-cli/"><meta property="og:image" content="http://localhost:1313/cover.png"><meta property="article:section" content="docs">
+<meta property="article:published_time" content="2023-02-13T19:10:57-08:00">
+<meta property="article:modified_time" content="2023-02-13T19:10:57-08:00"><meta property="og:site_name" content="My Docs">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="http://localhost:1313/cover.png"><meta name="twitter:title" content="Kubectl CLI">
+<meta name="twitter:description" content="kubectl is a command line interface tool that interacts with the kube-apiserver/control plane.
+API resources can generally use with get, describe, delete.">
+<meta name="twitter:site" content="@getdoks">
+
+    
+    
+    <script type="application/ld+json">
+  {
+   "@context": "https://schema.org",
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+     {
+       "@type": "ListItem",
+       "item": "http://localhost:1313/",
+       "name": "Welcome to Doks",
+       "position": 1
+     },
+     {
+       "@type": "ListItem",
+       "item": "http://localhost:1313/docs/",
+       "name": "Docs",
+       "position": 2
+     },
+     {
+       "@type": "ListItem",
+       "item": "http://localhost:1313/docs/kubernetes/",
+       "name": "Kubernetes",
+       "position": 3
+     },
+     {
+       "@type": "ListItem",
+       "name": "Kubectl CLI",
+       "position": 4
+     }
+   ]
+ }
+</script>
+
+
+
+
+
+</head>
+
+  
+  <body class="single section docs" data-bs-spy="scroll" data-bs-target="#toc" data-bs-root-margin="0px 0px -60%" data-bs-smooth-scroll="true" tabindex="0">
+    <div class="sticky-top">
+<header class="navbar navbar-expand-lg">
+  <div class="container-lg">
+  
+    <a class="navbar-brand me-auto me-lg-3" href="/">My Docs</a>
+
+    
+    
+    <button type="button" id="searchToggleMobile" class="btn btn-link nav-link mx-2 d-lg-none" aria-label="Search website">
+      <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+        <circle cx="10" cy="10" r="7"></circle>
+        <line x1="21" y1="21" x2="15" y2="15"></line>
+      </svg>
+    </button>
+    
+    <button class="btn btn-link d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavSection" aria-controls="offcanvasNavSection" aria-label="Open section navigation menu">
+      <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-dots-vertical" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+        <path d="M12 12m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0"></path>
+        <path d="M12 19m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0"></path>
+        <path d="M12 5m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0"></path>
+      </svg>
+    </button>
+    <div class="offcanvas offcanvas-start d-lg-none" tabindex="-1" id="offcanvasNavSection" aria-labelledby="offcanvasNavSectionLabel">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasNavSectionLabel">Docs</h5>
+        <button type="button" class="btn btn-link nav-link p-0 ms-auto" data-bs-dismiss="offcanvas" aria-label="Close">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-x" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+            <path d="M18 6l-12 12"></path>
+            <path d="M6 6l12 12"></path>
+          </svg>
+        </button>
+      </div>
+      <div class="offcanvas-body">
+        <aside class="doks-sidebar mt-n3">
+          <nav id="doks-docs-nav" aria-label="Tertiary navigation">
+            
+  
+    
+<nav class="section-nav docs-links">
+  <ul class="list-unstyled">
+
+  <li>
+    <details open>
+      <summary>Bash</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/docs/bash/bash-scripting/">Bash Scripting</a>
+  </li>
+
+  <li>
+      <a href="/docs/bash/bash-reference/">Bash Reference</a>
+  </li>
+
+  <li>
+      <a href="/docs/bash/bash-cheatsheet/">Bash Cheatsheet</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Docker</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/docs/docker/docker-overview/">Docker Overview</a>
+  </li>
+
+  <li>
+      <a href="/docs/docker/docker-cli-commands/">Docker CLI Commands</a>
+  </li>
+
+  <li>
+      <a href="/docs/docker/creating-dockerfiles/">Creating Dockerfiles</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Help</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/docs/help/how-to-update/">How to Update</a>
+  </li>
+
+  <li>
+      <a href="/docs/help/troubleshooting/">Troubleshooting</a>
+  </li>
+
+  <li>
+      <a href="/docs/help/faq/">FAQ</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Javascript</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/docs/js/js-reference/">Js Reference</a>
+  </li>
+
+  <li>
+      <a href="/docs/js/js-cheatsheet/">Js Cheatsheet</a>
+  </li>
+
+  <li>
+      <a href="/docs/js/basic-js/">Basic Js</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Linux</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/docs/linux/file-structure/">File Structure</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Python2</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/docs/python2/python-snippets/">Python Snippets</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Guides</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/docs/guides/example-guide/">Example Guide</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details>
+      <summary>Reference</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/docs/reference/example-reference/">Example Reference</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Python</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/docs/python/python-snippets/">Python Snippets</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Networking</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/docs/networking/dns/">DNS</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open open>
+      <summary>Kubernetes</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/docs/kubernetes/kubernetes-overview/">Kubernetes Overview</a>
+  </li>
+
+  <li class="active" >
+      <a aria-current="page" href="/docs/kubernetes/kubectl-cli/">Kubectl CLI</a>
+  </li>
+
+  <li>
+      <a href="/docs/kubernetes/kubernetes-troubleshooting/">Kubernetes Troubleshooting</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Postgres</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/docs/postgres/postgres-basics/">Postgres Basics</a>
+  </li>
+
+  <li>
+      <a href="/docs/postgres/psql-reference/">PSQL Reference</a>
+  </li>
+
+  <li>
+      <a href="/docs/postgres/postgres-dataypes/">Postgres Dataypes</a>
+  </li>
+
+  <li>
+      <a href="/docs/postgres/sql-crash-course/">SQL Crash Course</a>
+  </li>
+
+  <li>
+      <a href="/docs/postgres/psql-cli/">PSQL CLI</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Web Dev</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/docs/web-dev/online-tools/">Online Tools</a>
+  </li>
+
+  <li>
+      <a href="/docs/web-dev/css/">CSS</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+  </ul>
+</nav>
+
+  
+
+          </nav>
+        </aside>
+      </div>
+    </div>
+    
+    <button class="btn btn-link nav-link mx-2 order-3 d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavMain" aria-controls="offcanvasNavMain" aria-label="Open main navigation menu">
+      <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-menu" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+        <line x1="4" y1="8" x2="20" y2="8"></line>
+        <line x1="4" y1="16" x2="20" y2="16"></line>
+      </svg>
+    </button>
+
+    
+    <div class="offcanvas offcanvas-end h-auto" tabindex="-1" id="offcanvasNavMain" aria-labelledby="offcanvasNavMainLabel">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasNavMainLabel">My Docs</h5>
+        <button type="button" class="btn btn-link nav-link p-0 ms-auto" data-bs-dismiss="offcanvas" aria-label="Close">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-x" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+            <path d="M18 6l-12 12"></path>
+            <path d="M6 6l12 12"></path>
+         </svg>
+        </button>
+      </div>
+      
+      <div class="offcanvas-body d-flex flex-column flex-lg-row justify-content-between">
+        <ul class="navbar-nav flex-grow-1"><li class="nav-item">
+                <a class="nav-link active" href="http://localhost:1313/docs/guides/example-guide/" aria-current="true">Docs</a>
+              </li>
+            <li class="nav-item">
+                <a class="nav-link" href="http://localhost:1313/blog/">Blog</a>
+              </li>
+            </ul>
+
+        
+        
+        <button type="button" id="searchToggleDesktop" class="btn btn-link nav-link p-2 d-none d-lg-block" aria-label="Search website">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+            <circle cx="10" cy="10" r="7"></circle>
+            <line x1="21" y1="21" x2="15" y2="15"></line>
+          </svg>
+        </button>
+        
+        
+        
+        <button id="buttonColorMode" class="btn btn-link mx-auto nav-link p-0 ms-lg-2 me-lg-1" type="button" aria-label="Toggle theme">
+          <svg data-bs-theme-value="dark" xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-moon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+            <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z"></path>
+          </svg>
+          <svg data-bs-theme-value="light" xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-sun" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+            <path d="M12 12m-4 0a4 4 0 1 0 8 0a4 4 0 1 0 -8 0m-5 0h1m8 -9v1m8 8h1m-9 8v1m-6.4 -15.4l.7 .7m12.1 -.7l-.7 .7m0 11.4l.7 .7m-12.1 -.7l-.7 .7"></path>
+          </svg>
+        </button>
+        
+        <ul id="socialMenu" class="nav mx-auto flex-row order-lg-4">
+          <li class="nav-item">
+              <a class="nav-link social-link" href="https://github.com/gethyas/doks"><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5"></path></svg><small class="ms-2 visually-hidden">GitHub</small></a>
+            </li>
+          </ul>
+        
+        </div>
+    </div>
+
+    
+    </div>
+</header>
+</div>
+
+<div class="modal" id="searchModal" tabindex="-1" aria-labelledby="searchModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-fullscreen-md-down">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5 visually-hidden" id="searchModalLabel">Search</h1>
+        <button type="button" class="btn-close visually-hidden" data-bs-dismiss="modal" aria-label="Close"></button>
+        <div class="search-input flex-grow-1 d-none">
+          <form id="search-form" class="search-form" action="#" method="post" accept-charset="UTF-8" role="search">
+            <label for="query" class="visually-hidden">Search</label>
+            <div class="d-flex">
+              <input type="search" id="query" name="query" class="search-text form-control form-control-lg" placeholder="Search" aria-label="Search" maxlength="128" autocomplete="off">
+              <button type="button" class="btn btn-link text-decoration-none px-0 ms-3 d-md-none" data-bs-dismiss="modal" aria-label="Close">Cancel</button>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="modal-body">
+        <p class="search-loading status message d-none mt-3 text-center">Loading search index…</p>
+        <p class="search-no-recent message d-none mt-3 text-center">No recent searches</p>
+        <p class="search-no-results message d-none mt-3 text-center">No results for "<strong><span class="query-no-results">Query here</span></strong>"</p>
+        <div id="searchResults" class="search-results"></div>
+        <template>
+          <article class="search-result list-view">
+            <div class="card my-3">
+              <div class="card-body">
+                <header>
+                  <h2 class="h5 title title-submitted mb-0"><a class="stretched-link text-decoration-none text-reset" href="#">Title here</a></h2>
+                  <div class="submitted d-none"><time class="created-date">Date here</time></div>
+                </header>
+                <div class="content">Summary here</div>
+              </div>
+            </div>
+          </article>
+        </template>
+      </div>
+      <div class="modal-footer">
+        <ul class="list-inline me-auto d-none d-md-block">
+          <li class="list-inline-item"><kbd class="me-2"><svg width="15" height="15" aria-label="Enter key" role="img"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2"><path d="M12 3.53088v3c0 1-1 2-2 2H4M7 11.53088l-3-3 3-3"></path></g></svg></kbd><span class="DocSearch-Label">to select</span></li>
+          <li class="list-inline-item"><kbd class="me-2"><svg width="15" height="15" aria-label="Arrow down" role="img"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2"><path d="M7.5 3.5v8M10.5 8.5l-3 3-3-3"></path></g></svg></kbd><kbd class="me-2"><svg width="15" height="15" aria-label="Arrow up" role="img"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2"><path d="M7.5 11.5v-8M10.5 6.5l-3-3-3 3"></path></g></svg></kbd><span class="DocSearch-Label">to navigate</span></li>
+          <li class="list-inline-item"><kbd class="me-2"><svg width="15" height="15" aria-label="Escape key" role="img"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2"><path d="M13.6167 8.936c-.1065.3583-.6883.962-1.4875.962-.7993 0-1.653-.9165-1.653-2.1258v-.5678c0-1.2548.7896-2.1016 1.653-2.1016.8634 0 1.3601.4778 1.4875 1.0724M9 6c-.1352-.4735-.7506-.9219-1.46-.8972-.7092.0246-1.344.57-1.344 1.2166s.4198.8812 1.3445.9805C8.465 7.3992 8.968 7.9337 9 8.5c.032.5663-.454 1.398-1.4595 1.398C6.6593 9.898 6 9 5.963 8.4851m-1.4748.5368c-.2635.5941-.8099.876-1.5443.876s-1.7073-.6248-1.7073-2.204v-.4603c0-1.0416.721-2.131 1.7073-2.131.9864 0 1.6425 1.031 1.5443 2.2492h-2.956"></path></g></svg></kbd><span class="DocSearch-Label">to close</span></li>
+        </ul>
+        <p class="d-md-none">Search by <a class="text-decoration-none" href="https://github.com/nextapps-de/flexsearch">FlexSearch</a></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+    <div class="wrap container-lg" role="document">
+      <div class="content">
+      
+        
+	<div class="row flex-xl-nowrap">
+		<div class="col-lg-5 col-xl-4 docs-sidebar d-none d-lg-block">
+			
+  
+    
+<nav class="section-nav docs-links">
+  <ul class="list-unstyled">
+
+  <li>
+    <details open>
+      <summary>Bash</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/docs/bash/bash-scripting/">Bash Scripting</a>
+  </li>
+
+  <li>
+      <a href="/docs/bash/bash-reference/">Bash Reference</a>
+  </li>
+
+  <li>
+      <a href="/docs/bash/bash-cheatsheet/">Bash Cheatsheet</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Docker</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/docs/docker/docker-overview/">Docker Overview</a>
+  </li>
+
+  <li>
+      <a href="/docs/docker/docker-cli-commands/">Docker CLI Commands</a>
+  </li>
+
+  <li>
+      <a href="/docs/docker/creating-dockerfiles/">Creating Dockerfiles</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Help</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/docs/help/how-to-update/">How to Update</a>
+  </li>
+
+  <li>
+      <a href="/docs/help/troubleshooting/">Troubleshooting</a>
+  </li>
+
+  <li>
+      <a href="/docs/help/faq/">FAQ</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Javascript</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/docs/js/js-reference/">Js Reference</a>
+  </li>
+
+  <li>
+      <a href="/docs/js/js-cheatsheet/">Js Cheatsheet</a>
+  </li>
+
+  <li>
+      <a href="/docs/js/basic-js/">Basic Js</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Linux</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/docs/linux/file-structure/">File Structure</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Python2</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/docs/python2/python-snippets/">Python Snippets</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Guides</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/docs/guides/example-guide/">Example Guide</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details>
+      <summary>Reference</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/docs/reference/example-reference/">Example Reference</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Python</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/docs/python/python-snippets/">Python Snippets</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Networking</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/docs/networking/dns/">DNS</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open open>
+      <summary>Kubernetes</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/docs/kubernetes/kubernetes-overview/">Kubernetes Overview</a>
+  </li>
+
+  <li class="active" >
+      <a aria-current="page" href="/docs/kubernetes/kubectl-cli/">Kubectl CLI</a>
+  </li>
+
+  <li>
+      <a href="/docs/kubernetes/kubernetes-troubleshooting/">Kubernetes Troubleshooting</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Postgres</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/docs/postgres/postgres-basics/">Postgres Basics</a>
+  </li>
+
+  <li>
+      <a href="/docs/postgres/psql-reference/">PSQL Reference</a>
+  </li>
+
+  <li>
+      <a href="/docs/postgres/postgres-dataypes/">Postgres Dataypes</a>
+  </li>
+
+  <li>
+      <a href="/docs/postgres/sql-crash-course/">SQL Crash Course</a>
+  </li>
+
+  <li>
+      <a href="/docs/postgres/psql-cli/">PSQL CLI</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Web Dev</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/docs/web-dev/online-tools/">Online Tools</a>
+  </li>
+
+  <li>
+      <a href="/docs/web-dev/css/">CSS</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+  </ul>
+</nav>
+
+  
+
+		</div>
+		
+		<nav class="docs-toc d-none d-xl-block col-xl-3" aria-label="Secondary navigation">
+			<div class="page-links">
+  <h3>On this page</h3>
+    <nav id="toc">
+  <ul>
+    <li><a href="#creating-resrouces">Creating Resrouces</a></li>
+    <li><a href="#viewing-updating-and-deleting-resrouces">Viewing, Updating, and Deleting Resrouces</a>
+      <ul>
+        <li><a href="#viewing-resources">Viewing Resources</a></li>
+        <li><a href="#describing-editing-and-deleting">Describing, Editing, and Deleting</a></li>
+      </ul>
+    </li>
+    <li><a href="#get-logs">Get logs</a></li>
+    <li><a href="#exec-into-running-container">Exec into running container</a></li>
+    <li><a href="#port-forwarding">Port forwarding</a></li>
+    <li><a href="#namespaces">Namespaces</a></li>
+    <li><a href="#add-a-user-to-eks-config-map">Add a user to EKS Config Map</a></li>
+    <li><a href="#add-eks-cluster-to-your-local-kubeconfig">Add EKS cluster to your local kubeconfig</a>
+      <ul>
+        <li><a href="#unorganized-commands">Unorganized commands</a></li>
+        <li><a href="#generate-admin-token-for-dashboard">Generate admin token for dashboard</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+</div>
+
+		</nav>
+		<main class="docs-content col-lg-11 col-xl-9">
+		
+			<h1>Kubectl CLI</h1>
+			
+			<nav class="toc-mobile d-xl-none" aria-label="Quaternary navigation">
+				<details>
+    <summary>On this page</summary>
+    <div class="page-links">
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#creating-resrouces">Creating Resrouces</a></li>
+    <li><a href="#viewing-updating-and-deleting-resrouces">Viewing, Updating, and Deleting Resrouces</a>
+      <ul>
+        <li><a href="#viewing-resources">Viewing Resources</a></li>
+        <li><a href="#describing-editing-and-deleting">Describing, Editing, and Deleting</a></li>
+      </ul>
+    </li>
+    <li><a href="#get-logs">Get logs</a></li>
+    <li><a href="#exec-into-running-container">Exec into running container</a></li>
+    <li><a href="#port-forwarding">Port forwarding</a></li>
+    <li><a href="#namespaces">Namespaces</a></li>
+    <li><a href="#add-a-user-to-eks-config-map">Add a user to EKS Config Map</a></li>
+    <li><a href="#add-eks-cluster-to-your-local-kubeconfig">Add EKS cluster to your local kubeconfig</a>
+      <ul>
+        <li><a href="#unorganized-commands">Unorganized commands</a></li>
+        <li><a href="#generate-admin-token-for-dashboard">Generate admin token for dashboard</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </div>
+  </details>
+
+			</nav>
+			<p><code>kubectl</code> is a command line interface tool that interacts with the <code>kube-apiserver</code>/control plane.</p>
+<p>API resources can generally use with <code>get</code>, <code>describe</code>, <code>delete</code>. See the full list of API resources with <code>kubectl api-resources</code>.</p>
+<h2 id="creating-resrouces">Creating Resrouces<a href="#creating-resrouces" class="anchor" aria-hidden="true">#</a> </h2>
+<p>Use the <code>kubectl apply</code> command to create or update a resource. The <code>-f</code> flag specifies a file or directory name.</p>
+
+
+
+<div class="expressive-code">
+  <figure class="frame is-terminal not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># Specify file or directory</span>
+</span></span><span class="line"><span class="cl">$ kubectl apply -f ./deploy-dev.yaml        <span class="c1"># create resrouce from file</span>
+</span></span><span class="line"><span class="cl">$ kubectl apply -f ./dev.yaml ./prod.yaml   <span class="c1"># from two files</span>
+</span></span><span class="line"><span class="cl">$ kubectl apply -f ./dir                    <span class="c1"># from an entire directory</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Apply YAML from stdin</span>
+</span></span><span class="line"><span class="cl">cat deploy.json <span class="p">|</span> kubectl apply -f -</span></span></code></pre></div>
+  </figure>
+</div>
+<h2 id="viewing-updating-and-deleting-resrouces">Viewing, Updating, and Deleting Resrouces<a href="#viewing-updating-and-deleting-resrouces" class="anchor" aria-hidden="true">#</a> </h2>
+<p>Kuberentes API resoruces can be generally be used with <code>get</code>, <code>describe</code>, <code>edit</code>, and <code>delete</code>.</p>
+<div class="callout callout-note d-flex flex-row mt-4 mb-4 pt-4 pe-4 pb-2 ps-3">
+  
+  <div class="callout-content">
+    
+    <div class="callout-body">
+      <p>See full list of API Resources with <code>kubectl api-resources</code>.</p>
+
+    </div>
+  </div>
+</div>
+
+<h3 id="viewing-resources">Viewing Resources<a href="#viewing-resources" class="anchor" aria-hidden="true">#</a> </h3>
+<p>View resources with the <code>kubectl get</code> command.</p>
+
+
+
+<div class="expressive-code">
+  <figure class="frame is-terminal not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># get services in default namespace</span>
+</span></span><span class="line"><span class="cl">$ kubectl get pods
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># get services in dev namespace</span>
+</span></span><span class="line"><span class="cl">$ kubectl get pods -n dev
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># get pods all namespaces</span>
+</span></span><span class="line"><span class="cl">$ kubectl get pods -A
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># list pods with more details</span>
+</span></span><span class="line"><span class="cl">$ kubectl get pods -o wide
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># get deployment dev-dep</span>
+</span></span><span class="line"><span class="cl">$ kubectl get pods customer-service-ae892934-482da2f
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># get pod&#39;s YAML</span>
+</span></span><span class="line"><span class="cl">$ kubectl get pod ui-pod -o yaml
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">#list pod without cluster specific information</span>
+</span></span><span class="line"><span class="cl">$ kubectl get  --export
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># get all k8s resoruces in given namespace</span>
+</span></span><span class="line"><span class="cl">kubectl get all -n NAMESPACE
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># get all k8s resources in all namespaces</span>
+</span></span><span class="line"><span class="cl">kubectl get all -A
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Can get, describe, and delete resources</span>
+</span></span><span class="line"><span class="cl">$ k get pods -n tick
+</span></span><span class="line"><span class="cl">$ k desribe pods/influx-influxdb-j3ilso93-ae82kdl2 -n tick
+</span></span><span class="line"><span class="cl">$ k delete pods/influx-influxdb-j3ilso93-ae82kdl2 -n tick</span></span></code></pre></div>
+  </figure>
+</div>
+<h3 id="describing-editing-and-deleting">Describing, Editing, and Deleting<a href="#describing-editing-and-deleting" class="anchor" aria-hidden="true">#</a> </h3>
+
+
+
+<div class="expressive-code">
+  <figure class="frame is-terminal not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># delete deployment</span>
+</span></span><span class="line"><span class="cl">kubectl delete deployments applications-service -n applications-dev
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># shorthand</span>
+</span></span><span class="line"><span class="cl">kubectl describe po/payment-service-3829aec9-cea2831af -n dev
+</span></span><span class="line"><span class="cl">kubectl describe svc/payment-service -n dev
+</span></span><span class="line"><span class="cl">kubectl describe deploy/payment-service -n dev</span></span></code></pre></div>
+  </figure>
+</div>
+<h2 id="get-logs">Get logs<a href="#get-logs" class="anchor" aria-hidden="true">#</a> </h2>
+<div class="callout callout-note d-flex flex-row mt-4 mb-4 pt-4 pe-4 pb-2 ps-3">
+  
+  <div class="callout-content">
+    
+    <div class="callout-body">
+      
+    </div>
+  </div>
+</div>
+
+<p>Logs can be grabbed from a pod or a service.</p>
+<p>One advantage of service level logs is faster debugging: the service name is predictable while the pod name is randomly generated and there&rsquo;s an extra step to get the pod name. The service level logs will show logs from all pods it handles, which may or may not be desirable.</p>
+
+
+
+<div class="expressive-code">
+  <figure class="frame is-terminal not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># get logs associated with a pod</span>
+</span></span><span class="line"><span class="cl">kubectl logs CONTINER-NAME -n NAMESPACE
+</span></span><span class="line"><span class="cl">kubectl logs payment-service-39a03f2-ac624fe -n dev
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># get logs associated with other services</span>
+</span></span><span class="line"><span class="cl">kubectl logs RESOURCE/RESOURCE-NAME -n NAMESPACE
+</span></span><span class="line"><span class="cl">kubectl logs svc/payment-service -n dev
+</span></span><span class="line"><span class="cl">kubectl logs jobs/payment-service -n dev
+</span></span><span class="line"><span class="cl">kubectl logs deploy/payment-service -n dev
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># tail/follow logs</span>
+</span></span><span class="line"><span class="cl">kubectl logs svc/payment-service -n dev --follow
+</span></span><span class="line"><span class="cl">kubectl logs svc/payment-service -n dev -f
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># limit logs based on time</span>
+</span></span><span class="line"><span class="cl">kubectl logs svc/payment-service -n dev --since 10m</span></span></code></pre></div>
+  </figure>
+</div>
+<h2 id="exec-into-running-container">Exec into running container<a href="#exec-into-running-container" class="anchor" aria-hidden="true">#</a> </h2>
+<p>Exec into a running container to get shell access or run a command.</p>
+
+
+
+<div class="expressive-code">
+  <figure class="frame is-terminal not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">kubectl <span class="nb">exec</span> po/pod-name -n namespace-name -- bash</span></span></code></pre></div>
+  </figure>
+</div>
+<h2 id="port-forwarding">Port forwarding<a href="#port-forwarding" class="anchor" aria-hidden="true">#</a> </h2>
+<p>Use port forwarding to map a port on your local machine to a running kubernetes pod or service.</p>
+<p>This is useful when an engineer is working on one service and needs to interact with another service for development or testing.</p>
+<div class="callout callout-note d-flex flex-row mt-4 mb-4 pt-4 pe-4 pb-2 ps-3">
+  
+  <div class="callout-content">
+    
+    <div class="callout-body">
+      
+    </div>
+  </div>
+</div>
+
+
+
+
+<div class="expressive-code">
+  <figure class="frame is-terminal not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ k port-forward services/applications-service -n dev 8080:80</span></span></code></pre></div>
+  </figure>
+</div>
+<h2 id="namespaces">Namespaces<a href="#namespaces" class="anchor" aria-hidden="true">#</a> </h2>
+<p>Namespaces are a way to segment and organize resources running in a cluster.</p>
+<div class="callout callout-note d-flex flex-row mt-4 mb-4 pt-4 pe-4 pb-2 ps-3">
+  
+  <div class="callout-content">
+    
+    <div class="callout-body">
+      
+    </div>
+  </div>
+</div>
+
+
+
+
+<div class="expressive-code">
+  <figure class="frame is-terminal not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># create a namespace</span>
+</span></span><span class="line"><span class="cl">kubectl create namespace finance-qa
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># delete a namespace</span>
+</span></span><span class="line"><span class="cl">kubectl delete namepsaces finance-qa <span class="c1"># note extra &#34;s&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># use &#34;ns&#34; shorthand for namespaces</span>
+</span></span><span class="line"><span class="cl">kubectl delete ns finance-qa</span></span></code></pre></div>
+  </figure>
+</div>
+<h2 id="add-a-user-to-eks-config-map">Add a user to EKS Config Map<a href="#add-a-user-to-eks-config-map" class="anchor" aria-hidden="true">#</a> </h2>
+<p>Give an IAM user access to an EKS cluster by editing its Config Map.</p>
+
+
+
+<div class="expressive-code">
+  <figure class="frame is-terminal not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">kubectl edit -n kube-system configmap/aws-auth</span></span></code></pre></div>
+  </figure>
+</div>
+<h2 id="add-eks-cluster-to-your-local-kubeconfig">Add EKS cluster to your local kubeconfig<a href="#add-eks-cluster-to-your-local-kubeconfig" class="anchor" aria-hidden="true">#</a> </h2>
+<p>Add an AWS EKS to a machine&rsquo;s kubeconfig using the AWS CLI.</p>
+
+
+
+<div class="expressive-code">
+  <figure class="frame is-terminal not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># add EKS cluster to local kubeconfig</span>
+</span></span><span class="line"><span class="cl">aws eks --region us-east-1 update-kubeconfig --name cluster-name-in-eks-ce548264</span></span></code></pre></div>
+  </figure>
+</div>
+<h3 id="unorganized-commands">Unorganized commands<a href="#unorganized-commands" class="anchor" aria-hidden="true">#</a> </h3>
+
+
+
+<div class="expressive-code">
+  <figure class="frame is-terminal not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># Current meximum pods per node</span>
+</span></span><span class="line"><span class="cl">kubectl get nodes -o yaml <span class="p">|</span> grep pods
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Current pods per node</span>
+</span></span><span class="line"><span class="cl">$ kubectl get pods --all-namespaces <span class="p">|</span> grep Running <span class="p">|</span> wc -l</span></span></code></pre></div>
+  </figure>
+</div>
+
+
+
+<div class="expressive-code">
+  <figure class="frame is-terminal not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># Get cluster info</span>
+</span></span><span class="line"><span class="cl">$ kubectl cluster-info
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">$ kubectl component-status
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># shorthand commands</span>
+</span></span><span class="line"><span class="cl">$ k get services
+</span></span><span class="line"><span class="cl">$ k get svc
+</span></span><span class="line"><span class="cl">$ k get pods
+</span></span><span class="line"><span class="cl">$ k get po
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># exec into container in pod</span>
+</span></span><span class="line"><span class="cl">k <span class="nb">exec</span> --stdin --tty employer-lookup-service-78cb8c8c7d-hhltf -- sh
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># see pod limit per node</span>
+</span></span><span class="line"><span class="cl">$ kubectl get nodes -o yaml <span class="p">|</span> grep pods
+</span></span><span class="line"><span class="cl"><span class="c1"># see total running pods</span>
+</span></span><span class="line"><span class="cl">$ kubectl get pods --all-namespaces <span class="p">|</span> grep Running <span class="p">|</span> wc -l
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Check node CPU and memory usage</span>
+</span></span><span class="line"><span class="cl">kubectl get nodes --no-headers <span class="p">|</span> awk <span class="s1">&#39;{print $1}&#39;</span> <span class="p">|</span> xargs -I <span class="o">{}</span> sh -c <span class="s1">&#39;echo {}; kubectl describe node {} | grep Allocated -A 5 | grep -ve Event -ve Allocated -ve percent -ve -- ; echo&#39;</span></span></span></code></pre></div>
+  </figure>
+</div>
+<p><a href="https://blog.heptio.com/kubectl-resource-short-names-heptioprotip-c8eff9fb7202">kubectl short hand</a></p>
+
+
+
+<div class="expressive-code">
+  <figure class="frame is-terminal not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ k get all
+</span></span><span class="line"><span class="cl">k get pod/applications-service-6ffbc48d6d-bpchh
+</span></span><span class="line"><span class="cl">$ k get service/applications-ui
+</span></span><span class="line"><span class="cl">$ k get deployment.apps/token-service
+</span></span><span class="line"><span class="cl">$ k get replicaset.apps/applications-service-558c6b579d</span></span></code></pre></div>
+  </figure>
+</div>
+<h3 id="generate-admin-token-for-dashboard">Generate admin token for dashboard<a href="#generate-admin-token-for-dashboard" class="anchor" aria-hidden="true">#</a> </h3>
+
+
+
+<div class="expressive-code">
+  <figure class="frame is-terminal not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="cp">#!/bin/bash
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span><span class="nv">EKS_ADMIN_TOKEN_KEY</span><span class="o">=</span><span class="k">$(</span>kubectl -n kube-system get secret <span class="p">|</span> grep eks-admin <span class="p">|</span> awk <span class="s1">&#39;{print $1}&#39;</span><span class="k">)</span>
+</span></span><span class="line"><span class="cl">kubectl -n kube-system describe secret <span class="si">${</span><span class="nv">EKS_ADMIN_TOKEN_KEY</span><span class="si">}</span> <span class="p">|</span> grep <span class="s1">&#39;token:&#39;</span></span></span></code></pre></div>
+  </figure>
+</div>
+
+			<div class="page-footer-meta d-flex flex-column flex-md-row justify-content-between">
+				</div>
+			<div class="page-nav d-flex flex-column flex-sm-row">
+	
+	<div class="card w-100">
+			<div class="card-body d-flex">
+				<div class="d-flex flex-column justify-content-center">
+					<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-arrow-left" width="20" height="20" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+						<path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+						<path d="M5 12l14 0"></path>
+						<path d="M5 12l6 6"></path>
+						<path d="M5 12l6 -6"></path>
+				 	</svg>
+				</div>
+				<div class="d-flex flex-column">
+					<div class="text-body-secondary">Prev</div>
+					<a href="/docs/networking/dns/" class="stretched-link text-reset text-decoration-none">DNS</a>
+				</div>
+			</div>
+		</div>
+	<div class="m-2"></div>
+	<div class="card text-end w-100">
+			<div class="card-body d-flex justify-content-end">
+				<div class="d-flex flex-column">
+					<div class="text-body-secondary">Next</div>
+					<a href="/docs/kubernetes/kubernetes-troubleshooting/" class="stretched-link text-reset text-decoration-none">Kubernetes Troubleshooting</a>
+				</div>
+				<div class="d-flex flex-column justify-content-center">
+					<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-arrow-right" width="20" height="20" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+						<path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+						<path d="M5 12l14 0"></path>
+						<path d="M13 18l6 -6"></path>
+						<path d="M13 6l6 6"></path>
+					</svg>
+				</div>
+			</div>
+		</div>
+	</div>
+
+			
+		</main>
+		
+	</div>
+
+      
+      </div>
+    </div>
+    
+    
+    <footer class="footer text-muted">
+  <div class="container-lg">
+    <div class="row">
+      <div class="col-lg-8 text-center text-lg-start">
+        <ul class="list-inline">
+          <li class="list-inline-item"><a class="text-muted" href="/privacy/">Privacy Policy</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-8 text-center text-lg-end">
+        <ul class="list-inline">
+          <li class="list-inline-item">Brought to you by <a class="text-muted" href="https://gethyas.com/">Hyas</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+
+    
+
+<script async
+  src="/js/app.2ef400de62fcbede61c74a23fadc29706e0732d309f2320efefe5b1179abd857.js"
+  integrity="sha256-LvQA3mL8vt5hx0oj&#43;twpcG4HMtMJ8jIO/v5bEXmr2Fc=">
+</script>
+
+
+
+
+
+<script async
+  src="/js/flexsearch.a43ad3e9453067320ab808b85ef437fc65518a219cfea8499e744b7b6f0b6924.js"
+  integrity="sha256-pDrT6UUwZzIKuAi4XvQ3/GVRiiGc/qhJnnRLe28LaSQ=">
+</script>
+<script async
+  src="/js/search-modal.543117a85590123cda9e96d1fcbf8bd22fc1a3a3ca3d31a816382f0f10f30a34.js"
+  integrity="sha256-VDEXqFWQEjzanpbR/L&#43;L0i/Bo6PKPTGoFjgvDxDzCjQ=">
+</script>
+
+    
+  </body>
+</html>
