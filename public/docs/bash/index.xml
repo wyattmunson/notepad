@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Bash on My Docs</title>
+    <title>Bash on WyNotes</title>
     <link>http://localhost:1313/docs/bash/</link>
-    <description>Recent content in Bash on My Docs</description>
+    <description>Recent content in Bash on WyNotes</description>
     <generator>Hugo</generator>
     <language>en</language>
-    <copyright>Copyright (c) 2020-2024 Hyas</copyright>
+    <copyright>Copyright (c) 2020-2024 North Aerospace</copyright>
     <lastBuildDate>Mon, 26 Jun 2023 17:35:47 -0700</lastBuildDate>
     <atom:link href="http://localhost:1313/docs/bash/index.xml" rel="self" type="application/rss+xml" />
     <item>

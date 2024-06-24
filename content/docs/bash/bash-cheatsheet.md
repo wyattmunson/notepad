@@ -632,3 +632,24 @@ cmd1 | cmd2 # pipe output of cmd1 to input of cmd2
 &> file     # redirect stdout and stderr
 2> file     # redirect stderr only
 ```
+
+### Select last charachters in string
+
+Extract the last charachters in a string
+
+```bash
+stringer="tester"
+echo "${stringer: -1}"
+# ⮑ r
+```
+
+### Remove last n charachters in string
+
+Exclude the last charachters in a string
+
+```bash
+stringer="someFile.md"
+short_str=${stringer::-3}
+echo $short_str
+# ⮑ someFile
+```

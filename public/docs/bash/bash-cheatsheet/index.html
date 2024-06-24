@@ -16,7 +16,7 @@
 
 <noscript><style>img.lazyload { display: none; }</style></noscript><base href="http://localhost:1313/docs/bash/bash-cheatsheet/">
   <link rel="canonical" href="http://localhost:1313/docs/bash/bash-cheatsheet/">
-<title>Bash Cheatsheet  |  My Docs</title>
+<title>Bash Cheatsheet  |  WyNotes</title>
 <meta name="description" content="Cheatsheet for handy bash commands">
 
     
@@ -101,7 +101,7 @@
 <header class="navbar navbar-expand-lg">
   <div class="container-lg">
   
-    <a class="navbar-brand me-auto me-lg-3" href="/">My Docs</a>
+    <a class="navbar-brand me-auto me-lg-3" href="/">WyNotes</a>
 
     
     
@@ -271,8 +271,36 @@
 
   <li>
     <details open>
+      <summary>Portal</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/docs/portal/mosquitto/">Mosquitto</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Unicode</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/docs/unicode/arrows/">Arrows</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
       <summary>Python</summary>
       <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/docs/python/deps/">Deps</a>
+  </li>
 
   <li>
       <a href="/docs/python/python-snippets/">Python Snippets</a>
@@ -377,7 +405,7 @@
     
     <div class="offcanvas offcanvas-end h-auto" tabindex="-1" id="offcanvasNavMain" aria-labelledby="offcanvasNavMainLabel">
       <div class="offcanvas-header">
-        <h5 class="offcanvas-title" id="offcanvasNavMainLabel">My Docs</h5>
+        <h5 class="offcanvas-title" id="offcanvasNavMainLabel">WyNotes</h5>
         <button type="button" class="btn btn-link nav-link p-0 ms-auto" data-bs-dismiss="offcanvas" aria-label="Close">
           <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-x" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
             <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
@@ -623,8 +651,36 @@
 
   <li>
     <details open>
+      <summary>Portal</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/docs/portal/mosquitto/">Mosquitto</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Unicode</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/docs/unicode/arrows/">Arrows</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
       <summary>Python</summary>
       <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/docs/python/deps/">Deps</a>
+  </li>
 
   <li>
       <a href="/docs/python/python-snippets/">Python Snippets</a>
@@ -775,6 +831,8 @@
     <li><a href="#bash">Bash</a>
       <ul>
         <li><a href="#input-and-output-redirection">Input and Output Redirection</a></li>
+        <li><a href="#select-last-charachters-in-string">Select last charachters in string</a></li>
+        <li><a href="#remove-last-n-charachters-in-string">Remove last n charachters in string</a></li>
       </ul>
     </li>
   </ul>
@@ -847,6 +905,8 @@
     <li><a href="#bash">Bash</a>
       <ul>
         <li><a href="#input-and-output-redirection">Input and Output Redirection</a></li>
+        <li><a href="#select-last-charachters-in-string">Select last charachters in string</a></li>
+        <li><a href="#remove-last-n-charachters-in-string">Remove last n charachters in string</a></li>
       </ul>
     </li>
   </ul>
@@ -1677,6 +1737,37 @@
 </span></span><span class="line"><span class="cl">&lt;&gt; file     <span class="c1"># use file as stdin and stdout</span>
 </span></span><span class="line"><span class="cl"><span class="p">&amp;</span>&gt; file     <span class="c1"># redirect stdout and stderr</span>
 </span></span><span class="line"><span class="cl">2&gt; file     <span class="c1"># redirect stderr only</span></span></span></code></pre></div>
+  </figure>
+</div>
+<h3 id="select-last-charachters-in-string">Select last charachters in string<a href="#select-last-charachters-in-string" class="anchor" aria-hidden="true">#</a> </h3>
+<p>Extract the last charachters in a string</p>
+
+
+
+<div class="expressive-code">
+  <figure class="frame is-terminal not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nv">stringer</span><span class="o">=</span><span class="s2">&#34;tester&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s2">&#34;</span><span class="si">${</span><span class="nv">stringer</span><span class="p">: -1</span><span class="si">}</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># ⮑ r</span></span></span></code></pre></div>
+  </figure>
+</div>
+<h3 id="remove-last-n-charachters-in-string">Remove last n charachters in string<a href="#remove-last-n-charachters-in-string" class="anchor" aria-hidden="true">#</a> </h3>
+<p>Exclude the last charachters in a string</p>
+
+
+
+<div class="expressive-code">
+  <figure class="frame is-terminal not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nv">stringer</span><span class="o">=</span><span class="s2">&#34;someFile.md&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nv">short_str</span><span class="o">=</span><span class="si">${</span><span class="nv">stringer</span><span class="p">:</span><span class="k">:-</span><span class="nv">3</span><span class="si">}</span>
+</span></span><span class="line"><span class="cl"><span class="nb">echo</span> <span class="nv">$short_str</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># ⮑ someFile</span></span></span></code></pre></div>
   </figure>
 </div>
 
