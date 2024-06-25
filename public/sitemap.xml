@@ -107,6 +107,16 @@
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
+    <loc>http://localhost:1313/docs/linux/telegraf/</loc>
+    <lastmod>2024-06-24T19:54:06-07:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>http://localhost:1313/docs/linux/linux-configuration/</loc>
+    <lastmod>2024-06-24T15:29:47-07:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
     <loc>http://localhost:1313/docs/python/deps/</loc>
     <lastmod>2024-06-22T16:05:55-07:00</lastmod>
     <changefreq>monthly</changefreq>

@@ -14,10 +14,10 @@
 
 <link rel="stylesheet" href="/main.01b0834d5af51b24812d02878d09c8d7677d6b8af13164fb50215889dc19aaefd0e9366c13b45a9a57ae481dfd1836bce46b5ebfe461d56e3498b9443d8c5e27.css" integrity="sha512-AbCDTVr1GySBLQKHjQnI12d9a4rxMWT7UCFYidwZqu/Q6TZsE7RamleuSB39GDa85Gtev&#43;Rh1W40mLlEPYxeJw==" crossorigin="anonymous">
 
-<noscript><style>img.lazyload { display: none; }</style></noscript><base href="http://localhost:1313/docs/guides/example-guide/">
-  <link rel="canonical" href="http://localhost:1313/docs/guides/example-guide/">
-<title>Example Guide  |  WyNotes</title>
-<meta name="description" content="Guides lead a user through a specific task they want to accomplish, often with a sequence of steps.">
+<noscript><style>img.lazyload { display: none; }</style></noscript><base href="http://localhost:1313/docs/linux/linux-configuration/">
+  <link rel="canonical" href="http://localhost:1313/docs/linux/linux-configuration/">
+<title>Linux Configuration  |  WyNotes</title>
+<meta name="description" content="Congrats on setting up a new Doks project!">
 
     
     <link rel="icon" href="/favicon.ico" sizes="32x32">
@@ -43,16 +43,16 @@
         type="image/png"
       >
 <link rel="manifest" href="/manifest.webmanifest">
-<meta property="og:title" content="Example Guide">
-<meta property="og:description" content="Guides lead a user through a specific task they want to accomplish, often with a sequence of steps.">
+<meta property="og:title" content="Linux Configuration">
+<meta property="og:description" content="Networking Set Static IP A static IP is an IP address that doesn’t change. This allows a machine to set its own IP address, rather than be assigned a random one by the router.">
 <meta property="og:type" content="article">
-<meta property="og:url" content="http://localhost:1313/docs/guides/example-guide/"><meta property="og:image" content="http://localhost:1313/cover.png"><meta property="article:section" content="docs">
-<meta property="article:published_time" content="2023-09-07T16:04:48+02:00">
-<meta property="article:modified_time" content="2023-09-07T16:04:48+02:00"><meta property="og:site_name" content="My Docs">
+<meta property="og:url" content="http://localhost:1313/docs/linux/linux-configuration/"><meta property="og:image" content="http://localhost:1313/cover.png"><meta property="article:section" content="docs">
+<meta property="article:published_time" content="2024-06-24T15:29:47-07:00">
+<meta property="article:modified_time" content="2024-06-24T15:29:47-07:00"><meta property="og:site_name" content="My Docs">
 
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="http://localhost:1313/cover.png"><meta name="twitter:title" content="Example Guide">
-<meta name="twitter:description" content="Guides lead a user through a specific task they want to accomplish, often with a sequence of steps.">
+<meta name="twitter:image" content="http://localhost:1313/cover.png"><meta name="twitter:title" content="Linux Configuration">
+<meta name="twitter:description" content="Networking Set Static IP A static IP is an IP address that doesn’t change. This allows a machine to set its own IP address, rather than be assigned a random one by the router.">
 <meta name="twitter:site" content="@getdoks">
 
     
@@ -76,13 +76,13 @@
      },
      {
        "@type": "ListItem",
-       "item": "http://localhost:1313/docs/guides/",
-       "name": "Guides",
+       "item": "http://localhost:1313/docs/linux/",
+       "name": "Linux",
        "position": 3
      },
      {
        "@type": "ListItem",
-       "name": "Example Guide",
+       "name": "Linux Configuration",
        "position": 4
      }
    ]
@@ -222,7 +222,7 @@
   </li>
 
   <li>
-    <details open>
+    <details open open>
       <summary>Linux</summary>
       <ul class="list-unstyled list-nested">
 
@@ -230,8 +230,8 @@
       <a href="/docs/linux/telegraf/">Telegraf</a>
   </li>
 
-  <li>
-      <a href="/docs/linux/linux-configuration/">Linux Configuration</a>
+  <li class="active" >
+      <a aria-current="page" href="/docs/linux/linux-configuration/">Linux Configuration</a>
   </li>
 
   <li>
@@ -254,12 +254,12 @@
   </li>
 
   <li>
-    <details open open>
+    <details open>
       <summary>Guides</summary>
       <ul class="list-unstyled list-nested">
 
-  <li class="active" >
-      <a aria-current="page" href="/docs/guides/example-guide/">Example Guide</a>
+  <li>
+      <a href="/docs/guides/example-guide/">Example Guide</a>
   </li>
       </ul>
     </details>
@@ -610,7 +610,7 @@
   </li>
 
   <li>
-    <details open>
+    <details open open>
       <summary>Linux</summary>
       <ul class="list-unstyled list-nested">
 
@@ -618,8 +618,8 @@
       <a href="/docs/linux/telegraf/">Telegraf</a>
   </li>
 
-  <li>
-      <a href="/docs/linux/linux-configuration/">Linux Configuration</a>
+  <li class="active" >
+      <a aria-current="page" href="/docs/linux/linux-configuration/">Linux Configuration</a>
   </li>
 
   <li>
@@ -642,12 +642,12 @@
   </li>
 
   <li>
-    <details open open>
+    <details open>
       <summary>Guides</summary>
       <ul class="list-unstyled list-nested">
 
-  <li class="active" >
-      <a aria-current="page" href="/docs/guides/example-guide/">Example Guide</a>
+  <li>
+      <a href="/docs/guides/example-guide/">Example Guide</a>
   </li>
       </ul>
     </details>
@@ -792,7 +792,12 @@
   <h3>On this page</h3>
     <nav id="toc">
   <ul>
-    <li><a href="#further-reading">Further reading</a></li>
+    <li><a href="#set-static-ip">Set Static IP</a>
+      <ul>
+        <li><a href="#network-manager">Network Manager</a></li>
+        <li><a href="#interface-file">Interface File</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
 </div>
@@ -800,7 +805,7 @@
 		</nav>
 		<main class="docs-content col-lg-11 col-xl-9">
 		
-			<h1>Example Guide</h1>
+			<h1>Linux Configuration</h1>
 			
 			<nav class="toc-mobile d-xl-none" aria-label="Quaternary navigation">
 				<details>
@@ -808,18 +813,118 @@
     <div class="page-links">
       <nav id="TableOfContents">
   <ul>
-    <li><a href="#further-reading">Further reading</a></li>
+    <li><a href="#set-static-ip">Set Static IP</a>
+      <ul>
+        <li><a href="#network-manager">Network Manager</a></li>
+        <li><a href="#interface-file">Interface File</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
     </div>
   </details>
 
 			</nav>
-			<p>Guides lead a user through a specific task they want to accomplish, often with a sequence of steps. Writing a good guide requires thinking about what your users are trying to do.</p>
-<h2 id="further-reading">Further reading<a href="#further-reading" class="anchor" aria-hidden="true">#</a> </h2>
-<ul>
-<li>Read <a href="https://diataxis.fr/how-to-guides/">about how-to guides</a> in the Diátaxis framework</li>
-</ul>
+			<h1 id="networking">Networking</h1>
+<h2 id="set-static-ip">Set Static IP<a href="#set-static-ip" class="anchor" aria-hidden="true">#</a> </h2>
+<p>A static IP is an IP address that doesn’t change. This allows a machine to set its own IP address, rather than be assigned a random one by the router. This means it will always be available at the same IP address, like <code>192.168.1.1</code>. This is contrasted with DHCP, where the IP is assigned randomly by the router.</p>
+<h3 id="network-manager">Network Manager<a href="#network-manager" class="anchor" aria-hidden="true">#</a> </h3>
+<p>Network Manager is the more modern version of managing network configs like IP addresses. Network configurations are stored as YAML files and then applied using Network Manager.</p>
+<p>Network Manager needs to be installed from apt before using.</p>
+
+
+
+<div class="expressive-code">
+  <figure class="frame is-terminal has-title not-content">
+  <figcaption class="header">
+    <span class="title">Installing network manager</span>
+  </figcaption>
+  <div class="highlight" title="Installing network manager"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># Install Network Manager with apt</span>
+</span></span><span class="line"><span class="cl">sudo apt install network-manager -y</span></span></code></pre></div>
+  </figure>
+</div>
+<p>The YAML file defines the network configs like IP address, gateway, and DNS servers.</p>
+
+
+
+<div class="expressive-code">
+  <figure class="frame has-title not-content">
+  <figcaption class="header">
+    <span class="title">Network Manager YAML example</span>
+  </figcaption>
+  <div class="highlight" title="Network Manager YAML example"><pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="c"># scripts/network/01-static-ip.yaml</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">network</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="m">2</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">renderer</span><span class="p">:</span><span class="w"> </span><span class="l">NetworkManager</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">ethernets</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="nt">eth0</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  	</span><span class="nt">dhcp4</span><span class="p">:</span><span class="w"> </span><span class="kc">no</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  	</span><span class="nt">addresses</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    	</span>- <span class="m">192.168.1.42</span><span class="l">/24</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  	</span><span class="nt">gateway4</span><span class="p">:</span><span class="w"> </span><span class="m">192.168.1.1</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  	</span><span class="nt">nameservers</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    	</span><span class="nt">addresses</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      	</span>- <span class="m">8.8.8.8</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      	</span>- <span class="m">8.8.8.4</span></span></span></code></pre></div>
+  </figure>
+</div>
+<h3 id="interface-file">Interface File<a href="#interface-file" class="anchor" aria-hidden="true">#</a> </h3>
+<p>Updating the interfaces file is the &ldquo;old&rdquo; way of setting a static IP.</p>
+<div class="callout callout-note d-flex flex-row mt-4 mb-4 pt-4 pe-4 pb-2 ps-3">
+  <svg class="outline/info-circle svg-inline callout-icon me-2 mb-3"  xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M3 12a9 9 0 1018 0A9 9 0 003 12"/><path d="M12 9h.01"/><path d="M11 12h1v4h1"/></svg>
+  <div class="callout-content">
+    <div class="callout-title">
+        <p>File locations</p>
+
+      </div>
+    <div class="callout-body">
+      <p>IP addresses are set in <code>/etc/network/interfaces</code>. DNS servers are set in <code>/etc/resolv.conf</code>.</p>
+
+    </div>
+  </div>
+</div>
+
+
+
+
+<div class="expressive-code">
+  <figure class="frame is-terminal has-title not-content">
+  <figcaption class="header">
+    <span class="title">Dyanmic IP address in /etc/network/interfaces</span>
+  </figcaption>
+  <div class="highlight" title="Dyanmic IP address in /etc/network/interfaces"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">auto eth0
+</span></span><span class="line"><span class="cl">iface eth0 inet dhcp</span></span></code></pre></div>
+  </figure>
+</div>
+
+
+
+<div class="expressive-code">
+  <figure class="frame is-terminal has-title not-content">
+  <figcaption class="header">
+    <span class="title">Dyanmic IP address in /etc/network/interfaces</span>
+  </figcaption>
+  <div class="highlight" title="Dyanmic IP address in /etc/network/interfaces"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">auto eth0
+</span></span><span class="line"><span class="cl">iface eth0 inet static
+</span></span><span class="line"><span class="cl">  address 192.168.0.100
+</span></span><span class="line"><span class="cl">  netmask 255.255.255.0
+</span></span><span class="line"><span class="cl">  gateway 192.168.0.1
+</span></span><span class="line"><span class="cl">  dns-nameservers 8.8.8.8
+</span></span><span class="line"><span class="cl">  dns-nameservers 8.8.4.4</span></span></code></pre></div>
+  </figure>
+</div>
+
+
+
+<div class="expressive-code">
+  <figure class="frame is-terminal has-title not-content">
+  <figcaption class="header">
+    <span class="title">DNS nameservers in /etc/resolv.conf</span>
+  </figcaption>
+  <div class="highlight" title="DNS nameservers in /etc/resolv.conf"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">nameserver 208.67.222.222
+</span></span><span class="line"><span class="cl">nameserver 208.67.220.220</span></span></code></pre></div>
+  </figure>
+</div>
 
 			<div class="page-footer-meta d-flex flex-column flex-md-row justify-content-between">
 				</div>
@@ -837,7 +942,7 @@
 				</div>
 				<div class="d-flex flex-column">
 					<div class="text-body-secondary">Prev</div>
-					<a href="/docs/help/faq/" class="stretched-link text-reset text-decoration-none">FAQ</a>
+					<a href="/docs/linux/telegraf/" class="stretched-link text-reset text-decoration-none">Telegraf</a>
 				</div>
 			</div>
 		</div>
@@ -846,7 +951,7 @@
 			<div class="card-body d-flex justify-content-end">
 				<div class="d-flex flex-column">
 					<div class="text-body-secondary">Next</div>
-					<a href="/docs/reference/example-reference/" class="stretched-link text-reset text-decoration-none">Example Reference</a>
+					<a href="/docs/python/deps/" class="stretched-link text-reset text-decoration-none">Deps</a>
 				</div>
 				<div class="d-flex flex-column justify-content-center">
 					<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-arrow-right" width="20" height="20" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
