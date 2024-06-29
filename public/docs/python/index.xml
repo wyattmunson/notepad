@@ -1,27 +1,3 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Python on WyNotes</title>
-    <link>http://localhost:1313/docs/python/</link>
-    <description>Recent content in Python on WyNotes</description>
-    <generator>Hugo</generator>
-    <language>en</language>
-    <copyright>Copyright (c) 2020-2024 North Aerospace</copyright>
-    <lastBuildDate>Sat, 22 Jun 2024 16:05:55 -0700</lastBuildDate>
-    <atom:link href="http://localhost:1313/docs/python/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Deps</title>
-      <link>http://localhost:1313/docs/python/deps/</link>
-      <pubDate>Sat, 22 Jun 2024 16:05:55 -0700</pubDate>
-      <guid>http://localhost:1313/docs/python/deps/</guid>
-      <description>Install deps with pip # install deps pip install -r requirements.txt # updated deps pip install --upgrade -r requirements.txt&#xD;Using venv virtual environment # create virtual env python -m venv &amp;lt;environment-name&amp;gt; python -m venv venv # activate environment source &amp;lt;environment-name&amp;gt;/bin/activate source venv/bin/activate # install deps pip install -r requirements.</description>
-    </item>
-    <item>
-      <title>Python Snippets</title>
-      <link>http://localhost:1313/docs/python/python-snippets/</link>
-      <pubDate>Mon, 03 Jun 2024 22:35:44 -0700</pubDate>
-      <guid>http://localhost:1313/docs/python/python-snippets/</guid>
-      <description>Snippets of various python code.&#xA;Time Things of time.&#xA;Convert datetime to string Convert datetime to string - strftime() from datetime import datetime now = datetime.</description>
-    </item>
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Python on WyNotes</title><link>https://wyattmunson.github.io/notepad/docs/python/</link><description>Recent content in Python on WyNotes</description><generator>Hugo</generator><language>en</language><copyright>Copyright (c) 2020-2024 North Aerospace</copyright><lastBuildDate>Sat, 22 Jun 2024 16:05:55 -0700</lastBuildDate><atom:link href="https://wyattmunson.github.io/notepad/docs/python/index.xml" rel="self" type="application/rss+xml"/><item><title>Deps</title><link>https://wyattmunson.github.io/notepad/docs/python/deps/</link><pubDate>Sat, 22 Jun 2024 16:05:55 -0700</pubDate><guid>https://wyattmunson.github.io/notepad/docs/python/deps/</guid><description>Install deps with pip # install deps pip install -r requirements.txt # updated deps pip install --upgrade -r requirements.txtUsing venv virtual environment # create virtual env python -m venv &amp;lt;environment-name&amp;gt; python -m venv venv # activate environment source &amp;lt;environment-name&amp;gt;/bin/activate source venv/bin/activate # install deps pip install -r requirements.</description></item><item><title>Python Snippets</title><link>https://wyattmunson.github.io/notepad/docs/python/python-snippets/</link><pubDate>Mon, 03 Jun 2024 22:35:44 -0700</pubDate><guid>https://wyattmunson.github.io/notepad/docs/python/python-snippets/</guid><description>Snippets of various python code.
+Time Things of time.
+Convert datetime to string Convert datetime to string - strftime() from datetime import datetime now = datetime.</description></item></channel></rss>

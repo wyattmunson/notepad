@@ -1,34 +1,3 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Linux on WyNotes</title>
-    <link>http://localhost:1313/docs/linux/</link>
-    <description>Recent content in Linux on WyNotes</description>
-    <generator>Hugo</generator>
-    <language>en</language>
-    <copyright>Copyright (c) 2020-2024 North Aerospace</copyright>
-    <lastBuildDate>Mon, 24 Jun 2024 19:54:06 -0700</lastBuildDate>
-    <atom:link href="http://localhost:1313/docs/linux/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Telegraf</title>
-      <link>http://localhost:1313/docs/linux/telegraf/</link>
-      <pubDate>Mon, 24 Jun 2024 19:54:06 -0700</pubDate>
-      <guid>http://localhost:1313/docs/linux/telegraf/</guid>
-      <description>Use Telegraf as the agent to collect system logs and metrics.&#xA;Setup Telegraf Monitoring Currently Telegraf was setup in the IOTstack.</description>
-    </item>
-    <item>
-      <title>Linux Configuration</title>
-      <link>http://localhost:1313/docs/linux/linux-configuration/</link>
-      <pubDate>Mon, 24 Jun 2024 15:29:47 -0700</pubDate>
-      <guid>http://localhost:1313/docs/linux/linux-configuration/</guid>
-      <description>Networking Set Static IP A static IP is an IP address that doesn’t change. This allows a machine to set its own IP address, rather than be assigned a random one by the router.</description>
-    </item>
-    <item>
-      <title>File Structure</title>
-      <link>http://localhost:1313/docs/linux/file-structure/</link>
-      <pubDate>Wed, 04 Jan 2023 03:01:06 -0800</pubDate>
-      <guid>http://localhost:1313/docs/linux/file-structure/</guid>
-      <description>Stanard Linux File Structure /bin&#xA;Essential binaries for the system to run. Applications like Chrome would be stored in /usr/bin, while something like Bash would be stored in /bin.</description>
-    </item>
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Linux on WyNotes</title><link>https://wyattmunson.github.io/notepad/docs/linux/</link><description>Recent content in Linux on WyNotes</description><generator>Hugo</generator><language>en</language><copyright>Copyright (c) 2020-2024 North Aerospace</copyright><lastBuildDate>Mon, 24 Jun 2024 19:54:06 -0700</lastBuildDate><atom:link href="https://wyattmunson.github.io/notepad/docs/linux/index.xml" rel="self" type="application/rss+xml"/><item><title>Telegraf</title><link>https://wyattmunson.github.io/notepad/docs/linux/telegraf/</link><pubDate>Mon, 24 Jun 2024 19:54:06 -0700</pubDate><guid>https://wyattmunson.github.io/notepad/docs/linux/telegraf/</guid><description>Use Telegraf as the agent to collect system logs and metrics.
+Setup Telegraf Monitoring Currently Telegraf was setup in the IOTstack.</description></item><item><title>Linux Configuration</title><link>https://wyattmunson.github.io/notepad/docs/linux/linux-configuration/</link><pubDate>Mon, 24 Jun 2024 15:29:47 -0700</pubDate><guid>https://wyattmunson.github.io/notepad/docs/linux/linux-configuration/</guid><description>Networking Set Static IP A static IP is an IP address that doesn’t change. This allows a machine to set its own IP address, rather than be assigned a random one by the router.</description></item><item><title>File Structure</title><link>https://wyattmunson.github.io/notepad/docs/linux/file-structure/</link><pubDate>Wed, 04 Jan 2023 03:01:06 -0800</pubDate><guid>https://wyattmunson.github.io/notepad/docs/linux/file-structure/</guid><description>Stanard Linux File Structure /bin
+Essential binaries for the system to run. Applications like Chrome would be stored in /usr/bin, while something like Bash would be stored in /bin.</description></item></channel></rss>

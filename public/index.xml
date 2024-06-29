@@ -1,83 +1,8 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Welcome to Doks on WyNotes</title>
-    <link>http://localhost:1313/</link>
-    <description>Recent content in Welcome to Doks on WyNotes</description>
-    <generator>Hugo</generator>
-    <language>en</language>
-    <copyright>Copyright (c) 2020-2024 North Aerospace</copyright>
-    <lastBuildDate>Thu, 07 Sep 2023 16:27:22 +0200</lastBuildDate>
-    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Kubernetes Overview</title>
-      <link>http://localhost:1313/docs/kubernetes/kubernetes-overview/</link>
-      <pubDate>Mon, 13 Feb 2023 19:07:47 -0800</pubDate>
-      <guid>http://localhost:1313/docs/kubernetes/kubernetes-overview/</guid>
-      <description>Kubernetes Kubernetes is a container orchistration platform.&#xA;Contents Core concepts kubectl commands Kubectx &amp;amp; Kubens Secrets - external secrets Core Concepts Deployment Set things like:</description>
-    </item>
-    <item>
-      <title>Postgres Basics</title>
-      <link>http://localhost:1313/docs/postgres/postgres-basics/</link>
-      <pubDate>Wed, 04 Jan 2023 20:59:23 -0800</pubDate>
-      <guid>http://localhost:1313/docs/postgres/postgres-basics/</guid>
-      <description>Postgres is an open source relational database manager.&#xA;Postgres Convetions Postgres connection stting Case sentitive column names PSQL CLI Logging into psql Basic psql commands Using psql wtih schemas Postgres flavored SQL Creating tables Drop table Alter table and delete rows Limit and offset Enums Schemas Postgres data types Postgres Conventions Postgres connection string # basic example&#xD;postgres://USERNAME:PASSWORD@DATABASE_URL:5432/DATABSE_NAME&#xD;# AWS database&#xD;postgres://postgres@some-database.</description>
-    </item>
-    <item>
-      <title>Docker Overview</title>
-      <link>http://localhost:1313/docs/docker/docker-overview/</link>
-      <pubDate>Wed, 04 Jan 2023 00:17:04 -0800</pubDate>
-      <guid>http://localhost:1313/docs/docker/docker-overview/</guid>
-      <description>Docker is a OS virtualization software. Similar to virtual machines in their outcome, their differ in their function.&#xA;What&amp;rsquo;s it purpose The general idea is to promote interoperability.</description>
-    </item>
-    <item>
-      <title>Online Tools</title>
-      <link>http://localhost:1313/docs/web-dev/online-tools/</link>
-      <pubDate>Thu, 05 Jan 2023 12:49:10 -0800</pubDate>
-      <guid>http://localhost:1313/docs/web-dev/online-tools/</guid>
-      <description>Convert Data Convert CSV - Convert CSV to JSON, YAML, XML, SQL, ect. Link City Bootstrap - Bootstrap </description>
-    </item>
-    <item>
-      <title>Docker CLI Commands</title>
-      <link>http://localhost:1313/docs/docker/docker-cli-commands/</link>
-      <pubDate>Wed, 04 Jan 2023 00:19:53 -0800</pubDate>
-      <guid>http://localhost:1313/docs/docker/docker-cli-commands/</guid>
-      <description>The Docker CLI is used to communicate with the Docker Engine to build, run, and maintain images.&#xA;Basic Commands # View all docker images saved locally docker images # View all running containers docker ps&#xD;Build Docker Image # build a docker image docker build .</description>
-    </item>
-    <item>
-      <title>Python Snippets</title>
-      <link>http://localhost:1313/docs/python2/python-snippets/</link>
-      <pubDate>Wed, 04 Jan 2023 00:19:53 -0800</pubDate>
-      <guid>http://localhost:1313/docs/python2/python-snippets/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Example Post</title>
-      <link>http://localhost:1313/blog/example-post/</link>
-      <pubDate>Thu, 07 Sep 2023 16:27:22 +0200</pubDate>
-      <guid>http://localhost:1313/blog/example-post/</guid>
-      <description>You can use blog posts for announcing product updates and features.</description>
-    </item>
-    <item>
-      <title>How to Update</title>
-      <link>http://localhost:1313/docs/help/how-to-update/</link>
-      <pubDate>Thu, 12 Nov 2020 13:26:54 +0100</pubDate>
-      <guid>http://localhost:1313/docs/help/how-to-update/</guid>
-      <description>Check for outdated packages The npm outdated command will check the registry to see if any (or, specific) installed packages are currently outdated:</description>
-    </item>
-    <item>
-      <title>Troubleshooting</title>
-      <link>http://localhost:1313/docs/help/troubleshooting/</link>
-      <pubDate>Thu, 12 Nov 2020 15:22:20 +0100</pubDate>
-      <guid>http://localhost:1313/docs/help/troubleshooting/</guid>
-      <description>Problems updating npm packages Delete the ./node_modules folder, and run again:&#xA;npm install&#xD;Problems with cache Delete the temporary directories:</description>
-    </item>
-    <item>
-      <title>FAQ</title>
-      <link>http://localhost:1313/docs/help/faq/</link>
-      <pubDate>Tue, 06 Oct 2020 08:49:31 +0000</pubDate>
-      <guid>http://localhost:1313/docs/help/faq/</guid>
-      <description>Hyas? Doks is a Hyas theme build by the creator of Hyas.&#xA;Footer notice? Please keep it in place.&#xA;Keyboard shortcuts for search?</description>
-    </item>
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Welcome to Doks on WyNotes</title><link>https://wyattmunson.github.io/notepad/</link><description>Recent content in Welcome to Doks on WyNotes</description><generator>Hugo</generator><language>en</language><copyright>Copyright (c) 2020-2024 North Aerospace</copyright><lastBuildDate>Thu, 07 Sep 2023 16:27:22 +0200</lastBuildDate><atom:link href="https://wyattmunson.github.io/notepad/index.xml" rel="self" type="application/rss+xml"/><item><title>Kubernetes Overview</title><link>https://wyattmunson.github.io/notepad/docs/kubernetes/kubernetes-overview/</link><pubDate>Mon, 13 Feb 2023 19:07:47 -0800</pubDate><guid>https://wyattmunson.github.io/notepad/docs/kubernetes/kubernetes-overview/</guid><description>Kubernetes Kubernetes is a container orchistration platform.
+Contents Core concepts kubectl commands Kubectx &amp;amp; Kubens Secrets - external secrets Core Concepts Deployment Set things like:</description></item><item><title>Postgres Basics</title><link>https://wyattmunson.github.io/notepad/docs/postgres/postgres-basics/</link><pubDate>Wed, 04 Jan 2023 20:59:23 -0800</pubDate><guid>https://wyattmunson.github.io/notepad/docs/postgres/postgres-basics/</guid><description>Postgres is an open source relational database manager.
+Postgres Convetions Postgres connection stting Case sentitive column names PSQL CLI Logging into psql Basic psql commands Using psql wtih schemas Postgres flavored SQL Creating tables Drop table Alter table and delete rows Limit and offset Enums Schemas Postgres data types Postgres Conventions Postgres connection string # basic examplepostgres://USERNAME:PASSWORD@DATABASE_URL:5432/DATABSE_NAME# AWS databasepostgres://postgres@some-database.</description></item><item><title>Docker Overview</title><link>https://wyattmunson.github.io/notepad/docs/docker/docker-overview/</link><pubDate>Wed, 04 Jan 2023 00:17:04 -0800</pubDate><guid>https://wyattmunson.github.io/notepad/docs/docker/docker-overview/</guid><description>Docker is a OS virtualization software. Similar to virtual machines in their outcome, their differ in their function.
+What&amp;rsquo;s it purpose The general idea is to promote interoperability.</description></item><item><title>Online Tools</title><link>https://wyattmunson.github.io/notepad/docs/web-dev/online-tools/</link><pubDate>Thu, 05 Jan 2023 12:49:10 -0800</pubDate><guid>https://wyattmunson.github.io/notepad/docs/web-dev/online-tools/</guid><description>Convert Data Convert CSV - Convert CSV to JSON, YAML, XML, SQL, ect. Link City Bootstrap - Bootstrap</description></item><item><title>Docker CLI Commands</title><link>https://wyattmunson.github.io/notepad/docs/docker/docker-cli-commands/</link><pubDate>Wed, 04 Jan 2023 00:19:53 -0800</pubDate><guid>https://wyattmunson.github.io/notepad/docs/docker/docker-cli-commands/</guid><description>The Docker CLI is used to communicate with the Docker Engine to build, run, and maintain images.
+Basic Commands # View all docker images saved locally docker images # View all running containers docker psBuild Docker Image # build a docker image docker build .</description></item><item><title>Python Snippets</title><link>https://wyattmunson.github.io/notepad/docs/python2/python-snippets/</link><pubDate>Wed, 04 Jan 2023 00:19:53 -0800</pubDate><guid>https://wyattmunson.github.io/notepad/docs/python2/python-snippets/</guid><description/></item><item><title>Example Post</title><link>https://wyattmunson.github.io/notepad/blog/example-post/</link><pubDate>Thu, 07 Sep 2023 16:27:22 +0200</pubDate><guid>https://wyattmunson.github.io/notepad/blog/example-post/</guid><description>You can use blog posts for announcing product updates and features.</description></item><item><title>How to Update</title><link>https://wyattmunson.github.io/notepad/docs/help/how-to-update/</link><pubDate>Thu, 12 Nov 2020 13:26:54 +0100</pubDate><guid>https://wyattmunson.github.io/notepad/docs/help/how-to-update/</guid><description>Check for outdated packages The npm outdated command will check the registry to see if any (or, specific) installed packages are currently outdated:</description></item><item><title>Troubleshooting</title><link>https://wyattmunson.github.io/notepad/docs/help/troubleshooting/</link><pubDate>Thu, 12 Nov 2020 15:22:20 +0100</pubDate><guid>https://wyattmunson.github.io/notepad/docs/help/troubleshooting/</guid><description>Problems updating npm packages Delete the ./node_modules folder, and run again:
+npm installProblems with cache Delete the temporary directories:</description></item><item><title>FAQ</title><link>https://wyattmunson.github.io/notepad/docs/help/faq/</link><pubDate>Tue, 06 Oct 2020 08:49:31 +0000</pubDate><guid>https://wyattmunson.github.io/notepad/docs/help/faq/</guid><description>Hyas? Doks is a Hyas theme build by the creator of Hyas.
+Footer notice? Please keep it in place.
+Keyboard shortcuts for search?</description></item></channel></rss>

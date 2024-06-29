@@ -1,34 +1,5 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Docker on WyNotes</title>
-    <link>http://localhost:1313/docs/docker/</link>
-    <description>Recent content in Docker on WyNotes</description>
-    <generator>Hugo</generator>
-    <language>en</language>
-    <copyright>Copyright (c) 2020-2024 North Aerospace</copyright>
-    <lastBuildDate>Wed, 04 Jan 2023 00:27:10 -0800</lastBuildDate>
-    <atom:link href="http://localhost:1313/docs/docker/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Docker Overview</title>
-      <link>http://localhost:1313/docs/docker/docker-overview/</link>
-      <pubDate>Wed, 04 Jan 2023 00:17:04 -0800</pubDate>
-      <guid>http://localhost:1313/docs/docker/docker-overview/</guid>
-      <description>Docker is a OS virtualization software. Similar to virtual machines in their outcome, their differ in their function.&#xA;What&amp;rsquo;s it purpose The general idea is to promote interoperability.</description>
-    </item>
-    <item>
-      <title>Docker CLI Commands</title>
-      <link>http://localhost:1313/docs/docker/docker-cli-commands/</link>
-      <pubDate>Wed, 04 Jan 2023 00:19:53 -0800</pubDate>
-      <guid>http://localhost:1313/docs/docker/docker-cli-commands/</guid>
-      <description>The Docker CLI is used to communicate with the Docker Engine to build, run, and maintain images.&#xA;Basic Commands # View all docker images saved locally docker images # View all running containers docker ps&#xD;Build Docker Image # build a docker image docker build .</description>
-    </item>
-    <item>
-      <title>Creating Dockerfiles</title>
-      <link>http://localhost:1313/docs/docker/creating-dockerfiles/</link>
-      <pubDate>Wed, 04 Jan 2023 00:27:10 -0800</pubDate>
-      <guid>http://localhost:1313/docs/docker/creating-dockerfiles/</guid>
-      <description>Dockerfiles are the instruction set to create a Docker Image.&#xA;Dockerfile Basics Dockerfiles are named Dockerfile with no extenstions.&#xA;Dockerfiles are built with the docker run command.</description>
-    </item>
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Docker on WyNotes</title><link>https://wyattmunson.github.io/notepad/docs/docker/</link><description>Recent content in Docker on WyNotes</description><generator>Hugo</generator><language>en</language><copyright>Copyright (c) 2020-2024 North Aerospace</copyright><lastBuildDate>Wed, 04 Jan 2023 00:27:10 -0800</lastBuildDate><atom:link href="https://wyattmunson.github.io/notepad/docs/docker/index.xml" rel="self" type="application/rss+xml"/><item><title>Docker Overview</title><link>https://wyattmunson.github.io/notepad/docs/docker/docker-overview/</link><pubDate>Wed, 04 Jan 2023 00:17:04 -0800</pubDate><guid>https://wyattmunson.github.io/notepad/docs/docker/docker-overview/</guid><description>Docker is a OS virtualization software. Similar to virtual machines in their outcome, their differ in their function.
+What&amp;rsquo;s it purpose The general idea is to promote interoperability.</description></item><item><title>Docker CLI Commands</title><link>https://wyattmunson.github.io/notepad/docs/docker/docker-cli-commands/</link><pubDate>Wed, 04 Jan 2023 00:19:53 -0800</pubDate><guid>https://wyattmunson.github.io/notepad/docs/docker/docker-cli-commands/</guid><description>The Docker CLI is used to communicate with the Docker Engine to build, run, and maintain images.
+Basic Commands # View all docker images saved locally docker images # View all running containers docker psBuild Docker Image # build a docker image docker build .</description></item><item><title>Creating Dockerfiles</title><link>https://wyattmunson.github.io/notepad/docs/docker/creating-dockerfiles/</link><pubDate>Wed, 04 Jan 2023 00:27:10 -0800</pubDate><guid>https://wyattmunson.github.io/notepad/docs/docker/creating-dockerfiles/</guid><description>Dockerfiles are the instruction set to create a Docker Image.
+Dockerfile Basics Dockerfiles are named Dockerfile with no extenstions.
+Dockerfiles are built with the docker run command.</description></item></channel></rss>
