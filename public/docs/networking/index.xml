@@ -1,1 +1,34 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Networking on WyNotes</title><link>https://wyattmunson.github.io/notepad/docs/networking/</link><description>Recent content in Networking on WyNotes</description><generator>Hugo</generator><language>en</language><copyright>Copyright (c) 2020-2024 North Aerospace</copyright><lastBuildDate>Mon, 13 Feb 2023 20:15:31 -0800</lastBuildDate><atom:link href="https://wyattmunson.github.io/notepad/docs/networking/index.xml" rel="self" type="application/rss+xml"/><item><title>DNS</title><link>https://wyattmunson.github.io/notepad/docs/networking/dns/</link><pubDate>Mon, 13 Feb 2023 20:15:31 -0800</pubDate><guid>https://wyattmunson.github.io/notepad/docs/networking/dns/</guid><description>Domain Name System (DNS) is the phone book of the internet. It translates human friendly domain names, e.g., www.exmaple.com, to computer friendly addresses like 192.</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Networking on WyNotes</title>
+    <link>http://localhost:1313/docs/networking/</link>
+    <description>Recent content in Networking on WyNotes</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <copyright>Copyright (c) 2020-2024 North Aerospace</copyright>
+    <lastBuildDate>Sun, 30 Jun 2024 00:50:57 -0700</lastBuildDate>
+    <atom:link href="http://localhost:1313/docs/networking/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Networking Basics</title>
+      <link>http://localhost:1313/docs/networking/networking-basics/</link>
+      <pubDate>Sun, 30 Jun 2024 00:50:57 -0700</pubDate>
+      <guid>http://localhost:1313/docs/networking/networking-basics/</guid>
+      <description>IP Addresses IPv4 addresses are like 192.168.10.55 are decimal representations of binary form.&#xA;They are composed of four binary blocks. Each block is 8 bits (or 1 byte), which specifies a number from 0 to 255.</description>
+    </item>
+    <item>
+      <title>DNS</title>
+      <link>http://localhost:1313/docs/networking/dns/</link>
+      <pubDate>Mon, 13 Feb 2023 20:15:31 -0800</pubDate>
+      <guid>http://localhost:1313/docs/networking/dns/</guid>
+      <description>Domain Name System (DNS) is the phone book of the internet. It translates human friendly domain names, e.g., www.exmaple.com, to computer friendly addresses like 192.</description>
+    </item>
+    <item>
+      <title>Ports</title>
+      <link>http://localhost:1313/docs/networking/ports/</link>
+      <pubDate>Mon, 13 Feb 2023 20:15:25 -0800</pubDate>
+      <guid>http://localhost:1313/docs/networking/ports/</guid>
+      <description>A port is an endpoint of communication; it&amp;rsquo;s the docking point where data flows through. Ports are a logical contrcut, but are commonly used in the TCP and UDP protocols.</description>
+    </item>
+  </channel>
+</rss>

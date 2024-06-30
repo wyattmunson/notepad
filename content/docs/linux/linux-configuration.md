@@ -78,3 +78,127 @@ iface eth0 inet static
 nameserver 208.67.222.222
 nameserver 208.67.220.220
 ```
+
+```json
+{
+  "title": "SIDECAR METADATA",
+  "description": "Discover or synchrnoize...",
+  "active": 0,
+  "waiting": 0
+}
+```
+
+```json
+{
+  "storage": {
+    "used": 28.6,
+    "total": 45
+  },
+  "server": {
+    "status": "Online",
+    "version": "v1.106.4"
+  }
+}
+```
+
+# Users
+
+## Manage User Groups
+
+### Create a New Group
+
+Create user group
+
+```bash { title="Create new group" }
+sudo groupadd GROUP_NAME
+```
+
+### Assign User to Group
+
+Add user to group. User and group must already exist.
+
+```bash { title="Add existing user to group" }
+sudo adduser USER_NAME GROUP_NAME
+
+# alternate
+sudo useradd -G GROUP_NAME USER_NAME
+
+# alternate
+sudo usermod -a -G GROUP_NAME USER_NAME
+```
+
+Add user to multiple groups
+
+```bash { title="Add user to multiple groups" }
+sudo usermod -a -G GROUP_NAME_1,GROUP_NAME_2 USER_NAME
+```
+
+#### Create new user and assign to group
+
+Create a new user and add to existing group. Group must already exist.
+
+```bash { title="Create new user and assign to group" }
+sudo useradd -G GROUP_NAME USER_NAME
+
+# give new user a password
+sudo passwd USER_NAME
+```
+
+#### Change users primary group
+
+Change users primary group
+
+```bash { title="Change user's primary group" }
+sudo usermod -g GROUP_NAME USER_NAME
+```
+
+### Remove user from group
+
+Remove user from group
+
+```bash { title="Remove user from a group" }
+sudo gpasswd -d USER_NAME GROUP_NAME
+```
+
+### View Groups
+
+View all groups on the system with `sudo nano /etc/groups`.
+
+```bash { title="View all groups" }
+sudo nano /etc/groups
+```
+
+View the current user's groups with `groups`.
+
+```bash { title="View current user's groups" }
+groups
+```
+
+View a given user's groups with `groups USER_NAME`.
+
+```bash { title="View a given user's groups" }
+groups USER_NAME
+```
+
+View a given user's Id and group Ids with `id USER_NAME`.
+
+```bash { title="View a given user's Id and group Ids" }
+id USER_NAME
+```
+
+View all users and their group associations with `getent group`.
+
+```bash { title="View what users are members of which groups" }
+getent group
+```
+
+### Common Groups
+
+| Group     | Allows users to...                         |
+| --------- | ------------------------------------------ |
+| `sudo`    | Use the sudo command to elevate prilieges. |
+| `wheel`   | An older way to endow sudo privlieges..    |
+| `cdrom`   | Mount the optical drive                    |
+| `adm`     | Monitor linux system logs                  |
+| `lpadmin` | Configure printers                         |
+| `plugdev` | Access external storage devices            |

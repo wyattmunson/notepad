@@ -20,6 +20,11 @@ Use Telegraf as the agent to collect system logs and metrics.
 
 Currently Telegraf was setup in the IOTstack. This runs inside the docker compose network, and collects metrics about what’s happening in the network.
 
+- Create Influx DB
+- Install Telegraf
+- Write configuration file
+- Start and enable with systemctl
+
 ### Create Influxdb Databases
 
 Create a database in Influx db that Telegraf will post to. The database should be created before instantiating Telegraf or there’ll be nowhere to send the data to.
@@ -44,7 +49,16 @@ show field keys		# like column names and datatypes for each measurement
 
 Telegraf can be installed in a Docker container or as an apt package and managed through systemd.
 
+```bash { title="Install telegraf from InfluxData apt repo" }
+curl -s https://repos.influxdata.com/influxdata-archive.key > influxdata-archive.key
+echo '943666881a1b8d9b849b74caebf02d3465d6beb716510d86a39f6c8e8dac7515 influxdata-archive.key' | sha256sum -c && cat influxdata-archive.key | gpg --dearmor | sudo tee /etc/apt/trusted.gpg.d/influxdata-archive.gpg > /dev/null
+echo 'deb [signed-by=/etc/apt/trusted.gpg.d/influxdata-archive.gpg] https://repos.influxdata.com/debian stable main' | sudo tee /etc/apt/sources.list.d/influxdata.list
+sudo apt-get update && sudo apt-get install telegraf
+```
+
 ### Configure Telegraf
+
+#### Default Location
 
 {{< callout context="note" icon="outline/info-circle" >}}
 Telegraf config sits in `/etc/telegraf/telegraf.conf`
@@ -52,9 +66,17 @@ Telegraf config sits in `/etc/telegraf/telegraf.conf`
 
 The `/etc/telegraf/telegraf.conf` file drives what metrics Telegraf selects and any filters or conditions. Restart Telegraf when updating this file for changes to take effect.
 
+#### List of all Telegraf inputs
+
 List of Telegraf input plugins: [GitHub](https://github.com/influxdata/telegraf/tree/master/plugins/inputs)
 
 The full Telegraf reference can be found in `/etc/telegraf-reference.conf`. It is a full list of inputs and configurations for reference only. The file is read only and changes to it are overridden.
+
+**Generate default config file**:
+
+```bash
+telegraf config > telegraf.conf
+```
 
 {{< callout context="caution" icon="outline/info-circle" >}}
 The Telegraf systemd service needs to be restarted after `telegraf.conf` is updated.

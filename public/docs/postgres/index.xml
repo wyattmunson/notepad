@@ -1,2 +1,48 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Postgres on WyNotes</title><link>https://wyattmunson.github.io/notepad/docs/postgres/</link><description>Recent content in Postgres on WyNotes</description><generator>Hugo</generator><language>en</language><copyright>Copyright (c) 2020-2024 North Aerospace</copyright><lastBuildDate>Thu, 05 Jan 2023 23:14:01 -0800</lastBuildDate><atom:link href="https://wyattmunson.github.io/notepad/docs/postgres/index.xml" rel="self" type="application/rss+xml"/><item><title>Postgres Basics</title><link>https://wyattmunson.github.io/notepad/docs/postgres/postgres-basics/</link><pubDate>Wed, 04 Jan 2023 20:59:23 -0800</pubDate><guid>https://wyattmunson.github.io/notepad/docs/postgres/postgres-basics/</guid><description>Postgres is an open source relational database manager.
-Postgres Convetions Postgres connection stting Case sentitive column names PSQL CLI Logging into psql Basic psql commands Using psql wtih schemas Postgres flavored SQL Creating tables Drop table Alter table and delete rows Limit and offset Enums Schemas Postgres data types Postgres Conventions Postgres connection string # basic examplepostgres://USERNAME:PASSWORD@DATABASE_URL:5432/DATABSE_NAME# AWS databasepostgres://postgres@some-database.</description></item><item><title>PSQL Reference</title><link>https://wyattmunson.github.io/notepad/docs/postgres/psql-reference/</link><pubDate>Thu, 05 Jan 2023 23:14:01 -0800</pubDate><guid>https://wyattmunson.github.io/notepad/docs/postgres/psql-reference/</guid><description>Postgres flavored SQL Postgres implements the SQL language as expected for the most part. Postgres layers on additional datatypes and functions.</description></item><item><title>Postgres Dataypes</title><link>https://wyattmunson.github.io/notepad/docs/postgres/postgres-dataypes/</link><pubDate>Thu, 05 Jan 2023 10:56:23 -0800</pubDate><guid>https://wyattmunson.github.io/notepad/docs/postgres/postgres-dataypes/</guid><description>Postgres Data Types Type Code Desc. Boolean BOOLEAN or BOOL 0, true, t, yes, y evaluates to true. 1, false, f, no, n evaluates to false.</description></item><item><title>SQL Crash Course</title><link>https://wyattmunson.github.io/notepad/docs/postgres/sql-crash-course/</link><pubDate>Wed, 04 Jan 2023 21:06:00 -0800</pubDate><guid>https://wyattmunson.github.io/notepad/docs/postgres/sql-crash-course/</guid><description>SQL Structured Query Language (SQL) is a language for interacting with databases. It defines the syntax for querying data and mantaining the database using statements like SELECT FROM and ADD COLUMN.</description></item><item><title>PSQL CLI</title><link>https://wyattmunson.github.io/notepad/docs/postgres/psql-cli/</link><pubDate>Wed, 04 Jan 2023 21:01:31 -0800</pubDate><guid>https://wyattmunson.github.io/notepad/docs/postgres/psql-cli/</guid><description>psql is a CLI front end for postgres. Use it to view and maintain databases or run SQL commands directly.</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Postgres on WyNotes</title>
+    <link>http://localhost:1313/docs/postgres/</link>
+    <description>Recent content in Postgres on WyNotes</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <copyright>Copyright (c) 2020-2024 North Aerospace</copyright>
+    <lastBuildDate>Thu, 05 Jan 2023 23:14:01 -0800</lastBuildDate>
+    <atom:link href="http://localhost:1313/docs/postgres/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Postgres Basics</title>
+      <link>http://localhost:1313/docs/postgres/postgres-basics/</link>
+      <pubDate>Wed, 04 Jan 2023 20:59:23 -0800</pubDate>
+      <guid>http://localhost:1313/docs/postgres/postgres-basics/</guid>
+      <description>Postgres is an open source relational database manager.&#xA;Postgres Convetions Postgres connection stting Case sentitive column names PSQL CLI Logging into psql Basic psql commands Using psql wtih schemas Postgres flavored SQL Creating tables Drop table Alter table and delete rows Limit and offset Enums Schemas Postgres data types Postgres Conventions Postgres connection string # basic example&#xD;postgres://USERNAME:PASSWORD@DATABASE_URL:5432/DATABSE_NAME&#xD;# AWS database&#xD;postgres://postgres@some-database.</description>
+    </item>
+    <item>
+      <title>PSQL Reference</title>
+      <link>http://localhost:1313/docs/postgres/psql-reference/</link>
+      <pubDate>Thu, 05 Jan 2023 23:14:01 -0800</pubDate>
+      <guid>http://localhost:1313/docs/postgres/psql-reference/</guid>
+      <description>Postgres flavored SQL Postgres implements the SQL language as expected for the most part. Postgres layers on additional datatypes and functions.</description>
+    </item>
+    <item>
+      <title>Postgres Dataypes</title>
+      <link>http://localhost:1313/docs/postgres/postgres-dataypes/</link>
+      <pubDate>Thu, 05 Jan 2023 10:56:23 -0800</pubDate>
+      <guid>http://localhost:1313/docs/postgres/postgres-dataypes/</guid>
+      <description>Postgres Data Types Type Code Desc. Boolean BOOLEAN or BOOL 0, true, t, yes, y evaluates to true. 1, false, f, no, n evaluates to false.</description>
+    </item>
+    <item>
+      <title>SQL Crash Course</title>
+      <link>http://localhost:1313/docs/postgres/sql-crash-course/</link>
+      <pubDate>Wed, 04 Jan 2023 21:06:00 -0800</pubDate>
+      <guid>http://localhost:1313/docs/postgres/sql-crash-course/</guid>
+      <description>SQL Structured Query Language (SQL) is a language for interacting with databases. It defines the syntax for querying data and mantaining the database using statements like SELECT FROM and ADD COLUMN.</description>
+    </item>
+    <item>
+      <title>PSQL CLI</title>
+      <link>http://localhost:1313/docs/postgres/psql-cli/</link>
+      <pubDate>Wed, 04 Jan 2023 21:01:31 -0800</pubDate>
+      <guid>http://localhost:1313/docs/postgres/psql-cli/</guid>
+      <description>psql is a CLI front end for postgres. Use it to view and maintain databases or run SQL commands directly.</description>
+    </item>
+  </channel>
+</rss>
