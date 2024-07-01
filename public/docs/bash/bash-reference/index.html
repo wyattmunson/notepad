@@ -815,14 +815,16 @@
       <ul>
         <li><a href="#symobilc-method">Symobilc Method</a></li>
         <li><a href="#numeric-method">Numeric Method</a></li>
+        <li><a href="#change-permissions-for-multiple-files">Change permissions for multiple files</a></li>
+        <li><a href="#change-permissions-in-subdirectories">Change permissions in subdirectories</a></li>
       </ul>
     </li>
     <li><a href="#cp---copy"><code>cp</code> - CoPy</a>
       <ul>
         <li><a href="#copy-a-file">Copy a file</a></li>
-        <li><a href="#copy-files-to-a-directory">Copy files to a directory</a></li>
+        <li><a href="#copy-multiiple-files-to-a-directory">Copy multiiple files to a directory</a></li>
         <li><a href="#copy-directories">Copy directories</a></li>
-        <li><a href="#copy-and-preserve-timestamp">Copy and preserve timestamp</a></li>
+        <li><a href="#other-copy-flags">Other copy flags</a></li>
       </ul>
     </li>
     <li><a href="#curl---client-url"><code>curl</code> - Client URL</a>
@@ -863,6 +865,11 @@
     </li>
     <li><a href="#pwd---print-working-directory"><code>pwd</code> - Print Working Directory</a></li>
     <li><a href="#rm---remove"><code>rm</code> - ReMove</a></li>
+    <li><a href="#rsync---rsync"><code>rsync</code> - Rsync</a>
+      <ul>
+        <li><a href="#sync-files-locally">Sync files locally</a></li>
+      </ul>
+    </li>
     <li><a href="#scp---secure-copy"><code>scp</code> - Secure CoPy</a></li>
     <li><a href="#sed---stream-editor"><code>sed</code> - Stream EDitor</a></li>
     <li><a href="#ssh---openssh-client"><code>ssh</code> - openSSH client</a></li>
@@ -914,14 +921,16 @@
       <ul>
         <li><a href="#symobilc-method">Symobilc Method</a></li>
         <li><a href="#numeric-method">Numeric Method</a></li>
+        <li><a href="#change-permissions-for-multiple-files">Change permissions for multiple files</a></li>
+        <li><a href="#change-permissions-in-subdirectories">Change permissions in subdirectories</a></li>
       </ul>
     </li>
     <li><a href="#cp---copy"><code>cp</code> - CoPy</a>
       <ul>
         <li><a href="#copy-a-file">Copy a file</a></li>
-        <li><a href="#copy-files-to-a-directory">Copy files to a directory</a></li>
+        <li><a href="#copy-multiiple-files-to-a-directory">Copy multiiple files to a directory</a></li>
         <li><a href="#copy-directories">Copy directories</a></li>
-        <li><a href="#copy-and-preserve-timestamp">Copy and preserve timestamp</a></li>
+        <li><a href="#other-copy-flags">Other copy flags</a></li>
       </ul>
     </li>
     <li><a href="#curl---client-url"><code>curl</code> - Client URL</a>
@@ -962,6 +971,11 @@
     </li>
     <li><a href="#pwd---print-working-directory"><code>pwd</code> - Print Working Directory</a></li>
     <li><a href="#rm---remove"><code>rm</code> - ReMove</a></li>
+    <li><a href="#rsync---rsync"><code>rsync</code> - Rsync</a>
+      <ul>
+        <li><a href="#sync-files-locally">Sync files locally</a></li>
+      </ul>
+    </li>
     <li><a href="#scp---secure-copy"><code>scp</code> - Secure CoPy</a></li>
     <li><a href="#sed---stream-editor"><code>sed</code> - Stream EDitor</a></li>
     <li><a href="#ssh---openssh-client"><code>ssh</code> - openSSH client</a></li>
@@ -1233,21 +1247,71 @@
 </div>
 <hr>
 <h2 id="chmod---change-mode"><code>chmod</code> - CHange MODe<a href="#chmod---change-mode" class="anchor" aria-hidden="true">#</a> </h2>
+<div class="callout callout-tip d-flex flex-row mt-4 mb-4 pt-4 pe-4 pb-2 ps-3">
+  <svg class="outline/rocket svg-inline callout-icon me-2 mb-3"  xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 13a8 8 0 017 7 6 6 0 003-5 9 9 0 006-8 3 3 0 00-3-3 9 9 0 00-8 6 6 6 0 00-5 3"/><path d="M7 14a6 6 0 00-3 6 6 6 0 006-3"/><path d="M15 9m-1 0a1 1 0 102 0 1 1 0 10-2 0"/></svg>
+  <div class="callout-content">
+    <div class="callout-title">
+        <p>chmod</p>
+
+      </div>
+    <div class="callout-body">
+      <p><code>chmod</code> changes file ownership.</p>
+
+    </div>
+  </div>
+</div>
+
 <p>Changes file permissions: who can read, write, and execute the file.</p>
 
 
 
 <div class="expressive-code">
-  <figure class="frame is-terminal not-content">
+  <figure class="frame is-terminal has-title not-content">
   <figcaption class="header">
-    <span class="title"></span>
+    <span class="title">Basic chmod usage example</span>
   </figcaption>
-  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">chmod +x FILE_NAME
+  <div class="highlight" title="Basic chmod usage example"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">chmod +x FILE_NAME
 </span></span><span class="line"><span class="cl">chmod <span class="m">744</span> FILE_NAME</span></span></code></pre></div>
   </figure>
 </div>
 <p>The file permissions can be specified with either the symbolic or numeric method.</p>
+<p><strong>File Permissions</strong></p>
+<div class="callout callout-caution d-flex flex-row mt-4 mb-4 pt-4 pe-4 pb-2 ps-3">
+  <svg class="outline/school svg-inline callout-icon me-2 mb-3"  xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M22 9 12 5 2 9l10 4 10-4v6"/><path d="M6 10.6V16a6 3 0 0012 0v-5.4"/></svg>
+  <div class="callout-content">
+    <div class="callout-title">
+        <p>Understand file permissions</p>
+
+      </div>
+    <div class="callout-body">
+      <p>Each file has three personas that can access the file: the file owner (or creator), the group, and all other users. Each persona then has different levels of permissions for that file: read, write, execute, or some combination.</p>
+
+    </div>
+  </div>
+</div>
+
+<p>When using chmod you are specifying two things:</p>
+<ol>
+<li><strong>The persona</strong>: file owner, file group, or all users</li>
+<li><strong>The permissions</strong>: read, write, execute, or some combination</li>
+</ol>
+<p>A single command can specify a single persona or multiple personas. Each persona can (and usually does) have different levels of permissions.</p>
 <h3 id="symobilc-method">Symobilc Method<a href="#symobilc-method" class="anchor" aria-hidden="true">#</a> </h3>
+<div class="callout callout-note d-flex flex-row mt-4 mb-4 pt-4 pe-4 pb-2 ps-3">
+  <svg class="outline/rocket svg-inline callout-icon me-2 mb-3"  xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 13a8 8 0 017 7 6 6 0 003-5 9 9 0 006-8 3 3 0 00-3-3 9 9 0 00-8 6 6 6 0 00-5 3"/><path d="M7 14a6 6 0 00-3 6 6 6 0 006-3"/><path d="M15 9m-1 0a1 1 0 102 0 1 1 0 10-2 0"/></svg>
+  <div class="callout-content">
+    <div class="callout-title">
+        <p>chmod</p>
+
+      </div>
+    <div class="callout-body">
+      <p>The symolic method users letters to refer to groups and permissions, e.g., <br>
+<code>chmod +x FILE_NAME</code></p>
+
+    </div>
+  </div>
+</div>
+
 <p>Symbolic method uses letters to refer to the groups and permissions, e.g., <code>g+x</code>.</p>
 <p>Groups:</p>
 <ul>
@@ -1273,11 +1337,11 @@
 
 
 <div class="expressive-code">
-  <figure class="frame is-terminal not-content">
+  <figure class="frame is-terminal has-title not-content">
   <figcaption class="header">
-    <span class="title"></span>
+    <span class="title">Change permissions with chmod symbolic method</span>
   </figcaption>
-  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># give file owner execute permissions</span>
+  <div class="highlight" title="Change permissions with chmod symbolic method"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># give file owner execute permissions</span>
 </span></span><span class="line"><span class="cl">chmod <span class="nv">u</span><span class="o">=</span>x FILE_NAME
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1"># remove group permissions to write to file</span>
@@ -1288,9 +1352,21 @@
   </figure>
 </div>
 <h3 id="numeric-method">Numeric Method<a href="#numeric-method" class="anchor" aria-hidden="true">#</a> </h3>
-<blockquote>
-<p>The numeric method uses numbers to identify permissions and their position to identify the linux user, e.g., <code>744</code>.</p>
-</blockquote>
+<div class="callout callout-note d-flex flex-row mt-4 mb-4 pt-4 pe-4 pb-2 ps-3">
+  <svg class="outline/rocket svg-inline callout-icon me-2 mb-3"  xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 13a8 8 0 017 7 6 6 0 003-5 9 9 0 006-8 3 3 0 00-3-3 9 9 0 00-8 6 6 6 0 00-5 3"/><path d="M7 14a6 6 0 00-3 6 6 6 0 006-3"/><path d="M15 9m-1 0a1 1 0 102 0 1 1 0 10-2 0"/></svg>
+  <div class="callout-content">
+    <div class="callout-title">
+        <p>Numeric Method</p>
+
+      </div>
+    <div class="callout-body">
+      <p>The numeric method uses numbers to identify permissions and their position to identify the linux user, e.g., <code>chmod 744 FILE_NAME</code>.</p>
+
+    </div>
+  </div>
+</div>
+
+<p>In the numeric method, each persona is assigned a single digit that represents their permissions: read, write, execute, or some combination thereof.</p>
 <ul>
 <li><code>r</code> - read - 4</li>
 <li><code>w</code> - write - 2</li>
@@ -1311,7 +1387,7 @@ Read (4) + Execute (1)             =&gt; 5
 Read (4)                           =&gt; 4</code></pre>
   </figure>
 </div>
-<p>Permissions given in a three digit code. The permission type(s) like read or execute are denoted by the value. The position of each digit refers to the three linux user group.</p>
+<p>Permissions for all groups are given in a three digit code. The position of each digit refers to the three linux user group. The order is file owner + file group + all users.</p>
 
 
 
@@ -1320,7 +1396,10 @@ Read (4)                           =&gt; 4</code></pre>
   <figcaption class="header">
     <span class="title"></span>
   </figcaption>
-  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">chmod <span class="m">123</span> FILE_NAME
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># numeric group order syntax</span>
+</span></span><span class="line"><span class="cl">chmod <span class="o">[</span>FILE_OWNER<span class="o">][</span>FILE_GROUP<span class="o">][</span>ALL_USERS<span class="o">]</span> FILE_NAME
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">chmod <span class="m">755</span> FILE_NAME
 </span></span><span class="line"><span class="cl">      ^^^
 </span></span><span class="line"><span class="cl">      <span class="o">||</span><span class="p">|</span>_  all other users <span class="o">(</span>o<span class="o">)</span>
 </span></span><span class="line"><span class="cl">      <span class="o">||</span>__  group <span class="o">(</span>g<span class="o">)</span>
@@ -1332,96 +1411,220 @@ Read (4)                           =&gt; 4</code></pre>
 
 
 <div class="expressive-code">
-  <figure class="frame is-terminal not-content">
+  <figure class="frame is-terminal has-title not-content">
   <figcaption class="header">
-    <span class="title"></span>
+    <span class="title">Example use of numeric method</span>
   </figcaption>
-  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># give file owner - read, write, execute; group - read, write; all other users - read</span>
+  <div class="highlight" title="Example use of numeric method"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># give file owner - read, write, execute; group - read, write; all other users - read</span>
 </span></span><span class="line"><span class="cl">chmod <span class="m">764</span> FILE_NAME
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1"># give all permissions to all groups</span>
 </span></span><span class="line"><span class="cl">chmod <span class="m">777</span> FILE_NAME</span></span></code></pre></div>
   </figure>
 </div>
-<hr>
-<h2 id="cp---copy"><code>cp</code> - CoPy<a href="#cp---copy" class="anchor" aria-hidden="true">#</a> </h2>
+<h3 id="change-permissions-for-multiple-files">Change permissions for multiple files<a href="#change-permissions-for-multiple-files" class="anchor" aria-hidden="true">#</a> </h3>
+<p>Use wildcards (<code>*</code>) to specify multiple files in a single command.</p>
 
 
 
 <div class="expressive-code">
-  <figure class="frame is-terminal not-content">
+  <figure class="frame is-terminal has-title not-content">
   <figcaption class="header">
-    <span class="title"></span>
+    <span class="title">Use wildcard with chmod to target multiple files</span>
   </figcaption>
-  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># syntax</span>
-</span></span><span class="line"><span class="cl">cp <span class="o">[</span>OPTIONS<span class="o">]</span> <span class="nb">source</span> destination
-</span></span><span class="line"><span class="cl">cp <span class="o">[</span>OPTIONS<span class="o">]</span> <span class="nb">source</span> directory
+  <div class="highlight" title="Use wildcard with chmod to target multiple files"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># give file owner execute permissions for all text files in current dir</span>
+</span></span><span class="line"><span class="cl">chmod <span class="nv">u</span><span class="o">=</span>x *.txt</span></span></code></pre></div>
+  </figure>
+</div>
+<h3 id="change-permissions-in-subdirectories">Change permissions in subdirectories<a href="#change-permissions-in-subdirectories" class="anchor" aria-hidden="true">#</a> </h3>
+<p>Use the recursive (<code>-R</code>) flag to also include subdirectories in the <code>chmod</code> command. This will also target all file as well as the target directory&rsquo;s permissions.</p>
+
+
+
+<div class="expressive-code">
+  <figure class="frame is-terminal has-title not-content">
+  <figcaption class="header">
+    <span class="title">Change permissions for all subdirectories and files</span>
+  </figcaption>
+  <div class="highlight" title="Change permissions for all subdirectories and files"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># give full permissions to all users</span>
+</span></span><span class="line"><span class="cl">chmod -R <span class="m">777</span> DIR_NAME</span></span></code></pre></div>
+  </figure>
+</div>
+
+
+
+<div class="expressive-code">
+  <figure class="frame is-terminal has-title not-content">
+  <figcaption class="header">
+    <span class="title">Use wildcard and target subdirectories</span>
+  </figcaption>
+  <div class="highlight" title="Use wildcard and target subdirectories"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># give file owner execute permissions for all text files</span>
+</span></span><span class="line"><span class="cl">chmod -R <span class="nv">u</span><span class="o">=</span>x *.txt</span></span></code></pre></div>
+  </figure>
+</div>
+<hr>
+<h2 id="cp---copy"><code>cp</code> - CoPy<a href="#cp---copy" class="anchor" aria-hidden="true">#</a> </h2>
+<div class="callout callout-tip d-flex flex-row mt-4 mb-4 pt-4 pe-4 pb-2 ps-3">
+  <svg class="outline/terminal-2 svg-inline callout-icon me-2 mb-3"  xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M8 9l3 3-3 3"/><path d="M13 15h3"/><path d="M3 4m0 2a2 2 0 012-2h14a2 2 0 012 2v12a2 2 0 01-2 2H5a2 2 0 01-2-2z"/></svg>
+  <div class="callout-content">
+    <div class="callout-title">
+        <p>Command: Copy</p>
+
+      </div>
+    <div class="callout-body">
+      <p>The <code>cp</code> command copies a file or directory from a <code>source</code> location to a new or existing <code>target</code> location.</p>
+
+    </div>
+  </div>
+</div>
+
+
+
+
+<div class="expressive-code">
+  <figure class="frame is-terminal has-title not-content">
+  <figcaption class="header">
+    <span class="title">Copy quick reference</span>
+  </figcaption>
+  <div class="highlight" title="Copy quick reference"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># syntax</span>
+</span></span><span class="line"><span class="cl">cp <span class="o">[</span>OPTIONS<span class="o">]</span> &lt;sourceFile&gt; &lt;destinationFile&gt;
+</span></span><span class="line"><span class="cl">cp <span class="o">[</span>OPTIONS<span class="o">]</span> SOURCE_DIRECTORY DESTINATION_DIRECTORY
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">cp fileName ../otherDirectory
-</span></span><span class="line"><span class="cl">cp someDirectory/* anotherDirectory/</span></span></code></pre></div>
+</span></span><span class="line"><span class="cl"><span class="c1"># basic usage</span>
+</span></span><span class="line"><span class="cl">cp sourceFile targetFile
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># copy a dir and its contents to a new dir</span>
+</span></span><span class="line"><span class="cl">cp -R directory1 directory2
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># copy file and add to an existing target dir</span>
+</span></span><span class="line"><span class="cl">cp fileName ../targetDirectory
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># copy all files within source directory to an existing target dir</span>
+</span></span><span class="line"><span class="cl">cp -R sourceDirectory/* targetDirectory/</span></span></code></pre></div>
   </figure>
 </div>
 <h3 id="copy-a-file">Copy a file<a href="#copy-a-file" class="anchor" aria-hidden="true">#</a> </h3>
 <p>Copies content of <code>file1</code> to <code>file2</code>. Creates file2 if it doesn&rsquo;t exist, overwrites it if it does.</p>
+<h4 id="copy-file-to-directory">Copy file to directory<a href="#copy-file-to-directory" class="anchor" aria-hidden="true">#</a> </h4>
+<p>A file can be copied to an existing directory. The file will be added to the target directory without affecting the other files in the target. If the source file exists in the target, it will be overwritten.</p>
 
 
 
 <div class="expressive-code">
-  <figure class="frame is-terminal not-content">
+  <figure class="frame is-terminal has-title not-content">
   <figcaption class="header">
-    <span class="title"></span>
+    <span class="title">Copy a file to an existing directory</span>
   </figcaption>
-  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">cp file1 file2</span></span></code></pre></div>
+  <div class="highlight" title="Copy a file to an existing directory"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">cp file1 dir1</span></span></code></pre></div>
   </figure>
 </div>
-<h3 id="copy-files-to-a-directory">Copy files to a directory<a href="#copy-files-to-a-directory" class="anchor" aria-hidden="true">#</a> </h3>
+<h3 id="copy-multiiple-files-to-a-directory">Copy multiiple files to a directory<a href="#copy-multiiple-files-to-a-directory" class="anchor" aria-hidden="true">#</a> </h3>
 <p>Overwrites contents of directory if it exits, creates one if it does not. Can supply 1..n files.</p>
 
 
 
 <div class="expressive-code">
-  <figure class="frame not-content">
+  <figure class="frame is-terminal has-title not-content">
   <figcaption class="header">
-    <span class="title"></span>
+    <span class="title">Copy multiple files to a target directory</span>
   </figcaption>
-  <pre tabindex="0"><code>cp file1 file2 file3 targetDirectory</code></pre>
+  <div class="highlight" title="Copy multiple files to a target directory"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">cp file1 file2 file3 targetDirectory</span></span></code></pre></div>
   </figure>
 </div>
 <h3 id="copy-directories">Copy directories<a href="#copy-directories" class="anchor" aria-hidden="true">#</a> </h3>
-<p>Copies entire contents of source directory to target directory. Creates or overwrites contents in target. Usually needs to be run recursively with the <code>-r</code> option.</p>
+<p>Copies entire contents of source directory to target directory.</p>
+<p>The behavior depends on if the target directory exists:</p>
+<ul>
+<li>If the target directory does not exist, it is created.</li>
+<li>If the target directory does exist, it is copied as a subdirectory into the target directory with the name of source directory</li>
+</ul>
 
 
 
 <div class="expressive-code">
-  <figure class="frame is-terminal not-content">
+  <figure class="frame is-terminal has-title not-content">
   <figcaption class="header">
-    <span class="title"></span>
+    <span class="title">Copy a directory</span>
   </figcaption>
-  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">cp -R sourceDirectory targetDirectory</span></span></code></pre></div>
+  <div class="highlight" title="Copy a directory"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">cp -R sourceDirectory targetDirectory</span></span></code></pre></div>
   </figure>
 </div>
-<h3 id="copy-and-preserve-timestamp">Copy and preserve timestamp<a href="#copy-and-preserve-timestamp" class="anchor" aria-hidden="true">#</a> </h3>
+<div class="callout callout-caution d-flex flex-row mt-4 mb-4 pt-4 pe-4 pb-2 ps-3">
+  <svg class="outline/alert-triangle svg-inline callout-icon me-2 mb-3"  xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 9v4"/><path d="M10.363 3.591 2.257 17.125a1.914 1.914.0 001.636 2.871h16.214a1.914 1.914.0 001.636-2.87L13.637 3.59a1.914 1.914.0 00-3.274.0z"/><path d="M12 16h.01"/></svg>
+  <div class="callout-content">
+    
+    <div class="callout-body">
+      <p>If the target directory exists, the source directory becomes a subdirectory in the target directory.</p>
+
+    </div>
+  </div>
+</div>
+
+<h3 id="other-copy-flags">Other copy flags<a href="#other-copy-flags" class="anchor" aria-hidden="true">#</a> </h3>
+<h4 id="wildcards">Wildcards<a href="#wildcards" class="anchor" aria-hidden="true">#</a> </h4>
+<p>Use wildcards to target multiple source files to copy.</p>
 
 
 
 <div class="expressive-code">
-  <figure class="frame is-terminal not-content">
+  <figure class="frame is-terminal has-title not-content">
   <figcaption class="header">
-    <span class="title"></span>
+    <span class="title">Use wildcards</span>
   </figcaption>
-  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">cp -p file1 file2</span></span></code></pre></div>
+  <div class="highlight" title="Use wildcards"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">cp *.txt targetDirectory</span></span></code></pre></div>
   </figure>
 </div>
-<p>Other <code>cp</code> commands</p>
+<h4 id="force-copying">Force copying<a href="#force-copying" class="anchor" aria-hidden="true">#</a> </h4>
+<p>Force copying, even in cases when user lacks write permissions, delete destination file if necessary.</p>
 
 
 
 <div class="expressive-code">
-  <figure class="frame is-terminal not-content">
+  <figure class="frame is-terminal has-title not-content">
   <figcaption class="header">
-    <span class="title"></span>
+    <span class="title">Force copy a file</span>
   </figcaption>
-  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ cp -i s.txt f.txt <span class="c1"># interactive - promt before overwriting</span></span></span></code></pre></div>
+  <div class="highlight" title="Force copy a file"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">cp -f file1 file2</span></span></code></pre></div>
+  </figure>
+</div>
+<h4 id="create-backup">Create backup<a href="#create-backup" class="anchor" aria-hidden="true">#</a> </h4>
+<p>Create a backup of the target file in the same folder with a different name and format.</p>
+
+
+
+<div class="expressive-code">
+  <figure class="frame is-terminal has-title not-content">
+  <figcaption class="header">
+    <span class="title">Create a backup when copying</span>
+  </figcaption>
+  <div class="highlight" title="Create a backup when copying"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">cp -b file1 file2</span></span></code></pre></div>
+  </figure>
+</div>
+<h4 id="preserve-file-charachteristics">Preserve file charachteristics<a href="#preserve-file-charachteristics" class="anchor" aria-hidden="true">#</a> </h4>
+<p>Preserve file charachteristics like modification time, access time, ownership, and permissions.</p>
+
+
+
+<div class="expressive-code">
+  <figure class="frame is-terminal has-title not-content">
+  <figcaption class="header">
+    <span class="title">Preserve charachteristics</span>
+  </figcaption>
+  <div class="highlight" title="Preserve charachteristics"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># preserve charachteristics</span>
+</span></span><span class="line"><span class="cl">cp -p file1 file2</span></span></code></pre></div>
+  </figure>
+</div>
+<h4 id="interactive-mode">Interactive mode<a href="#interactive-mode" class="anchor" aria-hidden="true">#</a> </h4>
+
+
+
+<div class="expressive-code">
+  <figure class="frame is-terminal has-title not-content">
+  <figcaption class="header">
+    <span class="title">Interactive mode to prompt before overwriting</span>
+  </figcaption>
+  <div class="highlight" title="Interactive mode to prompt before overwriting"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># interactive - promt before overwriting</span>
+</span></span><span class="line"><span class="cl">$ cp -i s.txt f.txt</span></span></code></pre></div>
   </figure>
 </div>
 <hr>
@@ -1664,6 +1867,20 @@ Read (4)                           =&gt; 4</code></pre>
 </ul>
 <hr>
 <h2 id="export---export"><code>export</code> - EXPORT<a href="#export---export" class="anchor" aria-hidden="true">#</a> </h2>
+<div class="callout callout-tip d-flex flex-row mt-4 mb-4 pt-4 pe-4 pb-2 ps-3">
+  <svg class="outline/terminal-2 svg-inline callout-icon me-2 mb-3"  xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M8 9l3 3-3 3"/><path d="M13 15h3"/><path d="M3 4m0 2a2 2 0 012-2h14a2 2 0 012 2v12a2 2 0 01-2 2H5a2 2 0 01-2-2z"/></svg>
+  <div class="callout-content">
+    <div class="callout-title">
+        <p>export</p>
+
+      </div>
+    <div class="callout-body">
+      <p>The <code>export</code> command makes variables and functions available to child shells and processes.</p>
+
+    </div>
+  </div>
+</div>
+
 <p>Mark variables and functions to be passed to child shells and processes.</p>
 <p>Export a variable:</p>
 <blockquote>
@@ -1695,6 +1912,7 @@ Read (4)                           =&gt; 4</code></pre>
 </span></span><span class="line"><span class="cl"><span class="nb">echo</span> <span class="nv">$IMAGE_NAME_AND_TAG</span> &gt; .stage-image-name-and-tag</span></span></code></pre></div>
   </figure>
 </div>
+<p>When sourcing a file, the chile process inherits all the variables of the parent process. If the child process sets variables with <code>export</code>, these variables are now available in the parent process.</p>
 <hr>
 <h2 id="file-command"><code>file</code> command<a href="#file-command" class="anchor" aria-hidden="true">#</a> </h2>
 <p>Indicates file type.</p>
@@ -2119,6 +2337,85 @@ Read (4)                           =&gt; 4</code></pre>
   </figure>
 </div>
 <hr>
+<h2 id="rsync---rsync"><code>rsync</code> - Rsync<a href="#rsync---rsync" class="anchor" aria-hidden="true">#</a> </h2>
+<div class="callout callout-tip d-flex flex-row mt-4 mb-4 pt-4 pe-4 pb-2 ps-3">
+  <svg class="outline/terminal-2 svg-inline callout-icon me-2 mb-3"  xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M8 9l3 3-3 3"/><path d="M13 15h3"/><path d="M3 4m0 2a2 2 0 012-2h14a2 2 0 012 2v12a2 2 0 01-2 2H5a2 2 0 01-2-2z"/></svg>
+  <div class="callout-content">
+    <div class="callout-title">
+        <p>rsync</p>
+
+      </div>
+    <div class="callout-body">
+      <p>The numeric method uses numbers to identify permissions and their position to identify the linux user, e.g., <code>chmod 744 FILE_NAME</code>.</p>
+
+    </div>
+  </div>
+</div>
+
+<h3 id="sync-files-locally">Sync files locally<a href="#sync-files-locally" class="anchor" aria-hidden="true">#</a> </h3>
+
+
+
+<div class="expressive-code">
+  <figure class="frame is-terminal has-title not-content">
+  <figcaption class="header">
+    <span class="title">Use rsync locally</span>
+  </figcaption>
+  <div class="highlight" title="Use rsync locally"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">rsync -avh source/ target/</span></span></code></pre></div>
+  </figure>
+</div>
+<p>This will sync all the files in <code>source/</code> to <code>target/</code>. If <code>target/</code> does not exist it will be created.</p>
+
+
+
+<div class="expressive-code">
+  <figure class="frame is-terminal not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># local to local</span>
+</span></span><span class="line"><span class="cl">rsync <span class="o">[</span>OPTIONS<span class="o">]</span> SOURCE TARGET
+</span></span><span class="line"><span class="cl"><span class="c1"># local to remote (push)</span>
+</span></span><span class="line"><span class="cl">rsync <span class="o">[</span>OPTIONS<span class="o">]</span> SOURCE USER@HOST:TARGET
+</span></span><span class="line"><span class="cl"><span class="c1"># remote to local (pull)</span>
+</span></span><span class="line"><span class="cl">rsync <span class="o">[</span>OPTIONS<span class="o">]</span> USER@HOST:SOURCE TARGET
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># basic usage</span>
+</span></span><span class="line"><span class="cl">rsync -a /source/foo/ /target/foo/
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># flags</span>
+</span></span><span class="line"><span class="cl">  -a          <span class="c1"># archive mode - sync recursively</span>
+</span></span><span class="line"><span class="cl">  -z          <span class="c1"># force compression to send to destination machine</span>
+</span></span><span class="line"><span class="cl">  -P          <span class="c1"># progress bar and keep partially transferred files</span>
+</span></span><span class="line"><span class="cl">  -q          <span class="c1"># quiet to supress non-error messages</span>
+</span></span><span class="line"><span class="cl">  -v          <span class="c1"># verbose</span>
+</span></span><span class="line"><span class="cl">  -h          <span class="c1"># human readable output</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># copy local source to remote target</span>
+</span></span><span class="line"><span class="cl">rsync -a /foo/ user@remote_host:/foo/
+</span></span><span class="line"><span class="cl"><span class="c1"># copy from remote source to local target</span>
+</span></span><span class="line"><span class="cl">rsync -a user@remote_hostname:/foo/ /foo/
+</span></span><span class="line"><span class="cl"><span class="c1"># use for large transfers and/or unstable internet connections</span>
+</span></span><span class="line"><span class="cl">rsync -aP <span class="nb">source</span> target
+</span></span><span class="line"><span class="cl"><span class="c1"># exclude &#34;directory&#34; and &#34;another_dir&#34;</span>
+</span></span><span class="line"><span class="cl">rsync -a --exclude<span class="o">=</span>directory --exlucde<span class="o">=</span>another_dir <span class="nb">source</span> target
+</span></span><span class="line"><span class="cl"><span class="c1"># include json files and no others</span>
+</span></span><span class="line"><span class="cl">rsync -ae ssh --include<span class="o">=</span><span class="s2">&#34;*.json&#34;</span> --exlucde<span class="o">=</span><span class="s2">&#34;*&#34;</span> <span class="nb">source</span> target
+</span></span><span class="line"><span class="cl"><span class="c1"># delete files that are not in source directory</span>
+</span></span><span class="line"><span class="cl">rsync -a --delete <span class="nb">source</span> target
+</span></span><span class="line"><span class="cl"><span class="c1"># rsync over ssh</span>
+</span></span><span class="line"><span class="cl">rsync -ae ssh user@remote_hostname:/foo/ /foo/
+</span></span><span class="line"><span class="cl"><span class="c1"># SSH other than port 22</span>
+</span></span><span class="line"><span class="cl">rsync -a -e <span class="s2">&#34;ssh -p 123&#34;</span> /source/ user@remote_hostname:/target/
+</span></span><span class="line"><span class="cl"><span class="c1"># specify max file size for transfer</span>
+</span></span><span class="line"><span class="cl">rsync -a --max-size<span class="o">=</span><span class="s2">&#34;200k&#34;</span> <span class="nb">source</span> target
+</span></span><span class="line"><span class="cl"><span class="c1"># do dry run</span>
+</span></span><span class="line"><span class="cl">rsync --dry-run --remove-source-files -v <span class="nb">source</span> target
+</span></span><span class="line"><span class="cl"><span class="c1"># set bandwidth limit</span>
+</span></span><span class="line"><span class="cl">rsync --bw-limit<span class="o">=</span><span class="m">100</span> -a <span class="nb">source</span> target</span></span></code></pre></div>
+  </figure>
+</div>
+<hr>
 <h2 id="scp---secure-copy"><code>scp</code> - Secure CoPy<a href="#scp---secure-copy" class="anchor" aria-hidden="true">#</a> </h2>
 <p>Secure copy is used to securely transfer files from one host to another.</p>
 
@@ -2144,8 +2441,11 @@ Read (4)                           =&gt; 4</code></pre>
   <figcaption class="header">
     <span class="title"></span>
   </figcaption>
-  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sed -i <span class="s2">&#34;s,TEXT_TO_FIND,TEXT_TO_REPLACE_WITH,g&#34;</span>
-</span></span><span class="line"><span class="cl">sed -i <span class="s2">&#34;s,&lt;SOMETHING_TO_FIND&gt;,REPLACE_TEXT,g&#34;</span> someFile.txt</span></span></code></pre></div>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># syntax</span>
+</span></span><span class="line"><span class="cl">sed -i <span class="s2">&#34;s,TEXT_TO_FIND,TEXT_TO_REPLACE_WITH,g&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># example usage</span>
+</span></span><span class="line"><span class="cl">sed -i <span class="s2">&#34;s,&lt;VERSION_NUMBER&gt;,2.1.15,g&#34;</span> someFile.txt</span></span></code></pre></div>
   </figure>
 </div>
 <hr>
@@ -2155,11 +2455,22 @@ Read (4)                           =&gt; 4</code></pre>
 
 
 <div class="expressive-code">
-  <figure class="frame not-content">
+  <figure class="frame is-terminal has-title not-content">
   <figcaption class="header">
-    <span class="title"></span>
+    <span class="title">Use SSH with password prompt</span>
   </figcaption>
-  <pre tabindex="0"><code>$ ssh -i keyName.pem ec2-user@whatever.amazonaws.com</code></pre>
+  <div class="highlight" title="Use SSH with password prompt"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">ssh ubuntu@172.16.0.105</span></span></code></pre></div>
+  </figure>
+</div>
+
+
+
+<div class="expressive-code">
+  <figure class="frame is-terminal has-title not-content">
+  <figcaption class="header">
+    <span class="title">Use SSH with key file</span>
+  </figcaption>
+  <div class="highlight" title="Use SSH with key file"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">ssh -i keyName.pem ec2-user@whatever.amazonaws.com</span></span></code></pre></div>
   </figure>
 </div>
 <hr>

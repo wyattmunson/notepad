@@ -7,7 +7,7 @@
     <generator>Hugo</generator>
     <language>en</language>
     <copyright>Copyright (c) 2020-2024 North Aerospace</copyright>
-    <lastBuildDate>Thu, 07 Sep 2023 16:27:22 +0200</lastBuildDate>
+    <lastBuildDate>Sun, 30 Jun 2024 00:50:57 -0700</lastBuildDate>
     <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Kubernetes Overview</title>
@@ -59,6 +59,13 @@
       <description>You can use blog posts for announcing product updates and features.</description>
     </item>
     <item>
+      <title>Networking Basics</title>
+      <link>http://localhost:1313/docs/networking/networking-basics/</link>
+      <pubDate>Sun, 30 Jun 2024 00:50:57 -0700</pubDate>
+      <guid>http://localhost:1313/docs/networking/networking-basics/</guid>
+      <description>IP Addresses IPv4 addresses are like 192.168.10.55 are decimal representations of binary form.&#xA;They are composed of four binary blocks. Each block is 8 bits (or 1 byte), which specifies a number from 0 to 255.</description>
+    </item>
+    <item>
       <title>How to Update</title>
       <link>http://localhost:1313/docs/help/how-to-update/</link>
       <pubDate>Thu, 12 Nov 2020 13:26:54 +0100</pubDate>
@@ -71,13 +78,6 @@
       <pubDate>Thu, 12 Nov 2020 15:22:20 +0100</pubDate>
       <guid>http://localhost:1313/docs/help/troubleshooting/</guid>
       <description>Problems updating npm packages Delete the ./node_modules folder, and run again:&#xA;npm install&#xD;Problems with cache Delete the temporary directories:</description>
-    </item>
-    <item>
-      <title>FAQ</title>
-      <link>http://localhost:1313/docs/help/faq/</link>
-      <pubDate>Tue, 06 Oct 2020 08:49:31 +0000</pubDate>
-      <guid>http://localhost:1313/docs/help/faq/</guid>
-      <description>Hyas? Doks is a Hyas theme build by the creator of Hyas.&#xA;Footer notice? Please keep it in place.&#xA;Keyboard shortcuts for search?</description>
     </item>
   </channel>
 </rss>

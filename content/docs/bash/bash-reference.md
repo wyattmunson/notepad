@@ -106,16 +106,39 @@ $ cd -                      # return to previous directory
 
 ## `chmod` - CHange MODe
 
+{{< callout context="tip" title="chmod" icon="outline/rocket" >}}
+`chmod` changes file ownership.
+{{< /callout >}}
+
 Changes file permissions: who can read, write, and execute the file.
 
-```bash
+```bash { title="Basic chmod usage example" }
 chmod +x FILE_NAME
 chmod 744 FILE_NAME
+
 ```
 
 The file permissions can be specified with either the symbolic or numeric method.
 
+**File Permissions**
+
+{{< callout context="caution" title="Understand file permissions" icon="outline/school" >}}
+Each file has three personas that can access the file: the file owner (or creator), the group, and all other users. Each persona then has different levels of permissions for that file: read, write, execute, or some combination.
+{{< /callout >}}
+
+When using chmod you are specifying two things:
+
+1. **The persona**: file owner, file group, or all users
+1. **The permissions**: read, write, execute, or some combination
+
+A single command can specify a single persona or multiple personas. Each persona can (and usually does) have different levels of permissions.
+
 ### Symobilc Method
+
+{{< callout context="note" title="chmod" icon="outline/rocket" >}}
+The symolic method users letters to refer to groups and permissions, e.g., \
+`chmod +x FILE_NAME`
+{{< /callout >}}
 
 Symbolic method uses letters to refer to the groups and permissions, e.g., `g+x`.
 
@@ -140,7 +163,7 @@ Permissions:
 
 **Use `chmod` with symbolic method**:
 
-```bash
+```bash { title="Change permissions with chmod symbolic method" }
 # give file owner execute permissions
 chmod u=x FILE_NAME
 
@@ -153,7 +176,11 @@ chmod u+x,g= FILE_NAME
 
 ### Numeric Method
 
-> The numeric method uses numbers to identify permissions and their position to identify the linux user, e.g., `744`.
+{{< callout context="note" title="Numeric Method" icon="outline/rocket" >}}
+The numeric method uses numbers to identify permissions and their position to identify the linux user, e.g., `chmod 744 FILE_NAME`.
+{{< /callout >}}
+
+In the numeric method, each persona is assigned a single digit that represents their permissions: read, write, execute, or some combination thereof.
 
 - `r` - read - 4
 - `w` - write - 2
@@ -168,10 +195,13 @@ Read (4) + Execute (1)             => 5
 Read (4)                           => 4
 ```
 
-Permissions given in a three digit code. The permission type(s) like read or execute are denoted by the value. The position of each digit refers to the three linux user group.
+Permissions for all groups are given in a three digit code. The position of each digit refers to the three linux user group. The order is file owner + file group + all users.
 
 ```bash
-chmod 123 FILE_NAME
+# numeric group order syntax
+chmod [FILE_OWNER][FILE_GROUP][ALL_USERS] FILE_NAME
+
+chmod 755 FILE_NAME
       ^^^
       |||_  all other users (o)
       ||__  group (g)
@@ -180,7 +210,7 @@ chmod 123 FILE_NAME
 
 **Use `chmod` with numeric method**:
 
-```bash
+```bash { title="Example use of numeric method" }
 # give file owner - read, write, execute; group - read, write; all other users - read
 chmod 764 FILE_NAME
 
@@ -188,53 +218,132 @@ chmod 764 FILE_NAME
 chmod 777 FILE_NAME
 ```
 
+### Change permissions for multiple files
+
+Use wildcards (`*`) to specify multiple files in a single command.
+
+```bash { title="Use wildcard with chmod to target multiple files" }
+# give file owner execute permissions for all text files in current dir
+chmod u=x *.txt
+```
+
+### Change permissions in subdirectories
+
+Use the recursive (`-R`) flag to also include subdirectories in the `chmod` command. This will also target all file as well as the target directory's permissions.
+
+```bash { title="Change permissions for all subdirectories and files" }
+# give full permissions to all users
+chmod -R 777 DIR_NAME
+```
+
+```bash { title="Use wildcard and target subdirectories" }
+# give file owner execute permissions for all text files
+chmod -R u=x *.txt
+```
+
 ---
 
 ## `cp` - CoPy
 
-```bash
-# syntax
-cp [OPTIONS] source destination
-cp [OPTIONS] source directory
+{{< callout context="tip" title="Command: Copy" icon="outline/terminal-2" >}}
+The `cp` command copies a file or directory from a `source` location to a new or existing `target` location.
+{{< /callout >}}
 
-cp fileName ../otherDirectory
-cp someDirectory/* anotherDirectory/
+```bash { title="Copy quick reference" }
+# syntax
+cp [OPTIONS] <sourceFile> <destinationFile>
+cp [OPTIONS] SOURCE_DIRECTORY DESTINATION_DIRECTORY
+
+# basic usage
+cp sourceFile targetFile
+
+# copy a dir and its contents to a new dir
+cp -R directory1 directory2
+
+# copy file and add to an existing target dir
+cp fileName ../targetDirectory
+
+# copy all files within source directory to an existing target dir
+cp -R sourceDirectory/* targetDirectory/
 ```
 
 ### Copy a file
 
 Copies content of `file1` to `file2`. Creates file2 if it doesn't exist, overwrites it if it does.
 
-```bash
-cp file1 file2
+#### Copy file to directory
+
+A file can be copied to an existing directory. The file will be added to the target directory without affecting the other files in the target. If the source file exists in the target, it will be overwritten.
+
+```bash { title="Copy a file to an existing directory" }
+cp file1 dir1
 ```
 
-### Copy files to a directory
+### Copy multiiple files to a directory
 
 Overwrites contents of directory if it exits, creates one if it does not. Can supply 1..n files.
 
-```
+```bash { title="Copy multiple files to a target directory" }
 cp file1 file2 file3 targetDirectory
 ```
 
 ### Copy directories
 
-Copies entire contents of source directory to target directory. Creates or overwrites contents in target. Usually needs to be run recursively with the `-r` option.
+Copies entire contents of source directory to target directory.
 
-```bash
+The behavior depends on if the target directory exists:
+
+- If the target directory does not exist, it is created.
+- If the target directory does exist, it is copied as a subdirectory into the target directory with the name of source directory
+
+```bash {title="Copy a directory"}
 cp -R sourceDirectory targetDirectory
 ```
 
-### Copy and preserve timestamp
+{{< callout context="caution" icon="outline/alert-triangle" >}}
+If the target directory exists, the source directory becomes a subdirectory in the target directory.
+{{< /callout >}}
 
-```bash
+### Other copy flags
+
+#### Wildcards
+
+Use wildcards to target multiple source files to copy.
+
+```bash { title="Use wildcards" }
+cp *.txt targetDirectory
+```
+
+#### Force copying
+
+Force copying, even in cases when user lacks write permissions, delete destination file if necessary.
+
+```bash { title="Force copy a file" }
+cp -f file1 file2
+```
+
+#### Create backup
+
+Create a backup of the target file in the same folder with a different name and format.
+
+```bash { title="Create a backup when copying" }
+cp -b file1 file2
+```
+
+#### Preserve file charachteristics
+
+Preserve file charachteristics like modification time, access time, ownership, and permissions.
+
+```bash { title="Preserve charachteristics" }
+# preserve charachteristics
 cp -p file1 file2
 ```
 
-Other `cp` commands
+#### Interactive mode
 
-```bash
-$ cp -i s.txt f.txt # interactive - promt before overwriting
+```bash { title="Interactive mode to prompt before overwriting" }
+# interactive - promt before overwriting
+$ cp -i s.txt f.txt
 ```
 
 ---
@@ -415,6 +524,10 @@ Request different types of records
 
 ## `export` - EXPORT
 
+{{< callout context="tip" title="export" icon="outline/terminal-2" >}}
+The `export` command makes variables and functions available to child shells and processes.
+{{< /callout >}}
+
 Mark variables and functions to be passed to child shells and processes.
 
 Export a variable:
@@ -433,6 +546,8 @@ export VERSION=`grep '"version":' package.json | cut -d\" -f4`
 export IMAGE_NAME_AND_TAG=$(cat .dev-image-name-and-tag)
 echo $IMAGE_NAME_AND_TAG > .stage-image-name-and-tag
 ```
+
+When sourcing a file, the chile process inherits all the variables of the parent process. If the child process sets variables with `export`, these variables are now available in the parent process.
 
 ---
 
@@ -748,6 +863,65 @@ rm -f file_name
 
 ---
 
+## `rsync` - Rsync
+
+{{< callout context="tip" title="rsync" icon="outline/terminal-2" >}}
+The numeric method uses numbers to identify permissions and their position to identify the linux user, e.g., `chmod 744 FILE_NAME`.
+{{< /callout >}}
+
+### Sync files locally
+
+```bash { title="Use rsync locally" }
+rsync -avh source/ target/
+```
+
+This will sync all the files in `source/` to `target/`. If `target/` does not exist it will be created.
+
+```bash
+# local to local
+rsync [OPTIONS] SOURCE TARGET
+# local to remote (push)
+rsync [OPTIONS] SOURCE USER@HOST:TARGET
+# remote to local (pull)
+rsync [OPTIONS] USER@HOST:SOURCE TARGET
+
+# basic usage
+rsync -a /source/foo/ /target/foo/
+
+# flags
+  -a          # archive mode - sync recursively
+  -z          # force compression to send to destination machine
+  -P          # progress bar and keep partially transferred files
+  -q          # quiet to supress non-error messages
+  -v          # verbose
+  -h          # human readable output
+
+# copy local source to remote target
+rsync -a /foo/ user@remote_host:/foo/
+# copy from remote source to local target
+rsync -a user@remote_hostname:/foo/ /foo/
+# use for large transfers and/or unstable internet connections
+rsync -aP source target
+# exclude "directory" and "another_dir"
+rsync -a --exclude=directory --exlucde=another_dir source target
+# include json files and no others
+rsync -ae ssh --include="*.json" --exlucde="*" source target
+# delete files that are not in source directory
+rsync -a --delete source target
+# rsync over ssh
+rsync -ae ssh user@remote_hostname:/foo/ /foo/
+# SSH other than port 22
+rsync -a -e "ssh -p 123" /source/ user@remote_hostname:/target/
+# specify max file size for transfer
+rsync -a --max-size="200k" source target
+# do dry run
+rsync --dry-run --remove-source-files -v source target
+# set bandwidth limit
+rsync --bw-limit=100 -a source target
+```
+
+---
+
 ## `scp` - Secure CoPy
 
 Secure copy is used to securely transfer files from one host to another.
@@ -764,8 +938,11 @@ scp -i /home/file.txt user@host:/app/data/file.txt
 Sed is a stream editor for filtering and replacing text. Sed probably has a shit tonne of stuff going on, used commonly for REGEX string matching and replacement.
 
 ```bash
+# syntax
 sed -i "s,TEXT_TO_FIND,TEXT_TO_REPLACE_WITH,g"
-sed -i "s,<SOMETHING_TO_FIND>,REPLACE_TEXT,g" someFile.txt
+
+# example usage
+sed -i "s,<VERSION_NUMBER>,2.1.15,g" someFile.txt
 ```
 
 ---
@@ -774,8 +951,12 @@ sed -i "s,<SOMETHING_TO_FIND>,REPLACE_TEXT,g" someFile.txt
 
 Remote login program
 
+```bash { title="Use SSH with password prompt" }
+ssh ubuntu@172.16.0.105
 ```
-$ ssh -i keyName.pem ec2-user@whatever.amazonaws.com
+
+```bash { title="Use SSH with key file" }
+ssh -i keyName.pem ec2-user@whatever.amazonaws.com
 ```
 
 ---
