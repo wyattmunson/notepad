@@ -11,5 +11,7 @@ menu:
     parent: ""
     identifier: "postgres-e6a0986b8048215dc683752fec50f585"
 weight: 999
+sidebar:
+  collapsed: true
 toc: true
 ---

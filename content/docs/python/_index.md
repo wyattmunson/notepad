@@ -10,6 +10,8 @@ menu:
   docs:
     parent: ""
     identifier: "python-44e9e6d552337efdbbebc27bdedb73a6"
+sidebar:
+  collapsed: true
 weight: 999
 toc: true
 ---

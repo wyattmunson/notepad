@@ -50,6 +50,8 @@ network:
       	- 8.8.8.4
 ```
 
+https://wiki.archlinux.org/title/NetworkManager
+
 ### Interface File
 
 Updating the interfaces file is the "old" way of setting a static IP.
@@ -202,3 +204,47 @@ getent group
 | `adm`     | Monitor linux system logs                  |
 | `lpadmin` | Configure printers                         |
 | `plugdev` | Access external storage devices            |
+
+## Bash Config Files
+
+Bash config files set common variables or functions that are run or set everytime a new login shell is invoked (a new terminal tab is opened). This can set frequently used variables or aliases, format the appearance of a shell, and more.
+
+When invoking a terminal shell, there are two types of shells:
+
+1. **Login/Interactive shell**: This is when someone logs into the terminal and is typing commands into a terminal shell. If a command requires additional user prompts, the user can type them in.
+1. **Non-interactive shell**: This is when a bash shell runs in the background or in a CI/CD pipeline. If a command requires additional prompts,
+
+Bash config files are typically located in the user's home directory (`~`).
+
+### Login shell order
+
+Bash checks for configuration files in the following order:
+
+```bash { title="Config file order" }
+# config file order, starting at top:
+~/.bash_profile
+~/.bash_login
+~/.profile
+```
+
+{{< callout context="caution" icon="outline/alert-triangle" >}}
+Bash uses the first, and only the first, configuration file it finds. Subdequent file are ignored.
+{{< /callout >}}
+
+#### .bash_profile
+
+| File Name       | When Sourced                                | Typical Content                                              |
+| --------------- | ------------------------------------------- | ------------------------------------------------------------ |
+| `.bash_profile` | Once during an interactive login shell      | Environment variables for login shell, startup scripts       |
+| `.bash_login`   | Fallback if .bash_profile is missing        | Same as .bash_profile                                        |
+| `.profile`      | All interactive shells (login & sub-shells) | Non-login specific environment variables, aliases, functions |
+
+- Keep `.bash_profile` lean
+
+### System Wide Login Config
+
+While bash config files are typically located in a user's home directory, there are configs that are loaded for all users.
+
+{{< callout note >}} The system-wide bash config file is stored at `/etc/profile`. {{< /callout >}}
+
+The system-wide config for Ubuntu is located at`/etc/profile`. This can be used to give a login message for all users.

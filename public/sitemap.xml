@@ -22,6 +22,11 @@
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
+    <loc>http://localhost:1313/docs/bash/bash-cheatsheet/</loc>
+    <lastmod>2023-01-03T23:52:57-08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
     <loc>http://localhost:1313/docs/docker/docker-cli-commands/</loc>
     <lastmod>2023-01-04T00:19:53-08:00</lastmod>
     <changefreq>monthly</changefreq>
@@ -29,6 +34,16 @@
   </url><url>
     <loc>http://localhost:1313/docs/python2/python-snippets/</loc>
     <lastmod>2023-01-04T00:19:53-08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>http://localhost:1313/docs/devops/terraform/</loc>
+    <lastmod>2024-07-01T14:11:51-07:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>http://localhost:1313/docs/bash/bash-reference/</loc>
+    <lastmod>2023-01-03T23:53:04-08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
@@ -49,11 +64,6 @@
   </url><url>
     <loc>http://localhost:1313/docs/bash/</loc>
     <lastmod>2023-06-26T17:35:37-07:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>http://localhost:1313/docs/docker/</loc>
-    <lastmod>2020-10-06T08:49:15+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
@@ -97,8 +107,13 @@
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>http://localhost:1313/docs/guides/example-guide/</loc>
+    <loc>http://localhost:1313/docs/guides/test/</loc>
     <lastmod>2023-09-07T16:04:48+02:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>http://localhost:1313/docs/docker/</loc>
+    <lastmod>2023-09-07T16:12:37+02:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
@@ -109,6 +124,36 @@
   </url><url>
     <loc>http://localhost:1313/docs/reference/example-reference/</loc>
     <lastmod>2023-09-07T16:13:18+02:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>http://localhost:1313/docs/portal/subdir/subfile/</loc>
+    <lastmod>2024-07-01T13:52:53-07:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>http://localhost:1313/docs/portal/subdir/</loc>
+    <lastmod>2024-07-01T13:52:35-07:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>http://localhost:1313/docs/devops/</loc>
+    <lastmod>2024-07-01T13:52:20-07:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>http://localhost:1313/docs/devops/git/</loc>
+    <lastmod>2024-07-01T13:22:34-07:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>http://localhost:1313/docs/portal/homelab/</loc>
+    <lastmod>2024-07-01T04:06:52-07:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>http://localhost:1313/docs/guides/get-started-in-wynotes/</loc>
+    <lastmod>2024-07-01T00:03:57-07:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
@@ -254,16 +299,6 @@
   </url><url>
     <loc>http://localhost:1313/docs/docker/creating-dockerfiles/</loc>
     <lastmod>2023-01-04T00:27:10-08:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>http://localhost:1313/docs/bash/bash-reference/</loc>
-    <lastmod>2023-01-03T23:53:04-08:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>http://localhost:1313/docs/bash/bash-cheatsheet/</loc>
-    <lastmod>2023-01-03T23:52:57-08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>

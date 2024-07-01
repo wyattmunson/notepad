@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Welcome to Doks on WyNotes</title>
+    <title>WyNotes</title>
     <link>http://localhost:1313/</link>
-    <description>Recent content in Welcome to Doks on WyNotes</description>
+    <description>Recent content on WyNotes</description>
     <generator>Hugo</generator>
     <language>en</language>
     <copyright>Copyright (c) 2020-2024 North Aerospace</copyright>
@@ -38,6 +38,13 @@
       <description>Convert Data Convert CSV - Convert CSV to JSON, YAML, XML, SQL, ect. Link City Bootstrap - Bootstrap </description>
     </item>
     <item>
+      <title>Bash Cheatsheet</title>
+      <link>http://localhost:1313/docs/bash/bash-cheatsheet/</link>
+      <pubDate>Tue, 03 Jan 2023 23:52:57 -0800</pubDate>
+      <guid>http://localhost:1313/docs/bash/bash-cheatsheet/</guid>
+      <description>File Commands File Commands ls Use ls to list files and directories.&#xA;ls # list current directory files ls -lah # show metadata and hidden files ls /dir # list specified direcotry&amp;#39;s file contents&#xD;Changing directories pwd # print working directory - get current location cd dir # move into &amp;#34;dir&amp;#34; directory cd .</description>
+    </item>
+    <item>
       <title>Docker CLI Commands</title>
       <link>http://localhost:1313/docs/docker/docker-cli-commands/</link>
       <pubDate>Wed, 04 Jan 2023 00:19:53 -0800</pubDate>
@@ -52,6 +59,13 @@
       <description></description>
     </item>
     <item>
+      <title>Bash Reference</title>
+      <link>http://localhost:1313/docs/bash/bash-reference/</link>
+      <pubDate>Tue, 03 Jan 2023 23:53:04 -0800</pubDate>
+      <guid>http://localhost:1313/docs/bash/bash-reference/</guid>
+      <description>Full Bash reference Command Name Description cat concatenate Display contents of text file; combine multiple files. cd change directory Traverse the directory tree and move to different folders cp copy Copy files or directories curl curl HTTP utility cut cut dig domain information grouper Show DNS information for a URL file file Display file type find find Find a file echo echo Print output to the terminal exit exit Exit current script or shell session export export Export a variable grep global regular expression print Use regex to find files kill kill Stop a running process ls list List contents of a directory lsof list open files See running processes, check ports mkdir mkdir Create a directory ps ps See status of running process pwd print working directory Show current directory rm remove Removes files or directories sudo super user do Elevates a command to super user privileges scp secure copy Securely copy file between hosts sed stream editor Edit a text stream ssh ssh HTTP utility tail tail Print the end of a file touch touch Create a file type type See file or directory type xargs xargs Yarr Redirect Operators Redirect Syntax Reference command ARGUMENT [OPTIONS] [FILE_NAME.</description>
+    </item>
+    <item>
       <title>Example Post</title>
       <link>http://localhost:1313/blog/example-post/</link>
       <pubDate>Thu, 07 Sep 2023 16:27:22 +0200</pubDate>
@@ -64,20 +78,6 @@
       <pubDate>Sun, 30 Jun 2024 00:50:57 -0700</pubDate>
       <guid>http://localhost:1313/docs/networking/networking-basics/</guid>
       <description>IP Addresses IPv4 addresses are like 192.168.10.55 are decimal representations of binary form.&#xA;They are composed of four binary blocks. Each block is 8 bits (or 1 byte), which specifies a number from 0 to 255.</description>
-    </item>
-    <item>
-      <title>How to Update</title>
-      <link>http://localhost:1313/docs/help/how-to-update/</link>
-      <pubDate>Thu, 12 Nov 2020 13:26:54 +0100</pubDate>
-      <guid>http://localhost:1313/docs/help/how-to-update/</guid>
-      <description>Check for outdated packages The npm outdated command will check the registry to see if any (or, specific) installed packages are currently outdated:</description>
-    </item>
-    <item>
-      <title>Troubleshooting</title>
-      <link>http://localhost:1313/docs/help/troubleshooting/</link>
-      <pubDate>Thu, 12 Nov 2020 15:22:20 +0100</pubDate>
-      <guid>http://localhost:1313/docs/help/troubleshooting/</guid>
-      <description>Problems updating npm packages Delete the ./node_modules folder, and run again:&#xA;npm install&#xD;Problems with cache Delete the temporary directories:</description>
     </item>
   </channel>
 </rss>

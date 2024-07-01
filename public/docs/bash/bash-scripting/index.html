@@ -44,7 +44,7 @@
       >
 <link rel="manifest" href="/manifest.webmanifest">
 <meta property="og:title" content="Bash Scripting">
-<meta property="og:description" content="Variables # set a variable VARIABLE_NAME=some_text # reference a variable echo $VARIABLE_NAME # set variable equal to a command output VARIABLE_NAME=$(ls)Bash Builtin Variables $0 # Name of the Bash script $1 - $9 # First 9 arguments to the script $# # Number of arguments were passed to script $@ # All the arguments supplied to the Bash script.">
+<meta property="og:description" content="Variables # set a variable VARIABLE_NAME=some_text # reference a variable echo $VARIABLE_NAME # set variable equal to a command output VARIABLE_NAME=$(echo &#34;Hello&#34;) # set default variable VARIABLE_NAME=&#34;${1:-HELLO}&#34;Bash Builtin Variables Builtin bash variables$0 # Name of the Bash script $1 - $9 # First 9 arguments to the script $# # Number of arguments were passed to script $@ # All the arguments supplied to the Bash script.">
 <meta property="og:type" content="article">
 <meta property="og:url" content="http://localhost:1313/docs/bash/bash-scripting/"><meta property="og:image" content="http://localhost:1313/cover.png"><meta property="article:section" content="docs">
 <meta property="article:published_time" content="2023-06-26T17:35:47-07:00">
@@ -52,7 +52,7 @@
 
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="http://localhost:1313/cover.png"><meta name="twitter:title" content="Bash Scripting">
-<meta name="twitter:description" content="Variables # set a variable VARIABLE_NAME=some_text # reference a variable echo $VARIABLE_NAME # set variable equal to a command output VARIABLE_NAME=$(ls)Bash Builtin Variables $0 # Name of the Bash script $1 - $9 # First 9 arguments to the script $# # Number of arguments were passed to script $@ # All the arguments supplied to the Bash script.">
+<meta name="twitter:description" content="Variables # set a variable VARIABLE_NAME=some_text # reference a variable echo $VARIABLE_NAME # set variable equal to a command output VARIABLE_NAME=$(echo &#34;Hello&#34;) # set default variable VARIABLE_NAME=&#34;${1:-HELLO}&#34;Bash Builtin Variables Builtin bash variables$0 # Name of the Bash script $1 - $9 # First 9 arguments to the script $# # Number of arguments were passed to script $@ # All the arguments supplied to the Bash script.">
 <meta name="twitter:site" content="@getdoks">
 
     
@@ -65,7 +65,7 @@
      {
        "@type": "ListItem",
        "item": "http://localhost:1313/",
-       "name": "Welcome to Doks",
+       "name": "Wy Notes",
        "position": 1
      },
      {
@@ -142,47 +142,27 @@
   <ul class="list-unstyled">
 
   <li>
-    <details open open>
+    <details open>
       <summary>Bash</summary>
       <ul class="list-unstyled list-nested">
 
-  <li class="active" >
-      <a aria-current="page" href="/docs/bash/bash-scripting/">Bash Scripting</a>
+  <li>
+      <a href="/docs/bash/bash-cheatsheet/">Bash Cheatsheet</a>
   </li>
 
   <li>
       <a href="/docs/bash/bash-reference/">Bash Reference</a>
   </li>
 
-  <li>
-      <a href="/docs/bash/bash-cheatsheet/">Bash Cheatsheet</a>
+  <li class="active" >
+      <a aria-current="page" href="/docs/bash/bash-scripting/">Bash Scripting</a>
   </li>
       </ul>
     </details>
   </li>
 
   <li>
-    <details open>
-      <summary>Docker</summary>
-      <ul class="list-unstyled list-nested">
-
-  <li>
-      <a href="/docs/docker/docker-overview/">Docker Overview</a>
-  </li>
-
-  <li>
-      <a href="/docs/docker/docker-cli-commands/">Docker CLI Commands</a>
-  </li>
-
-  <li>
-      <a href="/docs/docker/creating-dockerfiles/">Creating Dockerfiles</a>
-  </li>
-      </ul>
-    </details>
-  </li>
-
-  <li>
-    <details open>
+    <details>
       <summary>Help</summary>
       <ul class="list-unstyled list-nested">
 
@@ -202,7 +182,7 @@
   </li>
 
   <li>
-    <details open>
+    <details>
       <summary>Javascript</summary>
       <ul class="list-unstyled list-nested">
 
@@ -222,7 +202,7 @@
   </li>
 
   <li>
-    <details open>
+    <details>
       <summary>Linux</summary>
       <ul class="list-unstyled list-nested">
 
@@ -242,7 +222,7 @@
   </li>
 
   <li>
-    <details open>
+    <details>
       <summary>Python2</summary>
       <ul class="list-unstyled list-nested">
 
@@ -254,12 +234,36 @@
   </li>
 
   <li>
-    <details open>
+    <details>
       <summary>Guides</summary>
       <ul class="list-unstyled list-nested">
 
   <li>
-      <a href="/docs/guides/example-guide/">Example Guide</a>
+      <a href="/docs/guides/test/">Test</a>
+  </li>
+
+  <li>
+      <a href="/docs/guides/get-started-in-wynotes/">Get Started in WyNotes</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details>
+      <summary>Docker</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/docs/docker/docker-overview/">Docker Overview</a>
+  </li>
+
+  <li>
+      <a href="/docs/docker/docker-cli-commands/">Docker CLI Commands</a>
+  </li>
+
+  <li>
+      <a href="/docs/docker/creating-dockerfiles/">Creating Dockerfiles</a>
   </li>
       </ul>
     </details>
@@ -278,9 +282,41 @@
   </li>
 
   <li>
-    <details open>
+    <details>
+      <summary>Devops</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/docs/devops/terraform/">Terraform</a>
+  </li>
+
+  <li>
+      <a href="/docs/devops/git/">Git</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details>
       <summary>Portal</summary>
       <ul class="list-unstyled list-nested">
+
+  <li>
+    <details open>
+      <summary>Subdir</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/docs/portal/subdir/subfile/">Subfile</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+      <a href="/docs/portal/homelab/">Homelab</a>
+  </li>
 
   <li>
       <a href="/docs/portal/mosquitto/">Mosquitto</a>
@@ -290,7 +326,7 @@
   </li>
 
   <li>
-    <details open>
+    <details>
       <summary>Unicode</summary>
       <ul class="list-unstyled list-nested">
 
@@ -302,7 +338,7 @@
   </li>
 
   <li>
-    <details open>
+    <details>
       <summary>Python</summary>
       <ul class="list-unstyled list-nested">
 
@@ -318,7 +354,7 @@
   </li>
 
   <li>
-    <details open>
+    <details>
       <summary>Networking</summary>
       <ul class="list-unstyled list-nested">
 
@@ -338,7 +374,7 @@
   </li>
 
   <li>
-    <details open>
+    <details>
       <summary>Kubernetes</summary>
       <ul class="list-unstyled list-nested">
 
@@ -358,7 +394,7 @@
   </li>
 
   <li>
-    <details open>
+    <details>
       <summary>Postgres</summary>
       <ul class="list-unstyled list-nested">
 
@@ -386,7 +422,7 @@
   </li>
 
   <li>
-    <details open>
+    <details>
       <summary>Web Dev</summary>
       <ul class="list-unstyled list-nested">
 
@@ -538,47 +574,27 @@
   <ul class="list-unstyled">
 
   <li>
-    <details open open>
+    <details open>
       <summary>Bash</summary>
       <ul class="list-unstyled list-nested">
 
-  <li class="active" >
-      <a aria-current="page" href="/docs/bash/bash-scripting/">Bash Scripting</a>
+  <li>
+      <a href="/docs/bash/bash-cheatsheet/">Bash Cheatsheet</a>
   </li>
 
   <li>
       <a href="/docs/bash/bash-reference/">Bash Reference</a>
   </li>
 
-  <li>
-      <a href="/docs/bash/bash-cheatsheet/">Bash Cheatsheet</a>
+  <li class="active" >
+      <a aria-current="page" href="/docs/bash/bash-scripting/">Bash Scripting</a>
   </li>
       </ul>
     </details>
   </li>
 
   <li>
-    <details open>
-      <summary>Docker</summary>
-      <ul class="list-unstyled list-nested">
-
-  <li>
-      <a href="/docs/docker/docker-overview/">Docker Overview</a>
-  </li>
-
-  <li>
-      <a href="/docs/docker/docker-cli-commands/">Docker CLI Commands</a>
-  </li>
-
-  <li>
-      <a href="/docs/docker/creating-dockerfiles/">Creating Dockerfiles</a>
-  </li>
-      </ul>
-    </details>
-  </li>
-
-  <li>
-    <details open>
+    <details>
       <summary>Help</summary>
       <ul class="list-unstyled list-nested">
 
@@ -598,7 +614,7 @@
   </li>
 
   <li>
-    <details open>
+    <details>
       <summary>Javascript</summary>
       <ul class="list-unstyled list-nested">
 
@@ -618,7 +634,7 @@
   </li>
 
   <li>
-    <details open>
+    <details>
       <summary>Linux</summary>
       <ul class="list-unstyled list-nested">
 
@@ -638,7 +654,7 @@
   </li>
 
   <li>
-    <details open>
+    <details>
       <summary>Python2</summary>
       <ul class="list-unstyled list-nested">
 
@@ -650,12 +666,36 @@
   </li>
 
   <li>
-    <details open>
+    <details>
       <summary>Guides</summary>
       <ul class="list-unstyled list-nested">
 
   <li>
-      <a href="/docs/guides/example-guide/">Example Guide</a>
+      <a href="/docs/guides/test/">Test</a>
+  </li>
+
+  <li>
+      <a href="/docs/guides/get-started-in-wynotes/">Get Started in WyNotes</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details>
+      <summary>Docker</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/docs/docker/docker-overview/">Docker Overview</a>
+  </li>
+
+  <li>
+      <a href="/docs/docker/docker-cli-commands/">Docker CLI Commands</a>
+  </li>
+
+  <li>
+      <a href="/docs/docker/creating-dockerfiles/">Creating Dockerfiles</a>
   </li>
       </ul>
     </details>
@@ -674,9 +714,41 @@
   </li>
 
   <li>
-    <details open>
+    <details>
+      <summary>Devops</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/docs/devops/terraform/">Terraform</a>
+  </li>
+
+  <li>
+      <a href="/docs/devops/git/">Git</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details>
       <summary>Portal</summary>
       <ul class="list-unstyled list-nested">
+
+  <li>
+    <details open>
+      <summary>Subdir</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/docs/portal/subdir/subfile/">Subfile</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+      <a href="/docs/portal/homelab/">Homelab</a>
+  </li>
 
   <li>
       <a href="/docs/portal/mosquitto/">Mosquitto</a>
@@ -686,7 +758,7 @@
   </li>
 
   <li>
-    <details open>
+    <details>
       <summary>Unicode</summary>
       <ul class="list-unstyled list-nested">
 
@@ -698,7 +770,7 @@
   </li>
 
   <li>
-    <details open>
+    <details>
       <summary>Python</summary>
       <ul class="list-unstyled list-nested">
 
@@ -714,7 +786,7 @@
   </li>
 
   <li>
-    <details open>
+    <details>
       <summary>Networking</summary>
       <ul class="list-unstyled list-nested">
 
@@ -734,7 +806,7 @@
   </li>
 
   <li>
-    <details open>
+    <details>
       <summary>Kubernetes</summary>
       <ul class="list-unstyled list-nested">
 
@@ -754,7 +826,7 @@
   </li>
 
   <li>
-    <details open>
+    <details>
       <summary>Postgres</summary>
       <ul class="list-unstyled list-nested">
 
@@ -782,7 +854,7 @@
   </li>
 
   <li>
-    <details open>
+    <details>
       <summary>Web Dev</summary>
       <ul class="list-unstyled list-nested">
 
@@ -811,8 +883,10 @@
     <li><a href="#variables">Variables</a>
       <ul>
         <li><a href="#bash-builtin-variables">Bash Builtin Variables</a></li>
-        <li><a href="#reading-input">Reading Input</a></li>
         <li><a href="#check-if-variable-exists">Check if Variable Exists</a></li>
+        <li><a href="#default-variables">Default Variables</a></li>
+        <li><a href="#reading-user-input">Reading User Input</a></li>
+        <li><a href="#exporting-varibles">Exporting Varibles</a></li>
       </ul>
     </li>
     <li><a href="#if-statements">If Statements</a>
@@ -830,6 +904,7 @@
     </li>
     <li><a href="#functions">Functions</a>
       <ul>
+        <li><a href="#defining-and-calling-functions">Defining and Calling Functions</a></li>
         <li><a href="#returning-values">Returning Values</a></li>
         <li><a href="#handling-errors">Handling Errors</a></li>
       </ul>
@@ -861,8 +936,10 @@
     <li><a href="#variables">Variables</a>
       <ul>
         <li><a href="#bash-builtin-variables">Bash Builtin Variables</a></li>
-        <li><a href="#reading-input">Reading Input</a></li>
         <li><a href="#check-if-variable-exists">Check if Variable Exists</a></li>
+        <li><a href="#default-variables">Default Variables</a></li>
+        <li><a href="#reading-user-input">Reading User Input</a></li>
+        <li><a href="#exporting-varibles">Exporting Varibles</a></li>
       </ul>
     </li>
     <li><a href="#if-statements">If Statements</a>
@@ -880,6 +957,7 @@
     </li>
     <li><a href="#functions">Functions</a>
       <ul>
+        <li><a href="#defining-and-calling-functions">Defining and Calling Functions</a></li>
         <li><a href="#returning-values">Returning Values</a></li>
         <li><a href="#handling-errors">Handling Errors</a></li>
       </ul>
@@ -915,7 +993,10 @@
 </span></span><span class="line"><span class="cl"><span class="nb">echo</span> <span class="nv">$VARIABLE_NAME</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1"># set variable equal to a command output</span>
-</span></span><span class="line"><span class="cl"><span class="nv">VARIABLE_NAME</span><span class="o">=</span><span class="k">$(</span>ls<span class="k">)</span></span></span></code></pre></div>
+</span></span><span class="line"><span class="cl"><span class="nv">VARIABLE_NAME</span><span class="o">=</span><span class="k">$(</span><span class="nb">echo</span> <span class="s2">&#34;Hello&#34;</span><span class="k">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># set default variable</span>
+</span></span><span class="line"><span class="cl"><span class="nv">VARIABLE_NAME</span><span class="o">=</span><span class="s2">&#34;</span><span class="si">${</span><span class="nv">1</span><span class="k">:-</span><span class="nv">HELLO</span><span class="si">}</span><span class="s2">&#34;</span></span></span></code></pre></div>
   </figure>
 </div>
 <h3 id="bash-builtin-variables">Bash Builtin Variables<a href="#bash-builtin-variables" class="anchor" aria-hidden="true">#</a> </h3>
@@ -923,11 +1004,11 @@
 
 
 <div class="expressive-code">
-  <figure class="frame is-terminal not-content">
+  <figure class="frame is-terminal has-title not-content">
   <figcaption class="header">
-    <span class="title"></span>
+    <span class="title">Builtin bash variables</span>
   </figcaption>
-  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nv">$0</span>        <span class="c1"># Name of the Bash script</span>
+  <div class="highlight" title="Builtin bash variables"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nv">$0</span>        <span class="c1"># Name of the Bash script</span>
 </span></span><span class="line"><span class="cl"><span class="nv">$1</span> - <span class="nv">$9</span>   <span class="c1"># First 9 arguments to the script</span>
 </span></span><span class="line"><span class="cl"><span class="nv">$#</span>        <span class="c1"># Number of arguments were passed to script</span>
 </span></span><span class="line"><span class="cl"><span class="nv">$@</span>        <span class="c1"># All the arguments supplied to the Bash script.</span>
@@ -939,24 +1020,6 @@
 </span></span><span class="line"><span class="cl"><span class="nv">$SECONDS</span>  <span class="c1"># The number of seconds since the script was started.</span>
 </span></span><span class="line"><span class="cl"><span class="nv">$RANDOM</span>   <span class="c1"># Returns a different random number each time is it referred to.</span>
 </span></span><span class="line"><span class="cl"><span class="nv">$LINENO</span>   <span class="c1"># Returns the current line number in the Bash script.</span></span></span></code></pre></div>
-  </figure>
-</div>
-<h3 id="reading-input">Reading Input<a href="#reading-input" class="anchor" aria-hidden="true">#</a> </h3>
-<p>Read input is used to get input from a user which can be set to a variable.</p>
-
-
-
-<div class="expressive-code">
-  <figure class="frame is-terminal not-content">
-  <figcaption class="header">
-    <span class="title"></span>
-  </figcaption>
-  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># set a variable</span>
-</span></span><span class="line"><span class="cl"><span class="nb">read</span> VARIABLE_NAME
-</span></span><span class="line"><span class="cl"><span class="c1"># set a variable, with prompt statement</span>
-</span></span><span class="line"><span class="cl"><span class="nb">read</span> -p <span class="s1">&#39;Enter name: &#39;</span> VARIABLE_NAME
-</span></span><span class="line"><span class="cl"><span class="c1"># set a variable, with prompt statement, password</span>
-</span></span><span class="line"><span class="cl"><span class="nb">read</span> -sp <span class="s1">&#39;Enter password: &#39;</span> VARIABLE_NAME</span></span></code></pre></div>
   </figure>
 </div>
 <h3 id="check-if-variable-exists">Check if Variable Exists<a href="#check-if-variable-exists" class="anchor" aria-hidden="true">#</a> </h3>
@@ -984,6 +1047,71 @@
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1"># check if exists, otherwise set</span>
 </span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="o">[</span> -z <span class="si">${</span><span class="nv">var</span><span class="p">+x</span><span class="si">}</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span> <span class="nb">echo</span> <span class="s2">&#34;var is unset&#34;</span><span class="p">;</span> <span class="k">else</span> <span class="nb">echo</span> <span class="s2">&#34;var is set to &#39;</span><span class="nv">$var</span><span class="s2">&#39;&#34;</span><span class="p">;</span> <span class="k">fi</span></span></span></code></pre></div>
+  </figure>
+</div>
+<h3 id="default-variables">Default Variables<a href="#default-variables" class="anchor" aria-hidden="true">#</a> </h3>
+<p>Check if a variable is unset or null, then expand to default string value.</p>
+
+
+
+<div class="expressive-code">
+  <figure class="frame is-terminal not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ <span class="nv">foo</span><span class="o">=</span><span class="s2">&#34;bar&#34;</span>
+</span></span><span class="line"><span class="cl">$ <span class="nb">echo</span> <span class="s2">&#34;</span><span class="si">${</span><span class="nv">foo</span><span class="k">:-</span><span class="nv">defaultValue</span><span class="si">}</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl">↪ bar
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">$ <span class="nb">echo</span> <span class="s2">&#34;</span><span class="si">${</span><span class="nv">fizz</span><span class="k">:-</span><span class="nv">defaultValue</span><span class="si">}</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl">↪ defaultValue</span></span></code></pre></div>
+  </figure>
+</div>
+<p>Set a variable to default if a given variable is unset or null.</p>
+
+
+
+<div class="expressive-code">
+  <figure class="frame is-terminal has-title not-content">
+  <figcaption class="header">
+    <span class="title">Set a default variable if the first argument is not supplied</span>
+  </figcaption>
+  <div class="highlight" title="Set a default variable if the first argument is not supplied"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># set default variable if first argument not supplied</span>
+</span></span><span class="line"><span class="cl"><span class="nv">VARIABLE_NAME</span><span class="o">=</span><span class="s2">&#34;</span><span class="si">${</span><span class="nv">1</span><span class="k">:-</span><span class="nv">DEFAULT</span><span class="p"> VALUE</span><span class="si">}</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># example usage</span>
+</span></span><span class="line"><span class="cl"><span class="nv">MESSAGE</span><span class="o">=</span><span class="s2">&#34;</span><span class="si">${</span><span class="nv">1</span><span class="k">:-</span><span class="nv">Hello</span><span class="p"> localhost</span><span class="si">}</span><span class="s2">&#34;</span></span></span></code></pre></div>
+  </figure>
+</div>
+<h3 id="reading-user-input">Reading User Input<a href="#reading-user-input" class="anchor" aria-hidden="true">#</a> </h3>
+<p>Read is used to get input from a user which can be set to a variable.</p>
+
+
+
+<div class="expressive-code">
+  <figure class="frame is-terminal has-title not-content">
+  <figcaption class="header">
+    <span class="title">Get user input and set to variable</span>
+  </figcaption>
+  <div class="highlight" title="Get user input and set to variable"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># set a variable</span>
+</span></span><span class="line"><span class="cl"><span class="nb">read</span> VARIABLE_NAME
+</span></span><span class="line"><span class="cl"><span class="c1"># set a variable, with prompt statement</span>
+</span></span><span class="line"><span class="cl"><span class="nb">read</span> -p <span class="s1">&#39;Enter name: &#39;</span> VARIABLE_NAME
+</span></span><span class="line"><span class="cl"><span class="c1"># set a variable, with prompt statement, password</span>
+</span></span><span class="line"><span class="cl"><span class="nb">read</span> -sp <span class="s1">&#39;Enter password: &#39;</span> VARIABLE_NAME</span></span></code></pre></div>
+  </figure>
+</div>
+<h3 id="exporting-varibles">Exporting Varibles<a href="#exporting-varibles" class="anchor" aria-hidden="true">#</a> </h3>
+<p>Use <code>export</code> to make a variable available to a subprocess.</p>
+
+
+
+<div class="expressive-code">
+  <figure class="frame is-terminal has-title not-content">
+  <figcaption class="header">
+    <span class="title">Use export to set a variable</span>
+  </figcaption>
+  <div class="highlight" title="Use export to set a variable"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nb">export</span> <span class="nv">VAR_NAME</span><span class="o">=</span>VALUE</span></span></code></pre></div>
   </figure>
 </div>
 <hr>
@@ -1215,18 +1343,21 @@
 </div>
 <hr>
 <h2 id="functions">Functions<a href="#functions" class="anchor" aria-hidden="true">#</a> </h2>
+<h3 id="defining-and-calling-functions">Defining and Calling Functions<a href="#defining-and-calling-functions" class="anchor" aria-hidden="true">#</a> </h3>
 
 
 
 <div class="expressive-code">
-  <figure class="frame is-terminal not-content">
+  <figure class="frame is-terminal has-title not-content">
   <figcaption class="header">
-    <span class="title"></span>
+    <span class="title">Define and call a function</span>
   </figcaption>
-  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">function_name<span class="o">()</span> <span class="o">{</span>
+  <div class="highlight" title="Define and call a function"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># define a function that takes an argument</span>
+</span></span><span class="line"><span class="cl">function_name<span class="o">()</span> <span class="o">{</span>
 </span></span><span class="line"><span class="cl">  <span class="nb">echo</span> <span class="s2">&#34;Hello </span><span class="nv">$1</span><span class="s2">&#34;</span>
 </span></span><span class="line"><span class="cl"><span class="o">}</span>
 </span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># call a function and pass an argument</span>
 </span></span><span class="line"><span class="cl">function_name first_argument</span></span></code></pre></div>
   </figure>
 </div>
@@ -1235,11 +1366,11 @@
 
 
 <div class="expressive-code">
-  <figure class="frame is-terminal not-content">
+  <figure class="frame is-terminal has-title not-content">
   <figcaption class="header">
-    <span class="title"></span>
+    <span class="title">Set variable equal to return value of function</span>
   </figcaption>
-  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">function_name<span class="o">()</span> <span class="o">{</span>
+  <div class="highlight" title="Set variable equal to return value of function"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">function_name<span class="o">()</span> <span class="o">{</span>
 </span></span><span class="line"><span class="cl">  <span class="nb">local</span> <span class="nv">some_var</span><span class="o">=</span><span class="s1">&#39;some value&#39;</span>
 </span></span><span class="line"><span class="cl">  <span class="nb">echo</span> <span class="s2">&#34;</span><span class="k">$(</span>some_var<span class="k">)</span><span class="s2">&#34;</span>
 </span></span><span class="line"><span class="cl"><span class="o">}</span>
@@ -1247,16 +1378,32 @@
 </span></span><span class="line"><span class="cl"><span class="nv">result</span><span class="o">=</span><span class="k">$(</span>function_name<span class="k">)</span></span></span></code></pre></div>
   </figure>
 </div>
+
+
+
+<div class="expressive-code">
+  <figure class="frame is-terminal has-title not-content">
+  <figcaption class="header">
+    <span class="title">Alternate: set variable equal to return value of function</span>
+  </figcaption>
+  <div class="highlight" title="Alternate: set variable equal to return value of function"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">function_name<span class="o">()</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">  <span class="k">return</span> <span class="m">42</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">function_name
+</span></span><span class="line"><span class="cl"><span class="nv">new_var</span><span class="o">=</span><span class="nv">$?</span></span></span></code></pre></div>
+  </figure>
+</div>
 <h3 id="handling-errors">Handling Errors<a href="#handling-errors" class="anchor" aria-hidden="true">#</a> </h3>
 
 
 
 <div class="expressive-code">
-  <figure class="frame is-terminal not-content">
+  <figure class="frame is-terminal has-title not-content">
   <figcaption class="header">
-    <span class="title"></span>
+    <span class="title">Handling errors in function results</span>
   </figcaption>
-  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">function_name<span class="o">()</span> <span class="o">{</span>
+  <div class="highlight" title="Handling errors in function results"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">function_name<span class="o">()</span> <span class="o">{</span>
 </span></span><span class="line"><span class="cl">  <span class="k">return</span> <span class="m">1</span>
 </span></span><span class="line"><span class="cl"><span class="o">}</span>
 </span></span><span class="line"><span class="cl">

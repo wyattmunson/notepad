@@ -11,5 +11,7 @@ menu:
     parent: ""
     identifier: "kubernetes-58aa990bba5df9ae056298ba1656f77a"
 weight: 999
+sidebar:
+  collapsed: true
 toc: true
 ---

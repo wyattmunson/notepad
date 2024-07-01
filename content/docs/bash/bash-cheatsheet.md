@@ -10,7 +10,7 @@ menu:
   docs:
     parent: "guides"
     identifier: "bash-cheatsheet-92beadd4d4659911b67d21bcd0e33c74"
-weight: 999
+weight: 2
 toc: true
 ---
 
@@ -266,6 +266,14 @@ sed -i'.original' -e  "s,<SOMETHING_TO_FIND>,REPLACE_TEXT,g" someFile.txt
 ```
 
 ### Alias sed
+
+{{< callout context="tip" icon="outline/terminal-2" >}}
+The default `sed` binary on MacOS behaves differently from `sed` on linux machines. Install `gnu-sed` from homebrew.
+{{< /callout >}}
+
+Install `gnu-sed` with homebrew on MacOS machines to get the version of `sed` that has similar behavior to linux machines.
+
+Alias `gnu-sed` to `sed` so it will be used instead of the default `sed` command.
 
 ```bash
 brew install gnu-sed

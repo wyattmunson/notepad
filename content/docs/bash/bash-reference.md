@@ -10,7 +10,7 @@ menu:
   docs:
     parent: ""
     identifier: "bash-reference-bc6f6ee953e771df27c55e1b6a071b58"
-weight: 999
+weight: 10
 toc: true
 ---
 
@@ -353,27 +353,33 @@ $ cp -i s.txt f.txt
 Transfer an URL.
 
 ```bash
-curl https://google.com
+curl https://example.com
 
-# download file and set name to file_name
-curl https://google.com --output file_name
-curl https://google.com -o file_name
-# download file and use same file name
-curl https://google.com -O
-
-# silence output
-curl https://google.com --silent
-curl https://google.com -s
-
-# follow a location (instead of returning redirect)
-curl --location https://google.com
+# get file using FTP
+curl ftp://ftp.example.com/README
 ```
 
-```bash
-# download file
-curl -O https://example.com/dowload/linux-amd64.tar.gz
-    # -O: save file locally with same name as remote file
-    # -L: follow redirects (if first response is 3xx)
+```bash { title="Download a file with cURL" }
+# download file and set name to file_name
+curl https://example.com --output file_name
+curl https://example.com -o file_name
+
+# download file and use same file name
+curl https://example.com -O
+```
+
+```bash { title="Silence output" }
+# silence output
+curl https://example.com --silent
+curl https://example.com -s
+```
+
+Use `-L` to follow redirects if the first response is a 3xx.
+
+```bash { title="Follow redirects" }
+# follow a location (instead of returning redirect)
+curl --location https://example.com
+curl -L https://example.com
 ```
 
 ### Usename and password authentication
@@ -386,6 +392,13 @@ curl -u user:password http://example.com/
 ```
 
 ### HTTP POST request
+
+By default, cURL uses a `GET` request. Use the `-X` flag to specify a different method.
+
+```bash { title="Specify HTTP method" }
+# follow a location (instead of returning redirect)
+curl -X POST https://example.com
+```
 
 ```bash
 # curl POST using application/json

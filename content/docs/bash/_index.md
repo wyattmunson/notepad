@@ -11,5 +11,7 @@ menu:
     parent: ""
     identifier: "bash-97b49197b19ae8684da49dc569404cc6"
 weight: 200
+sidebar:
+  collapsed: true
 toc: true
 ---

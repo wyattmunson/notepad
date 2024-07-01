@@ -7,8 +7,15 @@
     <generator>Hugo</generator>
     <language>en</language>
     <copyright>Copyright (c) 2020-2024 North Aerospace</copyright>
-    <lastBuildDate>Sat, 22 Jun 2024 04:10:45 -0700</lastBuildDate>
+    <lastBuildDate>Mon, 01 Jul 2024 04:06:52 -0700</lastBuildDate>
     <atom:link href="http://localhost:1313/docs/portal/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Homelab</title>
+      <link>http://localhost:1313/docs/portal/homelab/</link>
+      <pubDate>Mon, 01 Jul 2024 04:06:52 -0700</pubDate>
+      <guid>http://localhost:1313/docs/portal/homelab/</guid>
+      <description>bash &amp;lt;(curl -s https://gitlab.com/NickBusey/HomelabOS/-/raw/master/install_homelabos.sh)&#xA;========== Preparing HomelabOS docker image ========== ========== This account is NOT in the docker group ========== Do you want to add yourself to the docker group?</description>
+    </item>
     <item>
       <title>Mosquitto</title>
       <link>http://localhost:1313/docs/portal/mosquitto/</link>

@@ -11,5 +11,7 @@ menu:
     parent: ""
     identifier: "networking-6e86927d76d043704483785582b27814"
 weight: 999
+sidebar:
+  collapsed: true
 toc: true
 ---

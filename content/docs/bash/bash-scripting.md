@@ -24,7 +24,7 @@ VARIABLE_NAME=some_text
 echo $VARIABLE_NAME
 
 # set variable equal to a command output
-VARIABLE_NAME=$(ls)
+VARIABLE_NAME=$(echo "Hello")
 
 # set default variable
 VARIABLE_NAME="${1:-HELLO}"
@@ -92,9 +92,9 @@ VARIABLE_NAME="${1:-DEFAULT VALUE}"
 MESSAGE="${1:-Hello localhost}"
 ```
 
-### Reading Input
+### Reading User Input
 
-Read input is used to get input from a user which can be set to a variable.
+Read is used to get input from a user which can be set to a variable.
 
 ```bash { title="Get user input and set to variable" }
 # set a variable
@@ -133,7 +133,7 @@ if [ -z ${var+x} ]; then echo "var is unset"; else echo "var is set to '$var'"; 
 
 Extend logic with `if`, `elif`, and `else`.
 
-{{< callout icon="👉" >}}
+{{< callout context="note" icon="👉" >}}
 Extend logic with `if`, `elif`, and `else`.
 {{< /callout >}}
 
@@ -266,17 +266,21 @@ EOL
 
 ## Functions
 
-```bash
+### Defining and Calling Functions
+
+```bash { title="Define and call a function" }
+# define a function that takes an argument
 function_name() {
   echo "Hello $1"
 }
 
+# call a function and pass an argument
 function_name first_argument
 ```
 
 ### Returning Values
 
-```bash
+```bash { title="Set variable equal to return value of function" }
 function_name() {
   local some_var='some value'
   echo "$(some_var)"
@@ -285,9 +289,18 @@ function_name() {
 result=$(function_name)
 ```
 
+```bash { title="Alternate: set variable equal to return value of function" }
+function_name() {
+  return 42
+}
+
+function_name
+new_var=$?
+```
+
 ### Handling Errors
 
-```bash
+```bash { title="Handling errors in function results" }
 function_name() {
   return 1
 }

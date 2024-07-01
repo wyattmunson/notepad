@@ -2,8 +2,8 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
     <url>
-      <loc>http://localhost:1313/docs/bash/bash-scripting/</loc>
-      <lastmod>2023-06-26T17:35:47-07:00</lastmod>
+      <loc>http://localhost:1313/docs/bash/bash-cheatsheet/</loc>
+      <lastmod>2023-01-03T23:52:57-08:00</lastmod>
       <changefreq>monthly</changefreq>
       <priority>0.5</priority>
     </url>
@@ -16,8 +16,8 @@
     </url>
     
     <url>
-      <loc>http://localhost:1313/docs/bash/bash-cheatsheet/</loc>
-      <lastmod>2023-01-03T23:52:57-08:00</lastmod>
+      <loc>http://localhost:1313/docs/bash/bash-scripting/</loc>
+      <lastmod>2023-06-26T17:35:47-07:00</lastmod>
       <changefreq>monthly</changefreq>
       <priority>0.5</priority>
     </url>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Devops on WyNotes</title>
+    <link>http://localhost:1313/docs/devops/</link>
+    <description>Recent content in Devops on WyNotes</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <copyright>Copyright (c) 2020-2024 North Aerospace</copyright>
+    <lastBuildDate>Mon, 01 Jul 2024 14:11:51 -0700</lastBuildDate>
+    <atom:link href="http://localhost:1313/docs/devops/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Terraform</title>
+      <link>http://localhost:1313/docs/devops/terraform/</link>
+      <pubDate>Mon, 01 Jul 2024 14:11:51 -0700</pubDate>
+      <guid>http://localhost:1313/docs/devops/terraform/</guid>
+      <description>Terraform Install Mac?&#xA;brew install terraform&#xD;Basic Usage Sample Backend terraform { backend &amp;#34;s3&amp;#34; { bucket = &amp;#34;terraform-core-lle-state&amp;#34; key = &amp;#34;A/UNIQUE/KEY&amp;#34; region = &amp;#34;us-east-1&amp;#34; dynamodb_table = &amp;#34;terraform-lock&amp;#34; } }&#xD;The key is the S3 key, that is the path to the file.</description>
+    </item>
+    <item>
+      <title>Git</title>
+      <link>http://localhost:1313/docs/devops/git/</link>
+      <pubDate>Mon, 01 Jul 2024 13:22:34 -0700</pubDate>
+      <guid>http://localhost:1313/docs/devops/git/</guid>
+      <description>Git Git CLI commands Initial repository setup Branches Git Config Remotes Tag Commit Git CLI commands Basic git flow commands&#xD;# see current branch and file status git status # add commits to staging git add .</description>
+    </item>
+  </channel>
+</rss>

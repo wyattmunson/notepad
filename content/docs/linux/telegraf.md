@@ -70,7 +70,7 @@ The `/etc/telegraf/telegraf.conf` file drives what metrics Telegraf selects and 
 
 List of Telegraf input plugins: [GitHub](https://github.com/influxdata/telegraf/tree/master/plugins/inputs)
 
-The full Telegraf reference can be found in `/etc/telegraf-reference.conf`. It is a full list of inputs and configurations for reference only. The file is read only and changes to it are overridden.
+A sample Telegraf reference can be found in `/etc/telegraf/telegraf.conf.sample`. It is a full list of inputs and configurations for reference only. The file is read only and changes to it are overridden.
 
 **Generate default config file**:
 
@@ -134,4 +134,59 @@ sudo systemctl restart telegraf
   url="http://192.168.1.100:10250"
   insecure_skip_verify = true
   bearer_token_string = "XXXXXXXXXXXXXXXXXXX"
+```
+
+#### Docker Telegraf configs
+
+```toml { title ="/home/user/IOTstack/volumes/telegraf/telegraf.conf" }
+[global_tags]
+[agent]
+  interval = "10s"
+  round_interval = true
+  metric_batch_size = 1000
+  metric_buffer_limit = 10000
+  collection_jitter = "0s"
+  flush_interval = "10s"
+  flush_jitter = "0s"
+  precision = "0s"
+  hostname = ""
+  omit_hostname = false
+[[inputs.cpu]]
+  percpu = true
+  totalcpu = true
+  collect_cpu_time = false
+  report_active = false
+  core_tags = false
+[[inputs.disk]]
+  ignore_fs = ["tmpfs", "devtmpfs", "devfs", "iso9660", "overlay", "aufs", "squashfs"]
+[[inputs.diskio]]
+[[inputs.kernel]]
+[[inputs.mem]]
+[[inputs.processes]]
+  use_sudo = false
+[[inputs.swap]]
+[[inputs.system]]
+[[inputs.file]]
+  files = ["/sys/class/thermal/thermal_zone0/temp"]
+  name_override = "cpu_temperature"
+  data_format = "value"
+  data_type = "integer"
+[[inputs.docker]]
+  endpoint = "unix:///var/run/docker.sock"
+  gather_services = false
+  source_tag = false
+  container_name_include = []
+  container_name_exclude = []
+  timeout = "5s"
+  perdevice = false
+  total_include = ["cpu", "blkio", "network"]
+  docker_label_include = []
+  docker_label_exclude = []
+  tag_env = ["HEAP_SIZE"]
+[[inputs.net]]
+[[outputs.influxdb]]
+  urls = ["http://influxdb:8086"]
+  database = "sys_metrics"
+  timeout = "5s"
+
 ```
