@@ -25,11 +25,14 @@ echo $VARIABLE_NAME
 
 # set variable equal to a command output
 VARIABLE_NAME=$(ls)
+
+# set default variable
+VARIABLE_NAME="${1:-HELLO}"
 ```
 
 ### Bash Builtin Variables
 
-```bash
+```bash { title="Builtin bash variables" }
 $0        # Name of the Bash script
 $1 - $9   # First 9 arguments to the script
 $#        # Number of arguments were passed to script
@@ -42,19 +45,6 @@ $HOSTNAME # The hostname of the machine the script is running on.
 $SECONDS  # The number of seconds since the script was started.
 $RANDOM   # Returns a different random number each time is it referred to.
 $LINENO   # Returns the current line number in the Bash script.
-```
-
-### Reading Input
-
-Read input is used to get input from a user which can be set to a variable.
-
-```bash
-# set a variable
-read VARIABLE_NAME
-# set a variable, with prompt statement
-read -p 'Enter name: ' VARIABLE_NAME
-# set a variable, with prompt statement, password
-read -sp 'Enter password: ' VARIABLE_NAME
 ```
 
 ### Check if Variable Exists
@@ -77,6 +67,50 @@ fi
 
 # check if exists, otherwise set
 if [ -z ${var+x} ]; then echo "var is unset"; else echo "var is set to '$var'"; fi
+```
+
+### Default Variables
+
+Check if a variable is unset or null, then expand to default string value.
+
+```bash
+$ foo="bar"
+$ echo "${foo:-defaultValue}"
+↪ bar
+
+$ echo "${fizz:-defaultValue}"
+↪ defaultValue
+```
+
+Set a variable to default if a given variable is unset or null.
+
+```bash { title="Set a default variable if the first argument is not supplied" }
+# set default variable if first argument not supplied
+VARIABLE_NAME="${1:-DEFAULT VALUE}"
+
+# example usage
+MESSAGE="${1:-Hello localhost}"
+```
+
+### Reading Input
+
+Read input is used to get input from a user which can be set to a variable.
+
+```bash { title="Get user input and set to variable" }
+# set a variable
+read VARIABLE_NAME
+# set a variable, with prompt statement
+read -p 'Enter name: ' VARIABLE_NAME
+# set a variable, with prompt statement, password
+read -sp 'Enter password: ' VARIABLE_NAME
+```
+
+### Exporting Varibles
+
+Use `export` to make a variable available to a subprocess.
+
+```bash { title="Use export to set a variable" }
+export VAR_NAME=VALUE
 ```
 
 ---

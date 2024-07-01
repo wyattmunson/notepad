@@ -522,6 +522,28 @@ Request different types of records
 
 ---
 
+## `echo` command
+
+Prints text to the terminal window.
+
+```bash
+$ echo some text
+↪ some text
+```
+
+---
+
+## `exit` command
+
+Exit current shell session with a given exit code.
+
+```bash
+# exit current shell with exit code 1
+exit 1
+```
+
+---
+
 ## `export` - EXPORT
 
 {{< callout context="tip" title="export" icon="outline/terminal-2" >}}
@@ -600,28 +622,6 @@ find . -name search_text -mtime 4
 
 # only find empty
 find . -name search_text -type f
-```
-
----
-
-## `echo` command
-
-Prints text to the terminal window.
-
-```bash
-$ echo some text
-↪ some text
-```
-
----
-
-## `exit` command
-
-Exit current shell session with a given exit code.
-
-```bash
-# exit current shell with exit code 1
-exit 1
 ```
 
 ---
