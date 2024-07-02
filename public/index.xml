@@ -7,7 +7,7 @@
     <generator>Hugo</generator>
     <language>en</language>
     <copyright>Copyright (c) 2020-2024 North Aerospace</copyright>
-    <lastBuildDate>Sun, 30 Jun 2024 00:50:57 -0700</lastBuildDate>
+    <lastBuildDate>Mon, 01 Jul 2024 14:11:51 -0700</lastBuildDate>
     <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Kubernetes Overview</title>
@@ -52,11 +52,11 @@
       <description>The Docker CLI is used to communicate with the Docker Engine to build, run, and maintain images.&#xA;Basic Commands # View all docker images saved locally docker images # View all running containers docker ps&#xD;Build Docker Image # build a docker image docker build .</description>
     </item>
     <item>
-      <title>Python Snippets</title>
-      <link>http://localhost:1313/docs/python2/python-snippets/</link>
-      <pubDate>Wed, 04 Jan 2023 00:19:53 -0800</pubDate>
-      <guid>http://localhost:1313/docs/python2/python-snippets/</guid>
-      <description></description>
+      <title>Terraform</title>
+      <link>http://localhost:1313/docs/devops/terraform/</link>
+      <pubDate>Mon, 01 Jul 2024 14:11:51 -0700</pubDate>
+      <guid>http://localhost:1313/docs/devops/terraform/</guid>
+      <description>This is a terraform summary</description>
     </item>
     <item>
       <title>Bash Reference</title>

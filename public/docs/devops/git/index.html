@@ -44,7 +44,7 @@
       >
 <link rel="manifest" href="/manifest.webmanifest">
 <meta property="og:title" content="Git">
-<meta property="og:description" content="Git Git CLI commands Initial repository setup Branches Git Config Remotes Tag Commit Git CLI commands Basic git flow commands# see current branch and file status git status # add commits to staging git add .">
+<meta property="og:description" content="Git CLI commands Basic git flow commands# see current branch and file status git status # add commits to staging git add .">
 <meta property="og:type" content="article">
 <meta property="og:url" content="http://localhost:1313/docs/devops/git/"><meta property="og:image" content="http://localhost:1313/cover.png"><meta property="article:section" content="docs">
 <meta property="article:published_time" content="2024-07-01T13:22:34-07:00">
@@ -52,7 +52,7 @@
 
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="http://localhost:1313/cover.png"><meta name="twitter:title" content="Git">
-<meta name="twitter:description" content="Git Git CLI commands Initial repository setup Branches Git Config Remotes Tag Commit Git CLI commands Basic git flow commands# see current branch and file status git status # add commits to staging git add .">
+<meta name="twitter:description" content="Git CLI commands Basic git flow commands# see current branch and file status git status # add commits to staging git add .">
 <meta name="twitter:site" content="@getdoks">
 
     
@@ -216,18 +216,6 @@
 
   <li>
       <a href="/docs/linux/file-structure/">File Structure</a>
-  </li>
-      </ul>
-    </details>
-  </li>
-
-  <li>
-    <details>
-      <summary>Python2</summary>
-      <ul class="list-unstyled list-nested">
-
-  <li>
-      <a href="/docs/python2/python-snippets/">Python Snippets</a>
   </li>
       </ul>
     </details>
@@ -655,18 +643,6 @@
 
   <li>
     <details>
-      <summary>Python2</summary>
-      <ul class="list-unstyled list-nested">
-
-  <li>
-      <a href="/docs/python2/python-snippets/">Python Snippets</a>
-  </li>
-      </ul>
-    </details>
-  </li>
-
-  <li>
-    <details>
       <summary>Guides</summary>
       <ul class="list-unstyled list-nested">
 
@@ -884,10 +860,17 @@
       <ul>
         <li><a href="#branches">Branches</a></li>
         <li><a href="#initial-repository-setup">Initial repository setup</a></li>
+        <li><a href="#staging-changes">Staging Changes</a></li>
         <li><a href="#git-config">Git Config</a></li>
         <li><a href="#remotes">Remotes</a></li>
         <li><a href="#tag-commit">Tag Commit</a></li>
         <li><a href="#pulling-without-pull-strategy-set">Pulling without pull strategy set</a></li>
+      </ul>
+    </li>
+    <li><a href="#authenticate-with-external-git-providers">Authenticate with External Git Providers</a>
+      <ul>
+        <li><a href="#configure-a-remote-to-use-a-pat">Configure a remote to use a PAT</a></li>
+        <li><a href="#specify-a-certain-ssh-key">Specify a certain SSH key</a></li>
       </ul>
     </li>
   </ul>
@@ -909,10 +892,17 @@
       <ul>
         <li><a href="#branches">Branches</a></li>
         <li><a href="#initial-repository-setup">Initial repository setup</a></li>
+        <li><a href="#staging-changes">Staging Changes</a></li>
         <li><a href="#git-config">Git Config</a></li>
         <li><a href="#remotes">Remotes</a></li>
         <li><a href="#tag-commit">Tag Commit</a></li>
         <li><a href="#pulling-without-pull-strategy-set">Pulling without pull strategy set</a></li>
+      </ul>
+    </li>
+    <li><a href="#authenticate-with-external-git-providers">Authenticate with External Git Providers</a>
+      <ul>
+        <li><a href="#configure-a-remote-to-use-a-pat">Configure a remote to use a PAT</a></li>
+        <li><a href="#specify-a-certain-ssh-key">Specify a certain SSH key</a></li>
       </ul>
     </li>
   </ul>
@@ -921,19 +911,7 @@
   </details>
 
 			</nav>
-			<h1 id="git">Git</h1>
-<ul>
-<li><a href="#git-cli-commands">Git CLI commands</a>
-<ul>
-<li><a href="#initial-repository-setup">Initial repository setup</a></li>
-<li><a href="#branches">Branches</a></li>
-<li><a href="#git-config">Git Config</a></li>
-<li><a href="#remotes">Remotes</a></li>
-<li><a href="#tag-commit">Tag Commit</a></li>
-</ul>
-</li>
-</ul>
-<h2 id="git-cli-commands">Git CLI commands<a href="#git-cli-commands" class="anchor" aria-hidden="true">#</a> </h2>
+			<h2 id="git-cli-commands">Git CLI commands<a href="#git-cli-commands" class="anchor" aria-hidden="true">#</a> </h2>
 
 
 
@@ -1028,6 +1006,53 @@
 </span></span><span class="line"><span class="cl">git push -u origin main</span></span></code></pre></div>
   </figure>
 </div>
+<h3 id="staging-changes">Staging Changes<a href="#staging-changes" class="anchor" aria-hidden="true">#</a> </h3>
+<p>Before commiting changes, they must be <code>staged</code> for commit.</p>
+
+
+
+<div class="expressive-code">
+  <figure class="frame is-terminal has-title not-content">
+  <figcaption class="header">
+    <span class="title">Stage changes for commit</span>
+  </figcaption>
+  <div class="highlight" title="Stage changes for commit"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># git add all changes at current dir (and below)</span>
+</span></span><span class="line"><span class="cl">git add .
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># git add all changes in repo</span>
+</span></span><span class="line"><span class="cl">git add -A
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># git add specific files or dirs</span>
+</span></span><span class="line"><span class="cl">git add dir/</span></span></code></pre></div>
+  </figure>
+</div>
+
+
+
+<div class="expressive-code">
+  <figure class="frame is-terminal has-title not-content">
+  <figcaption class="header">
+    <span class="title">Unstage changes for commit</span>
+  </figcaption>
+  <div class="highlight" title="Unstage changes for commit"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># unstage all changes</span>
+</span></span><span class="line"><span class="cl">git reset HEAD
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># unstage specific changes</span>
+</span></span><span class="line"><span class="cl">git reset HEAD dir/file.txt</span></span></code></pre></div>
+  </figure>
+</div>
+
+
+
+<div class="expressive-code">
+  <figure class="frame is-terminal has-title not-content">
+  <figcaption class="header">
+    <span class="title">Unstage changes for commit and delete all changes</span>
+  </figcaption>
+  <div class="highlight" title="Unstage changes for commit and delete all changes"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">git reset HEAD
+</span></span><span class="line"><span class="cl">git checkout .</span></span></code></pre></div>
+  </figure>
+</div>
 <h3 id="git-config">Git Config<a href="#git-config" class="anchor" aria-hidden="true">#</a> </h3>
 <p>Git Config stores metadata - globally and per repository.</p>
 
@@ -1080,27 +1105,6 @@
   <div class="highlight" title="Remove git remote"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">git remote remove origin</span></span></code></pre></div>
   </figure>
 </div>
-<h4 id="configure-a-remote-to-use-a-pat">Configure a remote to use a PAT<a href="#configure-a-remote-to-use-a-pat" class="anchor" aria-hidden="true">#</a> </h4>
-<p>Use a Personal Access Token to authenticate with an external git provider like GitHub.</p>
-<p>This is useful for private repositories that cannot use password or SSH based authentication.</p>
-
-
-
-<div class="expressive-code">
-  <figure class="frame is-terminal has-title not-content">
-  <figcaption class="header">
-    <span class="title">Remove git remote</span>
-  </figcaption>
-  <div class="highlight" title="Remove git remote"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># run `git remote add` command first as normal</span>
-</span></span><span class="line"><span class="cl">git remote set-url origin https://USER_NAME:PAT@github.com/ORG_NAME/REPO_NAME.git</span></span></code></pre></div>
-  </figure>
-</div>
-<ul>
-<li><code>USER_NAME</code> - GitHub username of user that owns/created PAT</li>
-<li><code>PAT</code> - Classic GitHub PAT (Personal access token). This token can additionally be set to authenticate with SSO if within a company managed GH org.</li>
-<li><code>ORG_NAME</code> - GitHub Org name, or username if not with a GH org</li>
-<li><code>REPO_NAME</code> - Name of GH repository</li>
-</ul>
 <h3 id="tag-commit">Tag Commit<a href="#tag-commit" class="anchor" aria-hidden="true">#</a> </h3>
 
 
@@ -1140,6 +1144,57 @@ or --ff-only on the command line to override the configured default per
 invocation.</code></pre>
   </figure>
 </div>
+<h2 id="authenticate-with-external-git-providers">Authenticate with External Git Providers<a href="#authenticate-with-external-git-providers" class="anchor" aria-hidden="true">#</a> </h2>
+<p>Different methods for authenticating with external git providers like GitHub.</p>
+<h3 id="configure-a-remote-to-use-a-pat">Configure a remote to use a PAT<a href="#configure-a-remote-to-use-a-pat" class="anchor" aria-hidden="true">#</a> </h3>
+<p>Use a Personal Access Token to authenticate over HTTPS with an external git provider like GitHub.</p>
+<p>This is useful for private repositories that cannot use password or SSH based authentication.</p>
+
+
+
+<div class="expressive-code">
+  <figure class="frame is-terminal has-title not-content">
+  <figcaption class="header">
+    <span class="title">Authenticate with PAT</span>
+  </figcaption>
+  <div class="highlight" title="Authenticate with PAT"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># run `git remote add` command first as normal</span>
+</span></span><span class="line"><span class="cl">git remote set-url origin https://USER_NAME:PAT@github.com/ORG_NAME/REPO_NAME.git</span></span></code></pre></div>
+  </figure>
+</div>
+<ul>
+<li><code>USER_NAME</code> - GitHub username of user that owns/created PAT</li>
+<li><code>PAT</code> - Classic GitHub PAT (Personal access token). This token can additionally be set to authenticate with SSO if within a company managed GH org.</li>
+<li><code>ORG_NAME</code> - GitHub Org name, or username if not with a GH org</li>
+<li><code>REPO_NAME</code> - Name of GH repository</li>
+</ul>
+<h3 id="specify-a-certain-ssh-key">Specify a certain SSH key<a href="#specify-a-certain-ssh-key" class="anchor" aria-hidden="true">#</a> </h3>
+<p>Use a specific SSH key to authenticate over SSH with an external git provider like GitHub.</p>
+
+
+
+<div class="expressive-code">
+  <figure class="frame is-terminal has-title not-content">
+  <figcaption class="header">
+    <span class="title">Authenticate with specific SSH key</span>
+  </figcaption>
+  <div class="highlight" title="Authenticate with specific SSH key"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># set given SSH key for current repo</span>
+</span></span><span class="line"><span class="cl">git config core.sshCommand <span class="s2">&#34;ssh -i /path/to/keyfile&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># set given SSH key for all repos</span>
+</span></span><span class="line"><span class="cl">git config --global core.sshCommand <span class="s2">&#34;ssh -i /path/to/keyfile&#34;</span></span></span></code></pre></div>
+  </figure>
+</div>
+<div class="callout callout-caution d-flex flex-row mt-4 mb-4 pt-4 pe-4 pb-2 ps-3">
+  
+  <div class="callout-content">
+    
+    <div class="callout-body">
+      <p>Support for <code>core.sshCommand</code> is only available in git version 2.10.0 and above.</p>
+
+    </div>
+  </div>
+</div>
+
 
 			<div class="page-footer-meta d-flex flex-column flex-md-row justify-content-between">
 				</div>

@@ -14,15 +14,6 @@ seo:
   noindex: false # false (default) or true
 ---
 
-# Git
-
-- [Git CLI commands](#git-cli-commands)
-  - [Initial repository setup](#initial-repository-setup)
-  - [Branches](#branches)
-  - [Git Config](#git-config)
-  - [Remotes](#remotes)
-  - [Tag Commit](#tag-commit)
-
 ## Git CLI commands
 
 ```bash { title="Basic git flow commands" }
@@ -88,6 +79,34 @@ git remote add origin git@github.com:USERNAME/REPO_NAME.git
 git push -u origin main
 ```
 
+### Staging Changes
+
+Before commiting changes, they must be `staged` for commit.
+
+```bash { title="Stage changes for commit" }
+# git add all changes at current dir (and below)
+git add .
+
+# git add all changes in repo
+git add -A
+
+# git add specific files or dirs
+git add dir/
+```
+
+```bash { title="Unstage changes for commit" }
+# unstage all changes
+git reset HEAD
+
+# unstage specific changes
+git reset HEAD dir/file.txt
+```
+
+```bash { title="Unstage changes for commit and delete all changes" }
+git reset HEAD
+git checkout .
+```
+
 ### Git Config
 
 Git Config stores metadata - globally and per repository.
@@ -124,22 +143,6 @@ git remote add second-remote git@github.com:USERNAME/REPO_NAME.git
 git remote remove origin
 ```
 
-#### Configure a remote to use a PAT
-
-Use a Personal Access Token to authenticate with an external git provider like GitHub.
-
-This is useful for private repositories that cannot use password or SSH based authentication.
-
-```bash { title="Remove git remote" }
-# run `git remote add` command first as normal
-git remote set-url origin https://USER_NAME:PAT@github.com/ORG_NAME/REPO_NAME.git
-```
-
-- `USER_NAME` - GitHub username of user that owns/created PAT
-- `PAT` - Classic GitHub PAT (Personal access token). This token can additionally be set to authenticate with SSO if within a company managed GH org.
-- `ORG_NAME` - GitHub Org name, or username if not with a GH org
-- `REPO_NAME` - Name of GH repository
-
 ### Tag Commit
 
 ```bash
@@ -166,3 +169,37 @@ preference for all repositories. You can also pass --rebase, --no-rebase,
 or --ff-only on the command line to override the configured default per
 invocation.
 ```
+
+## Authenticate with External Git Providers
+
+Different methods for authenticating with external git providers like GitHub.
+
+### Configure a remote to use a PAT
+
+Use a Personal Access Token to authenticate over HTTPS with an external git provider like GitHub.
+
+This is useful for private repositories that cannot use password or SSH based authentication.
+
+```bash { title="Authenticate with PAT" }
+# run `git remote add` command first as normal
+git remote set-url origin https://USER_NAME:PAT@github.com/ORG_NAME/REPO_NAME.git
+```
+
+- `USER_NAME` - GitHub username of user that owns/created PAT
+- `PAT` - Classic GitHub PAT (Personal access token). This token can additionally be set to authenticate with SSO if within a company managed GH org.
+- `ORG_NAME` - GitHub Org name, or username if not with a GH org
+- `REPO_NAME` - Name of GH repository
+
+### Specify a certain SSH key
+
+Use a specific SSH key to authenticate over SSH with an external git provider like GitHub.
+
+```bash { title="Authenticate with specific SSH key" }
+# set given SSH key for current repo
+git config core.sshCommand "ssh -i /path/to/keyfile"
+
+# set given SSH key for all repos
+git config --global core.sshCommand "ssh -i /path/to/keyfile"
+```
+
+{{< callout caution >}} Support for `core.sshCommand` is only available in git version 2.10.0 and above. {{< /callout >}}

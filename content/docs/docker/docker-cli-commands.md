@@ -42,8 +42,17 @@ docker build . --build-arg DB_PASSWORD=hunter2
 ### Run Docker container
 
 ```bash
-# run docker container
+# run docker container (using image name and tag)
+docker run <IMAGE_NAME>:<IMAGE_TAG>
 docker run alpine:latest
+
+# run docker container (using container Id)
+docker run <CONTAINER_ID>
+docker run 183582d52a03
+docker run 18
+
+# run with env vars
+docker run -e DB_PASSWORD=hunter2 -it ubuntu:latest some-command
 
 # exec into running container
 docker exec -it <CONTAINER_ID> <COMMAND>
@@ -55,9 +64,6 @@ docker run --rm -it gitlab/gitlab-runner:2.0.3 bin/bash
 
 # run exec against stopped container (override entrypoint)
 docker run --rm -ti --entrypoint='' munsonwf/nslookup:1.0.0 /bin/ash
-
-# run
-docker run -e DB_PASSWORD=hello -it ubuntu:latest some-command
 ```
 
 ### Logs from Docker container
@@ -77,17 +83,31 @@ sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
 
 ```
 
-```bash
-# take snapshot of running image
-docker commit <CONTAINER NAME>
+### Take Snapshot of Container
 
-# tag image you've created
+```bash { title="Take snapshot of running container" }
+# take snapshot of running container (get id with `docker ps`)
+docker commit <CONTAINER_ID>
+```
+
+### Tag Docker Image
+
+```bash { title="Tag image" }
+# tag docker image (get id with `docker images`)
 docker tag <IMAGE_ID> <NEW_NAME>
+```
 
+### Inspect Running Container
+
+```bash { title="Inspect running container" }
 # inspect container (see entrypoint, CMD)
 docker inspect <IMAGE ID>
 docker inspect 2bf89faaab70
+```
 
+### Inspect Network Configuration
+
+```bash { title="Inspect network configuration" }
 # list and inspect docker networks
 docker network ls
 docker network inspect 74e
