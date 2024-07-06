@@ -1,0 +1,19 @@
+{{ define "main" }}
+  <h1>{{ .Title }}</h1>
+  {{ range where .Site.Pages "RelPermalink" .Params.parent }}
+    <a href="{{ .Permalink }}">⇡ {{ .Title }}</a>
+  {{ end }}
+
+  <!-- BREADCRUMB LIST -->
+  <!-- {{ $url := replace .Permalink .Site.BaseURL "/" }} -->
+  {{ $url := replace .Permalink ( printf "%s" .Site.BaseURL) "/" }}
+  <ol class="breadcrumbs">
+    {{ range split $url "/" }}
+      {{ if ne $url "" }}
+      <li><a href="{{ . | absURL }}">{{ . }}</a></li>
+      {{ end }}
+    {{ end }}
+  </ol>
+  {{ .Content }}
+{{ end }}
+

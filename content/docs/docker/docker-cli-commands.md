@@ -1,6 +1,7 @@
 ---
 title: "Docker CLI Commands"
 description: ""
+summary: "Docker CLI command reference for building and running images, and managing Docker"
 lead: ""
 date: 2023-01-04T00:19:53-08:00
 lastmod: 2023-01-04T00:19:53-08:00
@@ -22,11 +23,25 @@ The Docker CLI is used to communicate with the Docker Engine to build, run, and 
 # View all docker images saved locally
 docker images
 
+# Download a docker image onto local machine
+docker pull <IMAGE_NAME>:<IMAGE_TAG>
+docker pull library/nginx:latest
+
 # View all running containers
 docker ps
 ```
 
 ### Build Docker Image
+
+Use `docker build` to build a Docker image from a Dockerfile, from a specified location (`.` specifies the current directory).
+
+{{< callout context="tip" >}}
+Docker images file the syntax `<VENDOR>/<REPO>:<TAG>`.
+{{< /callout >}}
+
+- `<VENDOR>` - the organization, company, or user. Set to the DockerHub username if pushing to that location.
+- `<REPO>` - the repository or application name for this image. All versions of an application share the same repo name.
+- `<TAG>` - reference to the version number or specific image.
 
 ```bash
 # build a docker image
@@ -108,8 +123,11 @@ docker inspect 2bf89faaab70
 ### Inspect Network Configuration
 
 ```bash { title="Inspect network configuration" }
-# list and inspect docker networks
+# list docker networks
 docker network ls
+
+# inspect given docker network
+docker network inspect <IMAGE ID>
 docker network inspect 74e
 ```
 

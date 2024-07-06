@@ -16,17 +16,3 @@ seo:
   noindex: false # false (default) or true
 ---
 
-```
-title: "Docker"
-description: "Help Doks."
-lead: ""
-date: 2020-10-06T08:49:15+00:00
-lastmod: 2020-10-06T08:49:15+00:00
-draft: false
-images: []
-weight: 600
-sidebar:
-  collapsed: true
-toc: true
-```
-

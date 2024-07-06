@@ -2,6 +2,13 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
     <url>
+      <loc>http://localhost:1313/docs/linux/systemd/</loc>
+      <lastmod>2024-07-02T02:52:22-07:00</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.5</priority>
+    </url>
+    
+    <url>
       <loc>http://localhost:1313/docs/linux/telegraf/</loc>
       <lastmod>2024-06-24T19:54:06-07:00</lastmod>
       <changefreq>monthly</changefreq>

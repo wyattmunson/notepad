@@ -1,0 +1,1188 @@
+<!doctype html>
+<html lang="en" data-bs-theme="auto">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><link rel="preload" href="http://localhost:1313/fonts/vendor/jost/jost-v4-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="http://localhost:1313/fonts/vendor/jost/jost-v4-latin-500.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="http://localhost:1313/fonts/vendor/jost/jost-v4-latin-700.woff2" as="font" type="font/woff2" crossorigin>
+<script 
+  src="/js/color-mode.f14b3e296de1d0b69e75af684b62a4a912a2cadab04e36123407cd8388204f1d.js"
+  integrity="sha256-8Us&#43;KW3h0Laeda9oS2KkqRKiytqwTjYSNAfNg4ggTx0=">
+</script>
+
+
+<link rel="stylesheet" href="/main.01b0834d5af51b24812d02878d09c8d7677d6b8af13164fb50215889dc19aaefd0e9366c13b45a9a57ae481dfd1836bce46b5ebfe461d56e3498b9443d8c5e27.css" integrity="sha512-AbCDTVr1GySBLQKHjQnI12d9a4rxMWT7UCFYidwZqu/Q6TZsE7RamleuSB39GDa85Gtev&#43;Rh1W40mLlEPYxeJw==" crossorigin="anonymous">
+
+<noscript><style>img.lazyload { display: none; }</style></noscript><base href="http://localhost:1313/docs/linux/systemctl/">
+  <link rel="canonical" href="http://localhost:1313/docs/linux/systemctl/">
+<title>Systemctl  |  WyNotes</title>
+<meta name="description" content="Congrats on setting up a new Doks project!">
+
+    
+    <link rel="icon" href="/favicon.ico" sizes="32x32">
+    
+      <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    
+      <link
+        rel="apple-touch-icon"
+        href="/apple-touch-icon.png"
+        sizes="180x180"
+        type="image/png"
+      >
+      <link
+        rel="icon"
+        href="/favicon-192x192.png"
+        sizes="192x192"
+        type="image/png"
+      >
+      <link
+        rel="icon"
+        href="/favicon-512x512.png"
+        sizes="512x512"
+        type="image/png"
+      >
+<link rel="manifest" href="/manifest.webmanifest">
+<meta property="og:title" content="Systemctl">
+<meta property="og:description" content="sudo systemctl status docker sudo systemctl status docker.service # start a service sudo systemctl start docker # stop a service sudo systemctl stop docker # restart a service sudo systemctl restart docker # reload config without restarting sudo systemctl reload docker # start service on boot sudo systemctl enable docker # disable start on boot sudo systemctl disabled dockerUnit Files A unit is some resource that systemd knows how to operate and manage.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="http://localhost:1313/docs/linux/systemctl/"><meta property="og:image" content="http://localhost:1313/cover.png"><meta property="article:section" content="docs">
+<meta property="article:published_time" content="2024-07-02T02:52:22-07:00">
+<meta property="article:modified_time" content="2024-07-02T02:52:22-07:00"><meta property="og:site_name" content="My Docs">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="http://localhost:1313/cover.png"><meta name="twitter:title" content="Systemctl">
+<meta name="twitter:description" content="sudo systemctl status docker sudo systemctl status docker.service # start a service sudo systemctl start docker # stop a service sudo systemctl stop docker # restart a service sudo systemctl restart docker # reload config without restarting sudo systemctl reload docker # start service on boot sudo systemctl enable docker # disable start on boot sudo systemctl disabled dockerUnit Files A unit is some resource that systemd knows how to operate and manage.">
+<meta name="twitter:site" content="@getdoks">
+
+    
+    
+    <script type="application/ld+json">
+  {
+   "@context": "https://schema.org",
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+     {
+       "@type": "ListItem",
+       "item": "http://localhost:1313/",
+       "name": "Wy Notes",
+       "position": 1
+     },
+     {
+       "@type": "ListItem",
+       "item": "http://localhost:1313/docs/",
+       "name": "Docs",
+       "position": 2
+     },
+     {
+       "@type": "ListItem",
+       "item": "http://localhost:1313/docs/linux/",
+       "name": "Linux",
+       "position": 3
+     },
+     {
+       "@type": "ListItem",
+       "name": "Systemctl",
+       "position": 4
+     }
+   ]
+ }
+</script>
+
+
+
+
+
+</head>
+
+  
+  <body class="single section docs" data-bs-spy="scroll" data-bs-target="#toc" data-bs-root-margin="0px 0px -60%" data-bs-smooth-scroll="true" tabindex="0">
+    <div class="sticky-top">
+<header class="navbar navbar-expand-lg">
+  <div class="container-lg">
+  
+    <a class="navbar-brand me-auto me-lg-3" href="/">WyNotes</a>
+
+    
+    
+    <button type="button" id="searchToggleMobile" class="btn btn-link nav-link mx-2 d-lg-none" aria-label="Search website">
+      <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+        <circle cx="10" cy="10" r="7"></circle>
+        <line x1="21" y1="21" x2="15" y2="15"></line>
+      </svg>
+    </button>
+    
+    <button class="btn btn-link d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavSection" aria-controls="offcanvasNavSection" aria-label="Open section navigation menu">
+      <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-dots-vertical" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+        <path d="M12 12m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0"></path>
+        <path d="M12 19m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0"></path>
+        <path d="M12 5m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0"></path>
+      </svg>
+    </button>
+    <div class="offcanvas offcanvas-start d-lg-none" tabindex="-1" id="offcanvasNavSection" aria-labelledby="offcanvasNavSectionLabel">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasNavSectionLabel">Docs</h5>
+        <button type="button" class="btn btn-link nav-link p-0 ms-auto" data-bs-dismiss="offcanvas" aria-label="Close">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-x" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+            <path d="M18 6l-12 12"></path>
+            <path d="M6 6l12 12"></path>
+          </svg>
+        </button>
+      </div>
+      <div class="offcanvas-body">
+        <aside class="doks-sidebar mt-n3">
+          <nav id="doks-docs-nav" aria-label="Tertiary navigation">
+            
+  
+    
+<nav class="section-nav docs-links">
+  <ul class="list-unstyled">
+
+  <li>
+    <details>
+      <summary>Bash</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/docs/bash/bash-cheatsheet/">Bash Cheatsheet</a>
+  </li>
+
+  <li>
+      <a href="/docs/bash/bash-reference/">Bash Reference</a>
+  </li>
+
+  <li>
+      <a href="/docs/bash/bash-scripting/">Bash Scripting</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details>
+      <summary>Help</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/docs/help/how-to-update/">How to Update</a>
+  </li>
+
+  <li>
+      <a href="/docs/help/troubleshooting/">Troubleshooting</a>
+  </li>
+
+  <li>
+      <a href="/docs/help/faq/">FAQ</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details>
+      <summary>Javascript</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/docs/js/js-reference/">Js Reference</a>
+  </li>
+
+  <li>
+      <a href="/docs/js/js-cheatsheet/">Js Cheatsheet</a>
+  </li>
+
+  <li>
+      <a href="/docs/js/basic-js/">Basic Js</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Linux</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li class="active" >
+      <a aria-current="page" href="/docs/linux/systemctl/">Systemctl</a>
+  </li>
+
+  <li>
+      <a href="/docs/linux/telegraf/">Telegraf</a>
+  </li>
+
+  <li>
+      <a href="/docs/linux/linux-configuration/">Linux Configuration</a>
+  </li>
+
+  <li>
+      <a href="/docs/linux/file-structure/">File Structure</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details>
+      <summary>Guides</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/docs/guides/test/">Test</a>
+  </li>
+
+  <li>
+      <a href="/docs/guides/get-started-in-wynotes/">Get Started in WyNotes</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details>
+      <summary>Docker</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/docs/docker/docker-overview/">Docker Overview</a>
+  </li>
+
+  <li>
+      <a href="/docs/docker/docker-cli-commands/">Docker CLI Commands</a>
+  </li>
+
+  <li>
+      <a href="/docs/docker/creating-dockerfiles/">Creating Dockerfiles</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details>
+      <summary>Reference</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/docs/reference/example-reference/">Example Reference</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Hugo</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/docs/hugo/templates/">Templates</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details>
+      <summary>Devops</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/docs/devops/terraform/">Terraform</a>
+  </li>
+
+  <li>
+      <a href="/docs/devops/git/">Git</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details>
+      <summary>Portal</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+    <details open>
+      <summary>Subdir</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/docs/portal/subdir/subfile/">Subfile</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+      <a href="/docs/portal/homelab/">Homelab</a>
+  </li>
+
+  <li>
+      <a href="/docs/portal/mosquitto/">Mosquitto</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details>
+      <summary>Unicode</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/docs/unicode/arrows/">Arrows</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details>
+      <summary>Python</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/docs/python/deps/">Deps</a>
+  </li>
+
+  <li>
+      <a href="/docs/python/python-snippets/">Python Snippets</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details>
+      <summary>Networking</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/docs/networking/networking-basics/">Networking Basics</a>
+  </li>
+
+  <li>
+      <a href="/docs/networking/dns/">DNS</a>
+  </li>
+
+  <li>
+      <a href="/docs/networking/ports/">Ports</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details>
+      <summary>Kubernetes</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/docs/kubernetes/kubernetes-overview/">Kubernetes Overview</a>
+  </li>
+
+  <li>
+      <a href="/docs/kubernetes/kubectl-cli/">Kubectl CLI</a>
+  </li>
+
+  <li>
+      <a href="/docs/kubernetes/kubernetes-troubleshooting/">Kubernetes Troubleshooting</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details>
+      <summary>Postgres</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/docs/postgres/postgres-basics/">Postgres Basics</a>
+  </li>
+
+  <li>
+      <a href="/docs/postgres/psql-reference/">PSQL Reference</a>
+  </li>
+
+  <li>
+      <a href="/docs/postgres/postgres-dataypes/">Postgres Dataypes</a>
+  </li>
+
+  <li>
+      <a href="/docs/postgres/sql-crash-course/">SQL Crash Course</a>
+  </li>
+
+  <li>
+      <a href="/docs/postgres/psql-cli/">PSQL CLI</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details>
+      <summary>Web Dev</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/docs/web-dev/online-tools/">Online Tools</a>
+  </li>
+
+  <li>
+      <a href="/docs/web-dev/css/">CSS</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+  </ul>
+</nav>
+
+  
+
+          </nav>
+        </aside>
+      </div>
+    </div>
+    
+    <button class="btn btn-link nav-link mx-2 order-3 d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavMain" aria-controls="offcanvasNavMain" aria-label="Open main navigation menu">
+      <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-menu" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+        <line x1="4" y1="8" x2="20" y2="8"></line>
+        <line x1="4" y1="16" x2="20" y2="16"></line>
+      </svg>
+    </button>
+
+    
+    <div class="offcanvas offcanvas-end h-auto" tabindex="-1" id="offcanvasNavMain" aria-labelledby="offcanvasNavMainLabel">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasNavMainLabel">WyNotes</h5>
+        <button type="button" class="btn btn-link nav-link p-0 ms-auto" data-bs-dismiss="offcanvas" aria-label="Close">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-x" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+            <path d="M18 6l-12 12"></path>
+            <path d="M6 6l12 12"></path>
+         </svg>
+        </button>
+      </div>
+      
+      <div class="offcanvas-body d-flex flex-column flex-lg-row justify-content-between">
+        <ul class="navbar-nav flex-grow-1"><li class="nav-item">
+                <a class="nav-link active" href="http://localhost:1313/docs/guides/example-guide/" aria-current="true">Docs</a>
+              </li>
+            <li class="nav-item">
+                <a class="nav-link" href="http://localhost:1313/blog/">Blog</a>
+              </li>
+            <li class="nav-item">
+                <a class="nav-link" href="http://localhost:1313/casino/">Casino</a>
+              </li>
+            </ul>
+
+        
+        
+        <button type="button" id="searchToggleDesktop" class="btn btn-link nav-link p-2 d-none d-lg-block" aria-label="Search website">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+            <circle cx="10" cy="10" r="7"></circle>
+            <line x1="21" y1="21" x2="15" y2="15"></line>
+          </svg>
+        </button>
+        
+        
+        
+        <button id="buttonColorMode" class="btn btn-link mx-auto nav-link p-0 ms-lg-2 me-lg-1" type="button" aria-label="Toggle theme">
+          <svg data-bs-theme-value="dark" xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-moon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+            <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z"></path>
+          </svg>
+          <svg data-bs-theme-value="light" xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-sun" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+            <path d="M12 12m-4 0a4 4 0 1 0 8 0a4 4 0 1 0 -8 0m-5 0h1m8 -9v1m8 8h1m-9 8v1m-6.4 -15.4l.7 .7m12.1 -.7l-.7 .7m0 11.4l.7 .7m-12.1 -.7l-.7 .7"></path>
+          </svg>
+        </button>
+        
+        <ul id="socialMenu" class="nav mx-auto flex-row order-lg-4">
+          <li class="nav-item">
+              <a class="nav-link social-link" href="https://github.com/gethyas/doks"><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5"></path></svg><small class="ms-2 visually-hidden">GitHub</small></a>
+            </li>
+          </ul>
+        
+        </div>
+    </div>
+
+    
+    </div>
+</header>
+</div>
+
+<div class="modal" id="searchModal" tabindex="-1" aria-labelledby="searchModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-fullscreen-md-down">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5 visually-hidden" id="searchModalLabel">Search</h1>
+        <button type="button" class="btn-close visually-hidden" data-bs-dismiss="modal" aria-label="Close"></button>
+        <div class="search-input flex-grow-1 d-none">
+          <form id="search-form" class="search-form" action="#" method="post" accept-charset="UTF-8" role="search">
+            <label for="query" class="visually-hidden">Search</label>
+            <div class="d-flex">
+              <input type="search" id="query" name="query" class="search-text form-control form-control-lg" placeholder="Search" aria-label="Search" maxlength="128" autocomplete="off">
+              <button type="button" class="btn btn-link text-decoration-none px-0 ms-3 d-md-none" data-bs-dismiss="modal" aria-label="Close">Cancel</button>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="modal-body">
+        <p class="search-loading status message d-none mt-3 text-center">Loading search index…</p>
+        <p class="search-no-recent message d-none mt-3 text-center">No recent searches</p>
+        <p class="search-no-results message d-none mt-3 text-center">No results for "<strong><span class="query-no-results">Query here</span></strong>"</p>
+        <div id="searchResults" class="search-results"></div>
+        <template>
+          <article class="search-result list-view">
+            <div class="card my-3">
+              <div class="card-body">
+                <header>
+                  <h2 class="h5 title title-submitted mb-0"><a class="stretched-link text-decoration-none text-reset" href="#">Title here</a></h2>
+                  <div class="submitted d-none"><time class="created-date">Date here</time></div>
+                </header>
+                <div class="content">Summary here</div>
+              </div>
+            </div>
+          </article>
+        </template>
+      </div>
+      <div class="modal-footer">
+        <ul class="list-inline me-auto d-none d-md-block">
+          <li class="list-inline-item"><kbd class="me-2"><svg width="15" height="15" aria-label="Enter key" role="img"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2"><path d="M12 3.53088v3c0 1-1 2-2 2H4M7 11.53088l-3-3 3-3"></path></g></svg></kbd><span class="DocSearch-Label">to select</span></li>
+          <li class="list-inline-item"><kbd class="me-2"><svg width="15" height="15" aria-label="Arrow down" role="img"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2"><path d="M7.5 3.5v8M10.5 8.5l-3 3-3-3"></path></g></svg></kbd><kbd class="me-2"><svg width="15" height="15" aria-label="Arrow up" role="img"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2"><path d="M7.5 11.5v-8M10.5 6.5l-3-3-3 3"></path></g></svg></kbd><span class="DocSearch-Label">to navigate</span></li>
+          <li class="list-inline-item"><kbd class="me-2"><svg width="15" height="15" aria-label="Escape key" role="img"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2"><path d="M13.6167 8.936c-.1065.3583-.6883.962-1.4875.962-.7993 0-1.653-.9165-1.653-2.1258v-.5678c0-1.2548.7896-2.1016 1.653-2.1016.8634 0 1.3601.4778 1.4875 1.0724M9 6c-.1352-.4735-.7506-.9219-1.46-.8972-.7092.0246-1.344.57-1.344 1.2166s.4198.8812 1.3445.9805C8.465 7.3992 8.968 7.9337 9 8.5c.032.5663-.454 1.398-1.4595 1.398C6.6593 9.898 6 9 5.963 8.4851m-1.4748.5368c-.2635.5941-.8099.876-1.5443.876s-1.7073-.6248-1.7073-2.204v-.4603c0-1.0416.721-2.131 1.7073-2.131.9864 0 1.6425 1.031 1.5443 2.2492h-2.956"></path></g></svg></kbd><span class="DocSearch-Label">to close</span></li>
+        </ul>
+        <p class="d-md-none">Search by <a class="text-decoration-none" href="https://github.com/nextapps-de/flexsearch">FlexSearch</a></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+    <div class="wrap container-lg" role="document">
+      <div class="content">
+      
+        
+	<div class="row flex-xl-nowrap">
+		<div class="col-lg-5 col-xl-4 docs-sidebar d-none d-lg-block">
+			
+  
+    
+<nav class="section-nav docs-links">
+  <ul class="list-unstyled">
+
+  <li>
+    <details>
+      <summary>Bash</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/docs/bash/bash-cheatsheet/">Bash Cheatsheet</a>
+  </li>
+
+  <li>
+      <a href="/docs/bash/bash-reference/">Bash Reference</a>
+  </li>
+
+  <li>
+      <a href="/docs/bash/bash-scripting/">Bash Scripting</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details>
+      <summary>Help</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/docs/help/how-to-update/">How to Update</a>
+  </li>
+
+  <li>
+      <a href="/docs/help/troubleshooting/">Troubleshooting</a>
+  </li>
+
+  <li>
+      <a href="/docs/help/faq/">FAQ</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details>
+      <summary>Javascript</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/docs/js/js-reference/">Js Reference</a>
+  </li>
+
+  <li>
+      <a href="/docs/js/js-cheatsheet/">Js Cheatsheet</a>
+  </li>
+
+  <li>
+      <a href="/docs/js/basic-js/">Basic Js</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Linux</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li class="active" >
+      <a aria-current="page" href="/docs/linux/systemctl/">Systemctl</a>
+  </li>
+
+  <li>
+      <a href="/docs/linux/telegraf/">Telegraf</a>
+  </li>
+
+  <li>
+      <a href="/docs/linux/linux-configuration/">Linux Configuration</a>
+  </li>
+
+  <li>
+      <a href="/docs/linux/file-structure/">File Structure</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details>
+      <summary>Guides</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/docs/guides/test/">Test</a>
+  </li>
+
+  <li>
+      <a href="/docs/guides/get-started-in-wynotes/">Get Started in WyNotes</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details>
+      <summary>Docker</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/docs/docker/docker-overview/">Docker Overview</a>
+  </li>
+
+  <li>
+      <a href="/docs/docker/docker-cli-commands/">Docker CLI Commands</a>
+  </li>
+
+  <li>
+      <a href="/docs/docker/creating-dockerfiles/">Creating Dockerfiles</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details>
+      <summary>Reference</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/docs/reference/example-reference/">Example Reference</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Hugo</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/docs/hugo/templates/">Templates</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details>
+      <summary>Devops</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/docs/devops/terraform/">Terraform</a>
+  </li>
+
+  <li>
+      <a href="/docs/devops/git/">Git</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details>
+      <summary>Portal</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+    <details open>
+      <summary>Subdir</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/docs/portal/subdir/subfile/">Subfile</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+      <a href="/docs/portal/homelab/">Homelab</a>
+  </li>
+
+  <li>
+      <a href="/docs/portal/mosquitto/">Mosquitto</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details>
+      <summary>Unicode</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/docs/unicode/arrows/">Arrows</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details>
+      <summary>Python</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/docs/python/deps/">Deps</a>
+  </li>
+
+  <li>
+      <a href="/docs/python/python-snippets/">Python Snippets</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details>
+      <summary>Networking</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/docs/networking/networking-basics/">Networking Basics</a>
+  </li>
+
+  <li>
+      <a href="/docs/networking/dns/">DNS</a>
+  </li>
+
+  <li>
+      <a href="/docs/networking/ports/">Ports</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details>
+      <summary>Kubernetes</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/docs/kubernetes/kubernetes-overview/">Kubernetes Overview</a>
+  </li>
+
+  <li>
+      <a href="/docs/kubernetes/kubectl-cli/">Kubectl CLI</a>
+  </li>
+
+  <li>
+      <a href="/docs/kubernetes/kubernetes-troubleshooting/">Kubernetes Troubleshooting</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details>
+      <summary>Postgres</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/docs/postgres/postgres-basics/">Postgres Basics</a>
+  </li>
+
+  <li>
+      <a href="/docs/postgres/psql-reference/">PSQL Reference</a>
+  </li>
+
+  <li>
+      <a href="/docs/postgres/postgres-dataypes/">Postgres Dataypes</a>
+  </li>
+
+  <li>
+      <a href="/docs/postgres/sql-crash-course/">SQL Crash Course</a>
+  </li>
+
+  <li>
+      <a href="/docs/postgres/psql-cli/">PSQL CLI</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details>
+      <summary>Web Dev</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/docs/web-dev/online-tools/">Online Tools</a>
+  </li>
+
+  <li>
+      <a href="/docs/web-dev/css/">CSS</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+  </ul>
+</nav>
+
+  
+
+		</div>
+		
+		<nav class="docs-toc d-none d-xl-block col-xl-3" aria-label="Secondary navigation">
+			<div class="page-links">
+  <h3>On this page</h3>
+    <nav id="toc">
+  <ul>
+    <li><a href="#unit-files">Unit Files</a>
+      <ul>
+        <li><a href="#types-of-unit-files">Types of Unit Files</a></li>
+        <li><a href="#file">File</a></li>
+        <li><a href="#overriding-a-unit-file">Overriding a unit file</a></li>
+        <li><a href="#unit-file-syntax">Unit File Syntax</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+</div>
+
+		</nav>
+		<main class="docs-content col-lg-11 col-xl-9">
+		
+			<h1>Systemctl</h1>
+			
+			<nav class="toc-mobile d-xl-none" aria-label="Quaternary navigation">
+				<details>
+    <summary>On this page</summary>
+    <div class="page-links">
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#unit-files">Unit Files</a>
+      <ul>
+        <li><a href="#types-of-unit-files">Types of Unit Files</a></li>
+        <li><a href="#file">File</a></li>
+        <li><a href="#overriding-a-unit-file">Overriding a unit file</a></li>
+        <li><a href="#unit-file-syntax">Unit File Syntax</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </div>
+  </details>
+
+			</nav>
+			
+
+
+<div class="expressive-code">
+  <figure class="frame is-terminal not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo systemctl status docker
+</span></span><span class="line"><span class="cl">sudo systemctl status docker.service
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># start a service</span>
+</span></span><span class="line"><span class="cl">sudo systemctl start docker
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># stop a service</span>
+</span></span><span class="line"><span class="cl">sudo systemctl stop docker
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># restart a service</span>
+</span></span><span class="line"><span class="cl">sudo systemctl restart docker
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># reload config without restarting</span>
+</span></span><span class="line"><span class="cl">sudo systemctl reload docker
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># start service on boot</span>
+</span></span><span class="line"><span class="cl">sudo systemctl <span class="nb">enable</span> docker
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># disable start on boot</span>
+</span></span><span class="line"><span class="cl">sudo systemctl disabled docker</span></span></code></pre></div>
+  </figure>
+</div>
+<h2 id="unit-files">Unit Files<a href="#unit-files" class="anchor" aria-hidden="true">#</a> </h2>
+<p>A <code>unit</code> is some resource that systemd knows how to operate and manage.</p>
+<div class="callout callout-note d-flex flex-row mt-4 mb-4 pt-4 pe-4 pb-2 ps-3">
+  
+  <div class="callout-content">
+    
+    <div class="callout-body">
+      <p>Typical location: <code>/etc/systemd/system/SERVICE_NAME.service</code></p>
+
+    </div>
+  </div>
+</div>
+
+<h3 id="types-of-unit-files">Types of Unit Files<a href="#types-of-unit-files" class="anchor" aria-hidden="true">#</a> </h3>
+<p>The <code>.service</code> unit file is the most common, but there are a variety of types:</p>
+<ul>
+<li><code>.service</code> - how to manage a service or application on the box. Includes how to start/stop service, when to start it, and dependency order</li>
+<li><code>.socket</code> - network or IPC socket, or FIFO buffer that <code>systemd</code> uses for socket-based activation.</li>
+<li><code>.device</code> - manages devces with <code>udev</code> or <code>sysfs</code> filesystem</li>
+<li><code>.mount</code> - manages a mountpoint. Named after the mount path</li>
+<li><code>.automount</code> - manages a mountpoint to be automatically mounted</li>
+<li><code>.swap</code> - manages swap space on system</li>
+<li><code>.path</code> - defines a path that can be used for path-based activation</li>
+<li><code>.snapshot</code> - created by <code>systemctl snapshot</code> command. Allows for snapshot of system state when making changes. Snapshots do not persist between sessions and are used to rollback temporary states.</li>
+<li><code>.slice</code> - related to Linux Control Group nodes</li>
+<li><code>.scope</code> - created automatically from info recieved from bus interfaces</li>
+</ul>
+<h3 id="file">File<a href="#file" class="anchor" aria-hidden="true">#</a> </h3>
+
+
+
+<div class="expressive-code">
+  <figure class="frame has-title not-content">
+  <figcaption class="header">
+    <span class="title">/etc/systemd/system/SERVICE_NAME.service</span>
+  </figcaption>
+  <div class="highlight" title="/etc/systemd/system/SERVICE_NAME.service"><pre tabindex="0" class="chroma"><code class="language-txt" data-lang="txt"><span class="line"><span class="cl">[Unit]
+</span></span><span class="line"><span class="cl">Description=Docker compose service
+</span></span><span class="line"><span class="cl">After=docker.service
+</span></span><span class="line"><span class="cl">Requires=docker.service
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">[Service]
+</span></span><span class="line"><span class="cl">User=USER_NAME
+</span></span><span class="line"><span class="cl">Group=USER_NAME
+</span></span><span class="line"><span class="cl">TimeoutStartSec=infinity
+</span></span><span class="line"><span class="cl">TimeoutStopSec=5min
+</span></span><span class="line"><span class="cl">Restart=always
+</span></span><span class="line"><span class="cl">RestartSec=3
+</span></span><span class="line"><span class="cl">WorkingDirectory=/path/to/Dockerfile
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">ExecStart=/usr/bin/docker compose -p STACK_NAME up
+</span></span><span class="line"><span class="cl">ExecStop=/usr/bin/docker compose -p STACK_NAME down
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">[Install]
+</span></span><span class="line"><span class="cl">WantedBy=multi-user.target</span></span></code></pre></div>
+  </figure>
+</div>
+<h3 id="overriding-a-unit-file">Overriding a unit file<a href="#overriding-a-unit-file" class="anchor" aria-hidden="true">#</a> </h3>
+<p>Override specific aspects of a unit file with a snippets in a subdirectory. For a unit named <code>SERVICE_NAME.service</code>, create a subdirectory <code>SERVICE_NAME.service.d</code>, and create a file within it ending in <code>.conf</code>.</p>
+<h3 id="unit-file-syntax">Unit File Syntax<a href="#unit-file-syntax" class="anchor" aria-hidden="true">#</a> </h3>
+
+
+
+<div class="expressive-code">
+  <figure class="frame has-title not-content">
+  <figcaption class="header">
+    <span class="title">Unit file syntax definitions</span>
+  </figcaption>
+  <div class="highlight" title="Unit file syntax definitions"><pre tabindex="0" class="chroma"><code class="language-systemd" data-lang="systemd"><span class="line"><span class="cl"><span class="k">[Section]</span>
+</span></span><span class="line"><span class="cl"><span class="na">Directive1</span><span class="o">=</span><span class="s">value</span>
+</span></span><span class="line"><span class="cl"><span class="na">Directive2</span><span class="o">=</span><span class="s">value2</span></span></span></code></pre></div>
+  </figure>
+</div>
+<ul>
+<li>Section names are case sensitive</li>
+</ul>
+<h4 id="unit-section">[Unit] Section<a href="#unit-section" class="anchor" aria-hidden="true">#</a> </h4>
+<div class="callout callout-note d-flex flex-row mt-4 mb-4 pt-4 pe-4 pb-2 ps-3">
+  
+  <div class="callout-content">
+    
+    <div class="callout-body">
+      <p>The <code>[Unit]</code> section is the beginning of the unit file and defines the metadata and relationship to other units.</p>
+
+    </div>
+  </div>
+</div>
+
+<ul>
+<li><code>Description=</code>: This directive can be used to describe the name and basic functionality of the unit. It is returned by various systemd tools, so it is good to set this to something short, specific, and informative.</li>
+<li><code>Documentation=</code>: This directive provides a location for a list of URIs for documentation. These can be either internally available man pages or web accessible URLs. The systemctl status command will expose this information, allowing for easy discoverability.</li>
+<li><code>Requires=</code>: This directive lists any units upon which this unit essentially depends. If the current unit is activated, the units listed here must successfully activate as well, else this unit will fail. These units are started in parallel with the current unit by default.</li>
+<li><code>Wants=</code>: This directive is similar to Requires=, but less strict. Systemd will attempt to start any units listed here when this unit is activated. If these units are not found or fail to start, the current unit will continue to function. This is the recommended way to configure most dependency relationships. Again, this implies a parallel activation unless modified by other directives.</li>
+<li><code>BindsTo=</code>: This directive is similar to Requires=, but also causes the current unit to stop when the associated unit terminates.</li>
+<li><code>Before=</code>: The units listed in this directive will not be started until the current unit is marked as started if they are activated at the same time. This does not imply a dependency relationship and must be used in conjunction with one of the above directives if this is desired.</li>
+<li><code>After=</code>: The units listed in this directive will be started before starting the current unit. This does not imply a dependency relationship and one must be established through the above directives if this is required.</li>
+<li><code>Conflicts=</code>: This can be used to list units that cannot be run at the same time as the current unit. Starting a unit with this relationship will cause the other units to be stopped.</li>
+<li><code>Condition...=</code>: There are a number of directives that start with Condition which allow the administrator to test certain conditions prior to starting the unit. This can be used to provide a generic unit file that will only be run when on appropriate systems. If the condition is not met, the unit is gracefully skipped.</li>
+<li><code>Assert...=</code>: Similar to the directives that start with Condition, these directives check for different aspects of the running environment to decide whether the unit should activate. However, unlike the Condition directives, a negative result causes a failure with this directive.</li>
+</ul>
+<h4 id="install-section">[Install] Section<a href="#install-section" class="anchor" aria-hidden="true">#</a> </h4>
+<ul>
+<li><code>WantedBy=</code>: The WantedBy= directive is the most common way to specify how a unit should be enabled. This directive allows you to specify a dependency relationship in a similar way to the Wants= directive does in the [Unit] section. The difference is that this directive is included in the ancillary unit allowing the primary unit listed to remain relatively clean. When a unit with this directive is enabled, a directory will be created within /etc/systemd/system named after the specified unit with .wants appended to the end. Within this, a symbolic link to the current unit will be created, creating the dependency. For instance, if the current unit has WantedBy=multi-user.target, a directory called multi-user.target.wants will be created within /etc/systemd/system (if not already available) and a symbolic link to the current unit will be placed within. Disabling this unit removes the link and removes the dependency relationship.</li>
+<li><code>RequiredBy=</code>: This directive is very similar to the WantedBy= directive, but instead specifies a required dependency that will cause the activation to fail if not met. When enabled, a unit with this directive will create a directory ending with .requires.</li>
+<li><code>Alias=</code>: This directive allows the unit to be enabled under another name as well. Among other uses, this allows multiple providers of a function to be available, so that related units can look for any provider of the common aliased name.</li>
+<li><code>Also=</code>: This directive allows units to be enabled or disabled as a set. Supporting units that should always be available when this unit is active can be listed here. They will be managed as a group for installation tasks.</li>
+<li><code>DefaultInstance=</code>: For template units (covered later) which can produce unit instances with unpredictable names, this can be used as a fallback value for the name if an appropriate name is not provided.</li>
+</ul>
+<h4 id="unit-specific-sections">Unit-specific Sections<a href="#unit-specific-sections" class="anchor" aria-hidden="true">#</a> </h4>
+<p><strong>Service</strong></p>
+<p><code>Type=</code> Can be one of:</p>
+<ul>
+<li><strong>simple</strong>: The main process of the service is specified in the start line. This is the default if the Type= and Busname= directives are not set, but the ExecStart= is set. Any communication should be handled outside of the unit through a second unit of the appropriate type (like through a .socket unit if this unit must communicate using sockets).</li>
+<li><strong>forking</strong>: This service type is used when the service forks a child process, exiting the parent process almost immediately. This tells systemd that the process is still running even though the parent exited.</li>
+<li><strong>oneshot</strong>: This type indicates that the process will be short-lived and that systemd should wait for the process to exit before continuing on with other units. This is the default Type= and ExecStart= are not set. It is used for one-off tasks.</li>
+<li><strong>dbus</strong>: This indicates that unit will take a name on the D-Bus bus. When this happens, systemd will continue to process the next unit.</li>
+<li><strong>notify</strong>: This indicates that the service will issue a notification when it has finished starting up. The systemd process will wait for this to happen before proceeding to other units.</li>
+<li><strong>idle</strong>: This indicates that the service will not be run until all jobs are dispatched.</li>
+</ul>
+<p>Additional Settings:</p>
+<ul>
+<li><code>RemainAfterExit=</code>: This directive is commonly used with the oneshot type. It indicates that the service should be considered active even after the process exits.</li>
+<li><code>PIDFile=</code>: If the service type is marked as “forking”, this directive is used to set the path of the file that should contain the process ID number of the main child that should be monitored.</li>
+<li><code>BusName=</code>: This directive should be set to the D-Bus bus name that the service will attempt to acquire when using the “dbus” service type.</li>
+<li><code>NotifyAccess=</code>: This specifies access to the socket that should be used to listen for notifications when the “notify” service type is selected This can be “none”, “main”, or &ldquo;all. The default, “none”, ignores all status messages. The “main” option will listen to messages from the main process and the “all” option will cause all members of the service’s control group to be processed.</li>
+</ul>
+<p>Manage Services:</p>
+<ul>
+<li><code>ExecStart=</code>: This specifies the full path and the arguments of the command to be executed to start the process. This may only be specified once (except for “oneshot” services). If the path to the command is preceded by a dash “-” character, non-zero exit statuses will be accepted without marking the unit activation as failed.</li>
+<li><code>ExecStartPre=</code>: This can be used to provide additional commands that should be executed before the main process is started. This can be used multiple times. Again, commands must specify a full path and they can be preceded by “-” to indicate that the failure of the command will be tolerated.</li>
+<li><code>ExecStartPost=</code>: This has the same exact qualities as ExecStartPre= except that it specifies commands that will be run after the main process is started.</li>
+<li><code>ExecReload=</code>: This optional directive indicates the command necessary to reload the configuration of the service if available.</li>
+<li><code>ExecStop=</code>: This indicates the command needed to stop the service. If this is not given, the process will be killed immediately when the service is stopped.</li>
+<li><code>ExecStopPost=</code>: This can be used to specify commands to execute following the stop command.</li>
+<li><code>RestartSec=</code>: If automatically restarting the service is enabled, this specifies the amount of time to wait before attempting to restart the service.</li>
+<li><code>Restart=</code>: This indicates the circumstances under which systemd will attempt to automatically restart the service. This can be set to values like “always”, “on-success”, “on-failure”, “on-abnormal”, “on-abort”, or “on-watchdog”. These will trigger a restart according to the way that the service was stopped.</li>
+<li><code>TimeoutSec=</code>: This configures the amount of time that systemd will wait when stopping or stopping the service before marking it as failed or forcefully killing it. You can set separate timeouts with TimeoutStartSec= and TimeoutStopSec= as well.</li>
+</ul>
+
+			<div class="page-footer-meta d-flex flex-column flex-md-row justify-content-between">
+				</div>
+			<div class="page-nav d-flex flex-column flex-sm-row">
+	
+	<div class="card w-100">
+			<div class="card-body d-flex">
+				<div class="d-flex flex-column justify-content-center">
+					<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-arrow-left" width="20" height="20" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+						<path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+						<path d="M5 12l14 0"></path>
+						<path d="M5 12l6 6"></path>
+						<path d="M5 12l6 -6"></path>
+				 	</svg>
+				</div>
+				<div class="d-flex flex-column">
+					<div class="text-body-secondary">Prev</div>
+					<a href="/docs/hugo/templates/" class="stretched-link text-reset text-decoration-none">Templates</a>
+				</div>
+			</div>
+		</div>
+	<div class="m-2"></div>
+	<div class="card text-end w-100">
+			<div class="card-body d-flex justify-content-end">
+				<div class="d-flex flex-column">
+					<div class="text-body-secondary">Next</div>
+					<a href="/docs/portal/subdir/subfile/" class="stretched-link text-reset text-decoration-none">Subfile</a>
+				</div>
+				<div class="d-flex flex-column justify-content-center">
+					<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-arrow-right" width="20" height="20" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+						<path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+						<path d="M5 12l14 0"></path>
+						<path d="M13 18l6 -6"></path>
+						<path d="M13 6l6 6"></path>
+					</svg>
+				</div>
+			</div>
+		</div>
+	</div>
+
+			
+		</main>
+		
+	</div>
+
+      
+      </div>
+    </div>
+    
+    
+    <footer class="footer text-muted">
+  <div class="container-lg">
+    <div class="row">
+      <div class="col-lg-8 text-center text-lg-start">
+        <ul class="list-inline">
+          <li class="list-inline-item"><a class="text-muted" href="/privacy/">Privacy Policy</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-8 text-center text-lg-end">
+        <ul class="list-inline">
+          <li class="list-inline-item">Brought to you by <a class="text-muted" href="https://gethyas.com/">Hyas</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+
+    
+
+<script async
+  src="/js/app.2ef400de62fcbede61c74a23fadc29706e0732d309f2320efefe5b1179abd857.js"
+  integrity="sha256-LvQA3mL8vt5hx0oj&#43;twpcG4HMtMJ8jIO/v5bEXmr2Fc=">
+</script>
+
+
+
+
+
+<script async
+  src="/js/flexsearch.a43ad3e9453067320ab808b85ef437fc65518a219cfea8499e744b7b6f0b6924.js"
+  integrity="sha256-pDrT6UUwZzIKuAi4XvQ3/GVRiiGc/qhJnnRLe28LaSQ=">
+</script>
+<script async
+  src="/js/search-modal.543117a85590123cda9e96d1fcbf8bd22fc1a3a3ca3d31a816382f0f10f30a34.js"
+  integrity="sha256-VDEXqFWQEjzanpbR/L&#43;L0i/Bo6PKPTGoFjgvDxDzCjQ=">
+</script>
+
+    
+  </body>
+</html>

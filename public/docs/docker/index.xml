@@ -14,21 +14,21 @@
       <link>http://localhost:1313/docs/docker/docker-overview/</link>
       <pubDate>Wed, 04 Jan 2023 00:17:04 -0800</pubDate>
       <guid>http://localhost:1313/docs/docker/docker-overview/</guid>
-      <description>Docker is a OS virtualization software. Similar to virtual machines in their outcome, their differ in their function.&#xA;What&amp;rsquo;s it purpose The general idea is to promote interoperability.</description>
+      <description>Overview of Docker</description>
     </item>
     <item>
       <title>Docker CLI Commands</title>
       <link>http://localhost:1313/docs/docker/docker-cli-commands/</link>
       <pubDate>Wed, 04 Jan 2023 00:19:53 -0800</pubDate>
       <guid>http://localhost:1313/docs/docker/docker-cli-commands/</guid>
-      <description>The Docker CLI is used to communicate with the Docker Engine to build, run, and maintain images.&#xA;Basic Commands # View all docker images saved locally docker images # View all running containers docker ps&#xD;Build Docker Image # build a docker image docker build .</description>
+      <description>Docker CLI command reference for building and running images, and managing Docker</description>
     </item>
     <item>
       <title>Creating Dockerfiles</title>
       <link>http://localhost:1313/docs/docker/creating-dockerfiles/</link>
       <pubDate>Wed, 04 Jan 2023 00:27:10 -0800</pubDate>
       <guid>http://localhost:1313/docs/docker/creating-dockerfiles/</guid>
-      <description>Dockerfiles are the instruction set to create a Docker Image.&#xA;Dockerfile Basics Dockerfiles are named Dockerfile with no extenstions.&#xA;Dockerfiles are built with the docker run command.</description>
+      <description>Reference for writing Dockerfiles to build Docker images.</description>
     </item>
   </channel>
 </rss>

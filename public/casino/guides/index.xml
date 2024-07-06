@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Guides on WyNotes</title>
+    <link>http://localhost:1313/casino/guides/</link>
+    <description>Recent content in Guides on WyNotes</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <copyright>Copyright (c) 2020-2024 North Aerospace</copyright>
+    <lastBuildDate>Thu, 20 Jun 2024 02:03:04 -0700</lastBuildDate>
+    <atom:link href="http://localhost:1313/casino/guides/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Total</title>
+      <link>http://localhost:1313/casino/guides/total/</link>
+      <pubDate>Thu, 20 Jun 2024 02:03:04 -0700</pubDate>
+      <guid>http://localhost:1313/casino/guides/total/</guid>
+      <description>This is a summary</description>
+    </item>
+  </channel>
+</rss>

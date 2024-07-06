@@ -1,6 +1,7 @@
 ---
 title: "Docker Overview"
-description: ""
+description: "Test desc"
+summary: "Overview of Docker"
 lead: ""
 date: 2023-01-04T00:17:04-08:00
 lastmod: 2023-01-04T00:17:04-08:00
@@ -16,6 +17,10 @@ toc: true
 
 Docker is a OS virtualization software. Similar to virtual machines in their outcome, their differ in their function.
 
+When setting up a VM, there is a greater focus on hardware: what processor, how many CPUs, how much RAM. Then a OS is installed on top of that.
+
+When setting up a Docker image, the software is the main question: what OS, adding application code or config, installing dependencies, or building binaries.
+
 ### What's it purpose
 
 The general idea is to promote interoperability. If a Docker container runs on your local machine, it should run on someone else's machine, or a Kubernetes cluster, or Elastic Container Service cluster.
@@ -30,18 +35,20 @@ In this case what you want to do is run the Node.js application, not spend time 
 
 ### Container vs Images
 
-A Docker Image is like a CD; it's the instructions.
+An **image** is like a DVD in a case. It can be downloaded, copied, or renamed. It has all information, but it's not running in a DVD player.
 
 - Docker images are built with `docker build`
 - Docker images are downloaded to a machine with `docker pull`
+- List all images with `docker images`
 
-A container is a running version of the image.
+A **container** is a running version of the image.
 
 - Docker images are started with `docker run`
+- List all running containers with `docker ps`
 
 ### Who created Docker
 
-Docker is created by Docker, Inc. (see: [recursion](#who-created-docker))
+Docker is created by Docker, Inc. (see: [recursion](#who-created-docker)).
 
 ### Docker vs. VMs
 

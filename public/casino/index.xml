@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Casinoes on WyNotes</title>
+    <title>Casino on WyNotes</title>
     <link>http://localhost:1313/casino/</link>
-    <description>Recent content in Casinoes on WyNotes</description>
+    <description>Recent content in Casino on WyNotes</description>
     <generator>Hugo</generator>
     <language>en</language>
     <copyright>Copyright (c) 2020-2024 North Aerospace</copyright>
@@ -14,14 +14,7 @@
       <link>http://localhost:1313/casino/faq/</link>
       <pubDate>Thu, 20 Jun 2024 02:03:04 -0700</pubDate>
       <guid>http://localhost:1313/casino/faq/</guid>
-      <description>Test inof</description>
-    </item>
-    <item>
-      <title>Total</title>
-      <link>http://localhost:1313/casino/guides/total/</link>
-      <pubDate>Thu, 20 Jun 2024 02:03:04 -0700</pubDate>
-      <guid>http://localhost:1313/casino/guides/total/</guid>
-      <description>This is a summary</description>
+      <description>This is a nested file</description>
     </item>
   </channel>
 </rss>
