@@ -203,3 +203,5 @@ git config --global core.sshCommand "ssh -i /path/to/keyfile"
 ```
 
 {{< callout caution >}} Support for `core.sshCommand` is only available in git version 2.10.0 and above. {{< /callout >}}
+
+![xkcd git](./git_xkcd.png)

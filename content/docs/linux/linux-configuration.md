@@ -105,6 +105,48 @@ nameserver 208.67.220.220
 
 # Users
 
+## Manage Users
+
+```bash { title="Create and delete a user" }
+# create user
+sudo adduser USER_NAME
+
+# delete user
+sudo deluser USER_NAME
+
+# set password
+sudo passwd USER_NAME
+```
+
+{{< callout context="note" icon="outline/info-circle" >}}
+Running `adduser` without arguments will create an interactive prompt for the password and full name.
+{{< /callout >}}
+
+```bash { title="Create user options" }
+# create user
+sudo adduser USER_NAME
+sudo adduser --uid USER_ID USER_NAME
+sudo adduser --system USER_NAME
+```
+
+{{< callout context="danger" title="Avoid providing password with -p flag" icon="outline/alert-octagon" >}}
+When using the `-p` flag, the password should already be encrypted. The `passwd` command is the preferred option.
+{{< /callout >}}
+
+### User Location
+
+| File Name     | Use                               |
+| ------------- | --------------------------------- |
+| `/etc/passwd` | Location of users                 |
+| `/etc/shadow` | Location of hashed user passwords |
+
+```bash { title="/etc/passwd file syntax" }
+username:password:UID:GID:comment:home:shell
+duke:x:1001:1001::/home/duke/:/bin/bash
+```
+
+Passwords were previously stored in `/etc/passwd`, making them viewable by everyone. The encrypted passwords are now stored in `/etc/shadow`.
+
 ## Manage User Groups
 
 ### Create a New Group

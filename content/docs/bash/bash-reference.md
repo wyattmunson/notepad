@@ -20,6 +20,7 @@ toc: true
 | ----------------------------------------------- | ------------------------------- | --------------------------------------------------------- |
 | [cat](#cat---concatenate)                       | concatenate                     | Display contents of text file; combine multiple files.    |
 | [cd](#cd---change-directory)                    | change directory                | Traverse the directory tree and move to different folders |
+| [chmod](#chmod---change-mode)                   | change mode                     | Change file permissions                                   |
 | [cp](#cp---copy)                                | copy                            | Copy files or directories                                 |
 | [curl](#curl---client-url)                      | curl                            | HTTP utility                                              |
 | [cut](#curl---cut)                              | cut                             |                                                           |
@@ -37,6 +38,7 @@ toc: true
 | [ps](#ps---process-status)                      | ps                              | See status of running process                             |
 | [pwd](#pwd---print-working-directory)           | print working directory         | Show current directory                                    |
 | [rm](#rm---remove)                              | remove                          | Removes files or directories                              |
+| [rsync](#rsync---rsync)                         | rsync                           | Sync files between locations or remotely                  |
 | [sudo](#sudo---super-user-do)                   | super user do                   | Elevates a command to super user privileges               |
 | [scp](#scp---secure-copy)                       | secure copy                     | Securely copy file between hosts                          |
 | [sed](#sed---stream-editor)                     | stream editor                   | Edit a text stream                                        |
@@ -54,6 +56,10 @@ command ARGUMENT [OPTIONS] [FILE_NAME...]
 ```
 
 ## `cat` - ConcATenate
+
+{{< callout context="tip" title="cat" icon="outline/terminal-2" >}}
+`cat` combines files.
+{{< /callout >}}
 
 Intended to combine or concatenate multiple text files into one. Used for a variety of things, like the simple `cat filename.txt` to print out a files contents.
 
@@ -79,7 +85,26 @@ $ cat file1 file2 > megaFile.txt
 
 # combine all files in current directory to monsterFile.txt
 $ cat * > monsterFile.txt
+
+# combine all text files
+cat *.txt > combined.txt
 ```
+
+### Cat multiline variable to file
+
+Use `cat` to send a multiline string to a file.
+
+```bash { title="Send multiline string to a file" }
+cat <<EOF > file_name.yaml
+version: 1
+type: prod
+settings:
+  status: active
+  online: false
+EOF
+```
+
+---
 
 ## `cd` - Change Directory
 
@@ -106,7 +131,7 @@ $ cd -                      # return to previous directory
 
 ## `chmod` - CHange MODe
 
-{{< callout context="tip" title="chmod" icon="outline/rocket" >}}
+{{< callout context="tip" title="chmod" icon="outline/terminal-2" >}}
 `chmod` changes file ownership.
 {{< /callout >}}
 
@@ -359,15 +384,6 @@ curl https://example.com
 curl ftp://ftp.example.com/README
 ```
 
-```bash { title="Download a file with cURL" }
-# download file and set name to file_name
-curl https://example.com --output file_name
-curl https://example.com -o file_name
-
-# download file and use same file name
-curl https://example.com -O
-```
-
 ```bash { title="Silence output" }
 # silence output
 curl https://example.com --silent
@@ -380,6 +396,17 @@ Use `-L` to follow redirects if the first response is a 3xx.
 # follow a location (instead of returning redirect)
 curl --location https://example.com
 curl -L https://example.com
+```
+
+### Download file with cURL
+
+```bash { title="Download a file with cURL" }
+# download file and set name to file_name
+curl https://example.com --output file_name
+curl https://example.com -o file_name
+
+# download file and use same file name
+curl https://example.com -O
 ```
 
 ### Usename and password authentication
@@ -414,6 +441,25 @@ curl -X POST "http://example.com" \
 
 # curl POST using application/x-www-form-urlencoded
 curl --data "birthyear=1905&press=%20OK%20" http://example.com/api
+```
+
+#### Set paramaterized HTTP POST response to variable
+
+Set HTTP POST response body to variable, using parameterized data payload and values.
+
+```bash
+# curl POST with parameters
+API_RESPONSE=$(curl -s --location "https://example.com/api/$VAR_ID?ticketId="$VAR_2"&anotherParamKey=paramValue" -X POST \
+--header 'Content-Type: application/json' \
+--header 'accept: application/json' \
+--header 'Authorization: ApiKey '$VAR_3'' \
+--data-raw '{
+    "id": "'$VAR_4'",
+    "email": "benish@example.com"
+}')
+
+# access response object key of "id", set to variable
+TEAM_ID=$(echo $API_RESPONSE | jq -r '.id')
 ```
 
 ### See redirect path
@@ -643,22 +689,26 @@ find . -name search_text -type f
 
 Search a file to see if it contains a phrase.
 
-```bash
+### Search file contents
+
+```bash { title="Search contents of a file with grep" }
 grep SEARCH_TEXT FILE_NAME
 grep phrase log.txt
 ```
 
 Case insensitive search:
 
-```bash
-grep -i "phrase"
+```bash { title="Use case insensitive search with -i" }
+grep -i "phrase" file_name.txt
 ```
 
 Search current directory and all subdirectories:
 
-```bash
+```bash { title="Search files in all subdirectories with -R" }
 grep -R "phrase" .
 ```
+
+### Search output of other commands
 
 Commands can be "piped in" to grep using the `|` operator.
 
@@ -670,6 +720,8 @@ ls | grep log.txt
 # use wildcards
 ls | grep *report.txt
 ls | grep *report*
+
+echo "tester" | grep "test"
 ```
 
 ### Get count of matching keyword

@@ -12,7 +12,7 @@
 </script>
 
 
-<link rel="stylesheet" href="/main.01b0834d5af51b24812d02878d09c8d7677d6b8af13164fb50215889dc19aaefd0e9366c13b45a9a57ae481dfd1836bce46b5ebfe461d56e3498b9443d8c5e27.css" integrity="sha512-AbCDTVr1GySBLQKHjQnI12d9a4rxMWT7UCFYidwZqu/Q6TZsE7RamleuSB39GDa85Gtev&#43;Rh1W40mLlEPYxeJw==" crossorigin="anonymous">
+<link rel="stylesheet" href="/main.7a35b1a7caa66e03ddd187d1e0860681a38badf8ae9e5529a1bb18c57d20dc7a88a0cc8de97e1e8d95e1599041f4397efcff4cebe5fe0d5a52ae4f349645e214.css" integrity="sha512-ejWxp8qmbgPd0YfR4IYGgaOLrfiunlUpobsYxX0g3HqIoMyN6X4ejZXhWZBB9Dl&#43;/P9M6&#43;X&#43;DVpSrk80lkXiFA==" crossorigin="anonymous">
 
 <noscript><style>img.lazyload { display: none; }</style></noscript><base href="http://localhost:1313/docs/linux/linux-configuration/">
   <link rel="canonical" href="http://localhost:1313/docs/linux/linux-configuration/">
@@ -900,6 +900,11 @@
   </ul>
 
   <ul>
+    <li><a href="#manage-users">Manage Users</a>
+      <ul>
+        <li><a href="#user-location">User Location</a></li>
+      </ul>
+    </li>
     <li><a href="#manage-user-groups">Manage User Groups</a>
       <ul>
         <li><a href="#create-a-new-group">Create a New Group</a></li>
@@ -939,6 +944,11 @@
   </ul>
 
   <ul>
+    <li><a href="#manage-users">Manage Users</a>
+      <ul>
+        <li><a href="#user-location">User Location</a></li>
+      </ul>
+    </li>
     <li><a href="#manage-user-groups">Manage User Groups</a>
       <ul>
         <li><a href="#create-a-new-group">Create a New Group</a></li>
@@ -1098,6 +1108,96 @@
   </figure>
 </div>
 <h1 id="users">Users</h1>
+<h2 id="manage-users">Manage Users<a href="#manage-users" class="anchor" aria-hidden="true">#</a> </h2>
+
+
+
+<div class="expressive-code">
+  <figure class="frame is-terminal has-title not-content">
+  <figcaption class="header">
+    <span class="title">Create and delete a user</span>
+  </figcaption>
+  <div class="highlight" title="Create and delete a user"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># create user</span>
+</span></span><span class="line"><span class="cl">sudo adduser USER_NAME
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># delete user</span>
+</span></span><span class="line"><span class="cl">sudo deluser USER_NAME
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># set password</span>
+</span></span><span class="line"><span class="cl">sudo passwd USER_NAME</span></span></code></pre></div>
+  </figure>
+</div>
+<div class="callout callout-note d-flex flex-row mt-4 mb-4 pt-4 pe-4 pb-2 ps-3">
+  <svg class="outline/info-circle svg-inline callout-icon me-2 mb-3"  xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M3 12a9 9 0 1018 0A9 9 0 003 12"/><path d="M12 9h.01"/><path d="M11 12h1v4h1"/></svg>
+  <div class="callout-content">
+    
+    <div class="callout-body">
+      <p>Running <code>adduser</code> without arguments will create an interactive prompt for the password and full name.</p>
+
+    </div>
+  </div>
+</div>
+
+
+
+
+<div class="expressive-code">
+  <figure class="frame is-terminal has-title not-content">
+  <figcaption class="header">
+    <span class="title">Create user options</span>
+  </figcaption>
+  <div class="highlight" title="Create user options"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># create user</span>
+</span></span><span class="line"><span class="cl">sudo adduser USER_NAME
+</span></span><span class="line"><span class="cl">sudo adduser --uid USER_ID USER_NAME
+</span></span><span class="line"><span class="cl">sudo adduser --system USER_NAME</span></span></code></pre></div>
+  </figure>
+</div>
+<div class="callout callout-danger d-flex flex-row mt-4 mb-4 pt-4 pe-4 pb-2 ps-3">
+  <svg class="outline/alert-octagon svg-inline callout-icon me-2 mb-3"  xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12.802 2.165l5.575 2.389c.48.206.863.589 1.07 1.07l2.388 5.574c.22.512.22 1.092.0 1.604l-2.389 5.575c-.206.48-.589.863-1.07 1.07l-5.574 2.388c-.512.22-1.092.22-1.604.0l-5.575-2.389a2.036 2.036.0 01-1.07-1.07l-2.388-5.574a2.036 2.036.0 010-1.604l2.389-5.575c.206-.48.589-.863 1.07-1.07l5.574-2.388a2.036 2.036.0 011.604.0z"/><path d="M12 8v4"/><path d="M12 16h.01"/></svg>
+  <div class="callout-content">
+    <div class="callout-title">
+        <p>Avoid providing password with -p flag</p>
+
+      </div>
+    <div class="callout-body">
+      <p>When using the <code>-p</code> flag, the password should already be encrypted. The <code>passwd</code> command is the preferred option.</p>
+
+    </div>
+  </div>
+</div>
+
+<h3 id="user-location">User Location<a href="#user-location" class="anchor" aria-hidden="true">#</a> </h3>
+<table>
+<thead>
+<tr>
+<th>File Name</th>
+<th>Use</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>/etc/passwd</code></td>
+<td>Location of users</td>
+</tr>
+<tr>
+<td><code>/etc/shadow</code></td>
+<td>Location of hashed user passwords</td>
+</tr>
+</tbody>
+</table>
+
+
+
+<div class="expressive-code">
+  <figure class="frame is-terminal has-title not-content">
+  <figcaption class="header">
+    <span class="title">/etc/passwd file syntax</span>
+  </figcaption>
+  <div class="highlight" title="/etc/passwd file syntax"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">username:password:UID:GID:comment:home:shell
+</span></span><span class="line"><span class="cl">duke:x:1001:1001::/home/duke/:/bin/bash</span></span></code></pre></div>
+  </figure>
+</div>
+<p>Passwords were previously stored in <code>/etc/passwd</code>, making them viewable by everyone. The encrypted passwords are now stored in <code>/etc/shadow</code>.</p>
 <h2 id="manage-user-groups">Manage User Groups<a href="#manage-user-groups" class="anchor" aria-hidden="true">#</a> </h2>
 <h3 id="create-a-new-group">Create a New Group<a href="#create-a-new-group" class="anchor" aria-hidden="true">#</a> </h3>
 <p>Create user group</p>

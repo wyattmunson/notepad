@@ -12,7 +12,7 @@
 </script>
 
 
-<link rel="stylesheet" href="/main.01b0834d5af51b24812d02878d09c8d7677d6b8af13164fb50215889dc19aaefd0e9366c13b45a9a57ae481dfd1836bce46b5ebfe461d56e3498b9443d8c5e27.css" integrity="sha512-AbCDTVr1GySBLQKHjQnI12d9a4rxMWT7UCFYidwZqu/Q6TZsE7RamleuSB39GDa85Gtev&#43;Rh1W40mLlEPYxeJw==" crossorigin="anonymous">
+<link rel="stylesheet" href="/main.7a35b1a7caa66e03ddd187d1e0860681a38badf8ae9e5529a1bb18c57d20dc7a88a0cc8de97e1e8d95e1599041f4397efcff4cebe5fe0d5a52ae4f349645e214.css" integrity="sha512-ejWxp8qmbgPd0YfR4IYGgaOLrfiunlUpobsYxX0g3HqIoMyN6X4ejZXhWZBB9Dl&#43;/P9M6&#43;X&#43;DVpSrk80lkXiFA==" crossorigin="anonymous">
 
 <noscript><style>img.lazyload { display: none; }</style></noscript><base href="http://localhost:1313/docs/docker/docker-cli-commands/">
   <link rel="canonical" href="http://localhost:1313/docs/docker/docker-cli-commands/">
@@ -894,7 +894,10 @@
     <li><a href="#basic-commands">Basic Commands</a>
       <ul>
         <li><a href="#build-docker-image">Build Docker Image</a></li>
-        <li><a href="#run-docker-container">Run Docker container</a></li>
+      </ul>
+    </li>
+    <li><a href="#run-docker-container">Run Docker container</a>
+      <ul>
         <li><a href="#logs-from-docker-container">Logs from Docker container</a></li>
         <li><a href="#take-snapshot-of-container">Take Snapshot of Container</a></li>
         <li><a href="#tag-docker-image">Tag Docker Image</a></li>
@@ -902,6 +905,11 @@
         <li><a href="#inspect-network-configuration">Inspect Network Configuration</a></li>
         <li><a href="#push-to-dockerhub">Push to DockerHub</a></li>
         <li><a href="#build-for-different-platforms">Build for different platforms</a></li>
+      </ul>
+    </li>
+    <li><a href="#docker-volumes">Docker Volumes</a>
+      <ul>
+        <li><a href="#volumes-in-docker-compose">Volumes in Docker Compose</a></li>
       </ul>
     </li>
   </ul>
@@ -922,7 +930,10 @@
     <li><a href="#basic-commands">Basic Commands</a>
       <ul>
         <li><a href="#build-docker-image">Build Docker Image</a></li>
-        <li><a href="#run-docker-container">Run Docker container</a></li>
+      </ul>
+    </li>
+    <li><a href="#run-docker-container">Run Docker container</a>
+      <ul>
         <li><a href="#logs-from-docker-container">Logs from Docker container</a></li>
         <li><a href="#take-snapshot-of-container">Take Snapshot of Container</a></li>
         <li><a href="#tag-docker-image">Tag Docker Image</a></li>
@@ -930,6 +941,11 @@
         <li><a href="#inspect-network-configuration">Inspect Network Configuration</a></li>
         <li><a href="#push-to-dockerhub">Push to DockerHub</a></li>
         <li><a href="#build-for-different-platforms">Build for different platforms</a></li>
+      </ul>
+    </li>
+    <li><a href="#docker-volumes">Docker Volumes</a>
+      <ul>
+        <li><a href="#volumes-in-docker-compose">Volumes in Docker Compose</a></li>
       </ul>
     </li>
   </ul>
@@ -995,7 +1011,7 @@
 </span></span><span class="line"><span class="cl">docker build . --build-arg <span class="nv">DB_PASSWORD</span><span class="o">=</span>hunter2</span></span></code></pre></div>
   </figure>
 </div>
-<h3 id="run-docker-container">Run Docker container<a href="#run-docker-container" class="anchor" aria-hidden="true">#</a> </h3>
+<h2 id="run-docker-container">Run Docker container<a href="#run-docker-container" class="anchor" aria-hidden="true">#</a> </h2>
 
 
 
@@ -1037,8 +1053,16 @@
   <figcaption class="header">
     <span class="title"></span>
   </figcaption>
-  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># View container logs and tail output</span>
-</span></span><span class="line"><span class="cl">sudo docker logs CONTAINER-NAME --follow
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># View container logs</span>
+</span></span><span class="line"><span class="cl">sudo docker logs CONTAINER-NAME
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># log flags</span>
+</span></span><span class="line"><span class="cl">sudo docker logs --follow CONTAINER-NAME
+</span></span><span class="line"><span class="cl">sudo docker logs --since<span class="o">=</span>1h CONTAINER-NAME
+</span></span><span class="line"><span class="cl">sudo docker logs --tail<span class="o">=</span><span class="m">20</span> CONTAINER-NAME
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># save logs to file</span>
+</span></span><span class="line"><span class="cl">sudo docker logs CONTAINER-NAME &gt; ./file/path.txt
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">sudo systemctl start docker
 </span></span><span class="line"><span class="cl">service docker status
@@ -1134,6 +1158,80 @@
     <span class="title"></span>
   </figcaption>
   <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">docker buildx build --platform<span class="o">=</span>linux/amd64 -t &lt;image-name&gt; .</span></span></code></pre></div>
+  </figure>
+</div>
+<h2 id="docker-volumes">Docker Volumes<a href="#docker-volumes" class="anchor" aria-hidden="true">#</a> </h2>
+<p>Volumes are a way to store data outside of a container. When a container is stopped, all the data inside it is destroyed. A volume allows the container to save data to the system it runs on.</p>
+
+
+
+<div class="expressive-code">
+  <figure class="frame is-terminal not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">docker run -it -v LOCATION_ON_FILESYSTEM:LOCATION_IN_CONTAINER ubuntu:22.06</span></span></code></pre></div>
+  </figure>
+</div>
+<p>Docker will automatically create a volume when referenced in a <code>docker run</code> command.</p>
+
+
+
+<div class="expressive-code">
+  <figure class="frame is-terminal not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># create a volume</span>
+</span></span><span class="line"><span class="cl">docker volume create VOLUME_NAME
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># list all volumes</span>
+</span></span><span class="line"><span class="cl">docker volume ls
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># inspace a given volume</span>
+</span></span><span class="line"><span class="cl">docker volume inspect VOLUME_NAME
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># remove a given volume</span>
+</span></span><span class="line"><span class="cl">docker volume rm VOLUME_NAME
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># force remove volume</span>
+</span></span><span class="line"><span class="cl">docker volume rm VOLUME_NAME -f
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># clean up all unused volumes (not mounted to a container)</span>
+</span></span><span class="line"><span class="cl">docker volume prune</span></span></code></pre></div>
+  </figure>
+</div>
+<h3 id="volumes-in-docker-compose">Volumes in Docker Compose<a href="#volumes-in-docker-compose" class="anchor" aria-hidden="true">#</a> </h3>
+
+
+
+<div class="expressive-code">
+  <figure class="frame not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="nt">services</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">app</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l">IMAGE_NAME:TAG</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">volumes</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="l">VOLUME_NAME:LOCATION_IN_CONTAINER</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">volumes</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="l">VOLUME_NAME:</span></span></span></code></pre></div>
+  </figure>
+</div>
+<p>If using an existing volume, set the external flag to true:</p>
+
+
+
+<div class="expressive-code">
+  <figure class="frame not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="nt">volumes</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">VOLUME_NAME</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">external</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span></span></span></code></pre></div>
   </figure>
 </div>
 

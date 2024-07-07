@@ -54,7 +54,7 @@ docker build . -t munsonwf/express-sample:1.2.3
 docker build . --build-arg DB_PASSWORD=hunter2
 ```
 
-### Run Docker container
+## Run Docker container
 
 ```bash
 # run docker container (using image name and tag)
@@ -84,8 +84,16 @@ docker run --rm -ti --entrypoint='' munsonwf/nslookup:1.0.0 /bin/ash
 ### Logs from Docker container
 
 ```bash
-# View container logs and tail output
-sudo docker logs CONTAINER-NAME --follow
+# View container logs
+sudo docker logs CONTAINER-NAME
+
+# log flags
+sudo docker logs --follow CONTAINER-NAME
+sudo docker logs --since=1h CONTAINER-NAME
+sudo docker logs --tail=20 CONTAINER-NAME
+
+# save logs to file
+sudo docker logs CONTAINER-NAME > ./file/path.txt
 
 sudo systemctl start docker
 service docker status
@@ -95,7 +103,6 @@ sudo curl -L "https://github.com/docker/compose/releases/download/1.26.2/docker-
 
 # add docker compose to path for sudo by creating symlink
 sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
-
 ```
 
 ### Take Snapshot of Container
@@ -147,4 +154,55 @@ The platform for an M1 MacBook is not the same as the Linux container it may be 
 
 ```bash
 docker buildx build --platform=linux/amd64 -t <image-name> .
+```
+
+## Docker Volumes
+
+Volumes are a way to store data outside of a container. When a container is stopped, all the data inside it is destroyed. A volume allows the container to save data to the system it runs on.
+
+```bash
+docker run -it -v LOCATION_ON_FILESYSTEM:LOCATION_IN_CONTAINER ubuntu:22.06
+```
+
+Docker will automatically create a volume when referenced in a `docker run` command.
+
+```bash
+# create a volume
+docker volume create VOLUME_NAME
+
+# list all volumes
+docker volume ls
+
+# inspace a given volume
+docker volume inspect VOLUME_NAME
+
+# remove a given volume
+docker volume rm VOLUME_NAME
+
+# force remove volume
+docker volume rm VOLUME_NAME -f
+
+# clean up all unused volumes (not mounted to a container)
+docker volume prune
+```
+
+### Volumes in Docker Compose
+
+```yaml
+services:
+  app:
+    image: IMAGE_NAME:TAG
+    volumes:
+      - VOLUME_NAME:LOCATION_IN_CONTAINER
+
+volumes:
+  VOLUME_NAME:
+```
+
+If using an existing volume, set the external flag to true:
+
+```yaml
+volumes:
+  VOLUME_NAME:
+    external: true
 ```
