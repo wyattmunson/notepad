@@ -14,6 +14,8 @@ seo:
   noindex: false # false (default) or true
 ---
 
+Webfonts: https://gwfh.mranftl.com/fonts/roboto?subsets=latin
+
 ## Basic
 
 ```md { title="/content/about.md" }

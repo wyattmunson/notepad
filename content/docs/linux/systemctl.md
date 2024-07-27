@@ -16,6 +16,10 @@ seo:
 
 `systemd` is a process and service manager.
 
+It can be used to start a webserver on boot, run a bash script, mount a drive automatically, and many more things.
+
+`systemctl` is the CLI that fronts `systemd`. Unit files are used to find systemd processes.
+
 ## Systemctl
 
 `systemctl` is the CLI to manage `systemd`.
@@ -41,6 +45,9 @@ sudo systemctl enable docker
 
 # disable start on boot
 sudo systemctl disabled docker
+
+# reload daemon
+sudo systemctl daemon-reload
 ```
 
 ## Unit Files
@@ -66,7 +73,7 @@ The `.service` unit file is the most common, but there are a variety of types:
 - `.slice` - related to Linux Control Group nodes
 - `.scope` - created automatically from info recieved from bus interfaces
 
-### File
+### Example Unit File
 
 ```txt { title="/etc/systemd/system/SERVICE_NAME.service" }
 [Unit]

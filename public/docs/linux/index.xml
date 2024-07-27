@@ -14,7 +14,7 @@
       <link>http://localhost:1313/docs/linux/systemd/</link>
       <pubDate>Tue, 02 Jul 2024 02:52:22 -0700</pubDate>
       <guid>http://localhost:1313/docs/linux/systemd/</guid>
-      <description>systemd is a process and service manager.&#xA;Systemctl systemctl is the CLI to manage systemd.&#xA;sudo systemctl status docker sudo systemctl status docker.</description>
+      <description>systemd is a process and service manager.&#xA;It can be used to start a webserver on boot, run a bash script, mount a drive automatically, and many more things.</description>
     </item>
     <item>
       <title>Telegraf</title>
