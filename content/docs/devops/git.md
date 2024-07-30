@@ -205,3 +205,32 @@ git config --global core.sshCommand "ssh -i /path/to/keyfile"
 {{< callout caution >}} Support for `core.sshCommand` is only available in git version 2.10.0 and above. {{< /callout >}}
 
 ![xkcd git](./git_xkcd.png)
+
+## Git Ignore
+
+Use the `.gitignore` file to remove files from git trakcing.
+
+{{< callout context="caution" title="Caution" icon="outline/alert-triangle" >}}
+The `.gitignore` file will only ignore files before they are tracked by git. If git is already tracking changes in those files, it will continue to track changes.
+{{< /callout >}}
+
+If a file is added to `.gitignore`
+
+### Remove tracked files from the git index
+
+If git is tracking changes in a file before it's added to the `.gitignore`, git will ignore the `.gitignore`. These files must be removed from the git index first.
+
+```bash { title="Remove files from git index" }
+git rm --cached -r FILE_PATH
+git commit -m "MESSAGE"
+```
+
+## Misc Config
+
+### Safe Directory
+
+When git detects dubious file ownership, it will block a `git init`
+
+```bash
+git config --global --add safe.directory /var/homelabos
+```

@@ -1,11 +1,11 @@
 ---
-title: "Welcome"
-description: "Landing page for docs"
+title: "Homelab"
+description: ""
 summary: ""
-date: 2024-07-27T03:06:17-07:00
-lastmod: 2024-07-27T03:06:17-07:00
+date: 2024-07-29T21:11:09-07:00
+lastmod: 2024-07-29T21:11:09-07:00
 draft: false
-weight: 1
+weight: 999
 toc: true
 sidebar:
   collapsed: true
@@ -15,7 +15,3 @@ seo:
   canonical: "" # custom canonical URL (optional)
   noindex: false # false (default) or true
 ---
-
-Welcome to WyNotes.
-
-Choose a topic on the left.

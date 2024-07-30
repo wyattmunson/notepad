@@ -247,6 +247,14 @@ file -z file_name
 wc file_name
 ```
 
+### Get directory size
+
+See the size of a directory
+
+```bash
+du -sh /some/dir
+```
+
 ## Text
 
 ## `sed` - Stream EDitor
@@ -660,4 +668,33 @@ stringer="someFile.md"
 short_str=${stringer::-3}
 echo $short_str
 # ⮑ someFile
+```
+
+## Mac Commands
+
+Commands that are specific to mac machines
+
+### List all USB devices
+
+```bash
+ioreg -p IOUSB
+```
+
+```bash
++-o Root  <class IORegistryEntry, id 0x100000100, retain 37>
+  +-o AppleT8112USBXHCI@00000000  <class AppleT8112USBXHCI, id 0x100000395, registered, matched, active, busy 0 (94208 ms), retain 1353>
+  | +-o USB3.0 Hub             @00200000  <class IOUSBHostDevice, id 0x1000527a9, registered, matched, active, busy 0 (13629 ms), retain 38>
+  | | +-o AX88179A@00230000  <class IOUSBHostDevice, id 0x1000528c5, registered, matched, active, busy 0 (280 ms), retain 37>
+  | | +-o Ugreen Storage Device@00220000  <class IOUSBHostDevice, id 0x100052a51, registered, matched, active, busy 0 (13233 ms), retain 124>
+  | +-o USB2.0 Hub             @00100000  <class IOUSBHostDevice, id 0x1000527c0, registered, matched, active, busy 0 (509 ms), retain 40>
+  |   +-o USB2.0 Hub@00140000  <class IOUSBHostDevice, id 0x1000527db, registered, matched, active, busy 0 (482 ms), retain 38>
+  |   | +-o USB2.0 HUB@00144000  <class IOUSBHostDevice, id 0x1000527fb, registered, matched, active, busy 0 (397 ms), retain 39>
+  |   | | +-o Yeti Stereo Microphone@00144200  <class IOUSBHostDevice, id 0x100052815, registered, matched, active, busy 0 (45 ms), retain 37>
+  |   | | +-o AKKO 3108 V2@00144400  <class IOUSBHostDevice, id 0x100052827, registered, matched, active, busy 0 (74 ms), retain 38>
+  |   | | +-o L01 HD Webcam@00144300  <class IOUSBHostDevice, id 0x100052852, registered, matched, active, busy 0 (262 ms), retain 34>
+  |   | +-o USB Audio@00141000  <class IOUSBHostDevice, id 0x1000528ac, registered, matched, active, busy 0 (70 ms), retain 31>
+  |   +-o Anker USB-C Basic Dock @00150000  <class IOUSBHostDevice, id 0x1000528f9, registered, matched, active, busy 0 (6 ms), retain 18>
+  +-o AppleT8112USBXHCI@02000000  <class AppleT8112USBXHCI, id 0x10000046c, registered, matched, active, busy 0 (13795 ms), retain 115>
+  +-o AppleT8112USBXHCI@01000000  <class AppleT8112USBXHCI, id 0x10000048c, registered, matched, active, busy 0 (41897 ms), retain 428>
+    +-o ArmorATD@01200000  <class IOUSBHostDevice, id 0x10005295a, registered, matched, active, busy 0 (6811 ms), retain 126>
 ```

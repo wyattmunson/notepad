@@ -78,3 +78,7 @@ lpstat -p
 lp -d _192_168_1_27 "test.txt"
 
 ```
+
+### Install wkhtmltopdf
+
+https://wkhtmltopdf.org/downloads.html
