@@ -252,7 +252,11 @@ wc file_name
 See the size of a directory
 
 ```bash
+# get size of directory at given location
 du -sh /some/dir
+
+# get size of each file/directory
+du -h /some/dir
 ```
 
 ## Text
@@ -299,6 +303,48 @@ cut file_name -f -3
 cut file_name -d ":" -f -3
 ```
 
+## System Commands
+
+### Shutdown and Reboot
+
+Various commands to shutdown the system immediately or with a delay.
+
+```bash { title="Shutdown system" }
+# shutdown immediately
+sudo shutdown -h now
+
+# shutdown in 1 minute
+sudo shutdown
+
+# cancel shutdown command
+shutdown -c
+
+# alternate
+sudo halt
+```
+
+Restart / reboot the system.
+
+```bash { title="Restart system" }
+# reboot immediately
+sudo reboot
+
+# alternate
+sudo shutdown -r now
+```
+
+#### Using systemcl to shutdown or reboot
+
+Use `systemctl` to shutdown and reboot and avoid using `sudo` for commands. This only works with Ubuntu 15.04 and later.
+
+```bash { title="Restart and shutdown with systemctl" }
+systemctl poweroff
+systemctl reboot
+systemctl suspend
+systemctl hibernate
+systemctl hybrid-sleep
+```
+
 ## System Information
 
 ```bash
@@ -323,6 +369,14 @@ su USER
 su -
 # execute command as super user
 sudo COMMAND
+```
+
+### Disk Size
+
+`df` displays the size of each file system.
+
+```bash
+df -h
 ```
 
 ## Variables
