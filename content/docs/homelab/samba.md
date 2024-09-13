@@ -13,6 +13,8 @@ seo:
   noindex: false # false (default) or true
 ---
 
+Samba is a fileserver for Linux.
+
 ## Install Samba
 
 ```bash { title="Install Samba" }
