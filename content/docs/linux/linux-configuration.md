@@ -24,12 +24,18 @@ A static IP is an IP address that doesn’t change. This allows a machine to set
 
 Network Manager is the more modern version of managing network configs like IP addresses. Network configurations are stored as YAML files and then applied using Network Manager.
 
+#### Install NetworkManager
+
 Network Manager needs to be installed from apt before using.
 
 ```bash {title="Installing network manager"}
 # Install Network Manager with apt
 sudo apt install network-manager -y
 ```
+
+{{< callout context="note" title="File locations" icon="outline/info-circle" >}}
+Netplan configuration YAMLs are stored in `/etc/netplan`.
+{{< /callout >}}
 
 The YAML file defines the network configs like IP address, gateway, and DNS servers.
 
@@ -51,6 +57,26 @@ network:
 ```
 
 https://wiki.archlinux.org/title/NetworkManager
+
+#### NetworkManager vs networkd
+
+NetworkManager is typically used for desktops, while severs usually use networkd.
+
+#### Test Netplan
+
+Use `netplan test` to test a netplan configuration without apply the changes.
+
+```bash {title="Test netplan configration without saving"}
+sudo netplan try
+```
+
+#### Apply Netplan
+
+Use `netplan apply` to apply the configuration. All configration files in `/etc/netplan` will be applied.
+
+```bash {title="Apply netplan configration"}
+sudo netplan apply
+```
 
 ### Interface File
 

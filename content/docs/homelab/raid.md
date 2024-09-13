@@ -126,6 +126,19 @@ Use `watch` to refresh status of process every 2 seconds.
 watch cat /proc/mdstat
 ```
 
+{{< details "Output of cat /proc/mdstat" >}}
+
+```bash
+$ cat /proc/mdstat
+Personalities : [raid0] [raid1] [raid6] [raid5] [raid4] [raid10]
+md0 : active raid5 sdd1[3] sdc1[1] sdb1[0]
+      23437502464 blocks super 1.2 level 5, 512k chunk, algorithm 2 [3/2] [UU_]
+      [=>...................]  recovery =  5.7% (669102104/11718751232) finish=915.9min speed=201054K/sec
+      bitmap: 0/88 pages [0KB], 65536KB chunk
+```
+
+{{< /details >}}
+
 ### Inspect RAID 5 device
 
 Inspect RAID 5 array after creation.

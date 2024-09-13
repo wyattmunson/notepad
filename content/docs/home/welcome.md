@@ -19,3 +19,14 @@ seo:
 Welcome to WyNotes.
 
 Choose a topic on the left.
+
+```
+  ／l、
+（ﾟ､ ｡７
+ l、ﾞ~ヽ
+ じしf_, )ノ
+
+)\_/(
+.o.o.
+(___)
+```
