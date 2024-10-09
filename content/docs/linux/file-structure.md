@@ -16,19 +16,19 @@ toc: true
 
 ## Stanard Linux File Structure
 
-/bin
+### `/bin` - Binaries
 
 Essential binaries for the system to run. Applications like Chrome would be stored in `/usr/bin`, while something like Bash would be stored in `/bin`.
 
-/boot
+### `/boot` - Boot files
 
 Static boot files. The GRUB boot loader's files and Linux kernel are stored here. Boot loader config file are stored in `/etc` with the other configuration files.
 
-/cdrom - Old mount point for CD drives
+### `/cdrom` - Old mount point for CD drives
 
 While not part of the FHS standard, it still appears on Ubuntu and other distros. The standard location for media, however, is the `/media` directory.
 
-/dev - Device files
+### `/dev` - Device files
 
 Linux exposes devices like hard drives as files. They're not traditional files in the technical sense, but they appear to the user as files. E.g, `/dev/sda` is the first SATA drive in the system.
 
