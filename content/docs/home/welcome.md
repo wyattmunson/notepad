@@ -30,3 +30,7 @@ Choose a topic on the left.
 .o.o.
 (___)
 ```
+
+Icons:
+
+https://tabler.io/icons

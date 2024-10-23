@@ -62,3 +62,4 @@ Use the `motd` (or, Message of the Day) file to generate a post-login banner.
 ```bash
 sudo vim /etc/motd
 ```
+ --exclude='.Spotlight-V100' --exclude='.TemporaryItems' --exclude='.fseventsd'
