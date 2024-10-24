@@ -1,7 +1,7 @@
 ---
 title: "Bash Snippets"
 description: ""
-summary: ""
+summary: "Handy snippets of Bash code."
 date: 2024-10-22T19:11:44-07:00
 lastmod: 2024-10-22T19:11:44-07:00
 weight: 999
@@ -20,8 +20,6 @@ filename=$(basename -- "$fullfile")
 extension="${filename##*.}"
 filename="${filename%.*}"
 ```
-
-
 
 ```bash
 # output somefile.txt

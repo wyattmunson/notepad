@@ -1,7 +1,7 @@
 ---
 title: "Grafana"
 description: ""
-summary: ""
+summary: "Install and manage Grafana: a frontend to manage dashboards to display system information."
 date: 2024-09-20T00:26:04-07:00
 lastmod: 2024-09-20T00:26:04-07:00
 weight: 999

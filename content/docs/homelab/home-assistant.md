@@ -1,7 +1,7 @@
 ---
 title: "Home Assistant"
-description: ""
-summary: ""
+description: "Test Description"
+summary: "Install and manage Home Assistant: a single tool to maange a myriad of IoT platforms."
 date: 2024-09-20T01:12:20-07:00
 lastmod: 2024-09-20T01:12:20-07:00
 weight: 999

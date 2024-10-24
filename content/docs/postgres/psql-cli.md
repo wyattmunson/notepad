@@ -1,7 +1,7 @@
 ---
 title: "PSQL CLI"
 description: ""
-lead: ""
+summary: "PSQL CLI usage to interface with a Postgres database."
 date: 2023-01-04T21:01:31-08:00
 lastmod: 2023-01-04T21:01:31-08:00
 draft: false

@@ -1,7 +1,7 @@
 ---
 title: "Mosquitto"
 description: ""
-summary: ""
+summary: "Install and manage Mosquitto: a MQTT message broker."
 date: 2024-09-13T00:16:29-07:00
 lastmod: 2024-09-13T00:16:29-07:00
 weight: 999

@@ -1,7 +1,7 @@
 ---
 title: "Authentik"
 description: ""
-summary: ""
+summary: "Run and manage Authentik: an authentication and SSO provider"
 date: 2024-09-20T01:15:26-07:00
 lastmod: 2024-09-20T01:15:26-07:00
 weight: 999

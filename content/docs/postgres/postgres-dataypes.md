@@ -1,7 +1,7 @@
 ---
 title: "Postgres Dataypes"
 description: ""
-lead: ""
+summary: "Full reference on datatypes in PostgreSQL."
 date: 2023-01-05T10:56:23-08:00
 lastmod: 2023-01-05T10:56:23-08:00
 draft: false

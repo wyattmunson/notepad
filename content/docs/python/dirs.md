@@ -1,7 +1,7 @@
 ---
 title: "Files and Directories"
 description: ""
-summary: ""
+summary: "Manipulating files and directories in Python: creating, listing, copying, and moving. How to write to and read from a file from Python."
 date: 2024-10-10T20:17:50-07:00
 lastmod: 2024-10-10T20:17:50-07:00
 weight: 999

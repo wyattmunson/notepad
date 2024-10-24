@@ -2,6 +2,7 @@
 title: "Js Reference"
 description: ""
 lead: ""
+summary: "Full JavaScript reference."
 date: 2023-01-04T03:11:29-08:00
 lastmod: 2023-01-04T03:11:29-08:00
 draft: false

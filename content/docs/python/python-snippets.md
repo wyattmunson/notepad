@@ -1,6 +1,7 @@
 ---
 title: "Python Snippets"
 description: ""
+summary: "General Python code snippet repository."
 lead: ""
 date: 2024-06-03T22:35:44-07:00
 lastmod: 2024-06-03T22:35:44-07:00

@@ -1,7 +1,7 @@
 ---
 title: "DNS"
 description: ""
-lead: ""
+summary: "DNS translates human readable domain names into machine readable addresses"
 date: 2023-02-13T20:15:31-08:00
 lastmod: 2023-02-13T20:15:31-08:00
 draft: false

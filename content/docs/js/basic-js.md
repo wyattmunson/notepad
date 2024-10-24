@@ -2,6 +2,7 @@
 title: "Basic Js"
 description: ""
 lead: ""
+summary: "Basic introduction to JavaScript concepts."
 date: 2023-01-04T03:03:46-08:00
 lastmod: 2023-01-04T03:03:46-08:00
 draft: false
@@ -114,7 +115,7 @@ console.log(anArray[2]);
 const anObject = {
   size: "large",
   color: "green",
-  inStock: true,
+  inStock: true
 };
 console.log(anObject.size);
 // "large"
@@ -124,13 +125,13 @@ const shirtList = [
   {
     size: "large",
     color: "green",
-    inStock: true,
+    inStock: true
   },
   {
     size: "medium",
     color: "blue",
-    inStock: false,
-  },
+    inStock: false
+  }
 ];
 console.log(shirtList[0].inStock);
 // true

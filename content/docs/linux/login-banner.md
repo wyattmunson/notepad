@@ -1,7 +1,7 @@
 ---
 title: "Login Banner"
 description: ""
-summary: ""
+summary: "Configure a login banner to display to users during a SSH login."
 date: 2024-10-08T20:26:04-07:00
 lastmod: 2024-10-08T20:26:04-07:00
 weight: 999
@@ -62,4 +62,5 @@ Use the `motd` (or, Message of the Day) file to generate a post-login banner.
 ```bash
 sudo vim /etc/motd
 ```
- --exclude='.Spotlight-V100' --exclude='.TemporaryItems' --exclude='.fseventsd'
+
+--exclude='.Spotlight-V100' --exclude='.TemporaryItems' --exclude='.fseventsd'

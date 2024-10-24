@@ -1,7 +1,7 @@
 ---
 title: "Deps"
 description: ""
-summary: ""
+summary: "Managing dependencies in Python. Create a virtual environment with venv."
 date: 2024-06-22T16:05:55-07:00
 lastmod: 2024-06-22T16:05:55-07:00
 draft: false

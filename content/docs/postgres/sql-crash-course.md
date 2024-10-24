@@ -1,7 +1,7 @@
 ---
 title: "SQL Crash Course"
 description: ""
-lead: ""
+summary: "Crash course on SQL usage."
 date: 2023-01-04T21:06:00-08:00
 lastmod: 2023-01-04T21:06:00-08:00
 draft: false

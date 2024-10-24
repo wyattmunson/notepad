@@ -1,6 +1,6 @@
 ---
 title: "PSQL Reference"
-description: ""
+description: "Basic PostgreSQL reference including queries, enums, schemas, and datatypes."
 lead: ""
 date: 2023-01-05T23:14:01-08:00
 lastmod: 2023-01-05T23:14:01-08:00

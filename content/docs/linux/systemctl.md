@@ -1,7 +1,7 @@
 ---
 title: "Systemd"
 description: ""
-summary: ""
+summary: "Use systemctl control the systemd system and service manager via the command line."
 date: 2024-07-02T02:52:22-07:00
 lastmod: 2024-07-02T02:52:22-07:00
 draft: false

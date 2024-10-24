@@ -1,7 +1,7 @@
 ---
 title: "Linux Configuration"
 description: ""
-summary: ""
+summary: "Configuration of common Linux settings around network, static IP addresses, users, and groups."
 date: 2024-06-24T15:29:47-07:00
 lastmod: 2024-06-24T15:29:47-07:00
 draft: false

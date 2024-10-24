@@ -2,6 +2,7 @@
 title: "Bash Scripting"
 description: ""
 lead: ""
+summary: "Bash scripting information on variables, conditionals, redirection, looping, and functions."
 date: 2023-06-26T17:35:47-07:00
 lastmod: 2023-06-26T17:35:47-07:00
 draft: false

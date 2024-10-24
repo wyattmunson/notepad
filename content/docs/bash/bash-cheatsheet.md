@@ -1,6 +1,7 @@
 ---
 title: "Bash Cheatsheet"
 description: "Cheatsheet for handy bash commands"
+summary: "Cheatsheet for handy bash commands"
 lead: "Cheatsheet for handy bash commands"
 date: 2023-01-03T23:52:57-08:00
 lastmod: 2023-01-03T23:52:57-08:00

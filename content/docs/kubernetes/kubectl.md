@@ -1,6 +1,7 @@
 ---
 title: "Kubectl CLI"
-description: ""
+description: "Kubectl is a command line interface to interact with a Kubernetes cluster."
+summary: "Kubectl is a command line interface to interact with a Kubernetes cluster."
 lead: ""
 date: 2023-02-13T19:10:57-08:00
 lastmod: 2023-02-13T19:10:57-08:00

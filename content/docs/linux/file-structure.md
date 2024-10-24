@@ -1,6 +1,7 @@
 ---
 title: "File Structure"
 description: ""
+summary: "Explanation of root directory structure of Linux distributions. Kown as the Filesystem Heirarchy Standard (FHS)."
 lead: ""
 date: 2023-01-04T03:01:06-08:00
 lastmod: 2023-01-04T03:01:06-08:00
@@ -15,6 +16,8 @@ toc: true
 ---
 
 ## Stanard Linux File Structure
+
+This is known as FHS (Filesystem Hierarchy Standard).
 
 ### `/bin` - Binaries
 

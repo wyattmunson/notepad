@@ -1,7 +1,7 @@
 ---
 title: "nodeRED"
 description: ""
-summary: ""
+summary: "Install and manage nodeRED: a workflow automation and IoT framework."
 date: 2024-09-13T00:15:18-07:00
 lastmod: 2024-09-13T00:15:18-07:00
 weight: 999

@@ -1,7 +1,7 @@
 ---
 title: "SSH"
 description: ""
-summary: ""
+summary: "How to create SSH keys, upload public keys to a remote machine, and disable password authentication."
 date: 2024-10-08T23:15:45-07:00
 lastmod: 2024-10-08T23:15:45-07:00
 weight: 999

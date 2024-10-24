@@ -1,6 +1,7 @@
 ---
 title: "Kubernetes Troubleshooting"
 description: ""
+summary: "How to troubleshoot Kubernetes issues and common issues."
 lead: ""
 date: 2023-02-13T19:08:19-08:00
 lastmod: 2023-02-13T19:08:19-08:00

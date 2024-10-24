@@ -1,7 +1,7 @@
 ---
 title: "Telegraf"
 description: ""
-summary: ""
+summary: "Configure Telegraf to send system and Docker stats to InfluxDB or another timeseries database."
 date: 2024-06-24T19:54:06-07:00
 lastmod: 2024-06-24T19:54:06-07:00
 draft: false

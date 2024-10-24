@@ -1,7 +1,7 @@
 ---
 title: "InfluxDB"
 description: ""
-summary: ""
+summary: "Install and manage InfluxDB: a timeseries database."
 date: 2024-09-13T00:16:20-07:00
 lastmod: 2024-09-13T00:16:20-07:00
 weight: 999

@@ -1,7 +1,8 @@
 ---
 title: "Bash Reference"
-description: ""
-lead: ""
+description: "This is the description metadata"
+summary: "Full command reference for common bash commands"
+lead: "This is the lead metadata"
 date: 2023-01-03T23:53:04-08:00
 lastmod: 2023-01-03T23:53:04-08:00
 draft: false

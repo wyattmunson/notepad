@@ -1,7 +1,7 @@
 ---
 title: "n8n"
 description: ""
-summary: ""
+summary: "Install and manage n8n: a workflow automation tool."
 date: 2024-09-12T23:37:54-07:00
 lastmod: 2024-09-12T23:37:54-07:00
 weight: 999

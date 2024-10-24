@@ -1,7 +1,7 @@
 ---
 title: "RFID"
 description: ""
-summary: ""
+summary: "Types of RFID cards. How to clone RFID cards."
 date: 2024-08-07T01:32:31-07:00
 lastmod: 2024-08-07T01:32:31-07:00
 weight: 999

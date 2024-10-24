@@ -1,7 +1,7 @@
 ---
 title: "Install Ubuntu"
 description: ""
-summary: ""
+summary: "How to install Ubuntu server on a new machine."
 date: 2024-09-20T01:48:15-07:00
 lastmod: 2024-09-20T01:48:15-07:00
 weight: 999

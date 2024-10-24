@@ -1,7 +1,7 @@
 ---
 title: "Traefik"
 description: ""
-summary: ""
+summary: "Install and manage Traefik: a webserver and reverse proxy."
 date: 2024-07-29T21:11:20-07:00
 lastmod: 2024-07-29T21:11:20-07:00
 draft: false
