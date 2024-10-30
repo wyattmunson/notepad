@@ -4,6 +4,7 @@ description: "Basic Terraform usage"
 summary: "This is a terraform summary"
 date: 2024-07-01T14:11:51-07:00
 lastmod: 2024-07-01T14:11:51-07:00
+area: "Some thing"
 draft: false
 weight: 10
 toc: true

@@ -5,13 +5,22 @@
       <h1 class="text-center">{{ if eq .CurrentSection .FirstSection }}{{ .Section | humanize }}{{ else }}{{ .Title }}{{ end }}</h1>
       {{ with .Content }}<div class="text-center">{{ . }}</div>{{ end }}
       <h2>Default list layout</h2>
+			<script>
+				console.log('Hugo Debug: ', JSON.parse({{ jsonify . }}))
+			</script>
 			<div class="card-list">
 				{{ $currentSection := .CurrentSection }}
 				{{ range where .Site.RegularPages.ByTitle "Section" .Section }}
 					{{ if in (.RelPermalink | string) $currentSection.RelPermalink }}
 						<div class="card my-3">
+							<script>
+								console.log('Hugo Debug IN LOOP: ', JSON.parse({{ jsonify . }}))
+							</script>
 							<div class="card-body">
 								<a class="stretched-link" href="{{ .RelPermalink }}">{{ .Params.title | title }} &rarr;</a>
+								<!-- UX2: Section config -->
+								<div>{{ .Section }}</div>
+								<!-- UX2: Section config END -->
 								<p>{{ .Summary }}</p>
 							</div>
 						</div>

@@ -401,6 +401,8 @@ curl -L https://example.com
 
 ### Download file with cURL
 
+Download a file using cURL. Specify a file name with `-o` or use `-O` to keep the default file name.
+
 ```bash { title="Download a file with cURL" }
 # download file and set name to file_name
 curl https://example.com --output file_name
@@ -424,9 +426,13 @@ curl -u user:password http://example.com/
 By default, cURL uses a `GET` request. Use the `-X` flag to specify a different method.
 
 ```bash { title="Specify HTTP method" }
-# follow a location (instead of returning redirect)
+# specify a POST HTTP method
 curl -X POST https://example.com
 ```
+
+#### HTTP POST with payload
+
+Use cURL to send a POST command with a JSON payload. Use the `--data` flag to specify a JSON payload.
 
 ```bash
 # curl POST using application/json
@@ -465,11 +471,15 @@ TEAM_ID=$(echo $API_RESPONSE | jq -r '.id')
 
 ### See redirect path
 
+Use the `-sILK` flags to see the redirect path of a URL using cURL.
+
 ```bash
 curl -sILk google.com
 ```
 
 ### Certificates
+
+Use the `--cert` flag to specify a `.pem` file.
 
 ```bash
 # Certificates
@@ -523,9 +533,9 @@ $ cut sales.txt -f -3
 2022-20-10  10:23   500.34
 ```
 
-### Cut with a Delimeter
+### Cut with a Delimiter
 
-Use the `-d` flag to specify a delimeter.
+Use the `-d` flag to specify a delimeter. By default, cut uses tabs the delimiter.
 
 ```bash
 cut sales.txt -d ":" -f 1,2

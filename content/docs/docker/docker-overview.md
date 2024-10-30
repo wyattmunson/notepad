@@ -1,7 +1,7 @@
 ---
 title: "Docker Overview"
 description: "Test desc"
-summary: "Overview of Docker"
+summary: "Overview of Docker: what it is and how it's used"
 lead: ""
 date: 2023-01-04T00:17:04-08:00
 lastmod: 2023-01-04T00:17:04-08:00

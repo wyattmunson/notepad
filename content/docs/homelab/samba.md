@@ -1,7 +1,7 @@
 ---
 title: "Samba"
 description: ""
-summary: ""
+summary: "Install and manage Samba: a linux-based fileserver."
 date: 2024-09-12T22:11:15-07:00
 lastmod: 2024-09-12T22:11:15-07:00
 weight: 999

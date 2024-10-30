@@ -503,3 +503,23 @@ random_int = random.randint(0, 9)
 for x in range(5):
 	print(x)
 ```
+
+## Regex Match
+
+### See if string matchs "Xs" format
+
+Use regex to see if a string matches the format of "nd", where "n" is a number, and "d" is the letter "d". It will match strings like `2d` or `16d`.
+
+```python
+def is_match(string):
+    return bool(re.fullmatch(r"\d+d", string))
+```
+
+#### Match multiple charachters
+
+The following code updates the regex to match a string ending in "d" or "w".
+
+```python
+def is_match(string):
+    return bool(re.fullmatch(r"\d+[dw]", string))
+```

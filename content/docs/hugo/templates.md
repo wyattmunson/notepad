@@ -67,6 +67,14 @@ Create a single layout page
 {{ end }}
 ```
 
+## Debugging
+
+```html
+<script>
+  console.log('Hugo Debug: ', JSON.parse({{ jsonify . }}))
+</script>
+```
+
 ## Add CSS styles
 
 ```css
