@@ -293,26 +293,6 @@ else:
   print("Value not found")
 ```
 
-### Check if env variable exists, otherwise get input
-
-```python
-source_account = os.environ.get('SOME_VAR') if not KeyError else input("Enter input:")
-```
-
-Know, working
-
-```python
-def check_var(var, prompt):
-           res = os.environ.get(var)
-           if res is None:
-              print("ERROR: Environment variable {var} not supplied")
-              res = input(prompt)
-           print(f"INFO: Got {var} from environment variable")
-           return res
-
-check_var("SOME_VAR", "Enter some variable:")
-```
-
 ### Check if multiple variables are all populated
 
 ```python
