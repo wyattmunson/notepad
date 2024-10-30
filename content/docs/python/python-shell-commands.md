@@ -1,10 +1,10 @@
 ---
-title: "Regex"
+title: "Shell Commands in Python"
 description: ""
-summary: "Python regex"
-date: 2024-10-29T21:55:22-07:00
-lastmod: 2024-10-29T21:55:22-07:00
-weight: 190
+summary: "Use Python to run shell commands using the subprocess or os package."
+date: 2024-10-29T22:55:57-07:00
+lastmod: 2024-10-29T22:55:57-07:00
+weight: 200
 toc: true
 seo:
   title: "" # custom title (optional)

@@ -5,7 +5,7 @@ summary: "Managing dependencies in Python. Create a virtual environment with ven
 date: 2024-06-22T16:05:55-07:00
 lastmod: 2024-06-22T16:05:55-07:00
 draft: false
-weight: 999
+weight: 25
 toc: true
 seo:
   title: "" # custom title (optional)

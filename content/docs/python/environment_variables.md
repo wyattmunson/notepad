@@ -4,7 +4,7 @@ description: ""
 summary: "Checking and getting environment variables, command arguments, and flags in Python scripts."
 date: 2024-10-22T21:17:23-07:00
 lastmod: 2024-10-22T21:17:23-07:00
-weight: 999
+weight: 31
 toc: true
 seo:
   title: "" # custom title (optional)

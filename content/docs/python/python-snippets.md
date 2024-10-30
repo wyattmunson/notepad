@@ -6,12 +6,12 @@ lead: ""
 date: 2024-06-03T22:35:44-07:00
 lastmod: 2024-06-03T22:35:44-07:00
 draft: false
+weight: 210
 images: []
 menu:
   docs:
     parent: ""
     identifier: "python-snippets-bc2c41697207056757ca8a0ac270807b"
-weight: 999
 toc: true
 ---
 
@@ -87,28 +87,6 @@ except Exception as e:
   logging.error(f"Unexpected error: {e}")
 ```
 
-### Open File Modes
-
-- `r` - read only. I/O exception raised if file doesn’t exist. Default mode. Handle location is start of file.
-- `r+` - read and write. I/O exception raised if file doesn’t exist. Default mode. Handle location is start of file.
-- `w` - write only. Existing files overwritten. Creates new file if doesn’t exist. Fails if writing to new directory that doesn’t exist. Handle location is start of file.
-- `w+` - ready and write. Overwrites existing text.
-- `a` - append only. Writes new text at end of file. Creates new file if doesn’t exist. Fails if writing to new directory that doesn’t exist. Handle location is end of file.
-- `a+` - read and write. Read and append behavior.
-
-```python
-try:
-	with open(filename, "a") as file_obj:
-		file_obj.write(string_to_append)
-		print(f"Appended {string_to_append}")
-except FileNotFoundError:
-	print("Error")
-```
-
-### Create a directory
-
-- When using `os.makedirs()` if not using the aboslute path, e.g., calling the python script from a different path than the code is in, it will fail.
-
 ## Install Deps with Pip
 
 ```python
@@ -140,125 +118,12 @@ deactivate
 rm -rf venv
 ```
 
-# Date / Time
-
-```python
-from datetime import datetime
-now = datetime.now()
-
-year = now.strftime("%Y") # => 2018
-
-week = now.strftime("%a") # => Sun
-week = now.strftime("%A") # => Sunday
-week = now.strftime("%w") # => 0
-
-day = now.strftime("%d") # => 01
-day = now.strftime("%-d") # => 1
-
-month = now.strftime("%b") # => Jan
-month = now.strftime("%B") # => January
-month = now.strftime("%m") # => 01
-month = now.strftime("%-m") # => 1
-
-hour = now.strftime("%H") # => 00..23
-hour = now.strftime("%-H") # => 0..23
-hour = now.strftime("%I") # => 01...12
-hour = now.strftime("%=I") # => 1..12
-meridian = now.strftime("%H") # => AM..PM
-minute = now.strftime("%M") # => 00..59
-minute = now.strftime("%-M") # => 0..59
-second = now.strftime("%S") # => 00..59
-second = now.strftime("%-S") # => 0..59
-microsecond = now.strftime("%f") # => 00000..99999
-
-utc_offset = now.strftime("%z") # => 00..59
-time_zone_name = now.strftime("%Z") # => 0..59ode
-
-local_timestamp = now.strftime("%c") # => Mon Jun  3 17:40:16 2024
-```
-
-### Convert Times
-
-```python
-from datetime import datetime
-
-# convert datetime to string
-strftime("%Y")
-
-# convert string to datetime
-datetime.strptime(date_string, "%d")
-```
-
 # Terminal Subprocess
 
 Keys: Terminal, Bash, run shell command, run command
 
 ```python
 import subprocess
-
-```
-
-# Classes
-
-Good Guide: https://realpython.com/python-classes/#getting-started-with-python-classes
-
-### Class with state manager
-
-```python
-class State:
-  def __init__(self):
-    self.current_menu = "main"
-    self.user_data = {}  # Store any relevant user data
-
-  def update_state(self, selection):
-    # Update state based on user selection
-    # ...
-
-  def get_next_action(self):
-    # Determine next action based on current state
-    # ...
-
-class UI:
-  def display_menu(self, menu_name):
-    # Display menu options from state
-    # ...
-
-  def get_user_input(self):
-    # Get user input and validate it
-    # ...
-
-class Logic:
-  def perform_action1(self, data):
-    # Business logic for action 1
-    # ...
-
-  def perform_action2(self, data):
-    # Business logic for action 2
-    # ...
-
-class App:
-  def __init__(self):
-    self.state = State()
-    self.ui = UI()
-    self.logic = Logic()
-
-  def run(self):
-    while True:
-      self.ui.display_menu(self.state.current_menu)
-      user_input = self.ui.get_user_input()
-      self.state.update_state(user_input)
-      next_action = self.state.get_next_action()
-      if next_action == "action1":
-        self.logic.perform_action1(self.state.user_data)
-      elif next_action == "action2":
-        self.logic.perform_action2(self.state.user_data)
-      # ... handle other actions ...
-      elif next_action == "exit":
-        break
-
-if __name__ == "__main__":
-  app = App()
-  app.run()
 
 ```
 
@@ -371,14 +236,6 @@ getPerson("Greg", 90, "VA")
 getPerson("Greg", state="VA", age=90)
 ```
 
-# Error Handling
-
-- **ValueError:** Raised when a correct argument type but an incorrect value is supplied to a function. For example, if you try to pass a string to a function that expects an integer, a ValueError will be raised.
-- **TypeError:** Raised when an argument is of the wrong type. For example, if you try to pass a string to a function that expects an integer, a TypeError will be raised.
-- **IndexError:** Raised when an index is out of range. For example, if you try to access the 10th element of a list that only has 5 elements, an IndexError will be raised.
-- **KeyError:** Raised when a key is not found in a dictionary. For example, if you try to access the key "foo" in a dictionary that does not have a key "foo", a KeyError will be raised.
-- **NameError:** Raised when a name is not defined. For example, if you try to use the variable "foo" but the variable "foo" has not been defined, a NameError will be raised.
-
 ## Check to see if attribute exists:
 
 ```python
@@ -388,23 +245,6 @@ def configureWireless(self):
             print("Error message for you to see.")
             print("ERROR: Call setPipes() to define transmit address")
             raise ValueError("Transmit not set. See more information above.")
-```
-
-## Set Variables in try catch
-
-A variable can be set in a try/except assuming the variable is also defined in the except or an error is raised.
-
-```python
-try:
-	spi = SPI(0, sck=Pin(2), mosi=Pin(7), miso=Pin(4))
-	cfg = {"spi": spi, "csn": 3, "ce": 0}
-except ValueError as e:
-	print("Upstream error: ", e)
-	raise ValueError("Last error rendered to user")
-
-# spi can be defined in "try"
-# spi can be defined in "except" or raise Error
-print(spi)
 ```
 
 ## Kargs with methods
