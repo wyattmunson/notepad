@@ -2,10 +2,9 @@
 title: "Arrows"
 description: ""
 summary: ""
-date: 2024-06-21T23:44:56-07:00
-lastmod: 2024-06-21T23:44:56-07:00
-draft: false
-weight: 999
+date: 2024-10-29T23:48:52-07:00
+lastmod: 2024-10-29T23:48:52-07:00
+weight: 100
 toc: true
 seo:
   title: "" # custom title (optional)

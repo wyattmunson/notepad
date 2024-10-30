@@ -19,6 +19,7 @@ toc: true
 
 | Command                                         | Name                            | Description                                               |
 | ----------------------------------------------- | ------------------------------- | --------------------------------------------------------- |
+| [alias](#alias---alias-command)                 | alias                           | Create a shorthand command to reference a longer command. |
 | [cat](#cat---concatenate)                       | concatenate                     | Display contents of text file; combine multiple files.    |
 | [cd](#cd---change-directory)                    | change directory                | Traverse the directory tree and move to different folders |
 | [chmod](#chmod---change-mode)                   | change mode                     | Change file permissions                                   |
@@ -54,6 +55,24 @@ toc: true
 
 ```bash
 command ARGUMENT [OPTIONS] [FILE_NAME...]
+```
+
+## `alias` - alias command
+
+{{< callout context="tip" title="alias" icon="outline/terminal-2" >}}
+Use `alias` to create a shorthand command.
+{{< /callout >}}
+
+Alias can be used to create a shorthand command. For example `gs` can be used instead of typing `git status`.
+
+```bash
+alias gs="git status"
+```
+
+The alias command should be saved to the `.bash_profile`, `.bashrc`, or equivalent file so it's available every time a new shell session starts.
+
+```bash
+echo "alias some_command='bash some_script.sh'" >> ~/.bashrc
 ```
 
 ## `cat` - ConcATenate
