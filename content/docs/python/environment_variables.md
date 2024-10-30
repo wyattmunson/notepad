@@ -15,7 +15,11 @@ seo:
 
 ## Get Arguments
 
-Use `sys.argv` to get all the arguments that were provided to the python script when it was invoked.
+{{< callout context="note" title="Get all arguments" icon="outline/code" >}}
+Use `sys.argv` to get all arguments supplied to the Python script.
+{{< /callout >}}
+
+Use `sys.argv` to get all the arguments that were provided to the python script when it was invoked. It returns an array with all the arguments supplied, in order.
 
 ```python
 import sys

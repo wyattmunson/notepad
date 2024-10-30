@@ -1,7 +1,7 @@
 ---
 title: "Files and Directories in Python"
 description: ""
-summary: "Using Python to manipulate files and directories."
+summary: "Using Python to manipulate files and directories. Create, check for, move, and write to files."
 date: 2024-10-29T21:56:08-07:00
 lastmod: 2024-10-29T21:56:08-07:00
 weight: 27
@@ -26,6 +26,10 @@ os.mkdir(DIR_PATH)
 # usage
 os.mkdir("/tmp/some/path")
 ```
+
+{{< callout context="caution" title="Create directory" icon="outline/alert-triangle" >}}
+It's a good practice to specify a absolute file path.
+{{< /callout >}}
 
 ### Basic Usage
 
