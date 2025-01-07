@@ -1,11 +1,14 @@
 ---
 title: "Math Formulas"
 description: ""
-summary: ""
+summary: "Big list of math formulas for general use."
 date: 2024-10-30T11:36:00-07:00
 lastmod: 2024-10-30T11:36:00-07:00
 weight: 999
 toc: true
+tagger:
+  - "One Tag"
+  - "Another tag"
 seo:
   title: "" # custom title (optional)
   description: "" # custom description (recommended)
@@ -56,6 +59,7 @@ Circle:
 
 - Area: `πr^2`
 - Circumference: `2πr`
+- Where: `r` is radius
 
 ## Compounding Interest Rate
 

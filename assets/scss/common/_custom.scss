@@ -49,3 +49,21 @@
 .imgWidth10 {
     width: 10%;
 }
+
+.horizontalList {
+    display: flex;
+    list-style-type: none;
+    padding: 0;
+    // margin: 0;
+}
+.horizontalList > li {
+    background-color: #ddd;
+    border: none;
+    color: black;
+    padding: 3px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin: 4px 2px;
+    border-radius: 16px;
+}

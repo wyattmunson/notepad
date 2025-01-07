@@ -1,7 +1,7 @@
 ---
 title: "Arrows"
 description: ""
-summary: ""
+summary: "Unicode reference for all things arrows."
 date: 2024-10-29T23:48:52-07:00
 lastmod: 2024-10-29T23:48:52-07:00
 weight: 100
