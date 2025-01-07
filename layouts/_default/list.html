@@ -6,10 +6,13 @@
       {{ with .Content }}<div class="text-center">{{ . }}</div>{{ end }}
       <h2>Default list layout</h2>
 			<script>
-				console.log('Hugo Debug: ', JSON.parse({{ jsonify . }}))
+				console.log('Hugo Debug List: ', JSON.parse({{ jsonify . }}))
 			</script>
 			<div class="card-list">
 				{{ $currentSection := .CurrentSection }}
+				<script>
+					console.log('Hugo Debug: ', JSON.parse({{ jsonify . }}))
+				</script>
 				{{ range where .Site.RegularPages.ByTitle "Section" .Section }}
 					{{ if in (.RelPermalink | string) $currentSection.RelPermalink }}
 						<div class="card my-3">
