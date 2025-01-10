@@ -53,7 +53,7 @@ $LINENO   # Returns the current line number in the Bash script.
 Bash scripts that expect environment variables can be enriched by checking to see if the variables exist before running the remainder of the script. Help text can be provided and an exit code can be thrown if the conditions are not met.
 
 ```bash
-#check if variable exists
+# return true if variable exists AND is set to a value
 if [ -n "$1" ]; then
   echo "You supplied the first parameter!"
 else
@@ -61,14 +61,22 @@ else
   exit 1
 fi
 
-# variable does not exist
+# returns true if variable does not exist OR not set to a value
 if [ -z "$1" ]; then
   echo "Does not exists"
 fi
 
 # check if exists, otherwise set
 if [ -z ${var+x} ]; then echo "var is unset"; else echo "var is set to '$var'"; fi
+
+# only supported in bash 4.2 (not widely supported)
+if [ -v "$1" ]; then
+  echo "Does not exists"
+fi
 ```
+
+- The `-n` operator returns true if string's length is non-zero, meaning it's set to some value.
+- The `-z` operator returns true if length of string is zero. Meaning it's set to nothing or doesn't exist at all.
 
 ### Default Variables
 
@@ -119,7 +127,7 @@ export VAR_NAME=VALUE
 ## If Statements
 
 ```bash
-if [[ $1 -gt 100]]
+if [[ $1 -gt 100 ]]
 then
   echo "Some text"
 fi
@@ -139,35 +147,158 @@ Extend logic with `if`, `elif`, and `else`.
 {{< /callout >}}
 
 ```bash
-if [ $1 -gt 100]
-then
+if [ $1 -gt 100 ]; then
   echo "Some text"
-elif [ $2 == 'no']
-then
+elif [ $2 == 'no']; then
   echo "Alternate matching condition"
 else
   echo "Final catch condition"
 fi
 ```
 
-### Wildcards
+### Equality Operators
 
-Use the asterisk wildcard (`*`) for partial matches of one or more occurences of any charachter. Can match beginning, end, or both.
+{{< callout context="tip" title="Equality Operators" >}}
+
+{{< /callout >}}
+
+| Operator | Usage                             |
+| -------- | --------------------------------- |
+| =        | equal to                          |
+| ==       | string comparisons (non-standard) |
+| !=       | not equal to                      |
+| -eq      | equals, numeric comparisons       |
+| -gt      | greater than                      |
+| -ge      | greater than or equal to          |
+| -lt      | less than                         |
+| -le      | less than or equal to             |
+| -ne      | not equal, numeric comparisons    |
+
+#### String Comparisons
 
 ```bash
-if [[ $1 == *"$SUBSTRING"* ]]
-then
-  echo "Matches substring"
-fi
+=   # equal to
+==  # string comparisons (non-standard)
+!=  # not equal to
 ```
 
-Use the question mark (`?`) to match a single occurence of any chatachter.
+```bash { title="Check if two strings are equal" }
+if [ "$foo" = "bar" ]; then echo "Foo is set to bar"; fi
+```
+
+- Checks if the variable `$foo` is equal to the string of `bar`.
+- Note the single equal sign (`=`).
 
 ```bash
-if [[ $1 == ??"log.txt" ]]
-then
+if [ "$foo" != "bar" ]; then echo "Foo is set to bar"; fi
+```
+
+#### Numeric Comparisons
+
+Bash uses different operators to compare two numbers.
+
+```bash
+-eq # equals, numeric comparisons
+-gt # greater than
+-ge # greater than or equal to
+-lt # less than
+-le # less than or equal to
+-ne # not equal
+```
+
+```bash
+foo=50
+if [ "$foo" -gt 10 ]; then echo "Foo is greater than 10"; fi
+```
+
+### Wildcards
+
+{{< callout context="tip" title="Wildcards" icon="outline/alert-triangle" >}}
+Use wildcards to perform partial string matches.
+
+- `*` - one or many occurrences of any character
+- `?` - single occurrence of any character
+- `[]` - single occurrence of one character inside the brackets
+  {{< /callout >}}
+
+#### Asterisk `*` Wildcard
+
+Use the asterisk wildcard (`*`) for partial matches of one or more occurrences of any character. Can match beginning, end, or both.
+
+```bash { title="Asterisk wildcard basic usage" }
+if [[ $1 == *"pattern"* ]]; then
   echo "Matches substring"
 fi
+
+# Use variables for search pattern
+if [[ $1 == *"$SEARCH_PATTERN"* ]]; then
+  echo "Matches substring"
+fi
+
+# quotes are not required
+if [[ $1 == *log*.txt ]]; then echo "Matches"; fi
+# ==> matches `log-01.txt`, `syslog-01.txt`
+```
+
+#### Question Mark `?` Wildcard
+
+Use the question mark (`?`) to match a single occurrence of any character.
+
+Use multiple question marks to
+
+```bash
+# If using quotes, `?` must appear outside
+if [[ $1 == ?"log.txt" ]]; then echo "Matches"; fi
+# ==> matches `alog.txt`
+
+# Paramaterize the search pattern
+if [[ $1 == ?"$FILE_NAME" ]]; then echo "Matches"; fi
+# ==> matches variable $FILE_NAME
+
+# use multiple quotes to match multiple characters
+if [[ $1 == ???"log.txt" ]]; then echo "Matches"; fi
+# ==> matches `syslog.txt`
+
+# quotes are not required
+if [[ $1 == log-??.txt ]]; then echo "Matches"; fi
+# ==> matches `log-01.txt`
+```
+
+{{< callout context="caution" >}}
+Wildcards like `*` and `?` must appear outside of quotation marks.
+{{< /callout >}}
+
+```bash
+# NOT VALID: wildcard will not work
+if [[ $1 == "????log.txt" ]]; then echo "Matches"; fi
+```
+
+Use the bracket wildcard (`[]`) to match a single occurrence of one of the characters match.
+
+```bash
+# Match single occurrence of a single character in the []
+if [[ $1 == [Ee]xample ]]; then echo "Matches"; fi
+# ==> matches `Example` or `example`
+# ==> no match `EExample`
+```
+
+Note: double required for bracket expression
+
+### More String Comparisons
+
+#### Regex String Comparisons
+
+```bash
+if [[ "$str" =~ ^[a-zA-Z]+$ ]]; then echo "str is alphabetic"; fi
+```
+
+#### String Length Comparisons
+
+Use the `#` operator to compare string length.
+
+```bash
+# check if variable `foo` is shorter than `bar`
+if [[ "${#foo}" -lt "${#bar}" ]]; then echo "foo is shorter"; fi
 ```
 
 ### Boolean Operators
@@ -178,26 +309,11 @@ fi
 ```
 
 ```bash
-if [[ $1 -gt 100 && $2 == 'yes']]
-then
+if [[ $1 -gt 100 && $2 == 'yes']]; then
   echo "And condition met"
-elif [[ $1 -gt 50 || $2 == 'no']]
-then
+elif [[ $1 -gt 50 || $2 == 'no']]; then
   echo "Or condition met"
 fi
-```
-
-### Equality Operators
-
-```bash
-=
-==  # string comparisons
--eq # equals, numeric comparisons
--gt # greater than
--ge # greater than or equal to
--lt # less than
--le # less than or equal to
--ne # not equal
 ```
 
 ### Bracket Syntax
@@ -265,6 +381,30 @@ EOL
 
 ---
 
+## Set
+
+- `set -u` - attempts to use undefined variables as errors
+- `-e` - exits immediately if a command fails
+- `-x` - enable debugging by printing every command before it is executed
+- `-o pipefail` - exit status of first non-zero exit code in a command pipeline (`cmd1 | cmd2 | cmd3`). Normal behavior is to return the exit code of the last command.
+
+---
+
+## Data Types
+
+### Arrays
+
+```bash
+VAR_NAME=("foo" "bar")
+
+for x in ${VAR_NAME[@]};
+do
+    # your commands here
+done
+```
+
+---
+
 ## Functions
 
 ### Defining and Calling Functions
@@ -322,6 +462,40 @@ Loop there it is.
 ```bash
 for i in TEST; do
   echo "$i"
+done
+```
+
+### Loop over directories
+
+- Given directory is `/tmp`
+- With subdirectories `/tmp/A`, `/tmp/B`, `/tmp/C`
+- It will return `A`, `B`, `C`
+
+```bash { title="Return names of subdirectories" }
+for dir in /tmp/*/     # list directories in the form "/tmp/dirname/"
+do
+    dir=${dir%*/}      # remove the trailing "/"
+    echo "${dir##*/}"    # print everything after the final "/"
+done
+```
+
+```bash
+# Loop through each subdirectory
+for dir in "$1"/*/; do
+  if [ -d "$dir" ]; then
+    echo "Processing directory: $dir"
+
+    # Change to the subdirectory
+    cd "$dir" || continue
+
+    # Loop through each album
+    for alb in "$dir"/*/; do
+        echo "Processing Album: $alb"
+    done
+
+    # Go back to the original directory
+    cd - > /dev/null
+  fi
 done
 ```
 

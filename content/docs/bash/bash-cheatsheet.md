@@ -15,6 +15,14 @@ weight: 2
 toc: true
 ---
 
+This is a Quick Reference Sheet for bash commands and usage. For a more detailed guide, see [Bash Reference](/docs/bash/bash-reference).
+
+{{< card-grid >}}
+{{< link-card title="Bash" href="#file-commands" description="Bash cheat sheet, reference, and snippets." >}}
+{{< link-card title="Python" href="/docs/python/" >}}
+{{< link-card title="Linux" href="/docs/linux/" >}}
+{{< /card-grid >}}
+
 - [File Commands](#file-commands)
 
 ## File Commands
@@ -48,6 +56,7 @@ vim FILE        # create/open file in vim text editor
 nano FILE       # create/open file in nano text editor
 mktemp -t FILE  # make temp file in /tmp (deleted on boot)
 mkdir DIR       # create a directory
+mkdir -p DIR/SUDIR  # create directory and subdirectories
 ```
 
 ### Moving a file
@@ -85,6 +94,9 @@ rsync [OPTIONS] USER@HOST:SOURCE TARGET
 
 # basic usage
 rsync -a /source/foo/ /target/foo/
+
+# create/copy of 'foo' into '/target' with subdirs
+rsync -azhP /source/foo /target
 
 # flags
   -a          # archive mode - sync recursively
@@ -388,6 +400,9 @@ VARIABLE_NAME=some_text
 
 # reference a variable
 echo $VARIABLE_NAME
+
+# set command output to variable
+VAR_NAME=$(ls -la)
 ```
 
 ### Bash Builtin Variables
@@ -407,6 +422,8 @@ $LINENO   # Returns the current line number in the Bash script.
 ```
 
 ### Reading Input
+
+Get user input and save to a variable in an interactive shell session.
 
 ```bash
 # set a variable
@@ -429,6 +446,16 @@ then
 else
   echo "Final catch condition"
 fi
+```
+
+```bash
+# use semi-colons to combine lines
+if [ $1 -gt 100]; then
+  echo "Some text"
+fi
+
+# one-liner
+if [ $1 -gt 100]; then echo "Some text"; fi
 ```
 
 ### Wildcards
@@ -478,11 +505,9 @@ dig google.com
 curl https://google.com
 
 # download file and set name to file_name
-curl https://google.com --output file_name
 curl https://google.com -o file_name
 
 # silence output
-curl https://google.com --silent
 curl https://google.com -s
 
 # follow a location (instead of returning redirect)

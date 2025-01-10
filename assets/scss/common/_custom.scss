@@ -50,12 +50,20 @@
     width: 10%;
 }
 
+.imgCenter {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
 .horizontalList {
     display: flex;
     list-style-type: none;
     padding: 0;
     // margin: 0;
 }
+
 .horizontalList > li {
     background-color: #ddd;
     border: none;

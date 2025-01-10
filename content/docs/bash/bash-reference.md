@@ -15,7 +15,7 @@ weight: 10
 toc: true
 ---
 
-# Full Bash reference
+Full bash reference for commands and common binaries.
 
 | Command                                         | Name                            | Description                                               |
 | ----------------------------------------------- | ------------------------------- | --------------------------------------------------------- |

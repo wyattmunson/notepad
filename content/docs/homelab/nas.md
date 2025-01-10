@@ -30,7 +30,7 @@ SATA power connectors uses 15 pins, which specific to the SATA standard. They ar
 
 <!-- ![sata connections](images/sataPower.png) -->
 
-{{< picture src="images/sataPower.png" alt="A bird flying through a field of tall grass" >}}
+{{< picture src="images/sataPower.png" class="imgWidth50 imgCenter" alt="A bird flying through a field of tall grass" >}}
 
 The 15-pin connector supplies 3.3V in addition to the traditional 5 V and 12 V, though it's rarely used in practice.
 
