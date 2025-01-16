@@ -4,7 +4,7 @@ description: "Move a file with mv."
 summary: ""
 date: 2025-01-16T03:06:49-08:00
 lastmod: 2025-01-16T03:06:49-08:00
-weight: 999
+weight: 295
 toc: true
 seo:
   title: "" # custom title (optional)

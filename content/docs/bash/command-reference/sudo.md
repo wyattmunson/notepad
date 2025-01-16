@@ -4,7 +4,7 @@ description: "sudo allows a user to execute a command as the superuser or anothe
 summary: ""
 date: 2025-01-16T02:20:53-08:00
 lastmod: 2025-01-16T02:20:53-08:00
-weight: 999
+weight: 495
 toc: true
 seo:
   title: "" # custom title (optional)

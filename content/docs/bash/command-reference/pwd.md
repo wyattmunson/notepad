@@ -4,7 +4,7 @@ description: "Displays the current directory you're in."
 summary: ""
 date: 2025-01-16T02:23:14-08:00
 lastmod: 2025-01-16T02:23:14-08:00
-weight: 999
+weight: 350
 toc: true
 seo:
   title: "" # custom title (optional)

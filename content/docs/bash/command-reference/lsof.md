@@ -4,7 +4,7 @@ description: "Use lsof to check if a process is running on a given port."
 summary: ""
 date: 2025-01-16T02:20:14-08:00
 lastmod: 2025-01-16T02:20:14-08:00
-weight: 999
+weight: 245
 toc: true
 seo:
   title: "" # custom title (optional)

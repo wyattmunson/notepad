@@ -4,7 +4,7 @@ description: "Type give the user information about the command type."
 summary: ""
 date: 2025-01-16T02:27:28-08:00
 lastmod: 2025-01-16T02:27:28-08:00
-weight: 999
+weight: 560
 toc: true
 seo:
   title: "" # custom title (optional)

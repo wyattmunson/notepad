@@ -4,7 +4,7 @@ description: "Use rsync to transfer files via CLI."
 summary: ""
 date: 2025-01-16T02:24:14-08:00
 lastmod: 2025-01-16T02:24:14-08:00
-weight: 999
+weight: 420
 toc: true
 seo:
   title: "" # custom title (optional)

@@ -4,7 +4,7 @@ description: "Secure copy is used to securely transfer files from one host to an
 summary: ""
 date: 2025-01-16T02:24:55-08:00
 lastmod: 2025-01-16T02:24:55-08:00
-weight: 999
+weight: 450
 toc: true
 seo:
   title: "" # custom title (optional)

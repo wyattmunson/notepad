@@ -4,7 +4,7 @@ description: "Use rm to delete a file or directory."
 summary: ""
 date: 2025-01-16T02:23:21-08:00
 lastmod: 2025-01-16T02:23:21-08:00
-weight: 999
+weight: 400
 toc: true
 seo:
   title: "" # custom title (optional)

@@ -4,7 +4,7 @@ description: "Use grep to find content in files or match string with regex match
 summary: ""
 date: 2025-01-16T02:06:17-08:00
 lastmod: 2025-01-16T02:06:17-08:00
-weight: 999
+weight: 200
 toc: true
 
 seo:

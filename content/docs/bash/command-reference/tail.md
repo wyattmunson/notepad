@@ -4,7 +4,7 @@ description: "Displays content of files; prints the last 10 lines of a file by d
 summary: ""
 date: 2025-01-16T02:26:15-08:00
 lastmod: 2025-01-16T02:26:15-08:00
-weight: 999
+weight: 510
 toc: true
 seo:
   title: "" # custom title (optional)

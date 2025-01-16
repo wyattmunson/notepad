@@ -4,7 +4,7 @@ description: "Touch command creates a new file."
 summary: ""
 date: 2025-01-16T02:26:46-08:00
 lastmod: 2025-01-16T02:26:46-08:00
-weight: 999
+weight: 530
 toc: true
 seo:
   title: "" # custom title (optional)
