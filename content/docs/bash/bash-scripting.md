@@ -31,6 +31,15 @@ VARIABLE_NAME=$(echo "Hello")
 VARIABLE_NAME="${1:-HELLO}"
 ```
 
+### Save Variable to File
+
+```bash
+# set variable `TOKEN` to file `.token`
+echo "$TOKEN" > .token
+# optionally unset token after saving it
+unset TOKEN
+```
+
 ### Bash Builtin Variables
 
 ```bash { title="Builtin bash variables" }
@@ -114,7 +123,7 @@ read -p 'Enter name: ' VARIABLE_NAME
 read -sp 'Enter password: ' VARIABLE_NAME
 ```
 
-### Exporting Varibles
+### Exporting Variables
 
 Use `export` to make a variable available to a subprocess.
 

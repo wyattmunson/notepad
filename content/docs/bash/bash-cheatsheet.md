@@ -225,31 +225,54 @@ awk -F ',' '$3~/'$VAR'/' airlines.csv
 # seach for file or dir at current dir and all subdirs
 find . -name NAME [TYPE]
 find . -name search_text
-
-# ignore text case
-find . -iname search_text
-
-# search by file size (c, k, M, G, T, P)
-find . -name search_text -size 10M
-
-# wildcard search
-find . -name "*.jpg"
-find . -name "tmp.???"
-
-# delete matching files/directories
-find . -name "tmp*" -delete
-
-# follow subdirectories to level X
-find . -name search_text -maxdepth X
-
-# only return type (f = file, d = dir)
-find . -name search_text -type f
-
-# files over given size (M, G, T, P) [use - for size below]
-find . -size +1G
+find . -iname search_text   # case insensitive
+find . -size +10M           # above size (M, G, T, P)
+find . -size -10M           # below size (M, G, T, P)
+find . -name "*.jpg"        # wildcard search
+find . -name "tmp.???"      # wildcard search
+find . -delete              # delete matching files/dirs
+find . -maxdepth X          # max subdir depth
+find . -type f              # only return files
+find . -type d              # only return dirs
 
 # print out directory tree structure
 tree
+```
+
+#### Searching inside files
+
+Use `grep` to search the contents of a file.
+
+```bash
+# search file for matching text
+grep search_text file_name
+grep -i "phrase" file.txt
+
+# case-insensitive search
+grep -i "phrase" file_name
+
+# search current directory and all subdirectories:
+grep -R "phrase" .
+
+# find matching file names
+ls | grep "phrase"
+
+# use wildcards
+ls | grep *report.txt
+ls | grep *report*
+```
+
+### Writing to a File
+
+```bash
+# write variable to a file
+echo $VAR_NAME > file.txt
+
+# write multiple lines to a file
+cat << 'EOF' > /path/to/script.sh
+echo "Running script..."
+ls
+EOF
 ```
 
 ### Creating a Symbolic Link
@@ -286,6 +309,20 @@ du -sh /some/dir
 
 # get size of each file/directory
 du -h /some/dir
+```
+
+## Alias
+
+```bash
+# create basic alias
+alias gs='git status'
+
+# create multi-line command
+cat << 'EOF' > /path/to/script.sh
+echo "command running..."
+ls
+EOF
+echo "alias some_command='bash /path/to/script.sh'" >> ~/.bashrc
 ```
 
 ## Text
@@ -518,20 +555,30 @@ dig google.com
 ### cURL
 
 ```bash
-curl https://google.com
+curl https://example.com
 
-# download file and set name to file_name
-curl https://google.com -o file_name
+# DOWNLOAD FILE
+# set name to file_name
+curl https://example.com -o file_name
+# use existing file name
+curl https://example.com -O
 
 # silence output
 curl https://google.com -s
 
+# make verbose
+curl https://google.com -v
+
 # follow a location (instead of returning redirect)
 curl --location https://google.com
 
-# username/password authentication
+# fail fast: return no output on server errors
+curl --fail https://google.com
+
+# AUTH: USERNAME / PASSWORD
+# username/password in URL
 curl http://user:password@example.com/
-# OR
+# username/password in -u flag
 curl -u user:password http://example.com/
 
 # curl POST using application/x-www-form-urlencoded
@@ -547,9 +594,10 @@ curl --header "Content-Type: application/json" \
 curl https://mysubdomain.zendesk.com/api/v2/groups.json \
     -v -u myemail@example.com:mypassword
 
+
+# CERTIFICATES
 # Certificates
 curl --cert mycert.pem https://secure.example.com
-
 # use your own CA cert store to verify server's certificate
 curl --cacert ca-bundle.pem https://example.com/
 
@@ -765,6 +813,19 @@ short_str=${stringer::-3}
 echo $short_str
 # ⮑ someFile
 ```
+
+## Misc Commands
+
+### Set
+
+```bash
+set -euxo pipefail
+```
+
+- `set -u` - attempts to use undefined variables as errors
+- `-e` - exits immediately if a command fails
+- `-x` - enable debugging by printing every command before it is executed
+- `-o pipefail` - exit status of first non-zero exit code in a command pipeline (`cmd1 | cmd2 | cmd3`). Normal behavior is to return the exit code of the last command.
 
 ## Mac Commands
 

@@ -75,6 +75,22 @@ The alias command should be saved to the `.bash_profile`, `.bashrc`, or equivale
 echo "alias some_command='bash some_script.sh'" >> ~/.bashrc
 ```
 
+### Save and alias multiline command
+
+```bash
+cat << 'EOF' > /path/to/script.sh
+echo "command running..."
+ls
+EOF
+echo "alias some_command='bash /path/to/script.sh'" >> ~/.bashrc
+```
+
+The above script:
+
+- Save a multiline command to a file, specifically a bash script
+- Use alias to create the command `some_command` that invokes that the bash script
+- Saves it to the `~/.bashrc` file so the command is available every time a new shell session starts
+
 ## `cat` - ConcATenate
 
 {{< callout context="tip" title="cat" icon="outline/terminal-2" >}}
@@ -395,6 +411,10 @@ $ cp -i s.txt f.txt
 
 ## `curl` - Client URL
 
+{{< callout context="tip" title="Command: curl" icon="outline/terminal-2" >}}
+Transfer a URL with `curl`. Make requests via HTTP, FTP, ect.
+{{< /callout >}}
+
 Transfer an URL.
 
 ```bash
@@ -440,7 +460,18 @@ curl http://user:password@example.com/
 curl -u user:password http://example.com/
 ```
 
-### HTTP POST request
+### Set HTTP headers with curl
+
+```bash { title="Specify HTTP method" }
+# specify a HTTP header
+curl https://example.com -H 'Content-Type: application/json'
+
+# specify multiple HTTP headers, with parameter
+curl https://example.com -H 'Content-Type: application/json' \
+  -H 'api-key: '$API_KEY''
+```
+
+### Set HTTP method with curl
 
 By default, cURL uses a `GET` request. Use the `-X` flag to specify a different method.
 
@@ -469,7 +500,7 @@ curl -X POST "http://example.com" \
 curl --data "birthyear=1905&press=%20OK%20" http://example.com/api
 ```
 
-#### Set paramaterized HTTP POST response to variable
+#### Save HTTP POST response to variable
 
 Set HTTP POST response body to variable, using parameterized data payload and values.
 
@@ -486,6 +517,17 @@ API_RESPONSE=$(curl -s --location "https://example.com/api/$VAR_ID?ticketId="$VA
 
 # access response object key of "id", set to variable
 TEAM_ID=$(echo $API_RESPONSE | jq -r '.id')
+```
+
+### Save response code to variable
+
+```bash
+# curl POST with parameters
+API_RESPONSE=$(curl --write-out %{http_code} -s --location "https://example.com")
+
+if [[ "$API_RESPONSE" -ne 201 ]] ; then
+  echo "Failed to create resource. Exiting..." && exit 1
+fi
 ```
 
 ### See redirect path
@@ -514,6 +556,17 @@ curl -k https://secure.example.com
 
 # curl resolve (point to different address for a hostname)
 curl --resolve www.example.org:80:127.0.0.1 http://www.example.org/
+```
+
+### Fail fast
+
+Use the `--fail` flag to fail fast and return no output on server outputs.
+
+Useful for scripts to better handle errors.
+
+```bash
+# Certificates
+curl --fail https://example.com
 ```
 
 ---

@@ -235,6 +235,14 @@ echo "alias some_command='bash /path/to/script.sh'" >> ~/.bashrc
 - The above creates a command called `some_command` that will invoke `bash /path/to/script.sh`
 - It writes it to the `~/.bashrc` file so it's available every time the terminal session is started
 
+### Save and alias command script
+
+This script:
+
+- Save a multiline command to a file, specifically a bash script
+- Use alias to create the command `some_command` that invokes that the bash script
+- Saves it to the `~/.bashrc` file so the command is available every time a new shell session starts
+
 ```bash
 cat << 'EOF' > /path/to/script.sh
 echo "command running..."
@@ -265,6 +273,8 @@ EOF
 ```
 
 ## Save Variable to File
+
+ADDED
 
 ```bash
 # set variable `TOKEN` to file `.token`
