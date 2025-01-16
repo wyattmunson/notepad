@@ -191,6 +191,31 @@ do
 done
 ```
 
+## Check if Something Exists
+
+### Check if file or directory exists
+
+```bash
+if [ -f "/some/file.txt" ]; then
+  echo "Python 3 installed"
+fi
+
+# check if directory exists
+if [ -d "/some/directory" ]; then
+  echo "Directory exists"
+fi
+```
+
+### Check if command exists
+
+```bash
+if command -v python3 &> /dev/null; then
+  echo "Python 3 installed"
+else
+  echo "Python 3 is NOT installed"
+fi
+```
+
 ## Generate Random Hash
 
 ```bash
@@ -260,4 +285,20 @@ unset TOKEN
 ```bash
 $ jq -r '.someKey' data.json
 ↪ someValue
+```
+
+## Get directory where a script is running
+
+```bash
+THIS=`which $0`
+PREFIX=`dirname $THIS`
+echo "$PREFIX"
+```
+
+```bash
+/bin/bash
+bash-3.2$ THIS=`which $0`
+bash-3.2$ PREFIX=`dirname $THIS`
+bash-3.2$ echo "$PREFIX"
+↪ /bin
 ```

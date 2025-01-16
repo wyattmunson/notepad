@@ -74,3 +74,15 @@ Where:
 - rr = the annual interest rate (decimal).
 - nn = the number of times interest is compounded per year.
 - tt = the number of years.
+
+## Aircraft MPG
+
+Aircraft MPG = Total Gallons Burned / Total Miles Flown​
+
+### Seat Miles
+
+Seat Miles=1,200miles×127filled seats=152,400seat-miles
+
+Total Gallons Burned = Seat Miles / MPG per Seat
+
+Aircraft MPG = Total Miles Flown / Total Gallons Burned

@@ -689,28 +689,47 @@ file -s /dev/sda5
 
 ## `find` command
 
-Find a file.
+Find a file or directory by name. Will search current directory and all subdirectories at a given file path.
 
 Basic usage:
 
 ```bash
+# search for matching files or directory names (and subdirectories)
 find . -name search_text
 ```
 
-Usage
+Usage:
 
 ```bash
-# ignore text case
+# ignore text case (case-insensitive search)
 find . -iname search_text
+
+# wildcard search
+find . -name "*.jpg"
+find . -name "tmp.???"
+
+# delete matching files/directories
+find . -name "tmp*" -delete
 
 # follow subdirectories to level X
 find . -name search_text -maxdepth X
+# another flag
+find . -name search_text -depth X
 
 # only find files modified in last 4 days
 find . -name search_text -mtime 4
 
-# only find empty
+# SEARCH BY TYPE
+# only return type file
 find . -name search_text -type f
+# only return type directory
+find . -name search_text -type d
+
+# SEARCH BY SIZE
+# files over 1GB
+find . -name search_text -size +1G
+# files below 100MB
+find . -name search_text -size -100M
 ```
 
 ---

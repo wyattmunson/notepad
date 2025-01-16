@@ -388,6 +388,18 @@ EOL
 - `-x` - enable debugging by printing every command before it is executed
 - `-o pipefail` - exit status of first non-zero exit code in a command pipeline (`cmd1 | cmd2 | cmd3`). Normal behavior is to return the exit code of the last command.
 
+```bash
+DEBUG_MODE=true
+if [ "$DEBUG_MODE" != "true" ]; then
+    set -euxo pipefail
+fi
+```
+
+```bash
+DEBUG_MODE=true
+if [ "$DEBUG_MODE" != "true" ]; then set -euo pipefail; else set -o pipefail; fi
+```
+
 ---
 
 ## Data Types

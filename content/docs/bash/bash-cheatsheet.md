@@ -224,13 +224,29 @@ awk -F ',' '$3~/'$VAR'/' airlines.csv
 ```bash
 # seach for file or dir at current dir and all subdirs
 find . -name NAME [TYPE]
-find . -iname search_text
+find . -name search_text
 
 # ignore text case
 find . -iname search_text
 
 # search by file size (c, k, M, G, T, P)
 find . -name search_text -size 10M
+
+# wildcard search
+find . -name "*.jpg"
+find . -name "tmp.???"
+
+# delete matching files/directories
+find . -name "tmp*" -delete
+
+# follow subdirectories to level X
+find . -name search_text -maxdepth X
+
+# only return type (f = file, d = dir)
+find . -name search_text -type f
+
+# files over given size (M, G, T, P) [use - for size below]
+find . -size +1G
 
 # print out directory tree structure
 tree
