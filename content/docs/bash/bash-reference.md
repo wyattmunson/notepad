@@ -17,6 +17,71 @@ toc: true
 
 Full bash reference for commands and common binaries.
 
+{{< card-grid >}}
+{{< link-card title="alias" href="/docs/bash/command-reference/alias" description="Alias common commands." >}}
+{{< link-card title="cat" href="/docs/bash/command-reference/cat" description="Combine files" >}}
+{{< link-card title="cd" href="/docs/bash/command-reference/cd" description="Change directories" >}}
+{{< /card-grid >}}
+
+{{< card-grid >}}
+{{< link-card title="chmod" href="/docs/bash/command-reference/chmod" description="Change file permissions." >}}
+{{< link-card title="cp" href="/docs/bash/command-reference/cp" description="Copy file or directories." >}}
+{{< link-card title="curl" href="/docs/bash/command-reference/curl" description="Make HTTP requests" >}}
+{{< /card-grid >}}
+
+{{< card-grid >}}
+{{< link-card title="cut" href="/docs/bash/command-reference/cut" description="Cut ouput." >}}
+{{< link-card title="dig" href="/docs/bash/command-reference/dig" description="Get DNS information about a domain name." >}}
+{{< link-card title="echo" href="/docs/bash/command-reference/echo" description="Print to terminal" >}}
+{{< /card-grid >}}
+
+{{< card-grid >}}
+{{< link-card title="exit" href="/docs/bash/command-reference/exit" description="Exit current script or shell session" >}}
+{{< link-card title="export" href="/docs/bash/command-reference/export" description="Make a variable available to a subprocess" >}}
+{{< link-card title="file" href="/docs/bash/command-reference/file" description="Get information about a file" >}}
+{{< /card-grid >}}
+
+{{< card-grid >}}
+{{< link-card title="find" href="/docs/bash/command-reference/find" description="Find matching file and directory names" >}}
+{{< link-card title="grep" href="/docs/bash/command-reference/grep" description="Use regex expressions to find files and text" >}}
+{{< link-card title="kill" href="/docs/bash/command-reference/kill" description="Kill a process by Process ID" >}}
+{{< /card-grid >}}
+
+{{< card-grid >}}
+{{< link-card title="ls" href="/docs/bash/command-reference/ls" description="List files in a directory" >}}
+{{< link-card title="lsof" href="/docs/bash/command-reference/lsof" description="Use regex expressions to find files and text" >}}
+{{< link-card title="man" href="/docs/bash/command-reference/man" description="See manual page for a command" >}}
+{{< /card-grid >}}
+
+{{< card-grid >}}
+{{< link-card title="mkdir" href="/docs/bash/command-reference/mkdir" description="Create a directory" >}}
+{{< link-card title="mv" href="/docs/bash/command-reference/mv" description="Move a file or directory" >}}
+{{< link-card title="ps" href="/docs/bash/command-reference/ps" description="See ps" >}}
+{{< /card-grid >}}
+
+{{< card-grid >}}
+{{< link-card title="pwd" href="/docs/bash/command-reference/pwd" description="See current directory" >}}
+{{< link-card title="rm" href="/docs/bash/command-reference/rm" description="Remove a file or directory" >}}
+{{< link-card title="rsync" href="/docs/bash/command-reference/rsync" description="Transfer files with rsync" >}}
+{{< /card-grid >}}
+
+{{< card-grid >}}
+{{< link-card title="scp" href="/docs/bash/command-reference/scp" description="Use Secure Copy to transfer files" >}}
+{{< link-card title="sed" href="/docs/bash/command-reference/sed" description="Replace text" >}}
+{{< link-card title="ssh" href="/docs/bash/command-reference/ssh" description="Initiate a shell session with SSH" >}}
+{{< /card-grid >}}
+
+{{< card-grid >}}
+{{< link-card title="sudo" href="/docs/bash/command-reference/sudo" description="Use superuser to execute a command" >}}
+{{< link-card title="tail" href="/docs/bash/command-reference/tail" description="Replace text" >}}
+{{< link-card title="touch" href="/docs/bash/command-reference/touch" description="Initiate a shell session with SSH" >}}
+{{< /card-grid >}}
+
+{{< card-grid >}}
+{{< link-card title="type" href="/docs/bash/command-reference/type" description="Use superuser to execute a command" >}}
+{{< link-card title="xargs" href="/docs/bash/command-reference/xargs" description="Replace text" >}}
+{{< /card-grid >}}
+
 | Command                                         | Name                            | Description                                               |
 | ----------------------------------------------- | ------------------------------- | --------------------------------------------------------- |
 | [alias](#alias---alias-command)                 | alias                           | Create a shorthand command to reference a longer command. |

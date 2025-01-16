@@ -4,7 +4,7 @@ description: "Use cURL to make HTTP and FTP requests."
 summary: ""
 date: 2025-01-16T01:08:23-08:00
 lastmod: 2025-01-16T01:08:23-08:00
-weight: 999
+weight: 65
 toc: true
 seo:
   title: "" # custom title (optional)

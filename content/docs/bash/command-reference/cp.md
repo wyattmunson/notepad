@@ -4,7 +4,7 @@ description: "The cp command copies a file or directory from a source location t
 summary: ""
 date: 2025-01-16T02:09:46-08:00
 lastmod: 2025-01-16T02:09:46-08:00
-weight: 999
+weight: 58
 toc: true
 seo:
   title: "" # custom title (optional)
@@ -25,8 +25,8 @@ cp [OPTIONS] SOURCE_DIRECTORY DESTINATION_DIRECTORY
 # basic usage
 cp sourceFile targetFile
 
-# copy a dir and its contents to a new dir
-cp -R directory1 directory2
+# copy contents of dir1 into dir2
+cp -R dir1 dir2
 
 # copy file and add to an existing target dir
 cp fileName ../targetDirectory
@@ -35,7 +35,7 @@ cp fileName ../targetDirectory
 cp -R sourceDirectory/* targetDirectory/
 ```
 
-### Copy a file
+## Copy a file
 
 Copies content of `file1` to `file2`. Creates file2 if it doesn't exist, overwrites it if it does.
 
@@ -55,17 +55,33 @@ Overwrites contents of directory if it exits, creates one if it does not. Can su
 cp file1 file2 file3 targetDirectory
 ```
 
-### Copy directories
+## Copy directories
 
 Copies entire contents of source directory to target directory.
 
-The behavior depends on if the target directory exists:
-
-- If the target directory does not exist, it is created.
-- If the target directory does exist, it is copied as a subdirectory into the target directory with the name of source directory
-
 ```bash {title="Copy a directory"}
 cp -R sourceDirectory targetDirectory
+```
+
+The behavior depends on if the target directory exists:
+
+- If the target directory does not exist, it is created. The contents of the source dir are copied into the target.
+- If the target directory does exist, the source is copied as a subdirectory into the target directory with the name of source directory
+
+```bash
+$ find .
+↪ sourceDir/subDir/file.txt
+  existingDir/
+
+# copy to an existing directory
+$ cp -R sourceDir existingDir
+$ find existingDir
+↪ existingDir/sourceDir/subDir/file.txt
+
+# copy to a new directory
+$ cp -R sourceDir newDir
+$ find newDir
+↪ newDir/subDir/file.txt
 ```
 
 {{< callout context="caution" icon="outline/alert-triangle" >}}

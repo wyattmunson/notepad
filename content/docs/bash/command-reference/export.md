@@ -4,7 +4,7 @@ description: "The export command makes variables and functions available to chil
 summary: ""
 date: 2025-01-16T02:31:11-08:00
 lastmod: 2025-01-16T02:31:11-08:00
-weight: 999
+weight: 97
 toc: true
 seo:
   title: "" # custom title (optional)

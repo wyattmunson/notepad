@@ -4,7 +4,7 @@ description: "Use cat combines files"
 summary: ""
 date: 2025-01-16T02:16:19-08:00
 lastmod: 2025-01-16T02:16:19-08:00
-weight: 999
+weight: 50
 toc: true
 seo:
   title: "" # custom title (optional)

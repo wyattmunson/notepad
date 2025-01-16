@@ -4,7 +4,7 @@ description: "Use dig to get DNS information about a domain name."
 summary: ""
 date: 2025-01-16T02:03:11-08:00
 lastmod: 2025-01-16T02:03:11-08:00
-weight: 999
+weight: 75
 toc: true
 seo:
   title: "" # custom title (optional)

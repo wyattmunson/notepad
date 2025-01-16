@@ -4,7 +4,7 @@ description: "Use alias to create a shorthand command."
 summary: ""
 date: 2025-01-16T02:15:19-08:00
 lastmod: 2025-01-16T02:15:19-08:00
-weight: 999
+weight: 10
 toc: true
 seo:
   title: "" # custom title (optional)

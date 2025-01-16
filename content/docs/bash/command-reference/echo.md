@@ -4,7 +4,7 @@ description: "Prints text to the terminal window."
 summary: ""
 date: 2025-01-16T02:30:25-08:00
 lastmod: 2025-01-16T02:30:25-08:00
-weight: 999
+weight: 85
 toc: true
 seo:
   title: "" # custom title (optional)

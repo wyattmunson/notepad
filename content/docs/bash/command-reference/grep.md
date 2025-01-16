@@ -6,6 +6,7 @@ date: 2025-01-16T02:06:17-08:00
 lastmod: 2025-01-16T02:06:17-08:00
 weight: 999
 toc: true
+
 seo:
   title: "" # custom title (optional)
   description: "" # custom description (recommended)
@@ -32,10 +33,68 @@ Case insensitive search:
 grep -i "phrase" file_name.txt
 ```
 
+Invert match - show lines that do not match:
+
+```bash { title="Find lines that do not match" }
+grep -v "phrase" file_name.txt
+```
+
 Search current directory and all subdirectories:
 
 ```bash { title="Search files in all subdirectories with -R" }
 grep -R "phrase" .
+```
+
+Specify multiple search patterns:
+
+```bash { title="Specify multiple search patterns" }
+grep -e "phrase1" -e "phrase2" file
+```
+
+Match whole words only:
+
+```bash { title="Match whole words only" }
+grep -w "search_word" file
+```
+
+### Get count of matches
+
+Get count of matching keyword:
+
+```bash
+grep -c "keyword" log.txt
+```
+
+Count the number of matching lines:
+
+```bash { title="Count the number of matching lines" }
+grep -n "phrase" file
+```
+
+### Show lines before and after
+
+Show N lines after a match.
+
+```bash { title="Show N lines after a match" }
+grep -A 3 "pattern" file
+```
+
+Show N lines before a match.
+
+```bash { title="Show N lines before a match" }
+grep -B 3 "pattern" file
+```
+
+Show N lines before and after a match (context).
+
+```bash { title="Show N lines before and after a match" }
+grep -C 2 "pattern" file
+```
+
+### Use extended regex
+
+```bash { title="Use extended regex" }
+grep -E "pattern1|pattern2" file
 ```
 
 ## Search output of other commands

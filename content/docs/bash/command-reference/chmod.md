@@ -4,7 +4,7 @@ description: "The chmod changes file ownership."
 summary: ""
 date: 2025-01-16T02:11:08-08:00
 lastmod: 2025-01-16T02:11:08-08:00
-weight: 999
+weight: 55
 toc: true
 seo:
   title: "" # custom title (optional)

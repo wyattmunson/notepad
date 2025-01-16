@@ -330,3 +330,149 @@ else
     echo "Request failed."
 fi
 ```
+
+## AWS
+
+### Extract AWS credentials
+
+```bash
+echo -e "===> EXISTING IDENTITY: "
+aws sts get-caller-identity
+aws configure list
+
+echo -e "===> Assuming the role..."
+aws sts assume-role --role-arn arn:aws:iam::123456789:role/roleName --role-session-name role-session-${UNIQUE_ID} >> credentials.json
+export AWS_SECRET_ACCESS_KEY=$(cat credentials.json | grep "SecretAccessKey" | cut -d ':' -f2 | cut -d '"' -f2)
+export AWS_SESSION_TOKEN=$(cat credentials.json | grep "SessionToken" | cut -d ':' -f2 | cut -d '"' -f2)
+export AWS_ACCESS_KEY_ID=$(cat credentials.json | grep "AccessKeyId" | cut -d ':' -f2 | cut -d '"' -f2)
+
+echo -e "===> ASSUMED IDENTITY:"
+aws sts get-caller-identity
+aws configure list
+```
+
+## Helm
+
+```bash { title="" }
+#!/bin/bash
+# Script example:
+# ./helm-deploy.sh ./lle-values.yaml dev 90s
+# Arguments:
+# $1 - location of custom values file relative to HELM_DIR (i.e. ./lle-values.yaml)
+# $2 - namespace to deploy to
+# $3 - timeout length - use 90s for most cases but 600s if you're using an NLB
+
+## debug values:
+#export HELM_DIR="./sample-web-service-application-go/helm/"
+#export CHART_NAME="sample-web-service-application-go"
+#export VERSION="1.0"
+#export HELM_REPO="https://nexus.internal.westcreekfin.com/repository/helm-hosted/"
+
+values_file=${values_file:-values.yaml}
+namespace=${namespace:-default}
+timeout=${timeout:-90s}
+helm_dir=${helm_dir:-${HELM_DIR}}
+chart_name=${chart_name:-${CHART_NAME}}
+version=${version:-${VERSION}}
+
+while [ $# -gt 0 ]; do
+    if [[ $1 == *"--"* ]]; then
+        v="${1/--/}"
+        declare $v="$2"
+        echo $1 $2
+    fi
+
+    shift
+done
+
+cd $helm_dir
+export BASE_CHART=$(grep -A2 'name: acme-core-api' $chart_name/Chart.yaml | tail -n1 | awk '{ print $2 }')
+bash chart-pull.sh $HELM_REPO "acme-core-api-${BASE_CHART}.tgz"
+
+sed -r "s/appVersion: bleeding-edge/appVersion: $version/" -i $chart_name/Chart.yaml #todo change to sed after testing
+
+if [[ $(helm list -n ${namespace} | awk -v chart="${chart_name}" '$1 == chart' | awk  '{print $8}') == failed ]]; then
+echo "Deleting previous failed chart release before deployment"
+helm del ${chart_name} -n ${namespace}
+fi
+
+echo "Deploying chart"
+helm upgrade --install --force ${chart_name} -n ${namespace} --wait --timeout ${timeout} -f ${values_file} ./${chart_name} || kubectl describe pod -l release=${chart_name} -n ${namespace} && kubectl logs -l release=${chart_name} -n ${namespace}
+```
+
+## Deploy Helm v2
+
+```bash { title="" }
+#!/bin/bash
+
+echo -e "\nHelm deployment starting..."
+
+# Check env vars are set, exit if not
+if [[ -z $NAMESPACE  ]]; then echo -e "\nERROR: NAMESPACE not exported. Exiting.\nSet to k8s namespace." && exit 1; fi
+if [[ -z $VALUES_FILE  ]]; then echo -e "\nERROR: VALUES_FILE not exported. Exiting.\nSet to environment specific values file like infra/helm." && exit 1; fi
+if [[ -z $VERSION  ]]; then echo -e "\nERROR: VERSION not exported. Exiting. \nSet to version number of your application." && exit 1; fi
+
+export HELM_REPO=https://nexus.internal.example.com/repository/helm-hosted/
+export CHART_NAME=$CI_PROJECT_NAME
+export HELM_DIR=infra/helm
+cd $HELM_DIR
+
+# Get base chart version number from Chart.yaml
+export BASE_CHART=$(grep -A2 'name: acme-core-api' ${CHART_NAME}/Chart.yaml | tail -n1 | awk '{ print $2 }')
+if [[ -z $BASE_CHART  ]]; then echo -e "\nERROR: BASE_CHART not set. Exiting. \nSet acme-core-api version in Chart.yaml." && exit 1; fi
+
+# Get core acme API, use local chart-pull script file
+bash /opt/deploy-scripts/chart-pull.sh $HELM_REPO "acme-core-api-${BASE_CHART}.tgz"
+
+# Overwrite bleeding-edge with version number
+sed -r "s/appVersion: bleeding-edge/appVersion: \"$VERSION\"/" -i $CHART_NAME/Chart.yaml
+
+# Get chart deployment status
+export DEPLOYMENT_STATUS=$(helm status -n ${NAMESPACE} ${CHART_NAME} -o json | jq -r '.info.status')
+echo -e "\n Deployment Status: $DEPLOYMENT_STATUS"
+
+# Check for failed installs
+if [[ $DEPLOYMENT_STATUS == 'failed' ]]; then
+    echo -e "\nFailed installation detected, removing..."
+    helm delete ${CHART_NAME} -n ${NAMESPACE}
+# Upgrade when previous deployment suceeded
+elif [[ $DEPLOYMENT_STATUS == 'deployed' ]]; then
+    echo -e "\nPrevious installation was successful, upgrading..."
+
+    helm upgrade ${CHART_NAME} ./${CHART_NAME} -n ${NAMESPACE} -f ${CHART_NAME}/${VALUES_FILE}
+
+    # Verify release successful
+    echo -e "\nHelm completed. Querying cluster to verify release was successful"
+    kubectl rollout status deployment/${CHART_NAME} -n ${NAMESPACE}
+
+    # Call listening post
+    bash /opt/deploy-scripts/deployBeacon.sh $VERSION $CI_ENVIRONMENT_NAME $NAMESPACE k8s
+
+    echo "___/|"
+    echo "\o.O|"
+    echo "(___)"
+
+    exit 0
+fi
+
+# Install fresh chart when no prior version installed
+echo -e "\nNo installation detected, installing..."
+helm install ${CHART_NAME} -n ${NAMESPACE} -f ${CHART_NAME}/${VALUES_FILE} ./${CHART_NAME}
+
+# Verify release successful
+echo -e "\nHelm completed. Querying cluster to verify release was successful..."
+kubectl rollout status deployment/${CHART_NAME} -n ${NAMESPACE}
+
+# Call listening post
+bash /opt/deploy-scripts/deployBeacon.sh $VERSION $CI_ENVIRONMENT_NAME $NAMESPACE k8s
+
+echo "___/|"
+echo "\o.O|"
+echo "(___)"
+```
+
+## Example
+
+```bash { title="" }
+
+```
