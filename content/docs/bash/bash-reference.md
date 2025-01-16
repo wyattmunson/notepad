@@ -59,6 +59,8 @@ command ARGUMENT [OPTIONS] [FILE_NAME...]
 
 ## `alias` - alias command
 
+ADDED
+
 {{< callout context="tip" title="alias" icon="outline/terminal-2" >}}
 Use `alias` to create a shorthand command.
 {{< /callout >}}
@@ -92,6 +94,8 @@ The above script:
 - Saves it to the `~/.bashrc` file so the command is available every time a new shell session starts
 
 ## `cat` - ConcATenate
+
+ADDED
 
 {{< callout context="tip" title="cat" icon="outline/terminal-2" >}}
 `cat` combines files.
@@ -166,6 +170,8 @@ $ cd -                      # return to previous directory
 ---
 
 ## `chmod` - CHange MODe
+
+ADDED
 
 {{< callout context="tip" title="chmod" icon="outline/terminal-2" >}}
 `chmod` changes file ownership.
@@ -306,6 +312,8 @@ chmod -R u=x *.txt
 
 ## `cp` - CoPy
 
+ADDED
+
 {{< callout context="tip" title="Command: Copy" icon="outline/terminal-2" >}}
 The `cp` command copies a file or directory from a `source` location to a new or existing `target` location.
 {{< /callout >}}
@@ -410,6 +418,8 @@ $ cp -i s.txt f.txt
 ---
 
 ## `curl` - Client URL
+
+ADDED
 
 {{< callout context="tip" title="Command: curl" icon="outline/terminal-2" >}}
 Transfer a URL with `curl`. Make requests via HTTP, FTP, ect.
@@ -617,6 +627,8 @@ cut sales.txt -d ":" -f 1,2
 
 ## `dig` - Domain Information Grouper
 
+ADDED
+
 Get information about DNS name servers. Commonly used to see what domain names resolve to.
 
 ```bash
@@ -717,6 +729,8 @@ When sourcing a file, the chile process inherits all the variables of the parent
 
 ## `file` command
 
+ADDED
+
 Indicates file type.
 
 Usage
@@ -741,6 +755,8 @@ file -s /dev/sda5
 ---
 
 ## `find` command
+
+ADDED
 
 Find a file or directory by name. Will search current directory and all subdirectories at a given file path.
 
@@ -789,6 +805,8 @@ find . -name search_text -size -100M
 
 ## `grep` - Global Regular Expression Print
 
+ADDED
+
 Search a file to see if it contains a phrase.
 
 ### Search file contents
@@ -836,6 +854,8 @@ grep -c "keyword" log.txt
 
 ## `kill` command
 
+ADDED
+
 Stop a process by process ID.
 
 ```bash
@@ -860,6 +880,8 @@ $ kill -l
 ---
 
 ## `ls` - LiSt
+
+ADDED
 
 List contents of a directory.
 
@@ -906,6 +928,8 @@ ls -lah
 ---
 
 ## `lsof` - LiSt Open Files
+
+ADDED
 
 Use it to check if a process is running on a given port.
 

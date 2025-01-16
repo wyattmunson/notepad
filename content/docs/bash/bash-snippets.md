@@ -86,6 +86,8 @@ fileNameOnly="${fileNameOnly%.*}"
 
 ## cURL with Parameters
 
+ADDED: TO - command-reference/curl
+
 ```bash
 RESPONSE=$(curl -s "https://example.com/api/users?account="$ACCOUNT"&realm="$REALM"" \
   -H 'x-api-key: '$TOKEN'' \
@@ -110,6 +112,8 @@ RESPONSE=$(curl -s --location "http://example.com" \
 
 ### Capture HTTP Response Code
 
+ADDED: TO - command-reference/curl
+
 ```bash
 RES_CODE=$(curl --write-out %{http_code} --silent --output /dev/null --location "http://exmaple.com" \
 --header 'Content-Type: application/json' \
@@ -127,6 +131,8 @@ fi
 ```
 
 ### cURL as a Function
+
+ADDED: TO - command-reference/curl
 
 ```bash
 curl_cmd() {
@@ -182,6 +188,8 @@ done
 - The `!` negates the condition
 
 ### Wait for HTTP endpoint before continuing
+
+ADDED: TO - command-reference/curl
 
 ```bash
 while ! curl --silent --fail --output /dev/null http://localhost:9000
@@ -311,4 +319,14 @@ bash-3.2$ THIS=`which $0`
 bash-3.2$ PREFIX=`dirname $THIS`
 bash-3.2$ echo "$PREFIX"
 ↪ /bin
+```
+
+## Silent with exit status
+
+```bash
+if curl --silent --fail https://example.com; then
+    echo "Request succeeded."
+else
+    echo "Request failed."
+fi
 ```
