@@ -19,7 +19,7 @@ toc: true
 
 API resources can generally use with `get`, `describe`, `delete`. See the full list of API resources with `kubectl api-resources`.
 
-## Creating Resrouces
+## Creating Resources
 
 Use the `kubectl apply` command to create or update a resource. The `-f` flag specifies a file or directory name.
 
@@ -33,9 +33,9 @@ $ kubectl apply -f ./dir                    # from an entire directory
 cat deploy.json | kubectl apply -f -
 ```
 
-## Viewing, Updating, and Deleting Resrouces
+## Viewing, Updating, and Deleting Resources
 
-Kuberentes API resoruces can be generally be used with `get`, `describe`, `edit`, and `delete`.
+Kubernetes API resources can be generally be used with `get`, `describe`, `edit`, and `delete`.
 
 {{< callout icon="👉" >}}
 
@@ -78,6 +78,9 @@ kubectl get all -A
 $ k get pods -n tick
 $ k desribe pods/influx-influxdb-j3ilso93-ae82kdl2 -n tick
 $ k delete pods/influx-influxdb-j3ilso93-ae82kdl2 -n tick
+
+# get all k8s resources in all namespaces
+kubectl describe certificates
 ```
 
 ### Describing, Editing, and Deleting
@@ -90,6 +93,9 @@ kubectl delete deployments applications-service -n applications-dev
 kubectl describe po/payment-service-3829aec9-cea2831af -n dev
 kubectl describe svc/payment-service -n dev
 kubectl describe deploy/payment-service -n dev
+
+# delete namespace deletes all resources
+kubectl delete ns dev
 ```
 
 ## Get logs

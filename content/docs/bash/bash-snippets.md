@@ -177,6 +177,8 @@ curl_cmd "${url}" "POST" "${json_data}" "X-Api-Key: ${PV_HARNESS_PAT}"
 
 Wait for a file to exist/be created before continuing.
 
+For example, and async process can create a file when complete. The parent script can watch a file location, and only continue when that file is created.
+
 ```bash
 while [ ! -f /some/file/path ]; do
     echo "Waiting for task to finish"
@@ -398,6 +400,17 @@ fi
 
 echo "Deploying chart"
 helm upgrade --install --force ${chart_name} -n ${namespace} --wait --timeout ${timeout} -f ${values_file} ./${chart_name} || kubectl describe pod -l release=${chart_name} -n ${namespace} && kubectl logs -l release=${chart_name} -n ${namespace}
+```
+
+```bash { title="" }
+echo '|\/\/|'
+echo "\o.O |"
+echo "(____)"
+
+    echo "___/|"
+    echo "\o.O|"
+    echo "(___)"
+
 ```
 
 ## Deploy Helm v2

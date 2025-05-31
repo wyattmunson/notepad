@@ -26,7 +26,7 @@ alias gs="git status"
 The alias command should be saved to the `.bash_profile`, `.bashrc`, or equivalent file so it's available every time a new shell session starts.
 
 ```bash
-echo "alias some_command='bash some_script.sh'" >> ~/.bashrc
+echo "alias some_command='bash /absolute/path/some_script.sh'" >> ~/.bashrc
 ```
 
 ### Save and alias multiline command
@@ -36,6 +36,7 @@ cat << 'EOF' > /path/to/script.sh
 echo "command running..."
 ls
 EOF
+
 echo "alias some_command='bash /path/to/script.sh'" >> ~/.bashrc
 ```
 
