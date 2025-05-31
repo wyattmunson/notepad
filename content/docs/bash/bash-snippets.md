@@ -205,11 +205,13 @@ done
 
 ### Check if file or directory exists
 
-```bash
+```bash { title="Check if file exists" }
 if [ -f "/some/file.txt" ]; then
   echo "Python 3 installed"
 fi
+```
 
+```bash { title="Check if directory exists" }
 # check if directory exists
 if [ -d "/some/directory" ]; then
   echo "Directory exists"
