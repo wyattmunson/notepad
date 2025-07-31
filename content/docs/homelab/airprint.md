@@ -27,3 +27,8 @@ Add your user to the lpadmin group to manage printers:
 ```bash
 sudo usermod -aG lpadmin $USER
 ```
+
+Backup config file
+
+sudo cp /etc/cups/cupsd.conf /etc/cups/cupsd.conf.original
+sudo chmod a-w /etc/cups/cupsd.conf.original

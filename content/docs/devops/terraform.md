@@ -205,3 +205,30 @@ DESTROY_ALL_RESOURCES:lle:
     - terraform workspace select lle
     - terraform destroy -auto-approve
 ```
+
+```bash
+TF_VALUES_TFVARS="/some/path/values.tfvars"
+
+cat <<EOF > ${TF_VALUES_TFVARS}
+my_north_account_id = "${NORTH_ACCOUNT}"
+my_orgs = ["${NORTH_ORG}"]
+existing_org = true
+my_container_registy_connectors={
+    my_dockerhub_container_registry = {
+            name = "${NORTH_CONNECTOR_CONTAINER_REGISTRY}"
+            type = "Harbor"
+            url = "${CONTAINER_REGISTRY_FQDN}"
+        }
+}
+an_array = [
+        {
+            name = "owner"
+            fixed_value = "Greg Benish"
+        },
+        {
+            name = "org"
+            fixed_value = "HR"
+        }
+]
+EOF
+```

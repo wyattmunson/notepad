@@ -111,8 +111,54 @@ Set a variable to default if a given variable is unset or null.
 # set default variable if first argument not supplied
 VARIABLE_NAME="${1:-DEFAULT VALUE}"
 
-# example usage
+# example usage (default variable is string of "Hello localhost")
 MESSAGE="${1:-Hello localhost}"
+
+# example usage (default variable is variable $ANOTHER_VAR)
+DEFAULT_VAR=${SOME_VAR:-${ANOTHER_VAR}}
+```
+
+#### Variable Manipulation
+
+In addition to setting a default value, you can also update the check value using (`:-` or `:=`).
+
+```bash { title="Set a default variable if the first argument is not supplied" }
+# Returns BAR if set and not null, otherwise returns default
+FOO="${BAR:-default}"
+
+# Returns BAR if set and not null, otherwise set BAR to and return default
+FOO="${BAR:=default}"
+
+# Returns default if $BAR is set and not null, otherwise return null
+FOO="${BAR:+default}"
+
+# Returns $BAR if set, otherwise print message and exit
+FOO="${BAR:$message}"
+
+# Returns the string length of bar
+FOO="${#BAR}"
+
+# Extracts substring of length charachters, offset
+FOO="${BAR:offset:length}"
+
+# replace first occurrence of `pattern` with `replacement`
+FOO="${BAR/pattern/replacement}"
+
+# replace all occurrences of `pattern` with `replacement`
+FOO="${BAR//pattern//replacement}"
+```
+
+#### Update both variables
+
+In addition to setting a default value, you can also update the check value using (`:-` or `:=`).
+
+```bash { title="Set a default variable if the first argument is not supplied" }
+# $FOO assigned 'defaultVale' if $BAR does not exist
+# the value of $BAR is unchanged
+FOO="${BAR:-defaultValue}"
+
+# the value of $BAR is also set to $FOO
+FOO="${BAR:=defaultValue}"
 ```
 
 ### Reading User Input
@@ -336,6 +382,13 @@ Use the `#` operator to compare string length.
 if [[ "${#foo}" -lt "${#bar}" ]]; then echo "foo is shorter"; fi
 ```
 
+#### Check file for matching text
+
+```bash { title="Check a file for matching text" }
+# check `server.log` file for string "Text to match"
+if grep -q "Text to match" server.log; then
+```
+
 ### Boolean Operators
 
 ```bash
@@ -448,6 +501,25 @@ for x in ${VAR_NAME[@]};
 do
     # your commands here
 done
+```
+
+### Arrays
+
+```bash
+# declare an array
+MY_ARRAY=("foo" "bar")
+
+# get value of array at specific index (arrays start at 1)
+$MY_ARRAY[1]
+
+# set value of array at specific index
+$MY_ARRAY[index]=value
+
+# get all values of array
+$MY_ARRAY[@]
+
+# access value of array at specific index
+${array[index]}
 ```
 
 ---

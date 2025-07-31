@@ -232,10 +232,10 @@ sudo gpasswd -d USER_NAME GROUP_NAME
 
 ### View Groups
 
-View all groups on the system with `sudo nano /etc/groups`.
+View all groups on the system with `cat /etc/groups`.
 
 ```bash { title="View all groups" }
-sudo nano /etc/groups
+sudo nano /etc/group
 ```
 
 View the current user's groups with `groups`.
@@ -272,6 +272,20 @@ getent group
 | `adm`     | Monitor linux system logs                  |
 | `lpadmin` | Configure printers                         |
 | `plugdev` | Access external storage devices            |
+
+## Manage File Ownership
+
+```bash
+# change owner to root
+chown root file.txt
+# change group to admin
+chown :admin file.txt
+# change owner to root, and group to admin
+chown root:admin file.txt
+
+# recursive (affects all subdirectories)
+chown -R root:admin ./some/dir
+```
 
 ## Bash Config Files
 

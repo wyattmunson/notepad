@@ -14,7 +14,7 @@ seo:
 ---
 
 {{< callout context="tip" title="chmod" icon="outline/terminal-2" >}}
-`chmod` changes file ownership.
+`chmod` changes file access permissions.
 {{< /callout >}}
 
 Changes file permissions: who can read, write, and execute the file.

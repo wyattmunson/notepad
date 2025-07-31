@@ -117,6 +117,19 @@ curl -X POST "http://example.com" \
 curl --data "birthyear=1905&press=%20OK%20" http://example.com/api
 ```
 
+```bash
+# create space/project
+curl "http://exmaple.com" -X POST \
+--data @<(cat <<EOF
+    {
+    "description": "${DESCRIPTION}",
+    "is_public": true,
+    "uid": "${UID}"
+    }
+EOF
+)
+```
+
 ## Save response to variable
 
 Set HTTP POST response body to variable, using parameterized data payload and values.
