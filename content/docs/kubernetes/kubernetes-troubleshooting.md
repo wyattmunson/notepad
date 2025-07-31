@@ -219,7 +219,7 @@ curl localhost:4545/healthcheck
 
 ### 7. Ambassador Configuration
 
-> NOTE: This step is only necessary if the service needs to be accessable externally from a domain name like (`service.dev.westcreekfin.com`).
+> NOTE: This step is only necessary if the service needs to be accessable externally from a domain name like (`service.dev.example.com`).
 
 If your pod is available via port forwarding, but cannot be accessed via its DNS name the issue lies with
 
@@ -231,7 +231,7 @@ This is a two step process:
 #### Debug DNS Entry
 
 ```bash
-dig apply.dev.westcreekfin.com
+dig apply.dev.example.com
 ```
 
 This should return the IP addresses of the AWS load balancers (`10.2.x.x` or `10.3.x.x` addresses).
@@ -395,8 +395,8 @@ Controlled By:  ReplicaSet/cat-facts-ui-849f888dbc
 Containers:
   cat-facts-ui:
     Container ID:   docker://ca7160614b34032cdd729cfd1a2c46ed0f551c7e5d2a568e72663775f2da574f
-    Image:          docker.internal.westcreekfin.com/westcreek/example-projects/cat-facts-ui:1.1.22
-    Image ID:       docker-pullable://docker.internal.westcreekfin.com/westcreek/example-projects/cat-facts-ui@sha256:8fd506a8844991c1ecb6bc202f025be5a340f4e2d79a6e4d7ff0dead68c4ed8a
+    Image:          docker.internal.example.com/westcreek/example-projects/cat-facts-ui:1.1.22
+    Image ID:       docker-pullable://docker.internal.example.com/westcreek/example-projects/cat-facts-ui@sha256:8fd506a8844991c1ecb6bc202f025be5a340f4e2d79a6e4d7ff0dead68c4ed8a
     Port:           80/TCP
     Host Port:      0/TCP
     State:          Running
@@ -449,8 +449,8 @@ Events:
   Type     Reason     Age               From                                 Message
   ----     ------     ----              ----                                 -------
   Normal   Scheduled  81s               default-scheduler                    Successfully assigned dev/cat-facts-ui-6886467ffc-rcb84 to ip-10-3-1-212.ec2.internal
-  Normal   Pulling    7s (x6 over 80s)  kubelet, ip-10-3-1-212.ec2.internal  Pulling image "docker.internal.westcreekfin.com/westcreek/example-projects/cat-facts-ui:1.1.23"
-  Normal   Pulled     7s (x6 over 61s)  kubelet, ip-10-3-1-212.ec2.internal  Successfully pulled image "docker.internal.westcreekfin.com/westcreek/example-projects/cat-facts-ui:1.1.23"
+  Normal   Pulling    7s (x6 over 80s)  kubelet, ip-10-3-1-212.ec2.internal  Pulling image "docker.internal.example.com/westcreek/example-projects/cat-facts-ui:1.1.23"
+  Normal   Pulled     7s (x6 over 61s)  kubelet, ip-10-3-1-212.ec2.internal  Successfully pulled image "docker.internal.example.com/westcreek/example-projects/cat-facts-ui:1.1.23"
   Warning  Failed     7s (x6 over 61s)  kubelet, ip-10-3-1-212.ec2.internal  Error: secret "non-existant-secret" not found
 ```
 
@@ -487,3 +487,66 @@ k port-forward pod/cat-facts-ui-849f888dbc-lwwfh 4545:80
 # port forward to serivce, access on you machine as localhost:4545
 k port-forward service/cat-facts-ui 4545:80
 ```
+
+## Node and Resource Troubleshooting
+
+### Check Node Resource Availability
+
+```bash
+kubectl describe nodes
+```
+
+- **Capacity** - total resources the node has
+- **Allocatable** - amount left after Kubernetes reserves system resources
+
+### See What's Currently Requested by Pods
+
+Use this to see which pods are using resources and what’s being requested:
+
+```bash
+kubectl top pods --all-namespaces
+```
+
+For detailed breakdown of requested and limited resources:
+
+```bash
+kubectl get pods -A -o custom-columns='NAMESPACE:.metadata.namespace,NAME:.metadata.name,CPU_REQUEST:.spec.containers[*].resources.requests.cpu,MEM_REQUEST:.spec.containers[*].resources.requests.memory'
+```
+
+### See Total Requests Across the Cluster
+
+Get all CPU/memory requests vs capacity:
+
+```bash
+kubectl get nodes -o json | jq '[.items[] | {
+  name: .metadata.name,
+  allocatable: .status.allocatable,
+  capacity: .status.capacity
+}]'
+```
+
+Get resource usage summary:
+
+```bash
+kubectl describe node <node-name> | grep -A5 "Non-terminated Pods:"
+```
+
+### Check Events for Scheduling Errors:
+
+```bash
+kubectl get events --sort-by='.lastTimestamp'
+```
+### Other Commands
+
+See pending pods:
+
+```bash
+kubectl get events --sort-by='.lastTimestamp'
+```
+
+Check pod scheduling conditions:
+
+```bash
+kubectl describe pod <pod-name>
+```
+

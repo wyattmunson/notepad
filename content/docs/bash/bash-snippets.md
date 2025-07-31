@@ -224,6 +224,36 @@ else
 fi
 ```
 
+### Check file for matching string
+
+```bash
+if grep -q "No previous release found, retrieving all commits" semver.log; then
+  echo "do something"
+fi
+```
+
+### Check if more than variable is set
+
+```bash
+count=0
+
+[[ -n "$VAR_A" ]] && ((count++))
+[[ -n "$VAR_B" ]] && ((count++))
+[[ -n "$VAR_C" ]] && ((count++))
+
+# Exit if more than one is set
+if [ "$count" -gt 1 ]; then
+  echo "==> ERROR: More than one Git credential variable is set. Exiting."
+  echo "Only one of VAR_A, VAR_B, or VAR_C may be set."
+  exit 1
+elif [ "$count" -eq 0 ]; then
+  echo "==> ERROR: No Git credential variables were set. Exiting."
+  echo "One of VAR_A, VAR_B, or VAR_C must be set."
+  exit 1
+fi
+```
+
+
 ## Generate Random Hash
 
 ```bash

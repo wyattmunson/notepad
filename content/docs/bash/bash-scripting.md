@@ -29,13 +29,18 @@ VARIABLE_NAME=$(echo "Hello")
 
 # set default variable
 VARIABLE_NAME="${1:-HELLO}"
+
+# unset a variable
+unset $VARIABLE_NAME
 ```
 
 ### Save Variable to File
 
 ```bash
-# set variable `TOKEN` to file `.token`
+# set variable `TOKEN` to file `.token` (overwrites file)
 echo "$TOKEN" > .token
+# adds variable `TOKEN` to file `.token` (appends to file)
+echo "$TOKEN" >> .token
 # optionally unset token after saving it
 unset TOKEN
 ```
@@ -129,6 +134,27 @@ Use `export` to make a variable available to a subprocess.
 
 ```bash { title="Use export to set a variable" }
 export VAR_NAME=VALUE
+```
+
+### Exporting Variables using `eval`
+
+When a child script is called using `eval`, use the below code in the child script to make the variables in the parent script.
+
+```bash { title="Use echo export to set a variable" }
+# export EVAL_EXPORT for use in parent script
+echo 'export TEST_EVAL_EXPORT="filled"'
+
+# set NEXT_VERSION equal to the variable VERSION in the child script
+echo "export NEXT_VERSION=\"$VERSION\""
+```
+
+```bash { title="Calling child script from parent script using eval" }
+# Calling child script from parent script using `eval`
+eval "$("/opt/winc/semver/scripts/main.sh")"
+
+# Use tee to capture the stdoout of the the child script
+# Use grep so only the echo statements starting with "export" are captured as an env var
+eval "$("/opt/winc/semver/scripts/main.sh" | tee /dev/stderr | grep '^export ')"
 ```
 
 ---

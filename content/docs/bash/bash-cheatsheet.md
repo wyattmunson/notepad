@@ -260,6 +260,8 @@ ls | grep "phrase"
 # use wildcards
 ls | grep *report.txt
 ls | grep *report*
+
+if grep -q "Text to search" file_name.txt; then
 ```
 
 ### Writing to a File
